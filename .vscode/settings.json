@@ -1,0 +1,67 @@
+{
+    "cSpell.language": "en-GB",
+    "editor.tabSize": 4,
+    "files.autoSave": "afterDelay",
+    "files.watcherExclude": {
+        "bazel-*/*": true,
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true,
+        "**/vendor/*/**": true,
+    },
+    "git.autofetch": true,
+    "git.fetchOnPull": true,
+    "telemetry.enableTelemetry": false,
+    "search.exclude": {
+        "bazel-*/*": true,
+        "**/node_modules/*/**": true,
+        "vendor/**": true,
+    },
+    "plantuml.exportFormat": "svg",
+    "plantuml.exportOutDir": "./",
+    "plantuml.exportSubFolder": false,
+    "plantuml.exportConcurrency": 16,
+    "csharp.suppressDotnetInstallWarning": true,
+    "csharp.suppressDotnetRestoreNotification": true,
+    "workbench.colorTheme": "One Dark Pro",
+    "material-icon-theme.activeIconPack": "react",
+    "python.pythonPath": "dev-env/bin/python",
+    // "plantuml.render": "PlantUMLServer",
+    // "plantuml.server": "http://localhost:8080/",
+
+    // "workbench.colorCustomizations": {
+    //     "statusBar.background": "#333",
+    //     "statusBar.foreground": "#fff",
+    //     "statusBar.noFolderBackground": "#333",
+    //     "statusBar.noFolderForeground": "#fff"
+    // },
+    // Controls the font family.
+    "editor.fontFamily": "Operator Mono",
+    // Controls the line height. Use 0 to compute the lineHeight from the fontSize.
+    "editor.lineHeight": 24,
+    // Enables font ligatures
+    "editor.fontLigatures": true,
+
+    "todo.file.exclude": [
+        "**/gc-roots/**",
+        "**/node_modules/*/**",
+        "**/vendor/*/**"
+    ],
+
+    "todo.timekeeping.created.enabled": true,
+    "todo.embedded.provider": "ag",
+    "editor.renderWhitespace": "boundary",
+    "files.exclude": {
+        "**/.bazel-cache": true
+    },
+    "editor.tabCompletion": "on",
+    "files.autoGuessEncoding": true,
+    "breadcrumbs.enabled": true,
+    "search.maintainFileSearchCache": true,
+    "search.showLineNumbers": true,
+    "terminal.integrated.copyOnSelection": true,
+   "git.ignoreLimitWarning": true,
+   "git.decorations.colors": true,
+   "files.eol": "\n",
+   "editor.minimap.enabled": true,
+}
