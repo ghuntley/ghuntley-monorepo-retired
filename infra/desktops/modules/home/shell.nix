@@ -35,7 +35,7 @@
     };
 
     home.sessionVariables = {
-      EDITOR = "${pkgs.neovim}/bin/vim";
+      EDITOR = "${pkgs.neovim}/bin/nvim";
       PAGER = "${pkgs.most}/bin/most";
     };
 
