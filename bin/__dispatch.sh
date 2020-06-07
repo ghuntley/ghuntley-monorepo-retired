@@ -16,6 +16,9 @@ case "${TARGET_TOOL}" in
   ack)
     attr="nixpkgs.ack"
     ;;
+  cachix)
+    attr="nixpkgs.cachix"
+    ;;
   git)
     attr="nixpkgs.git"
     ;;
