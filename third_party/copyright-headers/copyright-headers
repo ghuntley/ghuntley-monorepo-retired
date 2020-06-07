@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 # coding: utf8
 #
-## Idempotently add DA copyright headers to source files.
+## Idempotently add copyright headers to source files.
 #
 # To check that all files have required headers:
-# $ dade-copyright-headers check
+# $ copyright-headers check
 #
 # To add/update the copyright headers:
-# $ dade-copyright-headers update
+# $ copyright-headers update
 #
 # To ignore files under a certain directory and below:
 # $ touch some/directory/NO_AUTO_COPYRIGHT
@@ -28,8 +28,7 @@ import sys
 # skip: Optional prefix for lines to skip when adding header initially.
 
 filetypes = \
-  { 'daml'   : { 'start' : '-' * 80 , 'line' : '--'   , 'end' : ''    , 'empty_line' : '' } ,
-    'hs'     : { 'start' : '-' * 80 , 'line' : '--'   , 'end' : ''    , 'empty_line' : '', 'skip' : '#!'  } ,
+  { 'hs'     : { 'start' : '-' * 80 , 'line' : '--'   , 'end' : ''    , 'empty_line' : '', 'skip' : '#!'  } ,
     'lhs'    : { 'start' : '-' * 80 , 'line' : '--'   , 'end' : ''    , 'empty_line' : '' } ,
     'chs'    : { 'start' : '-' * 80 , 'line' : '--'   , 'end' : ''    , 'empty_line' : '' } ,
     'js'     : { 'start' : ''       , 'line' : '//'   , 'end' : ''    , 'empty_line' : '' } ,
@@ -247,7 +246,7 @@ def process_file(filename, check_only):
 # Main
 
 def usage():
-  print("usage: dade-copyright-headers <check|update> [DIRECTORY]")
+  print("usage: copyright-headers <check|update> [DIRECTORY]")
   print("  If DIRECTORY is provided, checks only in that directory")
   print("  Otherwise, checks in 'pkgs'.")
   print("  Note that the provided directory must be relative to the")
@@ -278,7 +277,7 @@ for file in list_files(dir):
     failed=True
 
 if failed and check_only:
-  print("\nCopyright header check failed.\nPlease update copyright headers by running 'dade-copyright-headers update'")
+  print("\nCopyright header check failed.\nPlease update copyright headers by running 'copyright-headers update'")
 
 sys.exit(failed)
 
