@@ -13,6 +13,14 @@ Twitter][].
 
 ## Automations
 
+* `.github/dependabot.yml` configures `dependabot` to automatically update git-submodules in `third_party` by pull-requests.
+* `.github/auto-approve.yml` automatically approves pull-requests raised by `imgbot` or `dependabot`.
+* `.github/auto-merge.yml` automatically merges approved pull-requests.
+* `.github/cla.yml` creates a comment on Pull Request asking contributors who have not signed the [CLA][] to sign and also
+   fails the pull request status check with a `failure`. The contributors are requested to sign the CLA within the
+   pull request by copy and pasting **"I have read the CLA Document and I hereby sign the CLA"** as a Pull Request comment.
+   If the contributor has already signed the CLA, then the PR status will pass with `success`. Signatures are stored in `cla/signatures.json`.
+
 ## Tools
 
 * `third_party/copyright-headers` idempotently add copyright headers to source files
@@ -39,8 +47,9 @@ cover a variety of topics.
 # Contributing
 
 If you'd like to contribute to any of the tools in here, please check out the
-[contribution guidelines](/tree/docs/CONTRIBUTING.md).
+[contribution guidelines](/tree/docs/CONTRIBUTING.md)
 
+[CLA](CLA/README.md)
 [monorepo]: https://en.wikipedia.org/wiki/Monorepo
 [Nix]: https://nixos.org/nix
 [on Twitter]: https://twitter.com/geoffreyhuntley
