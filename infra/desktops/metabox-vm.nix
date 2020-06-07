@@ -1,5 +1,14 @@
 { config, pkgs, lib, ... }: {
-  imports = [ <home-manager/nixos> ./modules/vm.nix ];
+  imports = [
+    <home-manager/nixos>
+    ./modules/vm.nix
+    ./modules/sys/bluetooth.nix
+    ./modules/apps/steam.nix
+  ];
+
+  # High-DPI console
+  console.font =
+    lib.mkDefault "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
 
   networking.hostName = "metabox";
   networking.useDHCP = true;
@@ -72,9 +81,6 @@
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 
-  # High-DPI console
-  console.font =
-    lib.mkDefault "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
-
   services.xserver.videoDrivers = [ "nvidia" ];
+
 }
