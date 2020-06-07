@@ -4,13 +4,21 @@
 
 set -Eeuo pipefail
 
-# 1. Bootstrap third_party git submodules
-echo "[dev-env] Syncronizing git submodules"
+# 0. Configure git
+echo "[dev-env] Configuring git"
+git config color.ui true
+git config merge.conflictstyle "diff3"
+git config pull.rebase true
+git config rebase.autosquash true
+git config rebase.autostash true
+
+# 1. Install git-hooks
+bash "$REPO_ROOT/bin/de-install-git-hooks"
+
+# 2. Bootstrap third_party git submodules
+echo "[dev-env] Synchronizing git submodules"
 git submodule sync
 git submodule update
-
-# 2. Install git-hooks
-bash "$REPO_ROOT/bin/de-install-git-hooks"
 
 # n. Notify
 echo "[dev-env] Done"
