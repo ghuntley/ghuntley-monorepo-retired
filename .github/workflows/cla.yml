@@ -16,7 +16,7 @@ jobs:
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with: 
-          path-to-signatures: 'cla/version1/signatures.json'
+          path-to-signatures: 'cla/signatures.json'
           path-To-cladocument: 'https://github.com/ghuntley/test-action-workflow/blob/master/cla/README.md'
           # branch should not be protected
           branch: 'master'
