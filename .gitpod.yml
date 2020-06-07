@@ -1,5 +1,8 @@
 image:
   file: .gitpod.dockerfile
+tasks:
+  - init: direnv allow
+#    command: npm run start
 github:
   prebuilds:
     # enable for the master/default branch (defaults to true)
