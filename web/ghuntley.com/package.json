@@ -34,7 +34,7 @@
     "netlify-lambda": "^0.4.0",
     "node-sass": "^4.9.0",
     "node-sass-tilde-importer": "^1.0.2",
-    "npm": "^6.1.0",
+    "npm": "^6.13.4",
     "postcss": "^6.0.22",
     "postcss-cli": "^5.0.0",
     "pug-cli": "^1.0.0-alpha6",
