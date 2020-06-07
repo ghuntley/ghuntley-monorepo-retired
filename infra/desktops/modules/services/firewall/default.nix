@@ -6,6 +6,7 @@
     firewall = {
       enable = true;
       allowPing = true;
+      allowedTCPPorts = [ 22 ];
       extraCommands = ''
         # Make UPnP work
         ${pkgs.ipset}/bin/ipset create -exist upnp hash:ip,port timeout 3
@@ -14,5 +15,6 @@
       '';
     };
   };
+
 }
 

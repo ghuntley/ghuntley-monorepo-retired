@@ -11,8 +11,10 @@
     ./users
     ./services/firewall
     ./services/mosh
+    ./services/sshd
     ./services/syncthing
     ./services/tailscale
+    ./services/xrdp
     ./sys/corsair
   ];
 
@@ -138,14 +140,6 @@
     fstrim.enable = true;
 
     timesyncd.enable = true;
-
-    openssh = {
-      enable = true;
-      passwordAuthentication = false;
-      forwardX11 = true;
-      permitRootLogin = "no";
-      openFirewall = false;
-    };
 
     xserver = {
       enable = true;
