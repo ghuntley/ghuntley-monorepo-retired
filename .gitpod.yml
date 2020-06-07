@@ -5,6 +5,10 @@ image:
   file: .gitpod.dockerfile
 tasks:
   - init: direnv allow
+ports:
+  # git-hub
+  - port: 41564
+    onOpen: open-browser
 #    command: npm run start
 github:
   prebuilds:
