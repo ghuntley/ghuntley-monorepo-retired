@@ -1,6 +1,6 @@
 # The Prosperity Public License 3.0.0
 
-Contributor: Geoffrey Huntley <ghuntley@ghuntley.com>
+Contributor: [Geoffrey Huntley](https://ghuntley.com/) / ghuntley@ghuntley.com
 
 Source Code: https://github.com/ghuntley/ghuntley
 
