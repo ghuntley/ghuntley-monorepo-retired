@@ -16,8 +16,14 @@ case "${TARGET_TOOL}" in
   ack)
     attr="nixpkgs.ack"
     ;;
+  git)
+    attr="nixpkgs.git"
+    ;;
   git-bug)
     attr="nixpkgs.git-bug"
+    ;;
+  git-lfs)
+    attr="nixpkgs.git-lfs"
     ;;
   jq)
     attr="nixpkgs.jq"
