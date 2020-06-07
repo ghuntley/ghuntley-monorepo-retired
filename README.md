@@ -16,7 +16,7 @@ Twitter][].
 * `.imgbotconfig` configures `imgbot` to crawl through all image files and losslessly compress them via pull-requests.
 * `.github/dependabot.yml` configures `dependabot` to automatically update git-submodules in `third_party` via pull-requests.
 * `.github/auto-approve.yml` automatically approves pull-requests raised by `imgbot` or `dependabot`.
-* `.github/auto-merge.yml` automatically merges approved pull-requests.
+* `.github/auto-merge.yml` automatically merges approved pull-requests that pass all status checks.
 * `.github/cla.yml` creates a comment on Pull Request asking contributors who have not signed the [CLA][] to sign and also
    fails the pull request status check with a `failure`. The contributors are requested to sign the CLA within the
    pull request by copy and pasting **"I have read the CLA Document and I hereby sign the CLA"** as a Pull Request comment.
