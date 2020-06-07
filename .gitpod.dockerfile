@@ -21,7 +21,7 @@ RUN touch .bash_profile && \
   curl https://nixos.org/nix/install | sh
 
 RUN echo '. /home/gitpod/.nix-profile/etc/profile.d/nix.sh' >> /home/gitpod/.bashrc
-RUN echo `direnv hook bash` >> /home/gitpod/.bashrc
+RUN echo 'eval "$(direnv hook zsh)"' >> /home/gitpod/.bashrc
 
 # n. Give back control
 USER root
