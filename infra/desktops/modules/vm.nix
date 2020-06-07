@@ -53,20 +53,6 @@ in {
       #defaultGateway = "172.21.21.1";
       #nameservers = ["10.0.0.1" "8.8.8.8"];
       useDHCP = true;
-      firewall = {
-        enable = false;
-        allowedTCPPorts = [
-          22 # ssh
-          137 # netbios
-          139 # netbios
-          445 # smb
-          3389 # Microsoft RDP
-        ];
-        allowedUDPPorts = [
-          137 # netbios
-          139 # netbios
-        ];
-      };
       #interfaces = {
       #  eth0 = {
       #    ipv4 = {

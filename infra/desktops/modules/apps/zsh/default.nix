@@ -9,10 +9,10 @@
         autoload -U promptinit && promptinit && prompt suse && setopt prompt_sp
       '';
       interactiveShellInit = ''
-        HYPHEN_INSENSITIVE="true"
-        EDITOR = "${pkgs.neovim}/bin/nvim";
-        PAGER = "${pkgs.most}/bin/most";
-        WORDCHARS=
+        export HYPHEN_INSENSITIVE="true"
+        export EDITOR="${pkgs.neovim}/bin/nvim";
+        export PAGER="${pkgs.most}/bin/most";
+        export WORDCHARS=
 
         alias vi='nvim'
         alias vim='nvim'

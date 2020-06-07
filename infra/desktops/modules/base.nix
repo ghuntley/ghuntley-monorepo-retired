@@ -6,6 +6,10 @@
     ./apps/nvim
     ./apps/zsh
     ./users
+    ./services/firewall
+    ./services/mosh
+    ./services/syncthing
+    ./services/tailscale
     ./sys/corsair
   ];
 
@@ -22,6 +26,11 @@
     buildCores = 0;
     maxJobs = lib.mkDefault 4;
     autoOptimiseStore = true;
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
+    };
     nixPath = [ "/nix" "nixos-config=/etc/nixos/configuration.nix" ];
     binaryCaches = [
       "https://cache.nixos.org/"
