@@ -1,3 +1,6 @@
+# Copyright (c) 2020 Geoffrey Huntley <ghuntley@ghuntley.com>. All rights reserved.
+# SPDX-License-Identifier: Proprietary
+
 { config, pkgs, lib, ... }: {
   imports = [
     <home-manager/nixos>
@@ -84,3 +87,4 @@
   services.xserver.videoDrivers = [ "nvidia" ];
 
 }
+

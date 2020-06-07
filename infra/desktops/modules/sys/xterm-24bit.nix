@@ -1,3 +1,6 @@
+# Copyright (c) 2020 Geoffrey Huntley <ghuntley@ghuntley.com>. All rights reserved.
+# SPDX-License-Identifier: Proprietary
+
 { pkgs, stdenv, ncurses, ... }:
 let
   # https://www.gnu.org/software/emacs/manual/html_node/efaq/Colors-on-a-TTY.html
@@ -26,3 +29,4 @@ in stdenv.mkDerivation {
     echo "$terminfo" >> $out/nix-support/propagated-user-env-packages
   '';
 }
+
