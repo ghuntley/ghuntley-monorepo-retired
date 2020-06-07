@@ -1,3 +1,6 @@
+# Copyright (c) 2020 Geoffrey Huntley <ghuntley@ghuntley.com>. All rights reserved.
+# SPDX-License-Identifier: Proprietary
+
 # This file defines the derivations that should be built by CI.
 #
 # The plan is still to implement recursive tree traversal
@@ -8,3 +11,4 @@ with (import ./default.nix {}); [
   web."ghuntley.com"
  ]
  
+

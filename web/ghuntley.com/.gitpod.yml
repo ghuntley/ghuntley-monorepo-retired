@@ -1,8 +1,0 @@
-image:
-  file: .gitpod.dockerfile
-ports:
-  - port: 1313
-    onOpen: open-preview
-tasks:
-  - init: nix-env -iA nixpkgs.hugo && npm i
-  - command: npm run watch

@@ -1,3 +1,6 @@
+// Copyright (c) 2020 Geoffrey Huntley <ghuntley@ghuntley.com>. All rights reserved.
+// SPDX-License-Identifier: Proprietary
+
 'use strict'
 
 import gulp from 'gulp'
@@ -171,3 +174,4 @@ gulp.task('pub-delete', () => {
       console.log('Files and folders deleted:\n', paths.join('\n'), '\nTotal Files Deleted: ' + paths.length + '\n');
     })
 })
+
