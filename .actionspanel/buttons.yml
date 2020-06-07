@@ -1,0 +1,10 @@
+buttons:
+  - title: Run automerge
+    action: "automerge"
+    description: Automerge
+    confirm: true
+    
+    - title: Run Auto approve
+    action: "Auto approve"
+    description: Auto approve
+    confirm: true
