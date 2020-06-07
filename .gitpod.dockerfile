@@ -1,7 +1,12 @@
 FROM gitpod/workspace-full:latest
 
-# Install Nix
+# 0. Switch to root
 USER root
+
+# 1. Install direnv
+RUN apt-get install direnv
+
+# 2. Install Nix
 RUN addgroup --system nixbld \
   && usermod -a -G nixbld gitpod \
   && mkdir -m 0755 /nix && chown gitpod /nix \
@@ -16,6 +21,7 @@ RUN touch .bash_profile && \
   curl https://nixos.org/nix/install | sh
 
 RUN echo '. /home/gitpod/.nix-profile/etc/profile.d/nix.sh' >> /home/gitpod/.bashrc
+RUN echo `direnv hook bash` >> /home/gitpod/.bashrc
 
-# Give back control
+# n. Give back control
 USER root
