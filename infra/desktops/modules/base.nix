@@ -98,6 +98,7 @@
     nix-prefetch-scripts
     nmap
     nvme-cli
+    okular
     patchelf
     pciutils
     pinentry
