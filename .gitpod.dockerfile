@@ -3,8 +3,9 @@ FROM gitpod/workspace-full:latest
 # 0. Switch to root
 USER root
 
-# 1. Install direnv
-RUN apt-get install direnv
+# 1. Install direnv & git-lfs
+RUN apt-get install direnv \
+                    git-lfs
 
 # 2. Install Nix
 RUN addgroup --system nixbld \
