@@ -63,5 +63,8 @@
    "git.ignoreLimitWarning": true,
    "git.decorations.colors": true,
    "files.eol": "\n",
-   "editor.minimap.enabled": true,
+"editor.minimap.enabled": true,
+"cSpell.words": [
+    "idempotently"
+],
 }
