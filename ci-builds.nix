@@ -5,6 +5,6 @@
 # true`, but this is currently more effort than it would save me.
 
 with (import ./default.nix {}); [
-  web.ghuntley-com
+  web."ghuntley.com"
  ]
  
