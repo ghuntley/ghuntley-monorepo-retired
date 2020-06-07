@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Copyright (c) 2020 Geoffrey Huntley <ghuntley@ghuntley.com>. All rights reserved.
+# SPDX-License-Identifier: Proprietary
+
 # This script dispatches invocations transparently to programs instantiated from
 # Nix.
 #
@@ -54,3 +57,4 @@ result=$(nix-build --no-out-link --attr "${attr}" "${REPO_ROOT}")
 PATH="${result}/bin:$PATH"
 
 exec "${TARGET_TOOL}" "${@}"
+

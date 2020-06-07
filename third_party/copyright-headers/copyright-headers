@@ -10,8 +10,8 @@
 # $ copyright-headers update
 #
 # To ignore files under a certain directory and below:
-# $ touch some/directory/NO_AUTO_COPYRIGHT
-# $ git add some/directory/NO_AUTO_COPYRIGHT
+# $ touch some/directory/.autocopyrightignore
+# $ git add some/directory/.autocopyrightignore
 
 import subprocess
 import re
@@ -61,6 +61,7 @@ filetypes = \
     'scss'   : { 'start' : '/*'     , 'line' : ''     , 'end' : ' */' } ,
     'yml'    : { 'start' : '#' * 80 , 'line' : '#'    , 'end' : ''    , 'empty_line' : '' } ,
     'yaml'   : { 'start' : '#' * 80 , 'line' : '#'    , 'end' : ''    , 'empty_line' : '' } ,
+    'nix'    : { 'start' : '#' * 80 , 'line' : '#'    , 'end' : ''    , 'empty_line' : '' } ,
   }
 
 #########################
@@ -84,12 +85,12 @@ def list_files(dir):
     .strip()                                   \
     .split("\n")
 
-  # Find all 'NO_AUTO_COPYRIGHT' paths
+  # Find all '.autocopyrightignore' paths
   ignores = [ os.path.dirname(f) + "/" for f in all_files
-              if os.path.basename(f) == 'NO_AUTO_COPYRIGHT' ]
+              if os.path.basename(f) == '.autocopyrightignore' ]
 
   # Filter out files under directories that contained
-  # NO_AUTO_COPYRIGHT.
+  # .autocopyrightignore.
   unignored = [ f for f in all_files
                 if not any(map(lambda x: f.startswith(x), ignores))  ]
 
@@ -123,7 +124,7 @@ def process_file(filename, check_only):
   header = suffix.join(notice_lines) + "\n"
 
   # Read all lines from the file
-  with open(filename, 'r', encoding="UTF-8") as fp:
+  with open(filename, 'r', encoding="ISO-8859-1", ) as fp:
     lines = fp.readlines()
   # Pretend that the file has extra empty line at the end to handle files,
   # which consist only of the copyright notice and nothing else.
@@ -254,7 +255,7 @@ def usage():
   sys.exit(1)
 
 chdir_to_toplevel()
-with open('COPY', 'r') as f:
+with open('.copyrightheader', 'r') as f:
   LEGAL_NOTICES = list(map(lambda x: x.strip(), f.readlines()))
 
 if len(sys.argv) != 2 and len(sys.argv) != 3:
