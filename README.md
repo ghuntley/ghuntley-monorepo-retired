@@ -24,7 +24,7 @@ Twitter][].
 
 ## Tools
 
-* `third_party/copyright-headers` idempotently add copyright headers to source files
+* `third_party/copyright-headers` idempotently add copyright headers to source files with the contents of `.copyrightheader`
    unless a stub `.autocopyrightignore` is found in the current or parent directory.
 * `third_party/licensed` verify the licenses of dependencies.
 * `third_party/nixpkgs` contains my fork of the Nix package manager packages.
