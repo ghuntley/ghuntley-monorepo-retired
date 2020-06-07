@@ -1,7 +1,7 @@
-[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fghuntley%2Fghuntley%2Fbadge%3Fref%3Dmaster&style=flat)](https://actions-badge.atrox.dev/ghuntley/ghuntley/goto?ref=master) [![Actions Panel](https://img.shields.io/badge/actionspanel-enabled-brightgreen)](https://www.actionspanel.app/app/ghuntley/ghuntley)
+# ghuntley's personal monorepo
 
+This repository is the [monorepo][] for my personal software.
 
-This repository is the [monorepo][] for my personal tools and infrastructure.
 Everything in here is built using [Nix][] with an automatic attribute-set layout
 that mirrors the filesystem layout of the repository (this might feel familiar
 to users of Bazel).
