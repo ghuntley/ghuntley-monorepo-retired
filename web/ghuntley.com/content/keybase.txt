@@ -1,0 +1,75 @@
+==================================================================
+https://keybase.io/ghuntley
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://ghuntley.com
+  * I am ghuntley (https://keybase.io/ghuntley) on keybase.
+  * I have a public key with fingerprint 13DA EF2E 995C 1055 A87C  0AB7 1E0F 156E 39D1 D3A6
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "012054eda78234d4a6d4f2c8e4d419e956812c16c7671ca57f327cddd2d56c9e06030a",
+      "fingerprint": "13daef2e995c1055a87c0ab71e0f156e39d1d3a6",
+      "host": "keybase.io",
+      "key_id": "1e0f156e39d1d3a6",
+      "kid": "0101184aa7ebe8212c046723e878e1de6301727ab2594a9a09e6e6e7d80fe6f8e0f40a",
+      "uid": "b789244640919e9c7911efae4c68b019",
+      "username": "ghuntley"
+    },
+    "service": {
+      "hostname": "ghuntley.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1558799146,
+  "expire_in": 157680000,
+  "prev": "75ba2336f02606e6457a89a6c59ad4418980b25668ab70eb39bd223d48e44abe",
+  "seqno": 65,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.0
+Comment: https://keybase.io/crypto
+
+yMNtAnicbVJbUFVVGD7cPWijBJJTwNAOyDoH3PfLQbyAgomQJmICeVx777Vhczkb
+ztmADBAoKEbDEJeSGOwyWEEiM4CSFMmAWZnxwEglM/kAQyKEaWNqUVBrM/nStNbD
+Wutf3/et7//X/8VjHiZft5DVax3C2LUP3a4OtxSaMmal50sxUZNLMFsplgOXF5gr
+Q5duz1FlzIbhBIkzNJQBx5MULdOAlWmFlHiI9oQABYblCVIiWIljOUICDKdQJCfJ
+skzKDCsJEGdxCgeYFVNURyZ05jtVh45kCUoGUCGhIDASgTMM4DkJByJHQFwhGBZS
+gkzIFGARMUtzGQxkTgQuGKVqKIYO9mV7/4N/5BsnCJ4GgIMi5EnkEadZjqQgz/GQ
+kCFL4QRHckAkGYEGAsAFyKLJyTyuQFbhkS697LtwWU7keIGkaZbGBSNriRMIAioA
+0hLLizghGEAXdDpAHkTozKxCh56LqlluxVC0SJWgUVgjk/8goiQtD3HznZquSVou
+usnS9XyXzWDqJfkGtBiK9n9F7KLqkFEdEaMIOl2q5sBsBEJKumqoEgzDc4JA0KwV
+g4fzVSe0qwaC4VgeR8N4BxYhSY4RAUlRrIKTLI7SphkO8AJgJUYAMk0TvMDjqDAs
+y6MvwaFICaJMkpRMo2+ngQgxI60Ch4bZWAb5BJlI06VmOoBe6IRY+chwhqfJzdfk
+7eVuNJjJ17zmUdv9+dMaU2X1pR3Wv6YSY5binFn9l54LnLq29+7v88nhwtF94Fha
+QyT/cHCsYHfO4EDFpgNHmzomFoejU9ib9e+2T58f6ulasOFfMaG7C7Yvfv/jO7C5
+omyy//WV/OWU2vI9/h3rd52Iht9d9ltYWV9d4+lpjd1vfmmnp7bnrciypcbbqw8G
+RrS9b/ILOLOZyR5vfWWw4YjeE3O84qOznWGf6Y+TM9ONrafu+d9ixOnSBbPvmTst
+7j6dE3efsFy/0VHWkUE3VVCTU93Yg31PzoVVD7WnKxaOeLMqqasq9crnLZV67L2e
+rmJeiS9PaupKKY9p8NBOegafGj/4w8OxqZ1phwfM5oi/P3m6ZnIy0Tb8qVvA/ZPD
+m2KfeS9tY8nSsZ7OF1+gGs9djMv7YGNtaoR0Nrey7bU7Ia4SclEYTZgLKZYbvL8e
+uVl3vmg04eq6C1s+JtNHwXzdbJ799K6+HpLbOjvSFqKFpnglgY6+9qDaVdFv+xzi
+k4M2vKqfLg64sCW79XjzVGF46e0+5uJM4JFIS0B8tiV4Ic5vIvMQ0RZnmVlnfvaX
+5vUJ3U1DKVdWLLjFRKQnr1Cpxgd/RPR619UE1e0IPXD/G3Pi/s3dt55aFRO/9+W1
+9ee4E5FJ41pvlP/czDap6kvr1mBLf1in7xsbbngM8Knbvx0Md+8tGb9e7eUz175t
+3qvxV++ff5ssC/sH7rmxag==
+=1Qcl
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/ghuntley
+
+==================================================================

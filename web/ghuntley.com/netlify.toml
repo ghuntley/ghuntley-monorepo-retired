@@ -1,0 +1,15 @@
+[build]
+    command = "npm run build"
+    publish = "public"
+    functions = "functions"
+
+[build.environment]
+  YARN_VERSION = "1.9.4"
+  HUGO_VERSION = "0.46"
+
+[context.production.environment]
+    HUGO_ENV = "production"
+    NODE_ENV = "production"
+
+[context.deploy-preview]
+    command = "npm run build"

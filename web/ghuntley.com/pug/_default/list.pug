@@ -1,0 +1,24 @@
+| {{ partial "head.html" . }}
+
+body
+    .wrap
+        | {{ if .Site.Params.mainMenu }}
+        .section.top-menu
+            | {{ partial "top_menu.html" (dict "Page" . "show_back_menu_item" false) }}
+        | {{ end }}
+        .section#content
+            h1 {{ .Title }}
+            p {{ .Content }}
+            ul
+                | {{ range .Data.Pages }}
+                li
+                    |
+                    | {{ if .Params.showDate }}
+                    |
+                    | {{ .Date.Format (.Site.Params.dateForm | default "Mon Jan 02, 2006")}} --
+                    |
+                    | {{ end }}
+                    a(href='{{.Permalink}}') {{.Title}}
+                | {{ end }}
+        .section.footer
+            | {{ partial "footer.html" . }}

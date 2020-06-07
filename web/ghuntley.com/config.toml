@@ -1,0 +1,90 @@
+baseURL = "/"
+languageCode = "en-au"
+title = "Geoffrey Huntley"
+
+enableRobotsTXT = true
+disableAliases = true
+disableHugoGeneratorInject = true
+
+[params]
+disallow_search_engines = false # set robots.txt to disallow everything
+
+
+[[params.mainMenu]]
+    link = "/lately"
+    text = "lately"
+
+[[params.mainMenu]]
+    link = "/contact"
+    text = "contact"
+
+[[params.mainMenu]]
+    link = "/live"
+    text = "live"
+
+[[params.mainMenu]]
+    link = "/newsletter"
+    text = "newsletter"
+
+[[params.mainMenu]]
+    link = "/talks"
+    text = "talks"
+
+[[params.mainMenu]]
+    link = "/workshops"
+    text = "workshops"
+
+[[params.mainMenu]]
+    link = "/licensing"
+    text = "licensing"
+
+[[params.mainMenu]]
+    link = "/blog"
+    text = "writing"
+
+[[params.mainMenu]]
+    link = "/rss"
+    text = "rss feed"
+
+[[params.mainMenu]]
+    link = "/notes"
+    text = "notes"
+
+[[params.mainMenu]]
+    link = "/radar"
+    text = "radar"
+
+[[params.mainMenu]]
+    link = "/thanks"
+    text = "thanks"
+
+[[params.mainMenu]]
+    link = "/support"
+    text = "support"
+
+[[params.mainMenu]]
+    link = "/about"
+    text = "about"
+
+# add redirects/headers
+[outputs]
+home = ["HTML", "RSS", "REDIRECTS", "HEADERS"]
+
+# remove .{ext} from text/netlify
+[mediaTypes."text/netlify"]
+suffixes = [""]
+delimiter = ""
+
+# add output format for netlify _redirects
+[outputFormats.REDIRECTS]
+mediatype = "text/netlify"
+baseName = "_redirects"
+isPlainText = true
+notAlternative = true
+
+# add output format for netlify _headers
+[outputFormats.HEADERS]
+mediatype = "text/netlify"
+baseName = "_headers"
+isPlainText = true
+notAlternative = true

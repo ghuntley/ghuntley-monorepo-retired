@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: ghuntley.com 
+Token: b3f049e0b534c14e87e0d5a1ceaa52fc0aad98413ba0ddb633f26ba26d7d816e

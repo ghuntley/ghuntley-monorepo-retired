@@ -1,0 +1,49 @@
+| {{ partial "head.html" . }}
+
+body
+    .wrap
+        .section.top-menu
+            | {{ partial "top_menu.html" (dict "Page" . "show_back_menu_item" false) }}
+        .section#content
+            | {{ .Content }}
+        |
+        | {{ if .Site.Params.clickablePhotos }}
+        .grid
+            |
+            | {{ $name := .Site.Params.galleryFolder | default "images/"}}
+            | {{ $path := "photos/" }}
+            | {{ $content := "/content/" }}
+            | {{ $src := (print $path $name) }}
+            |
+            | {{ $folder := (print $content $path $name) }}
+            |
+            | {{ $files := readDir $folder }}
+            |
+            | {{ range shuffle $files }}
+            |
+            div
+                a(href='{{ $src | absURL }}{{.Name }}')
+                    img(src='{{ $src | absURL }}{{.Name }}')
+            |
+            | {{ end }}
+        |
+        | {{ else }}
+        .grid
+            |
+            | {{ $name := .Site.Params.galleryFolder | default "images/"}}
+            | {{ $path := "photos/" }}
+            | {{ $content := "/content/" }}
+            | {{ $src := (print $path $name) }}
+            |
+            | {{ $folder := (print $content $path $name) }}
+            |
+            | {{ $files := readDir $folder }}
+            |
+            | {{ range shuffle $files }}
+            |
+            div
+                img(src='{{ $src | absURL }}{{.Name }}')
+            | {{ end }}
+        | {{ end }}
+        .section.footer
+            | {{ partial "footer.html" . }}

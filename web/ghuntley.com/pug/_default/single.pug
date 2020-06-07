@@ -1,0 +1,14 @@
+| {{ partial "head.html" . }}
+
+body
+    .wrap
+        | {{ if .Site.Params.mainMenu }}
+        .section.top-menu
+              | {{ partial "top_menu.html" (dict "Page" . "show_back_menu_item" false) }}
+        | {{ end }}
+        .section#title
+            | {{ .Title }}
+        .section#content
+            | {{ .Content }}
+        .section.footer
+            | {{ partial "footer.html" . }}

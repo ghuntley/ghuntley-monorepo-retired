@@ -1,0 +1,1 @@
+{{ partial "head.html" . }}<body><div class="wrap">{{ if .Site.Params.mainMenu }}<div class="section top-menu">{{ partial "top_menu.html" (dict "Page" . "show_back_menu_item" false) }}</div>{{ end }}<div class="section" id="title">{{ .Title }}</div><div class="section" id="content">{{ .Content }}</div><div class="section footer">{{ partial "footer.html" . }}</div></div></body>

@@ -1,0 +1,3 @@
+---
+title: long bets
+---
