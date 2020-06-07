@@ -15,5 +15,3 @@ bash "$REPO_ROOT/bin/de-install-git-hooks"
 # n. Notify
 echo "[dev-env] Done"
 echo
-echo 'PREFERRED: Please install https://direnv.net/ and do `direnv allow` in this repo'
-echo
