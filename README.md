@@ -13,7 +13,8 @@ Twitter][].
 
 ## Automations
 
-* `.github/dependabot.yml` configures `dependabot` to automatically update git-submodules in `third_party` by pull-requests.
+* `.imgbotconfig` configures `imgbot` to crawl through all image files and losslessly compress them via pull-requests.
+* `.github/dependabot.yml` configures `dependabot` to automatically update git-submodules in `third_party` via pull-requests.
 * `.github/auto-approve.yml` automatically approves pull-requests raised by `imgbot` or `dependabot`.
 * `.github/auto-merge.yml` automatically merges approved pull-requests.
 * `.github/cla.yml` creates a comment on Pull Request asking contributors who have not signed the [CLA][] to sign and also
