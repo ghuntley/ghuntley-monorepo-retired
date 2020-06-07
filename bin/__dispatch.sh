@@ -13,8 +13,26 @@ readonly REPO_ROOT=$(dirname $0)/..
 TARGET_TOOL=$(basename $0)
 
 case "${TARGET_TOOL}" in
+  ack)
+    attr="nixpkgs.ack"
+    ;;
   git-bug)
     attr="nixpkgs.git-bug"
+    ;;
+  jq)
+    attr="nixpkgs.jq"
+    ;;
+  osht)
+    attr="nixpkgs.osht"
+    ;;
+  rpl)
+    attr="nixpkgs.rpl"
+    ;;
+  terraform)
+    attr="nixpkgs.terraform"
+    ;;
+  tmux)
+    attr="nixpkgs.tmux"
     ;;
   *)
     echo "The tool '${TARGET_TOOL}' is currently not installed in this repository."
