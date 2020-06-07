@@ -11,6 +11,8 @@ Twitter][].
 
 # Highlights
 
+## Automations
+
 ## Tools
 
 * `third_party/copyright-headers` idempotently add copyright headers to source files
