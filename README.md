@@ -18,19 +18,14 @@ Twitter][].
 * `third_party/licensed` verify the licenses of dependencies.
 * `third_party/nixpkgs` contains my fork of the Nix package manager packages
 
+## Infrastructure
+
+* `infra/desktops` contains my nixos configs for my personal computers.
+
 ## Packages / Libraries
 
 ## Services
 
-Services in this repository are deployed on a Google Kubernetes Engine cluster
-using [Nixery]().
-
-* `web/blog` and `web/homepage` contain my blog and website setup
-  (serving at [tazj.in][])
-* `web/cgit-taz` contains a slightly patched version of `cgit` that serves my
-  git web interface at [git.tazj.in][]
-* `ops/journaldriver` contains a small Rust daemon that can forward logs from
-  journald to Stackdriver Logging
 
 ## Miscellaneous
 
