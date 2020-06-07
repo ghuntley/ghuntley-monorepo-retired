@@ -11,5 +11,5 @@
 	path = third_party/tazjin
 	url = https://git.tazj.in/
 [submodule "web/noyaml.com"]
-	path = web/noyaml
+	path = web/noyaml.com
 	url = https://github.com/ghuntley/noyaml.git
