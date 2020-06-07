@@ -7,9 +7,6 @@
 [submodule "workshops/unoplatform"]
 	path = workshops/unoplatform
 	url = https://github.com/unoplatform/workshops.git
-[submodule "third_party/tazjin"]
-	path = third_party/tazjin
-	url = https://git.tazj.in/
 [submodule "web/noyaml.com"]
 	path = web/noyaml.com
 	url = https://github.com/ghuntley/noyaml.git
