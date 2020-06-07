@@ -1,12 +1,5 @@
 { pkgs, ... }: {
-  imports = [
-    ./alacritty.nix
-    ./firefox.nix
-    ./git.nix
-    ./shell.nix
-    ./tmux.nix
-    ./vscode.nix
-  ];
+  imports = [ ./alacritty.nix ./firefox.nix ./git.nix ./shell.nix ./tmux.nix ];
 
   home-manager.users.ghuntley = {
 

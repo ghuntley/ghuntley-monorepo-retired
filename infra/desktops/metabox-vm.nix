@@ -2,8 +2,8 @@
   imports = [
     <home-manager/nixos>
     ./modules/vm.nix
-    ./modules/sys/bluetooth.nix
-    ./modules/apps/steam.nix
+    ./modules/sys/bluetooth
+    ./modules/apps/steam
   ];
 
   # High-DPI console

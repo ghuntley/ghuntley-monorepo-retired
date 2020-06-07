@@ -82,8 +82,6 @@
         };
       };
 
-      options.hardware.ckb-next.enable = true;
-
       udiskie = {
         enable = true;
         automount = true;

@@ -2,7 +2,11 @@
   imports = [
     <home-manager/nixos>
     #  ./sys/initrd-ssh.nix
-    ./users.nix
+    ./apps/gist
+    ./apps/nvim
+    ./apps/zsh
+    ./users
+    ./sys/corsair
   ];
 
   nixpkgs = {
@@ -37,7 +41,7 @@
 
   i18n = { defaultLocale = "en_US.UTF-8"; };
 
-  boot = { kernelPackages = pkgs.linuxPackagesFor pkgs.linux_5_4; };
+  #boot = { kernelPackages = pkgs.linuxPackagesFor pkgs.linux_5_4; };
 
   hardware = {
     enableRedistributableFirmware = true;
@@ -81,7 +85,6 @@
     jnettop
     j4-dmenu-desktop
     ncftp
-    neovim
     nixfmt
     nix-prefetch-scripts
     nmap
@@ -171,29 +174,6 @@
       extraConfig = ''
         AddKeysToAgent yes
       '';
-    };
-
-    zsh = {
-      enable = true;
-      enableCompletion = true;
-      histSize = 100000;
-      promptInit = ''
-        autoload -U promptinit && promptinit && prompt suse && setopt prompt_sp
-      '';
-      interactiveShellInit = ''
-        HYPHEN_INSENSITIVE="true"
-        WORDCHARS=
-        if [ -f .nix-profile/etc/profile.d/hm-session-vars.sh ]; then
-          source  .nix-profile/etc/profile.d/hm-session-vars.sh
-        fi
-      '';
-      setOptions = [
-        "hist_ignore_dups"
-        "share_history"
-        "hist_fcntl_lock"
-        "auto_cd"
-        "extended_glob"
-      ];
     };
 
     gnupg.agent.enable = true;
