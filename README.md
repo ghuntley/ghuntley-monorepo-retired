@@ -1,4 +1,4 @@
-# ghuntley's personal monorepo
+# ghuntley's personal monorepo [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/ghuntley/ghuntley)
 
 This repository is the [monorepo][] for my personal software.
 
