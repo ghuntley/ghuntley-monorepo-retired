@@ -4,3 +4,6 @@
 [submodule "infra/desktops/home-manager"]
 	path = third_party/home-manager
 	url = https://github.com/rycee/home-manager
+[submodule "workshops/unoplatform"]
+	path = workshops/unoplatform
+	url = https://github.com/unoplatform/workshops.git
