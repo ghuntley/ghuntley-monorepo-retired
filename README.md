@@ -21,6 +21,7 @@ Twitter][].
    fails the pull request status check with a `failure`. The contributors are requested to sign the CLA within the
    pull request by copy and pasting **"I have read the CLA Document and I hereby sign the CLA"** as a Pull Request comment.
    If the contributor has already signed the CLA, then the PR status will pass with `success`. Signatures are stored in `cla/signatures.json`.
+* `.github/chatops-rebase.yml` when `/rebase` is left as a comment by a maintainer the pull-request is automatically rebased. 
 
 ## Tools
 
