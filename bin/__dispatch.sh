@@ -13,39 +13,8 @@ readonly REPO_ROOT=$(dirname $0)/..
 TARGET_TOOL=$(basename $0)
 
 case "${TARGET_TOOL}" in
-  terraform)
-    attr="third_party.terraform-gcp"
-    ;;
-  kontemplate)
-    attr="kontemplate"
-    ;;
-  stern)
-    attr="third_party.stern"
-    ;;
-  kms_pass)
-    attr="ops.kms_pass"
-    TARGET_TOOL="pass"
-    ;;
-  aoc2019)
-    attr="fun.aoc2019.${1}"
-    ;;
-  rink)
-    attr="third_party.rink"
-    ;;
-  age)
-    attr="third_party.age"
-    ;;
-  age-keygen)
-    attr="third_party.age"
-    ;;
-  rebuilder)
-    attr="ops.nixos.rebuilder"
-    ;;
-  meson)
-    attr="third_party.meson"
-    ;;
-  ninja)
-    attr="third_party.ninja"
+  git-bug)
+    attr="nixpkgs.git-bug"
     ;;
   *)
     echo "The tool '${TARGET_TOOL}' is currently not installed in this repository."
