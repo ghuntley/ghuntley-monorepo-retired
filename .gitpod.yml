@@ -15,11 +15,11 @@ github:
     # enable for the master/default branch (defaults to true)
     master: true
     # enable for all branches in this repo (defaults to false)
-    branches: true
+    branches: false
     # enable for pull requests coming from this repo (defaults to true)
-    pullRequests: true
+    pullRequests: false
     # add a check to pull requests (defaults to true)
-    addCheck: true
+    addCheck: false
     # add a "Review in Gitpod" button as a comment to pull requests (defaults to false)
     addComment: true
 
