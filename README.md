@@ -11,7 +11,6 @@ Twitter][].
 
 # Highlights
 
-## Automations
 
 * `.imgbotconfig` configures `imgbot` to crawl through all image files and losslessly compress them via pull-requests.
 * `.github/dependabot.yml` configures `dependabot` to automatically update git-submodules in `third_party` via pull-requests.
