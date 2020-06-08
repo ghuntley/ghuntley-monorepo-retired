@@ -10,3 +10,6 @@
 [submodule "web/noyaml.com"]
 	path = web/noyaml.com
 	url = https://github.com/ghuntley/noyaml.git
+[submodule "web/covidsafe.watch"]
+	path = web/covidsafe.watch
+	url = https://github.com/covidsafewatch/website
