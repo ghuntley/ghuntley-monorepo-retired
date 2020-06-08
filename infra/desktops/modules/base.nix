@@ -110,6 +110,7 @@
     powertop
     psmisc
     python
+    remmina
     rclone
     restic
     samba
