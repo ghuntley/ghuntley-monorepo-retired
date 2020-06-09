@@ -21,7 +21,7 @@ WORKDIR /home/gitpod
 RUN touch .bash_profile && \
   curl https://nixos.org/nix/install | sh
 
-RUN echo 'echo "{ allowUnfree = true; }"' >> /home/gitpod/.config/nixpkgs/config.nix
+RUN mkdir -p /home/gitpod/.config/nixpkgs && echo '{ allowUnfree = true; }' >> /home/gitpod/.config/nixpkgs/config.nix
 
 RUN echo '. /home/gitpod/.nix-profile/etc/profile.d/nix.sh' >> /home/gitpod/.bashrc
 RUN echo 'eval "$(direnv hook bash)"' >> /home/gitpod/.bashrc
