@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-#de format
-#de copyright
-#de license
+de-format
