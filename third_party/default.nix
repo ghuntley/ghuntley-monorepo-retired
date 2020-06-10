@@ -34,10 +34,10 @@ let
 
 in exposed.lib.fix(self: exposed // {
   callPackage = nixpkgs.lib.callPackageWith self;
-
+  
   # Packages to be overridden
   originals = {
-    inherit (nixpkgs) grpc notmuch;
+    inherit (nixpkgs);
     git = nixpkgs.gitAndTools.gitFull;
     terraform = nixpkgs.terraform_0_12;
   };

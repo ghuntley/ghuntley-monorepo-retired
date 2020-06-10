@@ -38,7 +38,7 @@ fix (self: {
   config = config self;
 
   # Elevate 'lib' from nixpkgs
-  lib = import (self.third_party.nixpkgsSrc + "/lib");
+  lib = self.third_party.nixpkgs.lib;
 
   # Expose readTree for downstream repo consumers.
   readTree = {
