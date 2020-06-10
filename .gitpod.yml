@@ -5,7 +5,7 @@
 image:
   file: .gitpod.dockerfile
 tasks:
-  - init: direnv allow
+  - init: direnv allow && de-preload
 ports:
   # git-hub
   - port: 41564
