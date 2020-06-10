@@ -19,7 +19,7 @@ case "${TARGET_TOOL}" in
   "aws")
     attr="third_party.aws"
     ;;
-  "azure-cli")
+  "az")
     attr="third_party.azure-cli"
     ;;
   "cachix")
@@ -31,7 +31,7 @@ case "${TARGET_TOOL}" in
   "git-bug")
     attr="third_party.git-bug"
     ;;
-  "google-cloud-sdk")
+  "gcloud")
     attr="third_party.google-cloud-sdk"
     ;;
   "jq")
