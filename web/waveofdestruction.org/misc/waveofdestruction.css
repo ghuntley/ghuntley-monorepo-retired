@@ -1,0 +1,300 @@
+PRE {
+        FONT-SIZE: 11.35px;
+}
+P {
+	FONT-SIZE: 13px; 
+	LINE-HEIGHT: 1.5;
+	FONT-FAMILY: Verdana, Tahoma, Arial;
+}
+TD {
+	FONT-SIZE: 13px; 
+	LINE-HEIGHT: 1.5; 
+	FONT-FAMILY: Verdana, Tahoma, Arial;
+}
+LI {
+	FONT-SIZE: 13px;
+	LINE-HEIGHT: 1.5;
+	list-style-type: none;
+	FONT-FAMILY: Verdana, Tahoma, Arial;
+}
+INPUT {
+	FONT-SIZE: 13px;
+	LINE-HEIGHT: 1.5;
+	FONT-FAMILY: Verdana, Tahoma, Arial;
+}
+SELECT {
+	FONT-SIZE: 13px;
+	LINE-HEIGHT: 1.5;
+	FONT-FAMILY: Verdana, Tahoma, Arial;
+}
+TEXTAREA {
+	FONT-SIZE: 13px;
+	LINE-HEIGHT: 1.5;
+	FONT-FAMILY: Verdana, Tahoma, Arial;
+}
+BODY {
+	FONT-SIZE: 13px;
+	MARGIN: 0px auto auto;
+	WIDTH: 755px; COLOR: #000000;
+	LINE-HEIGHT: 1.5;
+	FONT-FAMILY: Verdana, Tahoma, Arial;
+	BACKGROUND-COLOR: #191933;
+	TEXT-ALIGN: center;
+	Margin-TOP: 20px;
+	Margin-Bottom: 20px;
+}
+A {
+	COLOR: #FFCC00; TEXT-DECORATION: none;
+}
+B:hover {
+#	TEXT-DECORATION: underline;
+}
+HR {
+	BORDER-TOP: #aaaaaa 2px dashed;
+	COLOR: #aaaaaa;
+	HEIGHT: 2px;
+}
+IMG {
+	BORDER-TOP-WIDTH: 0px; 
+	PADDING-RIGHT: 0px; 
+	PADDING-LEFT: 0px; 
+	BORDER-LEFT-WIDTH: 0px; 
+	BORDER-BOTTOM-WIDTH: 0px; 
+	PADDING-BOTTOM: 0px; 
+	PADDING-TOP: 0px;
+	BORDER-RIGHT-WIDTH: 0px;
+
+}
+UL {
+	MARGIN-TOP: 0px;
+	MARGIN-BOTTOM: 0px;
+	PADDING-BOTTOM: 0px;
+	PADDING-TOP: 0px;
+}
+OL {
+	MARGIN-TOP: 0px;
+	MARGIN-BOTTOM: 0px;
+	PADDING-BOTTOM: 0px;
+	PADDING-TOP: 0px;
+}
+FORM {
+	PADDING-RIGHT: 0px; 
+	PADDING-LEFT: 0px;
+	PADDING-BOTTOM: 0px; 
+	MARGIN: 0px; 
+	PADDING-TOP: 0px;
+}
+H1 {
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	PADDING-BOTTOM: 0px;
+	MARGIN: 0px;
+	PADDING-TOP: 0px;
+	color: #99CC33;
+
+}
+H2 {
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	PADDING-BOTTOM: 0px;
+	MARGIN: 0px;
+	PADDING-TOP: 0px;
+	color: #99CC33;
+
+}
+H3 {
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	PADDING-BOTTOM: 0px; MARGIN: 0px;
+	PADDING-TOP: 0px;
+	color: #99CC33;
+}
+H4 {
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	PADDING-BOTTOM: 0px;
+	MARGIN: 0px;
+	PADDING-TOP: 0px;
+	color: #99CC33;
+}
+H5 {
+	PADDING-RIGHT: 0px; 
+	PADDING-LEFT: 0px; 
+	PADDING-BOTTOM: 0px;
+	MARGIN: 0px; PADDING-TOP: 0px;
+	color: #99CC33;
+}
+A.ext {
+	
+}
+TT {
+	font-family: "Courier New", "Courier", "Lucida Console", monospace;
+	border: #AAAAAA 1px solid;
+	background-color: #191933;
+}
+.page {
+	BORDER-RIGHT: #aaaaaa 2px solid;
+	PADDING-RIGHT: 10px;
+	PADDING-LEFT: 10px;
+	MARGIN-BOTTOM: 0px;
+	PADDING-BOTTOM: 20px;
+	BORDER-LEFT: #aaaaaa 2px solid;
+	COLOR: #ffffff; 
+	BORDER-BOTTOM: #aaaaaa 2px SOLID;
+	BACKGROUND-COLOR: #333366;
+	TEXT-ALIGN: left
+}
+#skyscraper {
+position: absolute; 
+     float: right;
+     top:300px;
+     margin-left: -135px;
+}
+.banner {
+	COLOR: #333333; 
+	BACKGROUND-COLOR: #333366;
+	ALIGN: center
+}
+.header {
+	PADDING-RIGHT: 10px; 
+	PADDING-LEFT: 10px;
+	FONT-WEIGHT: bold; FONT-SIZE: 200%;
+	PADDING-BOTTOM: 0px;
+	COLOR: #FFCC00; PADDING-TOP: 0px;
+	TEXT-ALIGN: center
+}
+.header A {
+	COLOR: white
+}
+.subheader {
+	BORDER-RIGHT: #aaaaaa 2px solid; 
+	PADDING-RIGHT: 0px; 
+	PADDING-LEFT: 0px; 
+	PADDING-BOTTOM: 2px; 
+	BORDER-TOP: #aaaaaa 2px solid; 
+	BORDER-LEFT: #aaaaaa 2px solid; 
+	COLOR: white; 
+	PADDING-TOP: 0px; 
+	BACKGROUND-COLOR: #333366;
+	TEXT-ALIGN: center;
+        FONT-WEIGHT: bold
+}
+.subheader A {
+}
+
+.footer {
+	MARGIN-TOP: 0px; 
+	TEXT-ALIGN: Right; 
+	COLOR: white;
+	FONT-WEIGHT: bold
+}
+
+.actions {
+	MARGIN-TOP: 0px; 
+	PADDING-LEFT: 150px; 
+	TEXT-ALIGN: center; 
+	COLOR: white;
+	FONT-WEIGHT: bold
+}
+
+.code {
+	BORDER-RIGHT: #888888 2px solid; 
+	PADDING-RIGHT: 3px;
+	BORDER-TOP: #888888 2px solid;
+	PADDING-LEFT: 3px; 
+	FONT-SIZE: 12pt; 
+	BACKGROUND: #ffffff; 
+	PADDING-BOTTOM: 3px; 
+	OVERFLOW: none;
+	BORDER-LEFT: #888888 2px solid; 
+	WIDTH: 98.8%; 
+	COLOR: black; 
+	PADDING-TOP: 3px; 
+	BORDER-BOTTOM: #888888 2px solid; 
+	FONT-FAMILY: "Courier New", Tahoma, Arial; ; 
+}
+
+.footertxt {
+	FONT-SIZE: 1pt; 
+	FONT-FAMILY: "Courier New", Tahoma, Arial; ; 
+}
+
+
+#subnav {
+      position:relative;
+     left:0px;
+     top:-0px;
+}
+
+#navbottom {
+      position:relative;
+     left:0px;
+     top:-0px;
+     z-index:1
+}
+
+#navtop {
+     position:relative;
+     left:0px;
+     top:0px;
+     z-index:1
+}
+
+#adsense {
+     position:relative;
+     top:-3px;
+}
+
+.fineprint {
+ color: white
+}
+
+.albumdesc {
+ color: white
+}
+
+
+.modcaption {
+ color: white
+}
+
+
+.modnavboxmid {
+ color: white
+}
+
+.modnavboxtop {
+ color: white
+}
+
+
+.modfooter {
+ color: white
+}
+
+.modheader {
+ color: white
+}
+
+
+.navtableborderbegin {
+ color: white
+}
+
+
+.navtableborderend {
+ color: white
+}
+
+.head {
+ color: white
+}
+
+.nav {
+ color: white
+}
+
+.popup {
+ color: white
+}
+

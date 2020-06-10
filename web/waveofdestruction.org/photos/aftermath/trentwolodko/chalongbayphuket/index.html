@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>chalongbayphuket</title>
+    <meta name="description" content="">
+    <meta name="author" content="Geoffrey Huntley">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Sans">
+    <link rel="stylesheet" href="../../../../static/css/style.min.css">
+    <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="four columns">
+        <div class="sidebar">
+          <h1><a href="../../../../index.html">The 2004 Indian Ocean earthquake and tsunami archive</a></h1>
+          <footer>
+            <p>&copy; Geoffrey Huntley</a></p>
+          </footer>
+        </div>
+      </div>
+
+      <div id="main" role="main" class="twelve columns offset-by-four">
+        <header>
+          <h2>
+            <a href="../../../index.html">photos</a> »             <a href="../../index.html">aftermath</a> »             <a href="../index.html">trentwolodko</a> »             <a href="index.html">chalongbayphuket</a></h2>
+          <hr>
+        </header>
+
+
+
+        <div id="gallery" class="row">
+            <div class="four columns thumbnail
+alpha">
+              <a href="IMGA0242.jpg" class="gallery" title="IMGA0242.jpg"  data-big="IMGA0242.jpg">
+                <img src="thumbnails/IMGA0242.tn.jpg" alt="IMGA0242.jpg"
+                    title="IMGA0242.jpg" /></a>
+            </div>
+            <div class="four columns thumbnail
+">
+              <a href="IMGA0243.jpg" class="gallery" title="IMGA0243.jpg"  data-big="IMGA0243.jpg">
+                <img src="thumbnails/IMGA0243.tn.jpg" alt="IMGA0243.jpg"
+                    title="IMGA0243.jpg" /></a>
+            </div>
+            <div class="four columns thumbnail
+omega">
+              <a href="IMGA0244.jpg" class="gallery" title="IMGA0244.jpg"  data-big="IMGA0244.jpg">
+                <img src="thumbnails/IMGA0244.tn.jpg" alt="IMGA0244.jpg"
+                    title="IMGA0244.jpg" /></a>
+            </div>
+            <div class="four columns thumbnail
+alpha">
+              <a href="IMGA0245.jpg" class="gallery" title="IMGA0245.jpg"  data-big="IMGA0245.jpg">
+                <img src="thumbnails/IMGA0245.tn.jpg" alt="IMGA0245.jpg"
+                    title="IMGA0245.jpg" /></a>
+            </div>
+            <div class="four columns thumbnail
+">
+              <a href="IMGA0246.jpg" class="gallery" title="IMGA0246.jpg"  data-big="IMGA0246.jpg">
+                <img src="thumbnails/IMGA0246.tn.jpg" alt="IMGA0246.jpg"
+                    title="IMGA0246.jpg" /></a>
+            </div>
+            <div class="four columns thumbnail
+omega">
+              <a href="IMGA0247.jpg" class="gallery" title="IMGA0247.jpg"  data-big="IMGA0247.jpg">
+                <img src="thumbnails/IMGA0247.tn.jpg" alt="IMGA0247.jpg"
+                    title="IMGA0247.jpg" /></a>
+            </div>
+            <div class="four columns thumbnail
+alpha">
+              <a href="IMGA0248.jpg" class="gallery" title="IMGA0248.jpg"  data-big="IMGA0248.jpg">
+                <img src="thumbnails/IMGA0248.tn.jpg" alt="IMGA0248.jpg"
+                    title="IMGA0248.jpg" /></a>
+            </div>
+            <div class="four columns thumbnail
+">
+              <a href="IMGA0249.jpg" class="gallery" title="IMGA0249.jpg"  data-big="IMGA0249.jpg">
+                <img src="thumbnails/IMGA0249.tn.jpg" alt="IMGA0249.jpg"
+                    title="IMGA0249.jpg" /></a>
+            </div>
+            <div class="four columns thumbnail
+omega">
+              <a href="IMGA0250.jpg" class="gallery" title="IMGA0250.jpg"  data-big="IMGA0250.jpg">
+                <img src="thumbnails/IMGA0250.tn.jpg" alt="IMGA0250.jpg"
+                    title="IMGA0250.jpg" /></a>
+            </div>
+            <div class="four columns thumbnail
+alpha">
+              <a href="IMGA0251.jpg" class="gallery" title="IMGA0251.jpg"  data-big="IMGA0251.jpg">
+                <img src="thumbnails/IMGA0251.tn.jpg" alt="IMGA0251.jpg"
+                    title="IMGA0251.jpg" /></a>
+            </div>
+        </div>
+
+        <div id="additionnal-infos" class="row">
+          <p><a href="archive.zip"
+              title="Download a zip archive with all images">Download ZIP</a></p>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>!window.jQuery && document.write(unescape('%3Cscript src="../../../../static/js/jquery-1.10.2.min.js"%3E%3C/script%3E'))</script>
+    <script src="../../../../static/js/jquery.colorbox.min.js"></script>
+
+    <script>
+      $(".gallery").colorbox({
+        rel:"gallery",
+        transition:"none",
+        maxWidth: "90%",
+        maxHeight: "90%",
+        scalePhotos: true,
+        current: "{current} / {total}",
+        title: function () {
+          title = this.title;
+          if(this.hasAttribute("data-big")) {
+            title += " (full size)".link(this.getAttribute("data-big"));
+          }
+          if(this.hasAttribute("data-date")) {
+            title += this.getAttribute("data-date");
+          }
+          return title;
+        },
+        inline: function() {
+          return this.hasAttribute("inline");
+        }
+      });
+    </script>
+  </body>
+</html>
