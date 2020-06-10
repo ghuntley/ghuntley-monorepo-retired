@@ -39,6 +39,7 @@ let
       terraform_0_12
       tmux
       tree
+      p7zip
       python3
       mercurialFull
       nixpkgs-fmt;

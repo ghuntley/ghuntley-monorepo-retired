@@ -13,6 +13,9 @@ readonly REPO_ROOT="$(dirname "$0")/.."
 TARGET_TOOL="$(basename "$0")"
 
 case "${TARGET_TOOL}" in
+  "7z")
+    attr="third_party.p7zip"
+    ;;
   "ack")
     attr="third_party.ack"
     ;;
