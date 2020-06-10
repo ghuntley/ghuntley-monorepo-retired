@@ -8,5 +8,6 @@
 # true`, but this is currently more effort than it would save me.
 
 with (import ./default.nix { }); [
+  presentations.template
   web."ghuntley.com"
 ]

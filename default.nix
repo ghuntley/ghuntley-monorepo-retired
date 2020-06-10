@@ -5,8 +5,6 @@
 # (see read-tree.nix for details) and constructing a matching attribute set
 # tree.
 #
-# This makes packages accessible via the Nixery instance that is configured to
-# use this repository as its nixpkgs source.
 
 { ... }@args:
 
