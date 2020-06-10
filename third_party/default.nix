@@ -7,11 +7,18 @@
 # This includes *all packages needed from nixpkgs*.
 { ... }:
 
+let nixpkgsConfig = {
+  allowBroken = true;
+  allowUnfree = true;
+  permittedInsecurePackages = [
+    "p7zip-16.02"
+  ];
+}; in
+
 let
   # Tracking nixos-unstable
   nixpkgs = (import ./github.com/nixos/nixpkgs-channels) {
-    config.allowUnfree = true;
-    config.allowBroken = true;
+    config = nixpkgsConfig;
   };
 
   exposed = {
