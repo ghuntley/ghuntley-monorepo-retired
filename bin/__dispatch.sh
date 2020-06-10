@@ -40,6 +40,9 @@ case "${TARGET_TOOL}" in
   "rpl")
     attr="third_party.rpl"
     ;;
+  "shellcheck")
+    attr="third_party.shellcheck"
+    ;;
   "terraform")
     attr="third_party.terraform-with-plugins"
     ;;
@@ -48,6 +51,12 @@ case "${TARGET_TOOL}" in
     ;;
   "tree")
     attr="third_party.tree"
+    ;;
+  "python")
+    attr="third_party.python3"
+    ;;
+  "nixpkgs-fmt")
+    attr="third_party.nixpkgs-fmt"
     ;;
   *)
     echo "The tool '${TARGET_TOOL}' is currently not installed in this repository."

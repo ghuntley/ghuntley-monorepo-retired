@@ -27,9 +27,12 @@ let
       google-cloud-sdk
       jq
       rpl
+      shellcheck
       terraform_0_12
       tmux
-      tree;
+      tree
+      python3
+      nixpkgs-fmt;
 
     inherit (nixpkgs.gitAndTools)
       git-bug;
