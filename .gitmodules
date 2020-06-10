@@ -1,8 +1,8 @@
 [submodule "infra/desktops/nixpkgs"]
-	path = third_party/nixpkgs
+	path = third_party/github.com/nixos/nixpkgs-channels
 	url = https://github.com/NixOS/nixpkgs-channels
 [submodule "infra/desktops/home-manager"]
-	path = third_party/home-manager
+	path = third_party/github.com/rycee/home-manager
 	url = https://github.com/rycee/home-manager
 [submodule "workshops/unoplatform"]
 	path = workshops/unoplatform
