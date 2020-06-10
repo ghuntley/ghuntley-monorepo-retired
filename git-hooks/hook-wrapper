@@ -14,7 +14,7 @@ set -euo pipefail
 # assumes your scripts are located at <repo-root>/dev-env/git-hooks
 
 exitcodes=()
-hookname=$(basename $0)
+hookname="$(basename "$0")"
 # our special hooks folder
 CUSTOM_HOOKS_DIR=$(git rev-parse --show-toplevel)/git-hooks
 # find gits native hooks folder
@@ -37,6 +37,7 @@ fi
 
 # If any exit code isn't 0, bail.
 for i in "${exitcodes[@]}"; do
+  # shellcheck disable=SC2004,SC2086
   (( ! $i )) || exit $i
 done
 

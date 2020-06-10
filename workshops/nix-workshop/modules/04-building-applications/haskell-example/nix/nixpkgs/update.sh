@@ -1,4 +1,4 @@
-#! /usr/bin/env nix-shell
+#!/usr/bin/env bash
 #! nix-shell -p nix-prefetch-git -i bash
-HERE=$(dirname $0)
-nix-prefetch-git https://github.com/NixOS/nixpkgs.git $1 > $HERE/git.json
+HERE="$(dirname "$0")"
+nix-prefetch-git https://github.com/NixOS/nixpkgs.git "$1" > "$HERE/git.json"

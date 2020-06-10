@@ -2,3 +2,4 @@
 set -euo pipefail
 
 de-format
+de-lint
