@@ -13,3 +13,6 @@
 [submodule "web/covidsafe.watch"]
 	path = web/covidsafe.watch
 	url = https://github.com/covidsafewatch/website
+[submodule "web/emailaddress.github.io"]
+	path = web/emailaddress.github.io
+	url = https://github.com/emailaddress/emailaddress.github.io.git
