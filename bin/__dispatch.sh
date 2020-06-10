@@ -13,35 +13,44 @@ readonly REPO_ROOT="$(dirname "$0")/.."
 TARGET_TOOL="$(basename "$0")"
 
 case "${TARGET_TOOL}" in
-  ack)
-    attr="pkgs.ack"
+  "ack")
+    attr="third_party.ack"
     ;;
-  cachix)
-    attr="nixpkgs.cachix"
+  "aws")
+    attr="third_party.aws"
     ;;
-  git)
-    attr="nixpkgs.git"
+  "azure-cli")
+    attr="third_party.azure-cli"
     ;;
-  git-bug)
-    attr="nixpkgs.git-bug"
+  "cachix")
+    attr="third_party.cachix"
     ;;
-  git-lfs)
-    attr="nixpkgs.git-lfs"
+  "git")
+    attr="third_party.git"
     ;;
-  jq)
-    attr="nixpkgs.jq"
+  "git-bug")
+    attr="third_party.git-bug"
     ;;
-  osht)
-    attr="nixpkgs.osht"
+  "git-lfs")
+    attr="third_party.git"
     ;;
-  rpl)
-    attr="nixpkgs.rpl"
+  "google-cloud-sdk")
+    attr="third_party.google-cloud-sdk"
     ;;
-  terraform)
-    attr="nixpkgs.terraform"
+  "jq")
+    attr="third_party.jq"
     ;;
-  tmux)
-    attr="nixpkgs.tmux"
+  "rpl")
+    attr="third_party.rpl"
+    ;;
+  "terraform")
+    attr="third_party.terraform"
+    ;;
+  "tmux")
+    attr="third_party.tmux"
+    ;;
+  "tree")
+    attr="third_party.tree"
     ;;
   *)
     echo "The tool '${TARGET_TOOL}' is currently not installed in this repository."

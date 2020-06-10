@@ -16,3 +16,6 @@
 [submodule "web/emailaddress.github.io"]
 	path = web/emailaddress.github.io
 	url = https://github.com/emailaddress/emailaddress.github.io.git
+[submodule "third_party/github.com/coryb/osht"]
+	path = third_party/github.com/coryb/osht
+	url = https://github.com/coryb/osht.git
