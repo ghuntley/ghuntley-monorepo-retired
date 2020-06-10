@@ -6,8 +6,12 @@ set -Eeuo pipefail
 
 # 1. update copyright headers
 echo "[dev-env] Updating copyright headers if required"
-"${REPO_ROOT}/third_party/copyright-headers/copyright-headers" update "${REPO_ROOT}"
+command -v copyright-headers >/dev/null 2>&1 || { echo >&2 "[dev-env] ERROR: 'copyright-headers' was not found on your path"; exit 2; }
+copyright-headers update "${REPO_ROOT}"
 
 # 2. nix-format
 echo "[dev-env] Formatting *.nix except if the file is located inside third_party/"
-find "${REPO_ROOT}" -name "*.nix" | grep -v "/third_party" |  xargs -P 32 nixpkgs-fmt
+command -v nixpkgs-fmt >/dev/null 2>&1 || { echo >&2 "[dev-env] ERROR: 'nixpkgs-fmt' was not found on your path"; exit 2; }
+
+# shellcheck disable=SC2038
+find "${REPO_ROOT}" -name "*.nix" | grep -v "/third_party" | xargs -P 32 nixpkgs-fmt

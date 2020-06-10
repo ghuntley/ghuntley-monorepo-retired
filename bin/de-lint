@@ -6,8 +6,13 @@ set -Eeuo pipefail
 
 # 1. lint shell scripts
 echo "[dev-env] Linting shell scripts except if the file is located inside third_party/"
+command -v shellcheck >/dev/null 2>&1 || { echo >&2 "[dev-env] ERROR: 'shellcheck' was not found on your path"; exit 2; }
+
+# shellcheck disable=SC2038
+find "${REPO_ROOT}/bin/" -name "de-*" | xargs -P 32 shellcheck
+# shellcheck disable=SC2038
 find "${REPO_ROOT}/git-hooks/" -name "post*-*" | xargs -P 32 shellcheck
-find "${REPO_ROOT}/git-hooks/" -name "pre*-*" | xargs -P 32 shellcheck
+# shellcheck disable=SC2038
+find "${REPO_ROOT}/git-hooks/" -name "pre*-*"| xargs -P 32 shellcheck
+# shellcheck disable=SC2038
 find "${REPO_ROOT}" -name "*.*sh" | grep -v "/third_party" | xargs -P 32 shellcheck
-
-

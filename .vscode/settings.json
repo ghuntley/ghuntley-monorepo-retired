@@ -65,6 +65,9 @@
    "files.eol": "\n",
 "editor.minimap.enabled": true,
 "cSpell.words": [
-    "idempotently"
+    "Preloading",
+    "idempotently",
+    "shellcheck",
+    "xargs"
 ],
 }
