@@ -14,4 +14,5 @@ pkgs.terraform_0_12.withPlugins(p: [
     p.kubernetes
     p.postgresql
     p.netlify
+    p.nixos
 ])
