@@ -14,7 +14,7 @@ TARGET_TOOL="$(basename "$0")"
 
 case "${TARGET_TOOL}" in
   ack)
-    attr="nixpkgs.ack"
+    attr="pkgs.ack"
     ;;
   cachix)
     attr="nixpkgs.cachix"
