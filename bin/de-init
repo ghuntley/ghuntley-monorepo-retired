@@ -21,5 +21,5 @@ git submodule sync
 git submodule update
 
 # n. Notify
-echo "[dev-env] Done"
+echo "[dev-env] Initialization complete"
 echo
