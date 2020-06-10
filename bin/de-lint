@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Copyright (c) 2020 Geoffrey Huntley <ghuntley@ghuntley.com>. All rights reserved.
+# SPDX-License-Identifier: Proprietary
+
+set -Eeuo pipefail
+
+# 1. lint shell scripts
+echo "[dev-env] Linting shell scripts except if the file is located inside third_party/"
+find "${REPO_ROOT}/git-hooks/" -name "post*-*" | xargs -P 32 shellcheck
+find "${REPO_ROOT}/git-hooks/" -name "pre*-*" | xargs -P 32 shellcheck
+find "${REPO_ROOT}" -name "*.*sh" | grep -v "/third_party" | xargs -P 32 shellcheck
+
+
