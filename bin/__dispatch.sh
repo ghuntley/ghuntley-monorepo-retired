@@ -31,9 +31,6 @@ case "${TARGET_TOOL}" in
   "git-bug")
     attr="third_party.git-bug"
     ;;
-  "git-lfs")
-    attr="third_party.git"
-    ;;
   "google-cloud-sdk")
     attr="third_party.google-cloud-sdk"
     ;;
