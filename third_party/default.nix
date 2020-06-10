@@ -17,7 +17,7 @@ let nixpkgsConfig = {
 
 let
   # Tracking nixos-unstable
-  nixpkgs = (import ./github.com/nixos/nixpkgs-channels) {
+  nixpkgs = import ./github.com/nixos/nixpkgs-channels {
     config = nixpkgsConfig;
   };
 
@@ -57,5 +57,6 @@ in exposed.lib.fix(self: exposed // {
   };
 
   # Make NixOS available
-  nixos = (import ./github.com/nixos/nixpkgs-channels/nixos);
+  nixos = import ./github.com/nixos/nixpkgs-channels/nixos;
+  nixeval = import ./github.com/nixos/nixpkgs-channels/nixos/lib/eval-config.nix;
 })
