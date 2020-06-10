@@ -22,6 +22,7 @@ let
       aws
       azure-cli
       cachix
+      docker
       lib
       git
       google-cloud-sdk

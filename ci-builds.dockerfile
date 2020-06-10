@@ -1,0 +1,1 @@
+third_party/github.com/lnl7/nix-docker/Dockerfile

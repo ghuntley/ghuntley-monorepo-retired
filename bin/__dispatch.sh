@@ -25,6 +25,9 @@ case "${TARGET_TOOL}" in
   "cachix")
     attr="third_party.cachix"
     ;;
+  "docker")
+    attr="third_party.docker"
+    ;;
   "git")
     attr="third_party.git"
     ;;
