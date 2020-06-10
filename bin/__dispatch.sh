@@ -41,7 +41,7 @@ case "${TARGET_TOOL}" in
     attr="third_party.rpl"
     ;;
   "terraform")
-    attr="third_party.terraform"
+    attr="third_party.terraform-with-plugins"
     ;;
   "tmux")
     attr="third_party.tmux"

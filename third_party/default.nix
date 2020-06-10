@@ -27,9 +27,12 @@ let
       google-cloud-sdk
       jq
       rpl
-      terraform
+      terraform_0_12
       tmux
       tree;
+
+    inherit (nixpkgs.gitAndTools)
+      git-bug;
   };
 
 in exposed.lib.fix(self: exposed // {
@@ -38,8 +41,6 @@ in exposed.lib.fix(self: exposed // {
   # Packages to be overridden
   originals = {
     inherit (nixpkgs);
-    git = nixpkgs.gitAndTools.gitFull;
-    terraform = nixpkgs.terraform_0_12;
   };
 
   # Make NixOS available
