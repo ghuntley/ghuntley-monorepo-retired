@@ -11,4 +11,3 @@
 
   environment.systemPackages = with pkgs; [ steam xorg.libxcb ];
 }
-

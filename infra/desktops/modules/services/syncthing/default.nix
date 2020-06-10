@@ -9,4 +9,3 @@
     dataDir = "/home/ghuntley";
   };
 }
-

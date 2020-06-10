@@ -2,8 +2,5 @@
 # SPDX-License-Identifier: Proprietary
 
 { pkgs, ... }: {
-  home-manager.users.ghuntley = {
-
-  };
+  home-manager.users.ghuntley = { };
 }
-

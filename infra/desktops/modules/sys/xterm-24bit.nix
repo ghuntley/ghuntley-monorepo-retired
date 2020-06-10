@@ -16,7 +16,8 @@ let
       setb24=\E[48;2;%p1%{65536}%/%d;%p1%{256}%/%{255}%&%d;%p1%{255}%&%dm,
       setf24=\E[38;2;%p1%{65536}%/%d;%p1%{256}%/%{255}%&%d;%p1%{255}%&%dm,
   '';
-in stdenv.mkDerivation {
+in
+stdenv.mkDerivation {
   name = "xterm-24bit";
   outputs = [ "out" "terminfo" ];
   builder = pkgs.writeText "builder.sh" ''
@@ -29,4 +30,3 @@ in stdenv.mkDerivation {
     echo "$terminfo" >> $out/nix-support/propagated-user-env-packages
   '';
 }
-

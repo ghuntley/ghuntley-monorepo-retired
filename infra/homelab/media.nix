@@ -26,23 +26,27 @@
   fileSystems."/mnt/downloads" = {
     device = "//10.0.10.10/downloads";
     fsType = "cifs";
-    options = let
-      # this line prevents hanging on network split
-      automount_opts =
-        "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s,dir_mode=0777,file_mode=0777";
+    options =
+      let
+        # this line prevents hanging on network split
+        automount_opts =
+          "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s,dir_mode=0777,file_mode=0777";
 
-    in [ "${automount_opts},credentials=/etc/nixos/smb-secrets" ];
+      in
+      [ "${automount_opts},credentials=/etc/nixos/smb-secrets" ];
   };
 
   fileSystems."/mnt/media" = {
     device = "//10.0.10.10/media";
     fsType = "cifs";
-    options = let
-      # this line prevents hanging on network split
-      automount_opts =
-        "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s,dir_mode=0777,file_mode=0777";
+    options =
+      let
+        # this line prevents hanging on network split
+        automount_opts =
+          "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s,dir_mode=0777,file_mode=0777";
 
-    in [ "${automount_opts},credentials=/etc/nixos/smb-secrets" ];
+      in
+      [ "${automount_opts},credentials=/etc/nixos/smb-secrets" ];
   };
 
   networking.hostName = "media";
@@ -140,5 +144,3 @@
 
   nixpkgs.config.allowUnfree = true;
 }
-
-

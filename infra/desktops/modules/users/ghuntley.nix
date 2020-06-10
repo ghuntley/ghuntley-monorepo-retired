@@ -23,4 +23,3 @@
 
   users.extraGroups.ghuntley.gid = 1000;
 }
-

@@ -6,4 +6,3 @@
 
   services.tailscale.enable = true;
 }
-

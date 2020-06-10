@@ -35,4 +35,3 @@
   nixpkgs.config.vim = { ftNixSupport = true; };
 
 }
-

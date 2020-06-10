@@ -28,4 +28,3 @@
 
   services.blueman.enable = true;
 }
-

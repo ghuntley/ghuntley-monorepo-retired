@@ -9,7 +9,7 @@ stdenv.mkDerivation rec {
     sha256 = "sha256:1fhwv0dr5lip38hqvdc9qh28hsjhzb9df7przcg70g35a5qy33i3";
   };
 
-  buildInputs = [ mktemp  ];
+  buildInputs = [ mktemp ];
 
   phases = [ "installPhase" ];
 

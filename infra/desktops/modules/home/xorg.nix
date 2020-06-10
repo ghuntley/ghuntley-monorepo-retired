@@ -19,57 +19,59 @@
         ${pkgs.xorg.xrdb}/bin/xrdb -merge $HOME/.Xresources
       '';
       windowManager = {
-        i3 = let mod = "Mod4";
-        in {
-          enable = true;
-          config = {
-            modifier = mod;
-            #fonts = [ "DejaVu Sans Mono" "FontAwesome5Free 10" ];
-            fonts = [ "Source Code Pro" "Source Code Pro 10" ];
-            keybindings = lib.mkOptionDefault {
-              "${mod}+d" = ''
-                exec --no-startup-id "${pkgs.j4-dmenu-desktop}/bin/j4-dmenu-desktop'';
-              "${mod}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
-              "${mod}+Ctrl+l" =
-                "exec --no-startup-id ${pkgs.i3lock}/bin/i3lock";
+        i3 =
+          let mod = "Mod4";
+          in
+          {
+            enable = true;
+            config = {
+              modifier = mod;
+              #fonts = [ "DejaVu Sans Mono" "FontAwesome5Free 10" ];
+              fonts = [ "Source Code Pro" "Source Code Pro 10" ];
+              keybindings = lib.mkOptionDefault {
+                "${mod}+d" = ''
+                  exec --no-startup-id "${pkgs.j4-dmenu-desktop}/bin/j4-dmenu-desktop'';
+                "${mod}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
+                "${mod}+Ctrl+l" =
+                  "exec --no-startup-id ${pkgs.i3lock}/bin/i3lock";
 
-              "${mod}+j" = "focus left";
-              "${mod}+k" = "focus down";
-              "${mod}+l" = "focus up";
-              "${mod}+semicolon" = "focus right";
+                "${mod}+j" = "focus left";
+                "${mod}+k" = "focus down";
+                "${mod}+l" = "focus up";
+                "${mod}+semicolon" = "focus right";
 
-              "${mod}+Shift+j" = "move left 40px";
-              "${mod}+Shift+k" = "move down 40px";
-              "${mod}+Shift+l" = "move up 40px";
-              "${mod}+Shift+semicolon" = "move right 40px";
+                "${mod}+Shift+j" = "move left 40px";
+                "${mod}+Shift+k" = "move down 40px";
+                "${mod}+Shift+l" = "move up 40px";
+                "${mod}+Shift+semicolon" = "move right 40px";
 
-              "${mod}+a" = "focus parent";
-              "${mod}+q" = "focus child";
+                "${mod}+a" = "focus parent";
+                "${mod}+q" = "focus child";
 
-              "${mod}+Shift+e" = "exit";
-              "${mod}+apostrophe" = "mode app";
-            };
-
-            modes = lib.mkOptionDefault {
-              resize = {
-                "j" = "resize shrink width 10 px or 10 ppt";
-                "k" = "resize grow height 10 px or 10 ppt";
-                "l" = "resize shrink height 10 px or 10 ppt";
-                "semicolon" = "resize grow width 10 px or 10 ppt";
-                "${mod}+r" = "mode default";
+                "${mod}+Shift+e" = "exit";
+                "${mod}+apostrophe" = "mode app";
               };
-              app = {
-                "d" = "exec ${pkgs.xfce.thunar}/bin/thunar; mode default";
-                "f" = "exec ${pkgs.firefox}/bin/firefox; mode default";
-                "c" = "exec ${pkgs.vscode}/bin/code; mode default";
-                "v" = "exec ${pkgs.pavucontrol}/bin/pavucontrol; mode default";
-                "${mod}+apostrophe" = "mode default";
-                "Escape" = "mode default";
-                "Return" = "mode default";
+
+              modes = lib.mkOptionDefault {
+                resize = {
+                  "j" = "resize shrink width 10 px or 10 ppt";
+                  "k" = "resize grow height 10 px or 10 ppt";
+                  "l" = "resize shrink height 10 px or 10 ppt";
+                  "semicolon" = "resize grow width 10 px or 10 ppt";
+                  "${mod}+r" = "mode default";
+                };
+                app = {
+                  "d" = "exec ${pkgs.xfce.thunar}/bin/thunar; mode default";
+                  "f" = "exec ${pkgs.firefox}/bin/firefox; mode default";
+                  "c" = "exec ${pkgs.vscode}/bin/code; mode default";
+                  "v" = "exec ${pkgs.pavucontrol}/bin/pavucontrol; mode default";
+                  "${mod}+apostrophe" = "mode default";
+                  "Escape" = "mode default";
+                  "Return" = "mode default";
+                };
               };
             };
           };
-        };
       };
     };
 
@@ -91,4 +93,3 @@
     };
   };
 }
-

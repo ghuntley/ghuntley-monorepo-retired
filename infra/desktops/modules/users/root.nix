@@ -8,4 +8,3 @@
     openssh.authorizedKeys.keys = [ "" ];
   };
 }
-

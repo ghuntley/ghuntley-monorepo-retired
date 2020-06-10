@@ -5,4 +5,9 @@
 set -Eeuo pipefail
 
 # 1. update copyright headers
+echo "[dev-env] Updating copyright headers if required"
 "${REPO_ROOT}/third_party/copyright-headers/copyright-headers" update "${REPO_ROOT}"
+
+# 2. nix-format
+echo "[dev-env] Formatting *.nix except if the file is located inside third_party/"
+find "${REPO_ROOT}" -name "*.nix" | grep -v "/third_party" |  xargs -P 32 nixpkgs-fmt

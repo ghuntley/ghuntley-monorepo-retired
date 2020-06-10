@@ -10,4 +10,3 @@
     alias gist='gist --private'
   '';
 }
-

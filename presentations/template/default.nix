@@ -6,7 +6,6 @@
 { pkgs, ... }:
 
 with pkgs;
-
 let tex = texlive.combine {
   inherit (texlive)
     beamer
@@ -24,7 +23,8 @@ let tex = texlive.combine {
     scheme-basic
     translator;
 };
-in stdenv.mkDerivation {
+in
+stdenv.mkDerivation {
   name = "nuug-bootstrapping-slides";
   src = ./.;
 
@@ -51,4 +51,3 @@ in stdenv.mkDerivation {
     cp presentation.pdf $out/
   '';
 }
-

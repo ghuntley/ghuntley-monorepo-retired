@@ -14,4 +14,3 @@
     challengeResponseAuthentication = false;
   };
 }
-

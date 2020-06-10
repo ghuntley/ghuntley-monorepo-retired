@@ -3,7 +3,8 @@
 
 { config, pkgs, ... }:
 let sources = import ../nix/sources.nix;
-in {
+in
+{
   imports = [ <home-manager/nixos> ./base.nix ./home/base.nix ./home/xorg.nix ];
 
   config = {
@@ -119,4 +120,3 @@ in {
     #};
   };
 }
-
