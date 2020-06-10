@@ -15,3 +15,5 @@ command -v nixpkgs-fmt >/dev/null 2>&1 || { echo >&2 "[dev-env] ERROR: 'nixpkgs-
 
 # shellcheck disable=SC2038
 find "${REPO_ROOT}" -name "*.nix" | grep -v "/third_party" | xargs -P 32 nixpkgs-fmt
+
+echo "[dev-env] Formatting complete"

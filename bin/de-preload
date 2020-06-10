@@ -5,3 +5,5 @@
 set -Eeuo pipefail
 
 echo "[dev-env] Preloading dev-env tools"
+
+echo "[dev-env] Preload complete"
