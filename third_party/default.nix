@@ -33,6 +33,7 @@ let
       tmux
       tree
       python3
+      mercurialFull
       nixpkgs-fmt;
 
     inherit (nixpkgs.gitAndTools)

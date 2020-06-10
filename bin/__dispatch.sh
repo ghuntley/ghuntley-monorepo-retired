@@ -58,6 +58,9 @@ case "${TARGET_TOOL}" in
   "python")
     attr="third_party.python3"
     ;;
+  "hg")
+    attr="third_party.mercurialFull"
+    ;;
   "nixpkgs-fmt")
     attr="third_party.nixpkgs-fmt"
     ;;
