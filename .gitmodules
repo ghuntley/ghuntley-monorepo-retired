@@ -22,6 +22,6 @@
 [submodule "third_party/github.com/jgavris/rs-git-fsmonitor"]
 	path = third_party/github.com/jgavris/rs-git-fsmonitor
 	url = https://github.com/jgavris/rs-git-fsmonitor.git
-[submodule "resume"]
-	path = resume
-	url = git@github.com:ghuntley/resume.git
+[submodule "private"]
+	path = private
+	url = git@github.com:ghuntley/private.git
