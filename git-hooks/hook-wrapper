@@ -15,10 +15,14 @@ set -euo pipefail
 
 exitcodes=()
 hookname="$(basename "$0")"
+
 # our special hooks folder
 CUSTOM_HOOKS_DIR=$(git rev-parse --show-toplevel)/git-hooks
+#echo "C - ${CUSTOM_HOOKS_DIR}"
+
 # find gits native hooks folder
-NATIVE_HOOKS_DIR=$(git rev-parse --show-toplevel)/.git/hooks
+NATIVE_HOOKS_DIR=$(git rev-parse --git-path hooks)
+#echo "N - ${NATIVE_HOOKS_DIR}"
 
 # Run each hook, passing through STDIN and storing the exit code.
 # We don't want to bail at the first failure, as the user might

@@ -45,6 +45,9 @@ rm "${REPO_ROOT}/private/.github/workflows/cla.yml"
 rm -rf "${REPO_ROOT}/private/.vscode"
 cp -r "${REPO_ROOT}/.vscode" "${REPO_ROOT}/private"
 
+rm -rf "${REPO_ROOT}/private/git-hooks"
+cp -r "${REPO_ROOT}/git-hooks" "${REPO_ROOT}/private"
+
 cp "${REPO_ROOT}/.copyrightheader" "${REPO_ROOT}/private"
 cp "${REPO_ROOT}/.editorconfig" "${REPO_ROOT}/private"
 cp "${REPO_ROOT}/.gitattributes" "${REPO_ROOT}/private"
