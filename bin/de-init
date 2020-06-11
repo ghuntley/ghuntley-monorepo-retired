@@ -6,11 +6,17 @@ set -Eeuo pipefail
 
 # 0. Configure git
 echo "[dev-env] Configuring git"
-git config color.ui true
-git config merge.conflictstyle "diff3"
-git config pull.rebase true
-git config rebase.autosquash true
-git config rebase.autostash true
+git config --local color.ui true
+
+## merge behaviours
+git config --local merge.conflictstyle "diff3"
+git config --local pull.rebase true
+git config --local rebase.autosquash true
+git config --local rebase.autostash true
+
+## monorepo tweaks
+git config --local feature.manyFiles true
+git config --local fetch.recurseSubmodules true
 
 # 1. Install git-hooks
 bash "$REPO_ROOT/bin/de-install-git-hooks"

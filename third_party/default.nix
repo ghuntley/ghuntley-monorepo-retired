@@ -42,7 +42,8 @@ let
       p7zip
       python3
       mercurialFull
-      nixpkgs-fmt;
+      nixpkgs-fmt
+      watchman;
 
     inherit (nixpkgs.gitAndTools)
       git-bug;

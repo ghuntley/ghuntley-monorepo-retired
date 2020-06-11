@@ -67,6 +67,9 @@ case "${TARGET_TOOL}" in
   "nixpkgs-fmt")
     attr="third_party.nixpkgs-fmt"
     ;;
+  "watchman")
+    attr="third_party.watchman"
+    ;;
   *)
     echo "The tool '${TARGET_TOOL}' is currently not installed in this repository."
     exit 1
