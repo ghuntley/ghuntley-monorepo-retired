@@ -5,21 +5,22 @@
 set -Eeuo pipefail
 
 HOOK_NAMES=(post-checkout post-commit post-merge pre-commit pre-push)
+HOOK_DIRS=("${REPO_ROOT}/.git/hooks" "${REPO_ROOT}/.git/modules/private/hooks")
 
-TOP_DIR=$(git rev-parse --show-toplevel)
-HOOK_DIR=$TOP_DIR/.git/hooks
-REPO_HOOKS=$TOP_DIR/git-hooks
+REPO_HOOKS="${REPO_ROOT}/git-hooks"
 
-for hook in "${HOOK_NAMES[@]}"; do
-    # If the hook already exists, is executable, and is not a symlink
-    if [[ ! -h "$HOOK_DIR/$hook" && -x "$HOOK_DIR/$hook" ]]; then
-        echo "Saving local $HOOK_DIR/$hook hook"
-        mv "$HOOK_DIR/$hook" "$HOOK_DIR/$hook.local"
-    fi
-    # create the symlink, overwriting the file if it exists
-    # probably the only way this would happen is if you're using an old version of git
-    # -- back when the sample hooks were not executable, instead of being named ____.sample
-    # we link all hooks to the wrapper, so we could also invoke .local hooks
-    echo "[dev-env] Installing $HOOK_DIR/$hook hook"
-    ln -s -f "$REPO_HOOKS/hook-wrapper" "$HOOK_DIR/$hook"
+for hookdir in "${HOOK_DIRS[@]}"; do
+    for hook in "${HOOK_NAMES[@]}"; do
+        # If the hook already exists, is executable, and is not a symlink
+        if [[ ! -h "${hookdir}/${hook}" && -x "${hookdir}/${hook}" ]]; then
+            echo "Saving local ${hookdir}/${hook} hook"
+            mv "${hookdir}/${hook}" "${hookdir}/${hook}.local"
+        fi
+        # create the symlink, overwriting the file if it exists
+        # probably the only way this would happen is if you're using an old version of git
+        # -- back when the sample hooks were not executable, instead of being named ____.sample
+        # we link all hooks to the wrapper, so we could also invoke .local hooks
+        echo "[dev-env] Installing ${hookdir}/${hook} hook"
+        ln -s -f "$REPO_HOOKS/hook-wrapper" "${hookdir}/${hook}"
+    done
 done
