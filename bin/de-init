@@ -16,6 +16,7 @@ git config --local rebase.autostash true
 
 ## monorepo tweaks
 git config --local feature.manyFiles true
+git config --local core.fsmonitor rs-git-fsmonitor
 git config --local fetch.recurseSubmodules true
 
 # 1. Install git-hooks

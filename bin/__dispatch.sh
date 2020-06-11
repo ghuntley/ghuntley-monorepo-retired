@@ -67,6 +67,9 @@ case "${TARGET_TOOL}" in
   "nixpkgs-fmt")
     attr="third_party.nixpkgs-fmt"
     ;;
+  "rs-git-fsmonitor")
+    attr="third_party.rs-git-fsmonitor"
+    ;;
   "watchman")
     attr="third_party.watchman"
     ;;
