@@ -31,3 +31,6 @@
 [submodule "third_party/github.com/kowainik/summoner"]
 	path = third_party/github.com/kowainik/summoner
 	url = https://github.com/kowainik/summoner
+[submodule "third_party/window-shopping/mu-haskell"]
+	path = third_party/window-shopping/mu-haskell
+	url = https://github.com/higherkindness/mu-haskell.git
