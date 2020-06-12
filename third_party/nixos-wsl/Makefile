@@ -1,0 +1,2 @@
+all:
+	NIX_PATH="nixpkgs=${REPO_ROOT}/third_party/github.com/nixos/nixpkgs-channels:nixpkgs/nixos=${REPO_ROOT}/third_party/github.com/nixos/nixpkgs-channels/nixos" nix-build -A system -A config.system.build.tarball ./nixos.nix

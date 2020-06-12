@@ -1,0 +1,54 @@
+name:                monad-transformers-step-by-step
+version:             0.1.0.0
+github:              "metadave/monad-transformers-step-by-step"
+license:             Apache-2.0
+author:              "Dave Parfitt"
+maintainer:          "metadave@protonmail.com"
+copyright:           "2020 Dave Parfitt"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            App category here
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/metadave/monad-transformers-step-by-step#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- containers
+- mtl
+- HUnit
+
+library:
+  source-dirs: src
+
+executables:
+  monad-transformers-step-by-step-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    - -Wall
+    dependencies:
+    - monad-transformers-step-by-step
+
+tests:
+  monad-transformers-step-by-step-test:
+    main:                HUnitTests.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    - -Wall
+    dependencies:
+    - monad-transformers-step-by-step
+    - HUnit

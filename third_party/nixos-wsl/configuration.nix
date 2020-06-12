@@ -6,7 +6,7 @@ let
   defaultUser = "nixos";
   syschdemd = import ./syschdemd.nix { inherit lib pkgs config defaultUser; };
 in
-{  nixpkgs.config.allowUnfree = true; 
+{  nixpkgs.config.allowUnfree = false; 
 
   imports = [
     <nixpkgs/nixos/modules/profiles/minimal.nix>
@@ -18,12 +18,10 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     git rclone treesheets openjdk11 wget vim google-chrome kate vscode netbeans
+     git wget vim
   ];
 
-  nix.binaryCaches = [ "https://cache.nixos.org/" "https://nixcache.reflex-frp.org" ];
-  nix.binaryCachePublicKeys = [ "ryantrinkle.com-1:JJiAKaRv9mWgpVAz8dwewnZe0AzzEAzPkagE9SP5NWI=" ];
-
+  nix.binaryCaches = [ "https://cache.nixos.org/" ];
 
   environment.etc.hosts.enable = false;
   environment.etc."resolv.conf".enable = false;
@@ -65,7 +63,7 @@ in
   services.xserver.xkbModel = "pc85";
   services.xserver.enable = true;
   services.xserver.layout = "us";
-  services.xserver.xkbOptions = "eurosign:e";
+  #services.xserver.xkbOptions = "eurosign:e";
 
   # Enable touchpad support.
   services.xserver.libinput.enable = true;
