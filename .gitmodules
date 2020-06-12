@@ -34,3 +34,9 @@
 [submodule "third_party/window-shopping/mu-haskell"]
 	path = third_party/window-shopping/mu-haskell
 	url = https://github.com/higherkindness/mu-haskell.git
+[submodule "third_party/window-shopping/cake-slayer"]
+	path = third_party/window-shopping/cake-slayer
+	url = https://github.com/kowainik/cake-slayer.git
+[submodule "third_party/window-shopping/smuggler"]
+	path = third_party/window-shopping/smuggler
+	url = https://github.com/kowainik/smuggler.git
