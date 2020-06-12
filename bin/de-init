@@ -22,7 +22,7 @@ for repo in "${REPOS[@]}"; do
 
     ## monorepo tweaks
     git config --local feature.manyFiles true
-    git config --local core.fsmonitor rs-git-fsmonitor
+    #git config --local core.fsmonitor rs-git-fsmonitor
     git config --local fetch.recurseSubmodules true
 done
 

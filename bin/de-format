@@ -7,7 +7,7 @@ set -Eeuo pipefail
 # 1. update copyright headers
 echo "[dev-env] Updating copyright headers if required"
 command -v copyright-headers >/dev/null 2>&1 || { echo >&2 "[dev-env] ERROR: 'copyright-headers' was not found on your path"; exit 2; }
-copyright-headers update
+copyright-headers update "$(git rev-parse --show-toplevel)" # use rev-parse instead of REPO_ROOT as this script maybe running in a submodule.
 
 # 2. nix-format
 echo "[dev-env] Formatting *.nix except if the file is located inside third_party/"
