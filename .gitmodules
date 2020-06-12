@@ -25,3 +25,6 @@
 [submodule "private"]
 	path = private
 	url = git@github.com:ghuntley/private.git
+[submodule "software-consulting-documents"]
+	path = third_party/software-consulting-documents
+	url = https://github.com/numtide/software-consulting-documents.git
