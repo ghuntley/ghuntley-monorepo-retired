@@ -1,0 +1,29 @@
+language: c
+
+sudo: false
+cache:
+  directories:
+  - $HOME/.stack/
+
+matrix:
+  include:
+    - env: CABALVER=1.24 GHCVER=8.0.2
+      addons: {apt: {packages: [cabal-install-1.24,ghc-8.0.2],sources: [hvr-ghc]}}
+
+branches:
+  only:
+    - master
+    - solutions
+
+before_install:
+- mkdir -p ~/.local/bin
+- export PATH=~/.local/bin:$PATH
+- travis_retry curl -L https://www.stackage.org/stack/linux-x86_64 | tar -xzO --wildcards '*/stack' > ~/.local/bin/stack
+- chmod a+x ~/.local/bin/stack
+
+install:
+- stack --no-terminal --install-ghc test --only-dependencies
+
+script:
+# Build the package, its tests, and its docs and run the tests
+- make test

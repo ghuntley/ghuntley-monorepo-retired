@@ -1,0 +1,112 @@
+-- This file has been generated from package.yaml by hpack version 0.28.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 07b1b96661a3e948b390501ac56d472faa581eac027e9cb258365338d3595130
+
+name:                katas
+version:             0.1.0.0
+homepage:            https://github.com/adomokos/hashmir#readme
+license-file:        LICENSE
+author:              Attila Domokos <adomokos@gmail.com>
+maintainer:          adomokos@gmail.com
+copyright:           2018 Attila Domokos
+category:            Console App
+build-type:          Simple
+cabal-version:       >= 1.10
+
+executable katas-exe
+  main-is: Main.hs
+  hs-source-dirs:
+      app/
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+  other-modules:
+      Paths_katas
+  default-language: Haskell2010
+
+test-suite katas-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  hs-source-dirs:
+      test/
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+    , bytestring
+    , hspec ==2.*
+    , mtl
+    , base-unicode-symbols
+    , containers
+    , containers-unicode-symbols
+    
+other-modules:
+      Ex01_ListsExtractingSpec
+      Ex02_ListsComprehensionsSpec
+      Ex03_ListsRangesSpec
+      Ex04_ListsTuplesSpec
+      Ex05_TypesIntroSpec
+      Ex06_FlowPatternMatchingSpec
+      Ex07_FlowGuardsSpec
+      Ex08_FlowWhereSpec
+      Ex09_FlowLetItBeSpec
+      Ex10_FlowCaseExpressionSpec
+      Ex11_FlowRecursionsSpec
+      Ex12_HofsIntroSpec
+      Ex13_HofsLambdasSpec
+      Ex14_HofsFoldsSpec
+      Ex15_HofsScansSpec
+      Ex16_HofsFunctionApplicationSpec
+      Ex17_HofsFunctionCompositionSpec
+      Ex18_ModulesIntroSpec
+      Ex19_ModulesListFunctionsSpec
+      Ex20_ModulesCharFunctionsSpec
+      Ex21_ModulesMapFunctionalitySpec
+      Ex22_ModulesMapFunctionsSpec
+      Ex23_ModulesSetFunctionsSpec
+      Ex24_TypesMakingTypesSpec
+      Ex25_TypesRecordSpec
+      Ex26_TypesTypeParametersSpec
+      Ex27_TypesDerivedInstancesSpec
+      Ex28_TypesMoreDerivedInstancesSpec
+      Ex29_TypesAliasingSpec
+      Ex30_TypesRecursiveDataStructuresSpec
+      Ex31_TypesMoreTypeClassesSpec
+      Ex32_TypesYesNoTypeClassSpec
+      Ex33_TypesSequenceSpec
+      Ex34_FaFunctorTypeClassSpec
+      Ex35_ExercisesLondonToHeathrowSpec
+      Ex36_ExercisesRPNCalculatorSpec
+      Ex37_ExercisesPhoneNumberCleanerSpec
+      Ex38_FaFmapFunctionCompositionSpec
+      Ex39_FaFmapReplicateSpec
+      Ex40_FaFunctorLawsSpec
+      Ex41_FaApplicativesSpec
+      Ex42_FaMoreApplicativesSpec
+      Ex43_FaNewTypeSpec
+      Ex44_FaMonoidsSpec
+      Ex45_FaOrderingMonoidsSpec
+      Ex46_FaMaybeMonoidsSpec
+      Ex47_FaNewTypeMonoidSpec
+      Ex48_FaFoldableSpec
+      Ex49_MonadsCalculateBirthYearSpec
+      Ex50_MonadsCalculateAgeFromDatesSpec
+      Ex51_MonadsIntroSpec
+      Ex52_MonadsBirdLandingSpec
+      Ex53_MonadsDoNotationSpec
+      Ex54_MonadsBirdLandingWithDoNotationSpec
+      Ex55_MonadsListMonadSpec
+      Ex56_MonadsMonadPlusSpec
+      Ex57_ExercisesKnightsQuestSpec
+      Ex58_MonadsMonadLawsSpec
+      Ex59_MonadsInstancesSpec
+      Ex60_MonadsIntroToWriteMonadSpec
+      Ex61_MonadsWriterTypeSpec
+      Ex62_MonadsLoggingWithWriterSpec
+      Ex63_MonadsReaderSpec
+      Ex64_MonadsReaderExampleSpec
+      Ex65_MonadsStatefulComputationsSpec
+      Ex66_ExercisesBalancedBinaryTreeSpec
+      Paths_katas
+  default-language: Haskell2010
