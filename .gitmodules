@@ -28,3 +28,6 @@
 [submodule "software-consulting-documents"]
 	path = third_party/software-consulting-documents
 	url = https://github.com/numtide/software-consulting-documents.git
+[submodule "third_party/github.com/kowainik/summoner"]
+	path = third_party/github.com/kowainik/summoner
+	url = https://github.com/kowainik/summoner

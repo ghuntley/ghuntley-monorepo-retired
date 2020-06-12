@@ -1,5 +1,13 @@
-{ mkDerivation, base, base-unicode-symbols, bytestring, containers
-, containers-unicode-symbols, hspec, mtl, QuickCheck, stdenv
+{ mkDerivation
+, base
+, base-unicode-symbols
+, bytestring
+, containers
+, containers-unicode-symbols
+, hspec
+, mtl
+, QuickCheck
+, stdenv
 }:
 mkDerivation {
   pname = "katas";
@@ -9,8 +17,14 @@ mkDerivation {
   isExecutable = true;
   executableHaskellDepends = [ base ];
   testHaskellDepends = [
-    base base-unicode-symbols bytestring containers
-    containers-unicode-symbols hspec mtl QuickCheck
+    base
+    base-unicode-symbols
+    bytestring
+    containers
+    containers-unicode-symbols
+    hspec
+    mtl
+    QuickCheck
   ];
   homepage = "https://github.com/adomokos/hashmir#readme";
   license = "unknown";

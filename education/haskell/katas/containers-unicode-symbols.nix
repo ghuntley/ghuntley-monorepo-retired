@@ -1,4 +1,8 @@
-{ mkDerivation, base, base-unicode-symbols, containers, fetchgit
+{ mkDerivation
+, base
+, base-unicode-symbols
+, containers
+, fetchgit
 , stdenv
 }:
 mkDerivation {

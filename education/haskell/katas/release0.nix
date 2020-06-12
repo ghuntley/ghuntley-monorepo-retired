@@ -18,8 +18,8 @@ let
   pkgs = import <nixpkgs> { inherit config; };
 
 in
-  {
-    containers = pkgs.haskellPackages.containers;           
-    containers-unicode-symbols = pkgs.haskellPackages.containers-unicode-symbols;           
-    project0 = pkgs.haskellPackages.project0;
-  }
+{
+  containers = pkgs.haskellPackages.containers;
+  containers-unicode-symbols = pkgs.haskellPackages.containers-unicode-symbols;
+  project0 = pkgs.haskellPackages.project0;
+}
