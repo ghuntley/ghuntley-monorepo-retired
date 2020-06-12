@@ -26,17 +26,17 @@
 	path = private
 	url = git@github.com:ghuntley/private.git
 [submodule "software-consulting-documents"]
-	path = third_party/software-consulting-documents
+	path = third_party/window-shopping/legal-agreements/software-consulting-documents
 	url = https://github.com/numtide/software-consulting-documents.git
 [submodule "third_party/github.com/kowainik/summoner"]
-	path = third_party/window-shopping/summoner
+	path = third_party/window-shopping/haskell/summoner
 	url = https://github.com/kowainik/summoner
 [submodule "third_party/window-shopping/mu-haskell"]
-	path = third_party/window-shopping/mu-haskell
+	path = third_party/window-shopping/haskell/mu-haskell
 	url = https://github.com/higherkindness/mu-haskell.git
 [submodule "third_party/window-shopping/cake-slayer"]
-	path = third_party/window-shopping/cake-slayer
+	path = third_party/window-shopping/haskell/cake-slayer
 	url = https://github.com/kowainik/cake-slayer.git
 [submodule "third_party/window-shopping/smuggler"]
-	path = third_party/window-shopping/smuggler
+	path = third_party/window-shopping/haskell/smuggler
 	url = https://github.com/kowainik/smuggler.git
