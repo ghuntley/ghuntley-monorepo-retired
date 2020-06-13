@@ -43,9 +43,6 @@
 [submodule "third_party/window-shopping/infra/smtprelay"]
 	path = third_party/window-shopping/infra/smtprelay
 	url = https://github.com/decke/smtprelay.git
-[submodule "private"]
-	path = private
-	url = git@github.com:ghuntley/private.git
 [submodule "patterns/nix/adga"]
 	path = patterns/nix/adga
 	url = https://github.com/atopuzov/agdastuff
