@@ -1,5 +1,0 @@
----
-layout: notes
-title: keyboardio
----
-

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <meta name="description" content="{{ .Site.Params.description }}">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400|Old+Standard+TT:400&display=swap' rel='stylesheet' type='text/css'>
+
+    <title>
+    </title>
+    <link rel="canonical" href="/">
+
+    @Html.Partial("/_styles.cshtml")
+
+    @Html.Partial("/_google-analytics.cshtml")
+    @Html.Partial("/_clicky.cshtml")
+    
+    @Html.Partial("/_edit-this-page.cshtml")
+  </head>
+
+    <body>
+        <section id=nav>
+            <h1><a href="/">Geoffrey Huntley</a></h1>
+            <ul>
+                <li><a href="/now">lately</a></li>
+                <li><a href="/contact">contact</a></li>
+                <li><a href="/live">live</a></li>
+                <li><a href="/newsletter">newsletter</a></li>
+                <li><a href="/talks">talks</a></li>
+                <li><a href="/workshops">workshops</a></li>
+            </ul>
+            <ul>
+                <li><a href="/licensing">licensing</a></li>
+                <li><a href="/rss">rss feed</a></li>
+                <li><a href="/notes">notes</a></li>
+                <li><a href="/radar">radar</a></li>
+                <li><a href="/thanks">thanks</a></li>
+            </ul>
+        </section>
+
+        <section id=content>
+            @RenderBody()
+        </section>
+    </body>
+</html>

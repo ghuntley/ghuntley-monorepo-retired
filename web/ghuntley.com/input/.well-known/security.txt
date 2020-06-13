@@ -1,0 +1,5 @@
+Contact: ghuntley@ghuntley.com
+Acknowledgments: https://ghuntley.com/thanks
+Preferred-Languages: en
+Canonical: https://ghuntley.com/.well-known/security.txt
+Policy: https://ghuntley.com/security
