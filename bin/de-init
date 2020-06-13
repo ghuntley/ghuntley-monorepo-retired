@@ -9,7 +9,7 @@ echo "[dev-env] Configuring git"
 REPOS=("${REPO_ROOT}" "${REPO_ROOT}/private")
 OLD_PWD=$(pwd)
 
-for repo in "${REPOS[@]}"; do
+(for repo in "${REPOS[@]}"; do
     cd "${repo}"
 
     git config --local color.ui true
@@ -24,7 +24,7 @@ for repo in "${REPOS[@]}"; do
     git config --local feature.manyFiles true
     #git config --local core.fsmonitor rs-git-fsmonitor
     git config --local fetch.recurseSubmodules true
-done
+done) &
 
 cd "${OLD_PWD}"
 
@@ -33,8 +33,7 @@ bash "$REPO_ROOT/bin/de-install-git-hooks"
 
 # 2. Bootstrap third_party git submodules
 echo "[dev-env] Synchronizing git submodules"
-git submodule sync
-git submodule update
+(git submodule sync && git submodule update) &
 
 # 3. Synchronizing private/* configuration
 echo "[dev-env] Synchronizing repository configuration to private/*"

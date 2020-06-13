@@ -40,3 +40,6 @@
 [submodule "third_party/window-shopping/smuggler"]
 	path = third_party/window-shopping/haskell/smuggler
 	url = https://github.com/kowainik/smuggler.git
+[submodule "patterns/nix/jupyter"]
+	path = patterns/nix/jupyter
+	url = https://github.com/tweag/jupyterWith.git

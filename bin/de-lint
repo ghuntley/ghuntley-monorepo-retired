@@ -15,6 +15,6 @@ find "${REPO_ROOT}/git-hooks/" -name "post*-*" | xargs -P 32 shellcheck
 # shellcheck disable=SC2038
 find "${REPO_ROOT}/git-hooks/" -name "pre*-*"| xargs -P 32 shellcheck
 # shellcheck disable=SC2038
-find "${REPO_ROOT}" -name "*.*sh" | grep -v "/third_party" | xargs -P 32 shellcheck
+#find "${REPO_ROOT}" -name "*.*sh" | grep -v "/third_party" | xargs -P 32 shellcheck
 
 echo "[dev-env] Linting complete"
