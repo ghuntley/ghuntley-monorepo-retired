@@ -58,18 +58,22 @@
 
                         @if (document.HasChildren())
                         {
+                            <ul>
                                 @foreach (IDocument child in document.GetChildren())
                                 {
                                     <li>@Html.DocumentLink(child)</li>
 
                                     @if (child.HasChildren())
                                     {
+                                        <ul>
                                             @foreach (IDocument child2 in child.GetChildren())
                                             {
                                                 <li>@Html.DocumentLink(child2)</li>
                                             }
+                                        <ul>
                                     }
                                 }
+                            </ul>
                         }
                     }
                 }
