@@ -43,7 +43,8 @@ let
       python3
       mercurialFull
       nixpkgs-fmt
-      watchman;
+      watchman
+      youtube-dl;
 
     inherit (nixpkgs.gitAndTools)
       git-bug;

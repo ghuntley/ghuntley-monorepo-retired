@@ -73,6 +73,9 @@ case "${TARGET_TOOL}" in
   "watchman")
     attr="third_party.watchman"
     ;;
+  "youtube-dl")
+    attr="third_party.youtube-dl"
+    ;;
   *)
     echo "The tool '${TARGET_TOOL}' is currently not installed in this repository."
     exit 1
