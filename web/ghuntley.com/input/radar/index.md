@@ -23,5 +23,5 @@ title: technology radar
 <script type="text/javascript" charset="utf-8"></script>
 
 <body onload="init(h,w);">
-  <div id="radar" style="margin-left: calc(-128px);"></div>
+  <div id="radar" style="margin-left: calc(-256px);"></div>
 </body>

@@ -10,6 +10,6 @@ These websites may collect data about you, use cookies, embed additional third-p
 
 I do not share your data with any third parties.
 
-If you leave a comment, the comment and its metadata are retained indefinitely. This is so he can recognize and approve any follow-up comments automatically instead of holding them in a moderation queue.
+If you leave a comment, the comment and its metadata are retained indefinitely.
 
-If you have any privacy related concerns, please contact me at: [ghuntley@ghuntley.com](mailto:ghuntley@ghuntley.com)
+If you have any privacy related concerns, please [contact me](/contact).

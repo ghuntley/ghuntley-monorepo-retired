@@ -1,14 +1,25 @@
 ---
-title: contact
+title: contact methods
 ---
 
 I'm usually pretty easy to get hold of, here's how I use different channels to communicate with people and how best to contact me.
 
-# email
+## my private contact list
+
+If you want the announcements and opportunities that I never post publicly, get on my private email list, here: 
+
+<form style="border:0px solid #ccc;padding:0px;text-align:center;" action="https://tinyletter.com/ghuntley" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/ghuntley', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true"><p><label for="tlemail">your email (kept private! never shared)</label></p><p><input type="text" style="border:1px solid black;width:256px" name="email" id="tlemail" /></p><input type="hidden" value="1" name="embed"/><input type="submit" style="width:256px" value="sign up" /></form>
+        
+
+## email
 
 This is the easiest way if you want to say howdy. I usually respond pretty promptly. My email address is <a href="mailto:ghuntley@ghuntley.com">ghuntley@ghuntley.com</a>
 
-# twitch & youtube
+## twitter
+
+This is my primary means of broadcasting things to the world so please follow me there. I do read my DMs and allow them from people I don't follow. Follow <a href="http://twitter.com/geoffreyhuntley">@geoffreyhuntley</a> on Twitter.
+
+## twitch & youtube
 
 Please follow me on [Twitch](https://twitch.tv/geoffreyhuntley) and [YouTube](https://youtube.com/c/geoffreyhuntley). Tell your friends, as by doing so you'll help prove that there is demand for live coding and this activity is worth doing.
 
@@ -16,11 +27,7 @@ Please follow me on [Twitch](https://twitch.tv/geoffreyhuntley) and [YouTube](ht
 
 The stream schedule is maintained in [an online calendar you can subscribe to](https://calendar.google.com/calendar?cid=Z2h1bnRsZXkuY29tX3BjNWo0MjdjZG1sNW81MmVqczE2aG91YmMwQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20). Past stream recordings are on [my YouTube channel](https://youtube.com/c/geoffreyhuntley). 
 
-# twitter
-
-This is my primary means of broadcasting things to the world so please follow me there. I do read my DMs and allow them from people I don't follow. Follow <a href="http://twitter.com/geoffreyhuntley">@geoffreyhuntley</a> on Twitter.
-
-# linkedin
+## linkedin
 
 I accept connections on [LinkedIn](https://linkedin.com/in/geoffreyhuntley
 ) from anyone. I don't respond to interactions or requests from people that originate from LinkedIn unless we have met in person. If you want to catch up for coffee then organise by a medium other than LinkedIn that way I know you have at least at minimum read this page. 
@@ -28,11 +35,11 @@ I accept connections on [LinkedIn](https://linkedin.com/in/geoffreyhuntley
 
 If I'm scheduled to talk with you, find me on Skype via my email address. For anything else, please use email or Twitter, I keep Skype connections to those who really need to communicate over that channel.
 
-# what i'll definitely respond to
+## what i'll definitely respond to
 
 Genuine queries about speaking at events will get a response, even if I can't accept the invite.
 
-# what I may not respond to
+## what I may not respond to
 
 I do not do tech-support unless we have a commercial agreement in place. If you want general help per hour of time (whether it's for help on open source, a workshop, training, or contributing), email me for more details. 
 

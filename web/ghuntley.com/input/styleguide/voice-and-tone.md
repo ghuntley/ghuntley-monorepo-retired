@@ -1,5 +1,5 @@
 ---
-Title: voice and tone
+title: voice and tone
 ---
 
 One way we write empowering content is by being aware of our voice and our tone. This section explains the difference between voice and tone, and lays out the elements of each as they apply to ghuntley. 

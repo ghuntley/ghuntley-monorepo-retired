@@ -17,6 +17,7 @@ namespace Statiqdev
                 .AddSetting(Keys.Host, "ghuntley.com")
                 .AddSetting(Keys.LinksUseHttps, true)
                 .AddSetting(WebKeys.MirrorResources, false)
+                .AddSetting(WebKeys.GenerateSitemap, true)
                 .AddSetting("EditLink", Config.FromDocument((doc, ctx) => "https://github.com/ghuntley/ghuntley/edit/trunk/web/ghuntley.com/input/" + doc.Source.GetRelativeInputPath()))
                 .AddSetting(SiteKeys.NoChildPages, Config.FromDocument(doc => doc.Destination.Segments[0].SequenceEqual("blog".AsMemory())))
                 .AddPipelines()

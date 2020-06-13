@@ -10,9 +10,11 @@
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400|Old+Standard+TT:400&display=swap' rel='stylesheet' type='text/css'>
 
-    <title>
-    </title>
-    <link rel="canonical" href="/">
+    @{
+        string title = @Document.ContainsKey(Keys.Title) ? $"Geoffrey Huntley - {Document.GetString(Keys.Title)}" : "Geoffrey Huntley";
+    }
+    <title>@title</title>
+    <link rel="canonical" href="@Document.GetLink()">
 
     @Html.Partial("/_styles.cshtml")
 
@@ -26,7 +28,7 @@
         <section id=nav>
             <h1><a href="/">Geoffrey Huntley</a></h1>
             <ul>
-                <li><a href="/now">lately</a></li>
+                <li><a href="/lately">lately</a></li>
                 <li><a href="/contact">contact</a></li>
                 <li><a href="/live">live</a></li>
                 <li><a href="/newsletter">newsletter</a></li>
@@ -43,7 +45,35 @@
         </section>
 
         <section id=content>
+            <h1 id="title">@Document.GetString(Keys.Title)</h1>
             @RenderBody()
+
+            <ul>
+                @{
+                    string section = Document.Destination.Segments.Length > 1 ? Document.Destination.Segments[0].ToString() : null;
+                    IDocument root = Outputs[nameof(Content)].FirstOrDefault(x => x.Destination == section + "/index.html");
+                    @foreach (IDocument document in root.GetChildren())
+                    {
+                        <li>@Html.DocumentLink(document)</li>
+
+                        @if (document.HasChildren())
+                        {
+                                @foreach (IDocument child in document.GetChildren())
+                                {
+                                    <li>@Html.DocumentLink(child)</li>
+
+                                    @if (child.HasChildren())
+                                    {
+                                            @foreach (IDocument child2 in child.GetChildren())
+                                            {
+                                                <li>@Html.DocumentLink(child2)</li>
+                                            }
+                                    }
+                                }
+                        }
+                    }
+                }
+            </ul>
         </section>
     </body>
 </html>

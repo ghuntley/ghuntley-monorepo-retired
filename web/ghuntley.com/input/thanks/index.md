@@ -29,7 +29,7 @@ These lovely people do, you should too:
 
 These lovely people have contributed a fix to my blog. If you want to see yourself in this list, send me a pull request! Every post in my blog has an edit link (the octocat button) that lets you edit the blog post directly in the browser which automatically sends me a pull request.
 
-Or [visit my repository](https://github.com/ghuntley/ghuntley) and send me a pull request the old fashioned way.
+Or [visit my repository](https://github.com/ghuntley/depot/tree/trunk/web/ghuntley.com) and send me a pull request the old fashioned way.
 
 <div class="contributors"></div>
 
@@ -37,8 +37,7 @@ Or [visit my repository](https://github.com/ghuntley/ghuntley) and send me a pul
 
 <script>
   $.when(
-    $.ajax('https://api.github.com/repos/ghuntley/ghuntley/contributors?per_page=250'),
-    $.ajax('https://api.github.com/repos/ghuntley/live/contributors?per_page=250'),
+    $.ajax('https://api.github.com/repos/ghuntley/depot/contributors?per_page=250'),
     $.ajax('https://api.github.com/repos/reactiveui/website/contributors?per_page=250'),
     $.ajax('https://api.github.com/repos/reactiveui/reactiveui/contributors?per_page=250'))
   .then(function(websiteData, reactiveUIData) {

@@ -1,5 +1,5 @@
 ---
-Title: grammar and mechanics
+title: grammar and mechanics
 ---
 
 # Basics

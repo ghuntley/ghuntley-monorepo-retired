@@ -33,7 +33,7 @@ bash "$REPO_ROOT/bin/de-install-git-hooks"
 
 # 2. Bootstrap third_party git submodules
 echo "[dev-env] Synchronizing git submodules"
-(git submodule sync && git submodule update) &
+#(git submodule sync && git submodule update) &
 
 # 3. Synchronizing private/* configuration
 echo "[dev-env] Synchronizing repository configuration to private/*"
