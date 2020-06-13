@@ -22,9 +22,6 @@
 [submodule "third_party/github.com/jgavris/rs-git-fsmonitor"]
 	path = third_party/github.com/jgavris/rs-git-fsmonitor
 	url = https://github.com/jgavris/rs-git-fsmonitor.git
-[submodule "private"]
-	path = private
-	url = git@github.com:ghuntley/private.git
 [submodule "software-consulting-documents"]
 	path = third_party/window-shopping/legal-agreements/software-consulting-documents
 	url = https://github.com/numtide/software-consulting-documents.git
@@ -46,3 +43,6 @@
 [submodule "third_party/window-shopping/infra/smtprelay"]
 	path = third_party/window-shopping/infra/smtprelay
 	url = https://github.com/decke/smtprelay.git
+[submodule "private"]
+	path = private
+	url = git@github.com:ghuntley/private.git
