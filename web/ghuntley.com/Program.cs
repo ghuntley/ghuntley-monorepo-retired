@@ -18,10 +18,10 @@ namespace StatiqWebsite
                     Environment.GetEnvironmentVariable("NETLIFY_SITE_ID"),
                     Environment.GetEnvironmentVariable("NETLIFY_ACCESS_TOKEN")
                 )
-                .AddSetting(WebKeys.NetlifyRedirects, false)
+                .AddSetting(WebKeys.NetlifyRedirects, true)
                 .AddSetting(Keys.Host, "ghuntley.com")
                 .AddSetting(Keys.LinksUseHttps, true)
-                .AddSetting(WebKeys.MirrorResources, true)
+                .AddSetting(WebKeys.MirrorResources, false)
                 .AddSetting(WebKeys.GenerateSitemap, true)
                 .AddSetting("EditLink", Config.FromDocument((doc, ctx) => "https://github.com/ghuntley/ghuntley/edit/trunk/web/ghuntley.com/input/" + doc.Source.GetRelativeInputPath()))
                 .AddPipelines()

@@ -48,36 +48,6 @@
             <h1 id="title">@Document.GetString(Keys.Title)</h1>
             @RenderBody()
 
-            <ul>
-                @{
-                    string section = Document.Destination.Segments.Length > 1 ? Document.Destination.Segments[0].ToString() : null;
-                    IDocument root = Outputs[nameof(Content)].FirstOrDefault(x => x.Destination == section + "/index.html");
-                    @foreach (IDocument document in root.GetChildren())
-                    {
-                        <li>@Html.DocumentLink(document)</li>
-
-                        @if (document.HasChildren())
-                        {
-                            <ul>
-                                @foreach (IDocument child in document.GetChildren())
-                                {
-                                    <li>@Html.DocumentLink(child)</li>
-
-                                    @if (child.HasChildren())
-                                    {
-                                        <ul>
-                                            @foreach (IDocument child2 in child.GetChildren())
-                                            {
-                                                <li>@Html.DocumentLink(child2)</li>
-                                            }
-                                        <ul>
-                                    }
-                                }
-                            </ul>
-                        }
-                    }
-                }
-            </ul>
         </section>
     </body>
 </html>
