@@ -1,0 +1,10 @@
+[package]
+name = "hello_world"
+version = "0.1.0"
+authors = ["Aleksandar Topuzović <aleksandar.topuzovic@gmail.com>"]
+
+[lib]
+name = "crate_hello_world"
+path = "src/main.rs"
+
+[dependencies]
