@@ -1,3 +1,6 @@
+-- Copyright (c) 2020 Geoffrey Huntley <ghuntley@ghuntley.com>. All rights reserved.
+-- SPDX-License-Identifier: Proprietary
+
 -- module1
 
 -- x = 200
@@ -36,3 +39,4 @@ idk2 x =
 
 
 data Maybe a = Nothing | Just a
+
