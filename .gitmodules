@@ -43,3 +43,6 @@
 [submodule "patterns/nix/jupyter"]
 	path = patterns/nix/jupyter
 	url = https://github.com/tweag/jupyterWith.git
+[submodule "third_party/window-shopping/infra/smtprelay"]
+	path = third_party/window-shopping/infra/smtprelay
+	url = https://github.com/decke/smtprelay.git

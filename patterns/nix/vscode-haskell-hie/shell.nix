@@ -1,3 +1,5 @@
+# Copyright (c) 2020 Geoffrey Huntley <ghuntley@ghuntley.com>. All rights reserved.
+# SPDX-License-Identifier: Proprietary
 let
   # Pinned nixpkgs for vscode
   nixpkgsVscode = builtins.fetchGit {
@@ -5,7 +7,7 @@ let
     rev = "f75d62941d8ad616bfc334ae19d71a0a6677dd19";
     ref = "master";
   };
-  pkgsVscode = import nixpkgsVscode {};
+  pkgsVscode = import nixpkgsVscode { };
 
   # Pinned for ghc and tools (unstable has cabal 3.2 which does not work with cabal-helper and hie)
   nixpkgs = builtins.fetchGit {
@@ -13,7 +15,7 @@ let
     rev = "6d68b920eb2df73d68a9355f9d572dbf97add5f5";
     ref = "nixos-20.03";
   };
-  pkgs = import nixpkgs {};
+  pkgs = import nixpkgs { };
 
   # Haskell IDE engine (with ghc pinned to nixos-20.03 so it has new glibc)
   allHiesSrc = builtins.fetchGit {
@@ -46,13 +48,12 @@ let
       { name = "vscode-hie-server"; publisher = "alanz"; version = "0.0.40"; sha256 = "1cmlgidjma41s5zq5161gcxxmk5lfzcm8dvznls04y5l7q9b0gca"; }
       { name = "language-haskell"; publisher = "justusadam"; version = "3.2.0"; sha256 = "190h1hky2yy5n00ncqf15mmaizgpm3w9pzvasmi2gangpg4qb6y5"; }
     ];
-    settings = {};
-    keybindings = {};
+    settings = { };
+    keybindings = { };
   };
 
-  project = compiler.callPackage ./demo.nix {};
+  project = compiler.callPackage ./demo.nix { };
 in
-
 project.env.overrideAttrs (shellEnv: {
   buildInputs = shellEnv.buildInputs ++ [
     pkgs.which # needed for --pure
