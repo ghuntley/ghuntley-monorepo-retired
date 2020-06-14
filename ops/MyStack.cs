@@ -1,26 +1,20 @@
 using Pulumi;
-using Pulumi.Azure.Core;
-using Pulumi.Azure.Storage;
+using Pulumi.Cloudflare;
 
 class MyStack : Stack
 {
     public MyStack()
     {
-        // Create an Azure Resource Group
-        var resourceGroup = new ResourceGroup("resourceGroup");
+        const string zoneId = "8cbecb7f14bf65e2e7060b325d928340";
 
-        // Create an Azure Storage Account
-        var storageAccount = new Account("storage", new AccountArgs
-        {
-            ResourceGroupName = resourceGroup.Name,
-            AccountReplicationType = "LRS",
-            AccountTier = "Standard"
-        });
-
-        // Export the connection string for the storage account
-        this.ConnectionString = storageAccount.PrimaryConnectionString;
+         var record = new Cloudflare.Record("sample-record", new Cloudflare.RecordArgs
+            {
+                Name = "my-record",
+                ZoneId = zoneId,
+                Type = "A",
+                Value = "192.168.0.11",
+                Ttl = 3600,
+            });
     }
 
-    [Output]
-    public Output<string> ConnectionString { get; set; }
 }
