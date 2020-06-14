@@ -5,58 +5,68 @@ partial class Infrastructure : Stack
 {
     public void CloudflareDNS()
     {
-        const string zoneId = "8cbecb7f14bf65e2e7060b325d928340";
+        const string zoneId = "7823ac7e890b6b2fc0e8da4f16c999a4";
 
         #region hosts
 
-        new Record("dns-record-devenv", new RecordArgs
+        new Record("dns-record-root", new RecordArgs
         {
-            Name = "devenv",
+            Name = "@",
             ZoneId = zoneId,
-            Type = "A",
-            Value = "100.98.111.64",
+            Type = "CNAME",
+            Value = "ghuntley.netlify.com",
             Ttl = 1, // 1 = automatic
         });
 
-        new Record("dns-record-surfacego", new RecordArgs
+        new Record("dns-record-www", new RecordArgs
         {
-            Name = "surfacego",
+            Name = "www",
             ZoneId = zoneId,
-            Type = "A",
-            Value = "100.77.47.105",
-            Ttl = 1, // 1 = automatic
-        });
-
-        new Record("dns-record-metabox", new RecordArgs
-        {
-            Name = "metabox",
-            ZoneId = zoneId,
-            Type = "A",
-            Value = "100.64.69.62",
-            Ttl = 1, // 1 = automatic
-        });
-
-        new Record("dns-record-smtp", new RecordArgs
-        {
-            Name = "smtp",
-            ZoneId = zoneId,
-            Type = "A",
-            Value = "127.0.0.1",
+            Type = "CNAME",
+            Value = "ghuntley.netlify.com",
             Ttl = 1, // 1 = automatic
         });
 
         #endregion
 
+
         #region domain ownership verification
+
+        // new Record("dns-record-bing-verification", new RecordArgs
+        // {
+        //     Name = "",
+        //     ZoneId = zoneId,
+        //     Type = "CNAME",
+        //     Value = "verify.bing.com",
+        //     Ttl = 1, // 1 = automatic
+        // });
 
         new Record("dns-record-google-site-verification", new RecordArgs
         {
             Name = "@",
             ZoneId = zoneId,
             Type = "TXT",
-            Value = "google-site-verification=rx0xZRxwl5gGW49-MTeR8j34i4GKcqFdp0-TiwxJ3cs",
+            Value = "google-site-verification=Ygi199GbO9ipejg0519FZUH5JVbWB_qIS9JOke_ulp8",
             Ttl = 1, // 1 = automatic
         });
+
+        // new Record("dns-record-keybase-verfication", new RecordArgs
+        // {
+        //     Name = "@",
+        //     ZoneId = zoneId,
+        //     Type = "TXT",
+        //     Value = "",
+        //     Ttl = 1, // 1 = automatic
+        // });
+
+        // new Record("dns-record-yandex-verification", new RecordArgs
+        // {
+        //     Name = "@",
+        //     ZoneId = zoneId,
+        //     Type = "TXT",
+        //     Value = "",
+        //     Ttl = 1, // 1 = automatic
+        // });
 
         #endregion
 
@@ -67,7 +77,7 @@ partial class Infrastructure : Stack
             Name = "google._domainkey",
             ZoneId = zoneId,
             Type = "TXT",
-            Value = "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnd/I9StH7axKnbH85OkB4dxaGpkXsh2vWnmCLE0G2HRR7/cAnl8d9lzUBXF+aG4n//okWHoaHPmfLLGZNXs/srFIVAqX1deu1tPS7pqph6EHd9tzEV/KJ9Pg0bxNTZ9nFpsqP11UxfZMj6YlIoBvM0MT8RQ91Rk4zxMJuXA1EeJ10HNYHQANHt+W1jknNEAFODhN2h2f6SPeWgIK8viYGsVj+w+iVkl9gLtDE28qInpHkpaj1CoWE8W/bl9IYNOs5lrCmYJD84y36lDVL501Nttyh+Jpa4+ktr3XcqBwjmrH4hJxyyL0g4ufpMcN53GVqIK3YU75n03ZFWrq/Mq7wQIDAQAB",
+            Value = "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCgoXN71FIF9uJQI7jcD6OwsUXtgwqqtn9aK+cFekpP995w6haBNEI7gQPPEN4fiyvYJ0j6GmqMzOAdQNqseXYS2fEg7D2doZxNu6cA/VNd06XvhIKDvrKsdTkan9IgHuE3Ocrh/zMYNML4o4KvuAdb7ryGBTah7EEf5//MlWREpQIDAQAB",
             Ttl = 1, // 1 = automatic
         });
 

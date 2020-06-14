@@ -5,43 +5,34 @@ partial class Infrastructure : Stack
 {
     public void CloudflareDNS()
     {
-        const string zoneId = "8cbecb7f14bf65e2e7060b325d928340";
+        const string zoneId = "a548e719763b08ac695475735536d9ad";
 
         #region hosts
 
-        new Record("dns-record-devenv", new RecordArgs
+        new Record("dns-record-auth", new RecordArgs
         {
-            Name = "devenv",
+            Name = "auth",
             ZoneId = zoneId,
-            Type = "A",
-            Value = "100.98.111.64",
+            Type = "CNAME",
+            Value = "ghuntley.dev",
             Ttl = 1, // 1 = automatic
         });
 
-        new Record("dns-record-surfacego", new RecordArgs
+        new Record("dns-record-root", new RecordArgs
         {
-            Name = "surfacego",
+            Name = "@",
             ZoneId = zoneId,
-            Type = "A",
-            Value = "100.77.47.105",
+            Type = "CNAME",
+            Value = "p52157.probes.atlas.ripe.net",
             Ttl = 1, // 1 = automatic
         });
 
-        new Record("dns-record-metabox", new RecordArgs
+        new Record("dns-record-www", new RecordArgs
         {
-            Name = "metabox",
+            Name = "www",
             ZoneId = zoneId,
-            Type = "A",
-            Value = "100.64.69.62",
-            Ttl = 1, // 1 = automatic
-        });
-
-        new Record("dns-record-smtp", new RecordArgs
-        {
-            Name = "smtp",
-            ZoneId = zoneId,
-            Type = "A",
-            Value = "127.0.0.1",
+            Type = "CNAME",
+            Value = "ghuntley.dev",
             Ttl = 1, // 1 = automatic
         });
 
@@ -54,7 +45,7 @@ partial class Infrastructure : Stack
             Name = "@",
             ZoneId = zoneId,
             Type = "TXT",
-            Value = "google-site-verification=rx0xZRxwl5gGW49-MTeR8j34i4GKcqFdp0-TiwxJ3cs",
+            Value = "google-site-verification=ooojce4hslC8h2R84k1Kvt0GrtjycD3oC7YLv_vjjEI",
             Ttl = 1, // 1 = automatic
         });
 
@@ -67,7 +58,7 @@ partial class Infrastructure : Stack
             Name = "google._domainkey",
             ZoneId = zoneId,
             Type = "TXT",
-            Value = "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnd/I9StH7axKnbH85OkB4dxaGpkXsh2vWnmCLE0G2HRR7/cAnl8d9lzUBXF+aG4n//okWHoaHPmfLLGZNXs/srFIVAqX1deu1tPS7pqph6EHd9tzEV/KJ9Pg0bxNTZ9nFpsqP11UxfZMj6YlIoBvM0MT8RQ91Rk4zxMJuXA1EeJ10HNYHQANHt+W1jknNEAFODhN2h2f6SPeWgIK8viYGsVj+w+iVkl9gLtDE28qInpHkpaj1CoWE8W/bl9IYNOs5lrCmYJD84y36lDVL501Nttyh+Jpa4+ktr3XcqBwjmrH4hJxyyL0g4ufpMcN53GVqIK3YU75n03ZFWrq/Mq7wQIDAQAB",
+            Value = "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAza6YHbwelIxuUHkPmpt9v7IoDLgKyzsmZ4+IO5HnSPTAz2Tuxn5wsnvjP6bvmZwGZYSIW7RJA1UNr4sWlIg48S4DvSd90reDlAcaaDNEsbhzlKzl1WCJTvUkuhqO11DonlkMcEpdQI9xzH5vZyLP6qksKn3/Wyy0Qq4GzdYqst5Ml9GHSn3rTpveD7k7D1WLt9mSpi+/wjbMZ8i67tu88WmGT+6uR6BJ+dtZmC7UaiV+XuGfQIlpCgBj4+kwRFL5dNEA6R6gMMHRxFm2OPs9S8onkqExnIYQMKW9VyToOdEIAp+o+FunJTMoBfhmkN3+d4nIlo6dg/ms78qro/pTpQIDAQAB",
             Ttl = 1, // 1 = automatic
         });
 

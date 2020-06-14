@@ -1,0 +1,4 @@
+config:
+  cloudflare:apiKey:
+    secure: AAABAJd05iiid9iQXepZhIZbFm0WXZ2Ys+YM38ikC92ehsijrY9Z12KBPpqOGZtWSBdCTiYhr7enx1P2KA9puXFVvLBe
+  cloudflare:email: ghuntley@ghuntley.com
