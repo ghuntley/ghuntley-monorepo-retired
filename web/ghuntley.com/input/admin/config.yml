@@ -3,16 +3,16 @@
 
 backend:
   name: github
-  repo: ghuntley/atlas
-  branch: master
+  repo: ghuntley/depot
+  branch: trunk
   
-media_folder: "static/uploads"
-public_folder: "/uploads"
+media_folder: "web/ghuntley.com/input/downloads"
+public_folder: "/downloads"
 collections:
 
   - name: "notes"
     label: "Notes"
-    folder: "content/notes"
+    folder: "web/ghuntley.com/input/notes"
     create: true
     slug: "{{slug}}"
     fields:
@@ -22,7 +22,7 @@ collections:
       
   - name: "blog"
     label: "Blog"
-    folder: "content/blog"
+    folder: "web/ghuntley.com/input/content/blog"
     create: true
     slug: "{{slug}}"
     fields:
@@ -33,7 +33,7 @@ collections:
 
   - name: "talks"
     label: "Talks"
-    folder: "content/talks"
+    folder: "web/ghuntley.com/input/talks"
     create: true
     slug: "{{slug}}"
     fields:
@@ -43,19 +43,9 @@ collections:
       - { label: "Video", name: "video", widget: "text" }
       - { label: "Misc", name: "misc", widget: "markdown" }
 
-  - name: "portfolio"
-    label: "Portfolio"
-    folder: "content/portfolio"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Tags", name: "tags", widget: "list" }
-      - { label: "Body", name: "body", widget: "markdown" }
-
   - name: "page"
     label: "Page"
-    folder: "content"
+    folder: "web/ghuntley.com/input"
     create: true
     slug: "{{slug}}"
     fields:
