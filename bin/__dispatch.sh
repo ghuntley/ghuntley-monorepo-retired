@@ -67,6 +67,9 @@ case "${TARGET_TOOL}" in
   "nixpkgs-fmt")
     attr="third_party.nixpkgs-fmt"
     ;;
+  "pulumi")
+    attr="third_party.pulumi-bin"
+    ;;
   "rs-git-fsmonitor")
     attr="third_party.rs-git-fsmonitor"
     ;;

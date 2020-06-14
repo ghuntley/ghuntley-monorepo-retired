@@ -40,6 +40,7 @@ let
       tmux
       tree
       p7zip
+      pulumi-bin
       python3
       mercurialFull
       nixpkgs-fmt
