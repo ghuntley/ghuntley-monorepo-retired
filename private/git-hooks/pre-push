@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+set -Eeuo pipefail
+
+# This hook is called with the following parameters:
+#
+# $1 -- Name of the remote to which the push is being done
+# $2 -- URL to which the push is being done
+#
+# If pushing without using a named remote those arguments will be equal.
+#
+# Information about the commits which are being pushed is supplied as lines to
+# the standard input in the form:
+#
+#   <local ref> <local sha1> <remote ref> <remote sha1>
+#
+
+# 1. git lfs
+
+command -v git-lfs >/dev/null 2>&1 || { echo >&2 "[dev-env] ERROR: This repository is configured for Git LFS but 'git-lfs' was not found on your path"; exit 2; }
+git lfs pre-push "$@"
+
+# 2. protected branch
+
+# protected_branches=('trunk')
+
+# IFS=' '
+# while read local_ref local_sha remote_ref remote_sha
+# do
+#     for protected_branch in "${protected_branches[@]}"; do
+#         if [[ $remote_ref == "refs/heads/$protected_branch" ]]; then
+#             echo -en "\033[31mYou're about to push trunk, that is verboten!\033[0m"
+#             echo
+#             exit 1 # push will not execute
+#         fi
+#     done
+# done
+
+# n. nothing wrong, let push execute
+exit 0

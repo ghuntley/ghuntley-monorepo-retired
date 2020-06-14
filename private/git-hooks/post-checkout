@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -Eeuo pipefail
+
+# 1. git lfs
+
+command -v git-lfs >/dev/null 2>&1 || { echo >&2 "[dev-env] ERROR: This repository is configured for Git LFS but 'git-lfs' was not found on your path"; exit 2; }
+git lfs post-checkout "$@"
