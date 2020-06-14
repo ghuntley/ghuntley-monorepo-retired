@@ -6,6 +6,6 @@ title: "biography"
 
 ## bio
 
-🙌 I’m Geoff, an open source software engineer. Software that I maintain is inside Microsoft Visual Studio, GitHub, Atlassian Sourcetree, Amazon Drive, Halo, is heavily used by the financial services industry and has been installed by other software developers 21 million times.
+<!-- 🙌 I’m Geoff, an open source software engineer. Software that I maintain is inside Microsoft Visual Studio, GitHub, Atlassian Sourcetree, Amazon Drive, Halo, is heavily used by the financial services industry and has been installed by other software developers 21 million times. -->
 
 ## photos
