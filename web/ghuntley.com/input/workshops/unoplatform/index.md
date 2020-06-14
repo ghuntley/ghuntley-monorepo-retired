@@ -27,7 +27,7 @@ With the Uno Platform you can empower your existing .NET teams to build beautifu
 
 # workshop audience and size
 
-Some knowledge of unix-like command lines and some programming experience are required, but no prior knowledge of Nix and NixOS themselves is required. There's always a breadth of competency and experience so I tailor the pace and depth accordingly. Often this means a combination of one-on-one time with some participants whilst setting stretch goals for others. Ultimately, everyone gets the opportunity to be challenged whilst not being overwhelmed.
+Some knowledge of programming experience in .NET is required, but no prior knowledge of the Uno Platform or WebAssembly is required. There's always a breadth of competency and experience so I tailor the pace and depth accordingly. Often this means a combination of one-on-one time with some participants whilst setting stretch goals for others. Ultimately, everyone gets the opportunity to be challenged whilst not being overwhelmed.
 
 I try to aim for between 15 and 30 participants in a workshop. This keeps the numbers high enough to get robust group discussion going and low enough to ensure I can provide individual support as required. Whilst I've run with both smaller and larger groups, this is the "sweet spot".
 
