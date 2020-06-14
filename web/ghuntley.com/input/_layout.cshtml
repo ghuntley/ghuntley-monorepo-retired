@@ -5,20 +5,80 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ .Site.Params.description }}">
+    <meta name="theme-color" content="#ffffff">
 
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400|Old+Standard+TT:400&display=swap' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/icon.png">
+    <link rel="manifest" href="site.webmanifest">
 
     @{
         string title = @Document.ContainsKey(Keys.Title) ? $"Geoffrey Huntley - {Document.GetString(Keys.Title)}" : "Geoffrey Huntley";
     }
     <title>@title</title>
+    <meta name="description" content="TODO: ">
     <link rel="canonical" href="@Document.GetLink()">
 
-    @Html.Partial("/_styles.cshtml")
+    <meta property="og:site_name" content="Geoffrey Huntley" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@title" />
+    <meta property="og:description" content="TODO: " />
+    <meta property="og:url" content="@Document.GetLink()" />
+    <meta property="og:image" content="https://ghuntley.com/bio/geoffreyhuntley.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="640" />
+    <meta property="article:publisher" content="https://www.facebook.com/geoffreyhuntley" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="@title" />
+    <meta name="twitter:description" content="TODO: " />
+    <meta name="twitter:url" content="https://ghuntley.com/" />
+    <meta name="twitter:image" content="https://ghuntley.com/bio/geoffreyhuntley.jpg" />
+    <meta name="twitter:site" content="@@geoffreyhuntley" />
 
-    @Html.Partial("/_google-analytics.cshtml")
-    @Html.Partial("/_clicky.cshtml")
+    <script type="application/ld+json">
+        {
+            "@@context": "https://schema.org",
+            "@@type": "WebSite",
+            "publisher": {
+                "@@type": "Organization",
+                "name": "Geoffrey Huntley",
+                "url": "https://ghuntley.com/",
+                "logo": {
+                    "@@type": "ImageObject",
+                    "url": "https://ghuntley.com/bio/geoffreyhuntley.jpg",
+                    "width": 60,
+                    "height": 60
+                }
+            },
+            "author": {
+                "@@type": "Person",
+                "name": "Geoffrey Huntley",
+                "image": {
+                    "@@type": "ImageObject",
+                    "url": "https://ghuntley.com/bio/geoffreyhuntley.jpg",
+                    "width": 800,
+                    "height": 800
+                },
+                "sameAs": []
+            },
+            "headline": "Speaking",
+            "url": "@Document.GetLink()",
+            "description": "TODO: "
+            "image": {
+                "@@type": "ImageObject",
+                "url": "https://ghuntley.com/bio/geoffreyhuntley.jpg",
+                "width": 1200,
+                "height": 640
+            },
+            "mainEntityOfPage": {
+                "@@type": "WebPage",
+                "@@id": "https://ghuntley.com/"
+            }
+        }
+    </script>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400|Old+Standard+TT:400&display=swap' rel='stylesheet' type='text/css'>
+
+    @Html.Partial("/_styles.cshtml")
     
     @Html.Partial("/_edit-this-page.cshtml")
   </head>
@@ -27,26 +87,50 @@
         <section id=nav>
             <h1><a href="/">Geoffrey Huntley</a></h1>
             <ul>
+                <li><a href="/about">about</a></li>
                 <li><a href="/lately">lately</a></li>
-                <li><a href="/contact">contact</a></li>
-                <li><a href="/live">live</a></li>
                 <li><a href="/newsletter">newsletter</a></li>
-                <li><a href="/talks">talks</a></li>
-                <li><a href="/workshops">workshops</a></li>
+                <li><a href="/contact">contact</a></li>
             </ul>
             <ul>
-                <li><a href="/licensing">licensing</a></li>
-                <li><a href="/rss">rss feed</a></li>
+                <li><a href="/media">media</a></li>
+                <li><a href="/talks">speaking</a></li>
+                <li><a href="/workshops">workshops</a></li>
+                <li><a href="/live">live</a></li>
+            </ul>
+            <ul>
                 <li><a href="/notes">notes</a></li>
+                <li><a href="/licensing">licensing</a></li>
                 <li><a href="/radar">radar</a></li>
                 <li><a href="/thanks">thanks</a></li>
+                <li><a href="/support">support</a></li>
             </ul>
         </section>
 
         <section id=content>
             <h1 id="title">@Document.GetString(Keys.Title)</h1>
             @RenderBody()
-
         </section>
+
+        <section id=content>
+            <h6>Subscribe Now!</h6>
+            <p>If you want the announcements and opportunities that I never post publicly, get on my private email list, here: </p>
+
+            <form style="border:0px solid #ccc;padding:0px;text-align:center;" action="https://tinyletter.com/ghuntley" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/ghuntley', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true"><p><label for="tlemail">your email (kept private! never shared)</label></p><p><input type="text" style="border:1px solid black;width:256px" name="email" id="tlemail" /></p><input type="hidden" value="1" name="embed"/><input type="submit" style="width:256px" value="sign up" /></form>
+        </section>
+
+        <section id=content>
+            <h6>Disclaimer</h6>
+            <p>Opinions expressed publicly are my own and do not necessarily represent those of my clients unless otherwise stated. Do not quote me as “$company person Geoffrey Huntley said” – if I speak for a company, I will publish on its channels. This is my personal slice of the internet. Everything here is me and is my opinion.</p>
+        </section>
+
+        <section id=content>
+            <h6>Copyright @DateTime.Now.Year, Geoffrey Huntley</h6>
+            <p>This work is dual-licensed under the <a href="/licensing?utm_source=footer">License Zero Prosperity Public License</a> and the <a href="/licensing?utm_source=footer">License Zero Patron License</a>. The Prosperity License limits commercial use to a 32 day trial period, after which license fees must be paid <a href="/licensing/?utm_source=footer">to obtain a Patron License</a>.</p>
+        </section>
+
+        @Html.Partial("/_google-analytics.cshtml")
+        @Html.Partial("/_clicky.cshtml")
+
     </body>
 </html>

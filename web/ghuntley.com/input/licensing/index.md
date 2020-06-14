@@ -1,7 +1,7 @@
 title: licensing
 ---
 
-Software produced and maintained by me is typically dual-licensed under the [License Zero Prosperity Public License](https://licensezero.com/licenses/prosperity), the [License Zero Patron License](https://blog.licensezero.com/2019/05/24/patron-license.html). The Prosperity License limits commercial use to a 32 day trial period, after which license fees must be paid to obtain a Patron License.
+Software and content produced or maintained by me is typically dual-licensed under the [License Zero Prosperity Public License](https://licensezero.com/licenses/prosperity), the [License Zero Patron License](https://blog.licensezero.com/2019/05/24/patron-license.html). The Prosperity License limits commercial use to a 32 day trial period, after which license fees must be paid to obtain a Patron License.
 
 A [License Zero Waiver](https://licensezero.com/licenses/waiver) may also be granted waiving the non-commercial clause of the Prosperity License without requiring a Patron License. These are granted on a case-by-case basis to friends, family, repeat contributors, folks who do good things in their community and usually when the person requesting one [makes a compelling case][contact] about why the non-commercial clause shouldn't apply to them.
 

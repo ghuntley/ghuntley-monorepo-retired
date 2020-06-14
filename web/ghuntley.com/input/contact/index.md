@@ -31,6 +31,7 @@ The stream schedule is maintained in [an online calendar you can subscribe to](h
 
 I accept connections on [LinkedIn](https://linkedin.com/in/geoffreyhuntley
 ) from anyone. I don't respond to interactions or requests from people that originate from LinkedIn unless we have met in person. If you want to catch up for coffee then organise by a medium other than LinkedIn that way I know you have at least at minimum read this page. 
+
 # skype
 
 If I'm scheduled to talk with you, find me on Skype via my email address. For anything else, please use email or Twitter, I keep Skype connections to those who really need to communicate over that channel.

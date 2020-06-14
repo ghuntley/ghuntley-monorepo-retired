@@ -1,3 +1,4 @@
-User-agent: *
-
 Sitemap: https://ghuntley.com/sitemap.xml
+
+User-agent: *
+Disallow: /styleguide
