@@ -47,6 +47,6 @@
 	path = patterns/nix/adga
 	url = https://github.com/atopuzov/agdastuff
 [submodule "third_party/nixpkgs-wsl"]
-	path = third_party/nixpkgs-wsl
+	path = third_party/wsl
 	url = git@github.com:ghuntley/nixpkgs.git
 	branch = wsl
