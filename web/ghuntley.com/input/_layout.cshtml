@@ -109,25 +109,55 @@
 
         <section id=content>
             <h1 id="title">@Document.GetString(Keys.Title)</h1>
+
             @RenderBody()
+            @if (@Document.ContainsKey(SiteKeys.ShowChildPages))
+            {
+                <ul>
+                    @{
+                        string section = Document.Destination.Segments.Length > 1 ? Document.Destination.Segments[0].ToString() : null;
+                        IDocument root = Outputs[nameof(Content)].FirstOrDefault(x => x.Destination == section + "/index.html");
+
+                        @foreach (IDocument document in root.GetChildren().OrderBy(x => x.Source))
+                        {
+                            @if (document.HasChildren())
+                            {
+                                @foreach (IDocument child in document.GetChildren().OrderBy(x => x.Source))
+                                {
+                                    @if (child.HasChildren())
+                                    {
+                                        @foreach (IDocument child2 in child.GetChildren().OrderBy(x => x.Source))
+                                        {
+                                            <li>@Html.DocumentLink(document) &raquo; @Html.DocumentLink(child, child.GetTitle().ToLowerInvariant()) &raquo; @Html.DocumentLink(child2, child2.GetTitle().ToLowerInvariant())</li>
+                                        }
+                                    }
+                                    else 
+                                    {
+                                        <li>@Html.DocumentLink(document, document.GetTitle().ToLowerInvariant()) &raquo; @Html.DocumentLink(child, child.GetTitle().ToLowerInvariant())</li>
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                <li>@Html.DocumentLink(document, document.GetTitle().ToLowerInvariant())</li>
+                            }
+                        }
+                    }
+                </ul>
+            }
         </section>
 
-        <section id=content>
-            <h6>Subscribe Now!</h6>
-            <p>If you want the announcements and opportunities that I never post publicly, get on my private email list, here: </p>
-
-            <form style="border:0px solid #ccc;padding:0px;text-align:center;" action="https://tinyletter.com/ghuntley" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/ghuntley', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true"><p><label for="tlemail">your email (kept private! never shared)</label></p><p><input type="text" style="border:1px solid black;width:256px" name="email" id="tlemail" /></p><input type="hidden" value="1" name="embed"/><input type="submit" style="width:256px" value="sign up" /></form>
-        </section>
-
-        <section id=content>
-            <h6>Disclaimer</h6>
-            <p>Opinions expressed publicly are my own and do not necessarily represent those of my clients unless otherwise stated. Do not quote me as “$company person Geoffrey Huntley said” – if I speak for a company, I will publish on its channels. This is my personal slice of the internet. Everything here is me and is my opinion.</p>
-        </section>
-
-        <section id=content>
-            <h6>Copyright @DateTime.Now.Year, Geoffrey Huntley</h6>
+@{
+    if (!string.IsNullOrEmpty(@Document.Destination.Parent.Name))
+    {
+        <section id=footer>
+            <h3>Copyright @DateTime.Now.Year, Geoffrey Huntley</h3>
             <p>This work is dual-licensed under the <a href="/licensing?utm_source=footer">License Zero Prosperity Public License</a> and the <a href="/licensing?utm_source=footer">License Zero Patron License</a>. The Prosperity License limits commercial use to a 32 day trial period, after which license fees must be paid <a href="/licensing/?utm_source=footer">to obtain a Patron License</a>.</p>
+
+            <p>This is my personal slice of the internet. Everything here is me and is my opinion. Do not quote me as “$company person Geoffrey Huntley said” – if I speak for a company, I will publish on its channels.</p>
         </section>
+    }
+}
 
         @Html.Partial("/_google-analytics.cshtml")
         @Html.Partial("/_clicky.cshtml")

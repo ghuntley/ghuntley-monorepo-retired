@@ -1,13 +1,7 @@
 ---
 title: Microsoft .NET - API Review (2019)
 date: 2019-03-20
-showDate: true
-tags: 
-  - dotnet
-  - compilers
 ---
-
-<!-- tweet 1108047192747458561 -->
 
 # abstract
 
@@ -25,9 +19,4 @@ Invited to partipcate in the .NET framework API review. We spent a couple hours 
 
 # video
 
-{{< youtube vHqgsQ23GRg >}}
-
-# twitter
-
-<!-- tweet 1108075466403901440 -->
-<!-- tweet 1108058084578979840 -->
+<?# YouTube vHqgsQ23GRg /?>

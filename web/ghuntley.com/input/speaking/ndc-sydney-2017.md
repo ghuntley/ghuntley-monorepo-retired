@@ -1,15 +1,10 @@
 ---
-layout: talks
 title: NDC Sydney (2017)
 date: 2017-08-14
-showDate: true
-tags: 
-  - sydney
-  - reactive-extensions
-  - reactiveui
 ---
 
 # abstract
+
 Knowledge of reactive programming changes you as a developer, makes you better
 and aligns your career with where the industry is going. One of the cool things
 about reactive programming is that the knowledge is universal across
@@ -32,11 +27,6 @@ an implementation for and vibrant community in that ecosystem.
 If you are sick of investing time into learning transitory knowledge - then
 this is the session for you.
 
-# twitter
-
-<!-- tweet 912621546492932096 -->
-<!-- tweet 898406366246690816 -->
-
 # video 
 
-{{< youtube 4inY7TFEVT0 >}}
+<?# YouTube 4inY7TFEVT0 /?>

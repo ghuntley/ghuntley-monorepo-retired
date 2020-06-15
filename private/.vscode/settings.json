@@ -23,7 +23,7 @@
     "plantuml.exportConcurrency": 16,
     "csharp.suppressDotnetInstallWarning": true,
     "csharp.suppressDotnetRestoreNotification": true,
-    "workbench.colorTheme": "Community Material Theme Ocean High Contrast",
+    "workbench.colorTheme": "SynthWave '84",
     "material-icon-theme.activeIconPack": "react",
     "python.pythonPath": "dev-env/bin/python",
     // "plantuml.render": "PlantUMLServer",

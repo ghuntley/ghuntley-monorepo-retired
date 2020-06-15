@@ -1,13 +1,9 @@
 ---
 title: Microsoft MVP Community Connection (2017)
 date: 2017-11-18
-showDate: true
-tags: 
-  - sydney
-  - maintainerati
 ---
 
-# Abstract
+# abstract
 
 Something has changed in open-source the last few years. Today, more people use
 open source than ever before, but fewer people contribute back than ever
@@ -25,8 +21,8 @@ organisation is incentivised to address the public good problem alone. We, the
 maintainers of open-source software, want to help you, all of you, but have you
 ever thought about how you can help us?
 
-# Twitter
+# social media
 
-{{< tweet 931756907576025089 >}}
+<?# Twitter 931756907576025089 /?>
 
-{{< tweet 931645272794394625 >}}
+<?# Twitter 931645272794394625 /?>

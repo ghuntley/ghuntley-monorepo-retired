@@ -1,13 +1,9 @@
 ---
 title: GitHub Constellation (2017)
 date: 2017-10-25
-showDate: true
-tags: 
-  - sydney
-  - maintainerati
 ---
 
-# Abstract
+# abstract
 
 Something has changed in open-source the last few years. Today, more people use
 open source than ever before, but fewer people contribute back than ever
@@ -25,12 +21,10 @@ organisation is incentivised to address the public good problem alone. We, the
 maintainers of open-source software, want to help you, all of you, but have you
 ever thought about how you can help us?
 
-# Twitter
+# twitter
 
-<!-- tweet 923113978057728000 -->
+<?# Twitter 923113978057728000 /?>
 
-<!-- tweet 923139427685122048 -->
-<!-- tweet 923101794082865152 -->
-<!-- tweet 923108615128367104 -->
+<?# Twitter 923139427685122048 /?>
 
-<!-- tweet 923113468282093575 -->
+<?# Twitter 923108615128367104 /?>

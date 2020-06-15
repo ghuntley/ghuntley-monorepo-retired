@@ -6,5 +6,8 @@ namespace StatiqWebsite
 {
     public static class SiteKeys
     {
+        public const string ShowChildPages = nameof(ShowChildPages);
+        public const string ShowDate = nameof(ShowDate);
+
     }
 }

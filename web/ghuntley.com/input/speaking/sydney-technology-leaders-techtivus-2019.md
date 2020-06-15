@@ -1,11 +1,6 @@
 ---
-layout: talks
 title: Sydney Technology Leaders - Techtivus (2018)
 date: 2018-12-06
-showDate: true
-tags: 
-  - open-source
-  - sustainability
 ---
 
 # abstract
