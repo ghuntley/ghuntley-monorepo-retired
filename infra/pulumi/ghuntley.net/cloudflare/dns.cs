@@ -27,6 +27,15 @@ partial class Infrastructure : Stack
             Ttl = 1, // 1 = automatic
         });
 
+        new Record("dns-record-pixel4xl", new RecordArgs
+        {
+            Name = "pixel4xl",
+            ZoneId = zoneId,
+            Type = "A",
+            Value = "100.123.145.101",
+            Ttl = 1, // 1 = automatic
+        });
+
         new Record("dns-record-metabox", new RecordArgs
         {
             Name = "metabox",

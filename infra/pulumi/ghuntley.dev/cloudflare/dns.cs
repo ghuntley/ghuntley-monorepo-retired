@@ -23,9 +23,18 @@ partial class Infrastructure : Stack
             Name = "@",
             ZoneId = zoneId,
             Type = "CNAME",
-            Value = "p52157.probes.atlas.ripe.net",
+            Value = "devenv.ghuntley.net",
             Ttl = 1, // 1 = automatic
         });
+
+//       new Record("dns-record-root", new RecordArgs
+//       {
+//          Name = "@",
+//          ZoneId = zoneId,
+//          Type = "CNAME",
+//          Value = "p52157.probes.atlas.ripe.net",
+//          Ttl = 1, // 1 = automatic
+//       });
 
         new Record("dns-record-www", new RecordArgs
         {
