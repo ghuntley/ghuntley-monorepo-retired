@@ -8,6 +8,8 @@ This is [a now page](https://nownownow.com/about), and if you have your own site
 
 I’m home Country Queensland, Australia. It’s Autumn. I’m observing [the AEST timezone](https://time.is/Sydney).
 
+<!-- 
+
 # upcoming conferences
 
 I'm always happy to speak - just ask.
@@ -15,6 +17,8 @@ I'm always happy to speak - just ask.
 # previous conferences
 
 Sept 2019 I spent a month at Montréal, Québec where I ran a [workshop on building cross-platform applications with the Uno Platform](/workshops). I was invited but didn't speak at [DDD Adelaide](https://dddadelaide.com/agenda) on the topic of WebAssembly but was unfortunately unable to attend.
+
+-->
 
 # what I'm doing now
 
