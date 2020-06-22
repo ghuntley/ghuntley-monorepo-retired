@@ -25,6 +25,10 @@
     <meta name="description" content="TODO: ">
     <link rel="canonical" href="@Document.GetLink()">
 
+    <link rel="preload" href='https://fonts.googleapis.com/css?family=Open+Sans:400|Old+Standard+TT:400&display=swap' rel='stylesheet' type='text/css'>
+
+    @Html.Partial("/_styles.cshtml")
+
     <meta property="og:site_name" content="Geoffrey Huntley" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="@title" />
@@ -83,10 +87,6 @@
         }
     </script>
 
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400|Old+Standard+TT:400&display=swap' rel='stylesheet' type='text/css'>
-
-    @Html.Partial("/_styles.cshtml")
-    
     @Html.Partial("/_edit-this-page.cshtml")
   </head>
 
