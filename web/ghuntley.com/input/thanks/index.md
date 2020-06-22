@@ -36,8 +36,7 @@ Or [visit my repository](https://github.com/ghuntley/depot/tree/trunk/web/ghuntl
 <script>
   $.when(
     $.ajax('https://api.github.com/repos/ghuntley/depot/contributors?per_page=250'),
-    $.ajax('https://api.github.com/repos/reactiveui/website/contributors?per_page=250'),
-    $.ajax('https://api.github.com/repos/reactiveui/reactiveui/contributors?per_page=250'))
+    $.ajax('https://api.github.com/repos/reactiveui/website/contributors?per_page=250'))
   .then(function(websiteData, reactiveUIData) {
     var persons = {};
     var allData = websiteData[0].concat(reactiveUIData[0]);
@@ -54,6 +53,7 @@ Or [visit my repository](https://github.com/ghuntley/depot/tree/trunk/web/ghuntl
       var preload = '<link rel="preload" as="image" href="' + src + '">';
       $('.contributors')
         .append(preload);
+    });
 
     $(sortedLogins).each(function (index, login) {
       var person = persons[login];
@@ -61,7 +61,6 @@ Or [visit my repository](https://github.com/ghuntley/depot/tree/trunk/web/ghuntl
       var img = '<img class="contributor" src=" + src';
       $('.contributors')
         .append('<a class="contributor-name" title="' + person.login + '" href="' + person.html_url + '">' + img + '</a>');
-
     });
   });
 </script>
