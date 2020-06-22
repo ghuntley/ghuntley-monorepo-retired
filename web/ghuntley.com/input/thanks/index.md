@@ -58,7 +58,7 @@ Or [visit my repository](https://github.com/ghuntley/depot/tree/trunk/web/ghuntl
     $(sortedLogins).each(function (index, login) {
       var person = persons[login];
       var src = person.avatar_url + '&s=48';
-      var img = '<img class="contributor" src=" + src;
+      var img = '<img class="contributor" src=" + src';
       $('.contributors')
         .append('<a class="contributor-name" title="' + person.login + '" href="' + person.html_url + '">' + img + '</a>');
 
