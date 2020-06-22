@@ -33,8 +33,6 @@ Or [visit my repository](https://github.com/ghuntley/depot/tree/trunk/web/ghuntl
 
 <div class="contributors"></div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 <script>
   $.when(
     $.ajax('https://api.github.com/repos/ghuntley/depot/contributors?per_page=250'),
@@ -52,10 +50,18 @@ Or [visit my repository](https://github.com/ghuntley/depot/tree/trunk/web/ghuntl
 
     $(sortedLogins).each(function (index, login) {
       var person = persons[login];
-      var img = '<img class="contributor" src="' + person.avatar_url + '" />';
+      var src = person.avatar_url + '&s=48';
+      var preload = '<link rel="preload" as="image" href="' + src + '">';
       $('.contributors')
-        .append('<a class="contributor-name" title="' + person.login + '" href="' + person.html_url + '">' 
-                + img + '</a>');
+        .append(preload);
+
+    $(sortedLogins).each(function (index, login) {
+      var person = persons[login];
+      var src = person.avatar_url + '&s=48';
+      var img = '<img class="contributor" src=" + src;
+      $('.contributors')
+        .append('<a class="contributor-name" title="' + person.login + '" href="' + person.html_url + '">' + img + '</a>');
+
     });
   });
 </script>
