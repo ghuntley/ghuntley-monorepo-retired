@@ -14,7 +14,7 @@ partial class Infrastructure : Stack
             Name = "devenv",
             ZoneId = zoneId,
             Type = "A",
-            Value = "100.64.108.102",
+            Value = "100.119.213.6",
             Ttl = 1, // 1 = automatic
         });
 
