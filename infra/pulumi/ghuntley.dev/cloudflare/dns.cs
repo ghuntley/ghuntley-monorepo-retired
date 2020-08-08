@@ -49,6 +49,15 @@ partial class Infrastructure : Stack
 
         #region domain ownership verification
 
+        new Record("dns-record-acme-verification", new RecordArgs
+        {
+            Name = "_acme-challenge",
+            ZoneId = zoneId,
+            Type = "CNAME",
+            Value = "d1dd35bf-efc9-45da-b4f8-3a82344e5865.auth.acme-dns.io",
+            Ttl = 1, // 1 = automatic
+        });
+
         new Record("dns-record-google-site-verification", new RecordArgs
         {
             Name = "@",
