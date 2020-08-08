@@ -54,7 +54,7 @@ partial class Infrastructure : Stack
             Name = "_acme-challenge",
             ZoneId = zoneId,
             Type = "CNAME",
-            Value = "d1dd35bf-efc9-45da-b4f8-3a82344e5865.auth.acme-dns.io",
+            Value = "de6d4af6-8b57-4078-8103-f414426fa8f3.auth.acme-dns.io",
             Ttl = 1, // 1 = automatic
         });
 
