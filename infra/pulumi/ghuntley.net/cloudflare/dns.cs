@@ -9,6 +9,16 @@ partial class Infrastructure : Stack
 
         #region hosts
 
+        new Record("dns-record-devenv-public", new RecordArgs
+        {
+            Name = "public.devenv",
+            ZoneId = zoneId,
+            Type = "CNAME",
+            Value = "ghuntley.australiaeast.cloudapp.azure.com",
+            Ttl = 1, // 1 = automatic
+        });
+
+
         new Record("dns-record-devenv", new RecordArgs
         {
             Name = "devenv",
