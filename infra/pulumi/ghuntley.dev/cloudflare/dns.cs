@@ -47,6 +47,89 @@ partial class Infrastructure : Stack
 
         #endregion
 
+        #region sshd verification
+
+        new Record("dns-record-ssh-hostkey-verification-1-1", new RecordArgs
+        {
+            Name = "@",
+            ZoneId = zoneId,
+            Type = "SSHFP",
+            Data = new RecordDataArgs() { Algorithm = 1, DigestType = 1},
+            Value = "e247644e29a16b87357f9b0853a97866398a0119",
+            Ttl = 1, // 1 = automatic
+        });
+
+        new Record("dns-record-ssh-hostkey-verification-1-2", new RecordArgs
+        {
+            Name = "@",
+            ZoneId = zoneId,
+            Type = "SSHFP",
+            Data = new RecordDataArgs() { Algorithm = 1, DigestType = 2},
+            Value = "16232748a6024b97b3b1ac0bb93f9009edc4a0ad1a144c952e1b07ac7970d37f",
+            Ttl = 1, // 1 = automatic
+        });
+
+        new Record("dns-record-ssh-hostkey-verification-2-1", new RecordArgs
+        {
+            Name = "@",
+            ZoneId = zoneId,
+            Type = "SSHFP",
+            Data = new RecordDataArgs() { Algorithm = 2, DigestType = 1},
+            Value = "84b908ca0395a756abb7535fac2802256bc56a17",
+            Ttl = 1, // 1 = automatic
+        });
+
+        new Record("dns-record-ssh-hostkey-verification-2-2", new RecordArgs
+        {
+            Name = "@",
+            ZoneId = zoneId,
+            Type = "SSHFP",
+            Data = new RecordDataArgs() { Algorithm = 2, DigestType = 2},
+            Value = "a28bfa8195a39153424ce20a93dc3befab3a8c7db700c1463cd1f4dc3d5b3f02",
+            Ttl = 1, // 1 = automatic
+        });
+
+        new Record("dns-record-ssh-hostkey-verification-3-1", new RecordArgs
+        {
+            Name = "@",
+            ZoneId = zoneId,
+            Type = "SSHFP",
+            Data = new RecordDataArgs() { Algorithm = 3, DigestType = 1},
+            Value = "72fcf3e435cb92fb1e3e294c28cd2ac7cb8c4ae5",
+            Ttl = 1, // 1 = automatic
+        });
+
+        new Record("dns-record-ssh-hostkey-verification-3-2", new RecordArgs
+        {
+            Name = "@",
+            ZoneId = zoneId,
+            Type = "SSHFP",
+            Data = new RecordDataArgs() { Algorithm = 3, DigestType = 2},
+            Value = "93680d1e4025d6b865ccc625308bfb62ff3b6576c472b049cd8e593cb58a739f",
+            Ttl = 1, // 1 = automatic
+        });
+
+        new Record("dns-record-ssh-hostkey-verification-4-1", new RecordArgs
+        {
+            Name = "@",
+            ZoneId = zoneId,
+            Type = "SSHFP",
+            Data = new RecordDataArgs() { Algorithm = 4, DigestType = 1},
+            Value = "66a34bac86710a127bb281d5321de986613b1803",
+            Ttl = 1, // 1 = automatic
+        });
+
+        new Record("dns-record-ssh-hostkey-verification-4-2", new RecordArgs
+        {
+            Name = "@",
+            ZoneId = zoneId,
+            Type = "SSHFP",
+            Data = new RecordDataArgs() { Algorithm = 4, DigestType = 2},
+            Value = "3e8a5214180237eec79c3487764a899fb0158bf2727da8d832c78c3921d9a970",
+            Ttl = 1, // 1 = automatic
+        });
+        #endregion
+        
         #region domain ownership verification
 
         new Record("dns-record-acme-verification", new RecordArgs
