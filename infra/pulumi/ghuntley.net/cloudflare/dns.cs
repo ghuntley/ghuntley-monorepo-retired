@@ -14,7 +14,7 @@ partial class Infrastructure : Stack
             Name = "public.devenv",
             ZoneId = zoneId,
             Type = "CNAME",
-            Value = "ghuntley.australiaeast.cloudapp.azure.com",
+            Value = "devenv.australiaeast.cloudapp.azure.com",
             Ttl = 1, // 1 = automatic
         });
 
@@ -24,7 +24,7 @@ partial class Infrastructure : Stack
             Name = "devenv",
             ZoneId = zoneId,
             Type = "A",
-            Value = "100.119.213.6",
+            Value = "100.74.246.124",
             Ttl = 1, // 1 = automatic
         });
 
