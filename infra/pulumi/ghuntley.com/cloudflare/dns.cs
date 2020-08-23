@@ -27,6 +27,15 @@ partial class Infrastructure : Stack
             Ttl = 1, // 1 = automatic
         });
 
+        new Record("dns-record-home", new RecordArgs
+        {
+            Name = "home",
+            ZoneId = zoneId,
+            Type = "CNAME",
+            Value = "wxrvlvbmx9ll185iy84jqc3f0txz8sp1.ui.nabu.casa",
+            Ttl = 1, // 1 = automatic
+        });
+
         #endregion
 
         #region google apps
