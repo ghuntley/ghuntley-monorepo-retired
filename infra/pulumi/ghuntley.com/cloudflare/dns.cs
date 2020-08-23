@@ -32,7 +32,7 @@ partial class Infrastructure : Stack
             Name = "home",
             ZoneId = zoneId,
             Type = "CNAME",
-            Value = "wxrvlvbmx9ll185iy84jqc3f0txz8sp1.ui.nabu.casa",
+            Value = "remote.nabucasa.com",
             Ttl = 1, // 1 = automatic
         });
 
