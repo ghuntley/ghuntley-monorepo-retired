@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# Copyright (c) 2020 Geoffrey Huntley <ghuntley@ghuntley.com>. All rights reserved.
+# SPDX-License-Identifier: Proprietary
+
+set -Eeuo pipefail
+
+cat <<EOF
+Usage: $0 <command>
+
+The following commands are supported:
+
+de help:                  This help page.
+
+de init:                  Initialize the development environment.
+
+de collect-garbage:       Garbage collect the development environment.
+
+de format:                Run platform-independent formatters and the
+                          3rd party license checker.
+
+de license-check:         Ensures that usage of 3rd party software licenses are
+                          acknowledged and the license type is whitelisted.
+
+de lint:                  Run platform-independent linters.
+
+de vendor:                Vendors a GitLab mirror as an submodule of the project.
+
+EOF
+
+

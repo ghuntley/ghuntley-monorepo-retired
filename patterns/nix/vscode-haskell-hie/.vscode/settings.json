@@ -1,0 +1,11 @@
+{
+    "editor.fontFamily": "'Hasklig', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontLigatures": true,
+    "html.trace.server": "messages",
+    "editor.fontSize": 16,
+    "code-runner.executorMap": {
+        "haskell": "cabal v2-run"
+    },
+    "haskell.hlint.run": "onType",
+    "editor.formatOnSave": true
+}

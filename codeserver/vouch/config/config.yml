@@ -1,0 +1,39 @@
+# Copyright (c) 2020 Geoffrey Huntley <ghuntley@ghuntley.com>. All rights reserved.
+# SPDX-License-Identifier: Proprietary
+
+
+# vouch config
+# bare minimum to get vouch running with github
+
+vouch:
+    # domains:
+    # valid domains that the jwt cookies can be set into
+    # the callback_urls will be to these domains
+    # for github that's only one domain since they only allow one callback URL
+    # https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#redirect-urls
+    # each of these domains must serve the url https://login.$domains[0] https://login.$domains[1] ...
+    domains:
+        - example.com
+
+    # set allowAllUsers: true to use Vouch Proxy to just accept anyone who can authenticate at GitHub
+    allowAllUsers: false
+
+    whitelist:
+        - ghuntley
+
+    cookie:
+        secure: true
+        httpOnly: true
+        # Set cookie maxAge to 0 to delete the cookie every time the browser is closed.
+        maxAge: 0
+
+    testing: false
+    logLevel: debug
+
+oauth:
+    # create a new OAuth application at:
+    # https://github.com/settings/applications/new
+    provider: github
+    client_id: redacted
+    client_secret: redacted
+    # endpoints set from https://godoc.org/golang.org/x/oauth2/github

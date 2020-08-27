@@ -1,0 +1,89 @@
+#+TITLE: Bootstrapping, reproducibility, etc.
+#+AUTHOR: Vincent Ambo
+#+DATE: <2018-03-10 Sat>
+
+* Compiler bootstrapping
+  This section contains notes about compiler bootstrapping, the
+  history thereof, which compilers need it - and so on:
+
+** C
+
+** Haskell
+   - self-hosted compiler (GHC)
+
+** Common Lisp
+   CL is fairly interesting in this space because it is a language
+   that is defined via an ANSI standard that compiler implementations
+   normally actually follow!
+
+   CL has several ecosystem components that focus on making
+   abstracting away implementation-specific calls and if a self-hosted
+   compiler is written in CL using those components it can be
+   cross-bootstrapped.
+
+** Python
+
+* A note on runtimes
+  Sometimes the compiler just isn't enough ...
+
+** LLVM
+** JVM
+
+* References
+  https://github.com/mame/quine-relay
+  https://manishearth.github.io/blog/2016/12/02/reflections-on-rusting-trust/
+  https://tests.reproducible-builds.org/debian/reproducible.html
+
+* Slide thoughts:
+  1. Hardware trust has been discussed here a bunch, most recently
+     during the puri.sm talk. Hardware trust is important, as we see
+     with IME, but it's striking that people often take a leap to "I'm
+     now on my trusted Debian with free software".
+
+     Unless you built it yourself from scratch (Spoiler: you haven't)
+     you're placing trust in what is basically foreign binary blobs.
+
+     Agenda: Implications/attack vectors of this, state of the chicken
+     & egg, the topic of reproducibility, what can you do? (Nix!)
+
+  2. Chicken-and-egg issue
+
+     It's an important milestone for a language to become self-hosted:
+     You begin doing a kind of dogfeeding, you begin to enforce
+     reliability & consistency guarantees to avoid having to redo your
+     own codebase constantly and so on.
+
+     However, the implication is now that you need your own compiler
+     to compile itself.
+
+     Common examples:
+     - C/C++ compilers needed to build C/C++ compilers:
+
+       GCC 4.7 was the last version of GCC that could be built with a
+       standard C-compiler, nowadays it is mostly written in C++.
+
+       Certain versions of GCC can be built with LLVM/Clang.
+
+       Clang/LLVM can be compiled by itself and also GCC.
+
+     - Rust was originally written in OCAML but moved to being
+       self-hosted in 2011. Currently rustc-releases are always built
+       with a copy of the previous release.
+
+       It's relatively new so we can build the chain all the way.
+
+     Notable exceptions: Some popular languages are not self-hosted,
+     for example Clojure. Languages also have runtimes, which may be
+     written in something else (e.g. Haskell -> C runtime)
+* How to help:
+  Most of this advice is about reproducible builds, not bootstrapping,
+  as that is a much harder project.
+
+  - fix reproducibility issues listed in Debian's issue tracker (focus
+    on non-Debian specific ones though)
+  - experiment with NixOS / GuixSD to get a better grasp on the
+    problem space of reproducibility
+
+  If you want to contribute to bootstrapping, look at
+  bootstrappable.org and their wiki. Several initiatives such as MES
+  could need help!

@@ -1,0 +1,8 @@
+{
+    "schedule": "daily", // daily|weekly|monthly
+    "ignoredFiles": [
+        "third_party/*",
+    ],
+    "aggressiveCompression": "true",
+    "compressWiki": "false",
+}

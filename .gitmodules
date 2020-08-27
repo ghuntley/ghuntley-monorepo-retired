@@ -1,0 +1,27 @@
+[submodule "infra/desktops/nixpkgs"]
+	path = third_party/github.com/nixos/nixpkgs-channels
+	url = https://github.com/NixOS/nixpkgs-channels
+[submodule "workshops/unoplatform"]
+	path = workshops/unoplatform
+	url = https://github.com/unoplatform/workshops.git
+[submodule "web/noyaml.com"]
+	path = web/noyaml.com
+	url = https://github.com/ghuntley/noyaml.git
+[submodule "third_party/github.com/lnl7/nix-docker"]
+	path = third_party/github.com/lnl7/nix-docker
+	url = https://github.com/LnL7/nix-docker.git
+[submodule "third_party/github.com/jgavris/rs-git-fsmonitor"]
+	path = third_party/github.com/jgavris/rs-git-fsmonitor
+	url = https://github.com/jgavris/rs-git-fsmonitor.git
+[submodule "web/emailaddress.github.io"]
+	path = web/emailaddress.github.io
+	url = https://github.com/emailaddress/emailaddress.github.io.git
+[submodule "web/covidsafe.watch"]
+	path = web/covidsafe.watch
+	url = https://github.com/covidsafewatch/website.git
+[submodule "third_party/github.com/phadej/cabal-fmt"]
+	path = third_party/github.com/phadej/cabal-fmt
+	url = https://github.com/phadej/cabal-fmt
+[submodule "third_party/github.com/synthetica9/nix-linter"]
+	path = third_party/github.com/synthetica9/nix-linter
+	url = https://github.com/Synthetica9/nix-linter

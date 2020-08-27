@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+# Copyright (c) 2020 Geoffrey Huntley <ghuntley@ghuntley.com>. All rights reserved.
+# SPDX-License-Identifier: Proprietary
+
+set -Eeuo pipefail
+
+# 0. Configure git
+echo "[dev-env] Configuring git"
+REPOS=("${REPO_ROOT}")
+OLD_PWD=$(pwd)
+
+(for repo in "${REPOS[@]}"; do
+    cd "${repo}"
+
+    git config --local color.ui true
+
+    ## merge behaviours
+    git config --local merge.conflictstyle "diff3"
+    git config --local pull.rebase true
+    git config --local rebase.autosquash true
+    git config --local rebase.autostash true
+
+    ## monorepo tweaks
+    git config --local feature.manyFiles true
+    #git config --local core.fsmonitor rs-git-fsmonitor
+    git config --local fetch.recurseSubmodules true
+done) &
+
+cd "${OLD_PWD}"
+
+# 1. Install git-hooks
+bash "$REPO_ROOT/bin/de-install-git-hooks"
+
+# 2. Bootstrap third_party git submodules
+echo "[dev-env] Synchronizing git submodules"
+#(git submodule sync && git submodule update) &
+
+# 3. Synchronizing private/* configuration
+echo "[dev-env] Synchronizing repository configuration to private/*"
+rm -rf "${REPO_ROOT}/private/.github"
+cp -r "${REPO_ROOT}/.github" "${REPO_ROOT}/private"
+rm "${REPO_ROOT}/private/.github/workflows/cla.yml"
+
+rm -rf "${REPO_ROOT}/private/.vscode"
+cp -r "${REPO_ROOT}/.vscode" "${REPO_ROOT}/private"
+
+rm -rf "${REPO_ROOT}/private/git-hooks"
+cp -r "${REPO_ROOT}/git-hooks" "${REPO_ROOT}/private"
+
+cp "${REPO_ROOT}/.copyrightheader" "${REPO_ROOT}/private"
+cp "${REPO_ROOT}/.editorconfig" "${REPO_ROOT}/private"
+cp "${REPO_ROOT}/.gitattributes" "${REPO_ROOT}/private"
+cp "${REPO_ROOT}/.gitignore" "${REPO_ROOT}/private"
+cp "${REPO_ROOT}/.gitpod.dockerfile" "${REPO_ROOT}/private"
+cp "${REPO_ROOT}/.gitpod.yml" "${REPO_ROOT}/private"
+cp "${REPO_ROOT}/.imgbotconfig" "${REPO_ROOT}/private"
+cp "${REPO_ROOT}/.licensed.yml" "${REPO_ROOT}/private"
+cp "${REPO_ROOT}/.markdownlint.json" "${REPO_ROOT}/private"
+cp "${REPO_ROOT}/commitlint.config.js" "${REPO_ROOT}/private"
+cp "${REPO_ROOT}/LICENSE.md" "${REPO_ROOT}/private"
+cp "${REPO_ROOT}/SECURITY.md" "${REPO_ROOT}/private"
+
+# 3. Configuring binary caches
+bash "$REPO_ROOT/bin/de-configure-cache"
+
+# n. Notify
+echo "[dev-env] Initialization complete"
+echo

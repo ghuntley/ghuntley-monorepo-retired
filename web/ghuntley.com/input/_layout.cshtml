@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="preconnect" href="//code.jquery.com">
+    <link rel="preconnect" href="//fonts.googleapis.com">
+    <link rel="preconnect" href="//www.google-analytics.com">
+    <link rel="preconnect" href="//in.getclicky.com">
+    <link rel="preconnect" href="//static.getclicky.com">
+    <link rel="dns-prefetch" href="//api.github.com">
+      
+    <link rel="prerender" href="/about">
+    <link rel="prerender" href="/lately">
+    <link rel="prerender" href="/newsletter">
+    <link rel="prerender" href="/contact">
+    <link rel="prerender" href="/media">
+    <link rel="prerender" href="/speaking">
+    <link rel="prerender" href="/workshops">
+    <link rel="prerender" href="/live">
+    <link rel="prefetch" href="/notes">
+    <link rel="prefetch" href="/licensing">
+    <link rel="prefetch" href="/radar">
+    <link rel="prefetch" href="/thanks">
+      
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="prefetch manifest" href="/site.webmanifest">
+
+    @{
+        string title = @Document.ContainsKey(Keys.Title) ? $"Geoffrey Huntley - {Document.GetString(Keys.Title)}" : "Geoffrey Huntley";
+    }
+    <title>@title</title>
+    <meta name="description" content="TODO: ">
+    <link rel="canonical" href="@Document.GetLink()">
+
+    <link rel="preload stylesheet" as="style" href="/style.css" type="text/css">
+    <link rel="preload stylesheet" as="style" href="https://fonts.googleapis.com/css?family=Open+Sans:400|Old+Standard+TT:400&display=swap" type="text/css" crossorigin>
+
+    <meta property="og:site_name" content="Geoffrey Huntley" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@title" />
+    <meta property="og:description" content="TODO: " />
+    <meta property="og:url" content="@Document.GetLink()" />
+    <meta property="og:image" content="https://ghuntley.com/bio/geoffreyhuntley.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="640" />
+    <meta property="article:publisher" content="https://www.facebook.com/geoffreyhuntley" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="@title" />
+    <meta name="twitter:description" content="TODO: " />
+    <meta name="twitter:url" content="https://ghuntley.com/" />
+    <meta name="twitter:image" content="https://ghuntley.com/bio/geoffreyhuntley.jpg" />
+    <meta name="twitter:site" content="@@geoffreyhuntley" />
+
+    <script type="application/ld+json">
+        {
+            "@@context": "https://schema.org",
+            "@@type": "WebSite",
+            "publisher": {
+                "@@type": "Organization",
+                "name": "Geoffrey Huntley",
+                "url": "https://ghuntley.com/",
+                "logo": {
+                    "@@type": "ImageObject",
+                    "url": "https://ghuntley.com/bio/geoffreyhuntley.jpg",
+                    "width": 60,
+                    "height": 60
+                }
+            },
+            "author": {
+                "@@type": "Person",
+                "name": "Geoffrey Huntley",
+                "image": {
+                    "@@type": "ImageObject",
+                    "url": "https://ghuntley.com/bio/geoffreyhuntley.jpg",
+                    "width": 800,
+                    "height": 800
+                },
+                "sameAs": []
+            },
+            "headline": "TODO",
+            "url": "@Document.GetLink()",
+            "description": "TODO: ",
+            "image": {
+                "@@type": "ImageObject",
+                "url": "https://ghuntley.com/bio/geoffreyhuntley.jpg",
+                "width": 1200,
+                "height": 640
+            },
+            "mainEntityOfPage": {
+                "@@type": "WebPage",
+                "@@id": "https://ghuntley.com/"
+            }
+        }
+    </script>
+
+    @Html.Partial("/_edit-this-page.cshtml")
+  </head>
+
+    <body>
+        <section id=nav>
+            <h1><a href="/">Geoffrey Huntley</a></h1>
+            <ul>
+                <li><a href="/about">about</a></li>
+                <li><a href="/lately">lately</a></li>
+                <li><a href="/newsletter">newsletter</a></li>
+                <li><a href="/contact">contact</a></li>
+            </ul>
+<!--
+            <ul>
+                <li><a href="/media">media</a></li>
+                <li><a href="/speaking">speaking</a></li>
+                <li><a href="/workshops">workshops</a></li>
+                <li><a href="/live">live</a></li>
+            </ul>
+-->
+            <ul>
+                <li><a href="/notes">notes</a></li>
+                <li><a href="/licensing">licensing</a></li>
+                <li><a href="/radar">radar</a></li>
+                <li><a href="/thanks">thanks</a></li>
+                <li><a href="/support">support</a></li>
+            </ul>
+        </section>
+
+        <section id=content>
+            <h1 id="title">@Document.GetString(Keys.Title)</h1>
+
+            @RenderBody()
+            @if (@Document.ContainsKey(SiteKeys.ShowChildPages))
+            {
+                <ul>
+                    @{
+                        string section = Document.Destination.Segments.Length > 1 ? Document.Destination.Segments[0].ToString() : null;
+                        IDocument root = Outputs[nameof(Content)].FirstOrDefault(x => x.Destination == section + "/index.html");
+
+                        @foreach (IDocument document in root.GetChildren().OrderBy(x => x.Source))
+                        {
+                            @if (document.HasChildren())
+                            {
+                                @foreach (IDocument child in document.GetChildren().OrderBy(x => x.Source))
+                                {
+                                    @if (child.HasChildren())
+                                    {
+                                        @foreach (IDocument child2 in child.GetChildren().OrderBy(x => x.Source))
+                                        {
+                                            <li>@Html.DocumentLink(document) &raquo; @Html.DocumentLink(child, child.GetTitle().ToLowerInvariant()) &raquo; @Html.DocumentLink(child2, child2.GetTitle().ToLowerInvariant())</li>
+                                        }
+                                    }
+                                    else 
+                                    {
+                                        <li>@Html.DocumentLink(document, document.GetTitle().ToLowerInvariant()) &raquo; @Html.DocumentLink(child, child.GetTitle().ToLowerInvariant())</li>
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                <li>@Html.DocumentLink(document, document.GetTitle().ToLowerInvariant())</li>
+                            }
+                        }
+                    }
+                </ul>
+            }
+        </section>
+
+@{
+    if (!string.IsNullOrEmpty(@Document.Destination.Parent.Name))
+    {
+        <section id=footer>
+            <h3>Copyright @DateTime.Now.Year, Geoffrey Huntley</h3>
+            <p>This work is dual-licensed under the <a href="/licensing?utm_source=footer">License Zero Prosperity Public License</a> and the <a href="/licensing?utm_source=footer">License Zero Patron License</a>. The Prosperity License limits commercial use to a 32 day trial period, after which license fees must be paid <a href="/licensing/?utm_source=footer">to obtain a Patron License</a>.</p>
+
+            <p>This is my personal slice of the internet. Everything here is me and is my opinion. Do not quote me as “$company person Geoffrey Huntley said” – if I speak for a company, I will publish on its channels.</p>
+        </section>
+    }
+}
+
+        @Html.Partial("/_google-analytics.cshtml")
+        @Html.Partial("/_clicky.cshtml")
+
+    </body>
+</html>

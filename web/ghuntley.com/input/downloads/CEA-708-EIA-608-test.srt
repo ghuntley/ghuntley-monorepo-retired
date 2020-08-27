@@ -1,0 +1,28 @@
+﻿1
+00:00:01,500 --> 00:00:03,140
+  Hello! My name is Geoffrey Huntley
+
+2
+00:00:03,140 --> 00:00:04,520
+This is a test.
+
+3
+00:00:04,520 --> 00:00:07,580
+I've been doing a lot of research into closed captioning
+
+4
+00:00:07,800 --> 00:00:13,420
+It turns out that baking captions onto the video is not accessible.
+
+5
+00:00:13,420 --> 00:00:17,180
+what you need to do is to bake the captions into the video.
+
+6
+00:00:17,180 --> 00:00:20,460
+So this is a test. Let's see if it works.
+
+7
+00:00:20,460 --> 00:00:21,180
+Cheers!
+

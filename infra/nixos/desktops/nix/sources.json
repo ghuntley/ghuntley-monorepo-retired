@@ -1,0 +1,38 @@
+{
+    "beans": {
+        "branch": "master",
+        "description": "An accounting tool inspired by beancount and ledger",
+        "homepage": "",
+        "owner": "sboehler",
+        "repo": "beans",
+        "rev": "f64e7642576406b969bdb00842037cf2a04dc7f8",
+        "sha256": "1zz0yc08mpdp7rxb64ak6vp8fr73i5b2w813p0n24l2qysifzcf5",
+        "type": "tarball",
+        "url": "https://github.com/sboehler/beans/archive/f64e7642576406b969bdb00842037cf2a04dc7f8.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "lorri": {
+        "branch": "rolling-release",
+        "description": "Your project's nix-env",
+        "homepage": "",
+        "owner": "target",
+        "repo": "lorri",
+        "rev": "da0e72da2f56cd5013cca468dc5f2d774bbd8f9e",
+        "sha256": "053xn53z1yg7qihh6zq4ibycd7j4dxay1ihrcjj7bww4ghxjwja2",
+        "type": "tarball",
+        "url": "https://github.com/target/lorri/archive/da0e72da2f56cd5013cca468dc5f2d774bbd8f9e.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "niv": {
+        "branch": "master",
+        "description": "Easy dependency management for Nix projects",
+        "homepage": "https://github.com/nmattia/niv",
+        "owner": "nmattia",
+        "repo": "niv",
+        "rev": "430ee95b6d285074ce82deef0f75e2e2f7db95f6",
+        "sha256": "174af57zhdmjsv17la5zxm4c6p9bmqkhx6vq1nkhlng2yipihr9f",
+        "type": "tarball",
+        "url": "https://github.com/nmattia/niv/archive/430ee95b6d285074ce82deef0f75e2e2f7db95f6.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    }
+}
