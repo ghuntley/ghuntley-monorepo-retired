@@ -28,6 +28,15 @@ partial class Infrastructure : Stack
             Ttl = 1, // 1 = automatic
         });
 
+        new Record("dns-record-compute", new RecordArgs
+        {
+            Name = "devenv",
+            ZoneId = zoneId,
+            Type = "A",
+            Value = "100.88.32.97",
+            Ttl = 1, // 1 = automatic
+        });
+
         new Record("dns-record-surfacego", new RecordArgs
         {
             Name = "surfacego",
