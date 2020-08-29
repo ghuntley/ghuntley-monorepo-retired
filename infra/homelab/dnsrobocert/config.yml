@@ -1,0 +1,139 @@
+# Copyright (c) 2020 Geoffrey Huntley <ghuntley@ghuntley.com>. All rights reserved.
+# SPDX-License-Identifier: Proprietary
+
+draft: false
+acme:
+  email_account: ${CLOUDFLARE_AUTH_USERNAME}
+  staging: false 
+  crontab_renew: 12 01,13 * * *
+  certs_permissions:
+    files_mode: 0644
+    dirs_mode: 0755
+    #user: nobody
+    #group: nogroup 
+
+profiles:
+  - name: cloudflare
+    provider: cloudflare
+    provider_options:
+      auth_username: ${CLOUDFLARE_AUTH_USERNAME}
+      auth_token: ${CLOUDFLARE_AUTH_TOKEN}
+      zone_id: ${CLOUDFLARE_ZONE_ID}
+
+certificates:
+- name: wg.ghuntley.net
+  profile: cloudflare
+  force_renew: false
+  domains:
+    - "*.wg.ghuntley.net"
+  autorestart:
+  - containers:
+    - ingress
+
+- name: ghuntley.net
+  profile: cloudflare
+  force_renew: false
+  domains:
+    - ghuntley.net
+    - dashboard.ghuntley.net
+  autorestart:
+  - containers:
+    - ingress
+
+- name: esxi.ghuntley.net
+  profile: cloudflare
+  force_renew: false
+  domains:
+    - esxi.ghuntley.net
+  autorestart:
+  - containers:
+    - ingress
+
+- name: git.ghuntley.net
+  profile: cloudflare
+  force_renew: false
+  domains:
+    - git.ghuntley.net
+  autorestart:
+  - containers:
+    - ingress
+
+- name: home.ghuntley.net
+  profile: cloudflare
+  force_renew: false
+  domains:
+    - home.ghuntley.net
+  autorestart:
+  - containers:
+    - ingress
+
+- name: ide.ghuntley.net
+  profile: cloudflare
+  force_renew: false
+  domains:
+    - ide.ghuntley.net
+  autorestart:
+  - containers:
+    - ingress
+
+- name: influxdb.ghuntley.net
+  profile: cloudflare
+  force_renew: false
+  domains:
+    - influxdb.ghuntley.net
+  autorestart:
+  - containers:
+    - ingress
+
+- name: motion.ghuntley.net
+  profile: cloudflare
+  force_renew: false
+  domains:
+    - motion.ghuntley.net
+  autorestart:
+  - containers:
+    - ingress
+
+
+- name: nexus.ghuntley.net
+  profile: cloudflare
+  force_renew: false
+  domains:
+    - nexus.ghuntley.net
+  autorestart:
+  - containers:
+    - ingress
+
+- name: portainer.ghuntley.net
+  profile: cloudflare
+  force_renew: false
+  domains:
+    - portainer.ghuntley.net
+  autorestart:
+  - containers:
+    - ingress
+
+- name: prometheus.ghuntley.net
+  profile: cloudflare
+  force_renew: false
+  domains:
+    - prometheus.ghuntley.net
+  autorestart:
+  - containers:
+    - ingress
+
+- name: smtp.ghuntley.net
+  profile: cloudflare
+  force_renew: false
+  domains:
+    - smtp.ghuntley.net
+
+- name: unifi.ghuntley.net
+  profile: cloudflare
+  force_renew: false
+  domains:
+    - unifi.ghuntley.net
+  autorestart:
+  - containers:
+    - ingress
+

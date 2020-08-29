@@ -2,7 +2,7 @@ FROM codercom/code-server:latest
 
 EXPOSE 8443
 
-VOLUME [ "${PWD}:/home/coder/project" ]
+VOLUME [ "${PWD}:/home/coder/code" ]
 
 USER root
 
