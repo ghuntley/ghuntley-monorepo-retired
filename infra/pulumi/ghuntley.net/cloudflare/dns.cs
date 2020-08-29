@@ -64,6 +64,15 @@ partial class Infrastructure : Stack
             Ttl = 1, // 1 = automatic
         });
 
+        new Record("dns-record-nexus", new RecordArgs
+        {
+            Name = "nexus",
+            ZoneId = zoneId,
+            Type = "CNAME",
+            Value = "compute.ghuntley.net",
+            Ttl = 1, // 1 = automatic
+        });
+
         new Record("dns-record-smtp", new RecordArgs
         {
             Name = "smtp",
