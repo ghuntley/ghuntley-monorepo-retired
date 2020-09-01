@@ -141,6 +141,7 @@ in
         "0.0.0.0:3000:3000"
       ];
       volumes = [
+        "/srv/grafana:/var/lib/grafana"
       ];
       environment = {
         GF_INSTALL_PLUGINS = "grafana-clock-panel";
