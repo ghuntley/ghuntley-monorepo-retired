@@ -152,6 +152,18 @@ in
       ];
     };
 
+    homeassistant = {
+      image = "homeassistant/home-assistant:stable";
+      volumes = [
+        "/etc/localtime:/etc/localtime:ro"
+        "/srv/homeassistant:/config"
+      ];
+      environment = { };
+      extraDockerOptions = [
+        "--net=host"
+      ];
+    };
+
     influxdb = {
       image = "quay.io/influxdb/influxdb:2.0.0-beta";
       ports = [
