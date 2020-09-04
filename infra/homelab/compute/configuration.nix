@@ -145,6 +145,8 @@ in
       ];
       environment = {
         GF_INSTALL_PLUGINS = "grafana-clock-panel";
+        GF_SMTP_ENABLED = "true";
+        GF_SMTP_HOST = "smtp.ghuntley.net:25";
       };
       cmd = [
       ];
