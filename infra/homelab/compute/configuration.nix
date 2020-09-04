@@ -13,10 +13,38 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "compute.wg.ghuntley.net";
 
   networking.useDHCP = false;
-  networking.interfaces.ens32.useDHCP = true;
+
+  networking.hostName = "compute.wg.ghuntley.net";
+  networking.defaultGateway = "10.10.10.254";
+  networking.nameservers = [ "10.10.10.254" ];
+
+  networking.enableIPv6 = false;
+
+  # virtual machines
+  networking.interfaces.ens32 = {
+    useDHCP = false;
+    ipv4.addresses = [{ address = "10.10.10.250"; prefixLength = 24; }];
+  };
+
+  # telstra
+  networking.interfaces.ens192 = {
+    useDHCP = false;
+    ipv4.addresses = [{ address = "10.10.103.250"; prefixLength = 24; }];
+  };
+
+  # optus
+  networking.interfaces.ens224 = {
+    useDHCP = false;
+    ipv4.addresses = [{ address = "10.10.104.250"; prefixLength = 24; }];
+  };
+
+  # vodafone
+  networking.interfaces.ens256 = {
+    useDHCP = false;
+    ipv4.addresses = [{ address = "10.10.105.250"; prefixLength = 24; }];
+  };
 
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
