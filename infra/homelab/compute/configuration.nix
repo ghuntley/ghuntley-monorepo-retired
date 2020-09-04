@@ -156,7 +156,7 @@ in
       image = "homeassistant/home-assistant:stable";
       volumes = [
         "/etc/localtime:/etc/localtime:ro"
-        "/srv/homeassistant:/config"
+        "/srv/git/ghuntley/trunk/infra/homeassistant:/config"
       ];
       environment = { };
       extraDockerOptions = [
