@@ -219,16 +219,23 @@ in
     #  ];
     #};
 
-    #smtp = {
-    #  image = "appwrite/smtp";
-    #  ports = [
-    #    "0.0.0.0:25:25"
-    #  ];
-    #  volumes = [
-    #  ];
-    #  environment = { };
-    #  cmd = [
-    #  ];
+    smtp = {
+      image = "juanluisbaptiste/postfix";
+      ports = [
+        "0.0.0.0:25:25"
+      ];
+      volumes = [
+      ];
+      environment = {
+        ALWAYS_ADD_MISSING_HEADERS = "yes";
+        SERVER_HOSTNAME = "smtp.ghuntley.net";
+        SMTP_SERVER = secrets.smtp-server;
+        SMTP_USERNAME = secrets.smtp-username;
+        SMTP_PASSWORD = secrets.smtp-password;
+      };
+      cmd = [
+      ];
+    };
 
     #telegraf = {
     #  image = "telegraf";
