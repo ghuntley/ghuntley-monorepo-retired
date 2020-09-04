@@ -225,6 +225,7 @@ in
         "0.0.0.0:25:25"
       ];
       volumes = [
+        "/srv/smtp:/var/spool/postfix"
       ];
       environment = {
         ALWAYS_ADD_MISSING_HEADERS = "yes";
