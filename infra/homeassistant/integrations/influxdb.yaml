@@ -1,0 +1,23 @@
+# Copyright (c) 2020 Geoffrey Huntley <ghuntley@ghuntley.com>. All rights reserved.
+# SPDX-License-Identifier: Proprietary
+
+# https://github.com/hassio-addons/addon-influxdb
+# https://github.com/hassio-addons/addon-grafana
+# https://www.home-assistant.io/integrations/influxdb/
+influxdb:
+  host: influxdb.ghuntley.net
+  port: 8086
+
+  database: homeassistant
+
+  username: !secret influxdb_username
+  password: !secret influxdb_password
+
+  max_retries: 3
+
+  tags_attributes:
+    - device_class
+
+  include:
+    entities: !include_dir_merge_list ../influxdb
+
