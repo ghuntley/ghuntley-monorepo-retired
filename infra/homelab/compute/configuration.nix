@@ -57,6 +57,7 @@ in
     direnv
     git
     git-lfs
+    gpsd
     htop
     inetutils
     smartmontools
@@ -82,6 +83,11 @@ in
   services.tailscale.enable = true;
 
   services.telegraf.enable = true;
+
+  services.gpsd = {
+    enable = true;
+    nowait = true;
+  };
 
   virtualisation.vmware.guest.enable = true;
   virtualisation.docker.enable = true;
