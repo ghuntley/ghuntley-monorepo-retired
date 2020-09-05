@@ -65,6 +65,7 @@ in
     tmux
     vim
     wget
+    wol
   ];
 
   nixpkgs.config.vim = {
