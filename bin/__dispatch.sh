@@ -34,6 +34,9 @@ case "${TARGET_TOOL}" in
   "cachix")
     attr="third_party.cachix"
     ;;
+  "cookiecutter")
+    attr="third_party.cookiecutter"
+    ;;
   "docker")
     attr="third_party.docker"
     ;;

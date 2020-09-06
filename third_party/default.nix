@@ -57,6 +57,7 @@ let
       git-bug;
 
     inherit (nixpkgs.python38Packages)
+      cookiecutter
       pip
       pylint;
   };
