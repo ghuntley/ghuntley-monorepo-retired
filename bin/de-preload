@@ -6,6 +6,6 @@ set -Eeuo pipefail
 
 echo "[dev-env] Preloading dev-env tools"
 
-time find "${REPO_ROOT}/bin" -lname "__dispatch.sh" -exec {} --version \; 1>/dev/null 2>&1
+time find "${REPO_ROOT}/bin" -lname "__dispatch.sh" -exec {} --version \; 
 
 echo "[dev-env] Preload complete"
