@@ -60,6 +60,9 @@ cp "${REPO_ROOT}/commitlint.config.js" "${REPO_ROOT}/private"
 cp "${REPO_ROOT}/LICENSE.md" "${REPO_ROOT}/private"
 cp "${REPO_ROOT}/SECURITY.md" "${REPO_ROOT}/private"
 
+# 4. Automatically push build artifacts to cachix
+bash "${REPO_ROOT}/bin/de-restart-cachix-daemon"
+
 # n. Notify
 echo "[dev-env] Initialization complete"
 echo
