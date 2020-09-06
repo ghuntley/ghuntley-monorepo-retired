@@ -25,7 +25,7 @@
     "csharp.suppressDotnetRestoreNotification": true,
     "workbench.colorTheme": "Material Theme Darker",
     "material-icon-theme.activeIconPack": "react",
-    "python.pythonPath": "dev-env/bin/python",
+    "python.pythonPath": "~/code/bin/python",
     // "plantuml.render": "PlantUMLServer",
     // "plantuml.server": "http://localhost:8080/",
 
