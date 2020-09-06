@@ -23,6 +23,20 @@ command -v terraform >/dev/null 2>&1 || { echo >&2 "[dev-env] ERROR: 'terraform'
 # shellcheck disable=SC2038
 terraform fmt "${REPO_ROOT}"
 
+# 4. isort
+echo "[dev-env] Sorting imports in *.py"
+command -v isort >/dev/null 2>&1 || { echo >&2 "[dev-env] ERROR: 'isort' was not found on your path"; exit 2; }
+
+# shellcheck disable=SC2038
+isort "${REPO_ROOT}"
+
+# 5. black
+echo "[dev-env] Formatting *.py"
+command -v black >/dev/null 2>&1 || { echo >&2 "[dev-env] ERROR: 'black' was not found on your path"; exit 2; }
+
+# shellcheck disable=SC2038
+black --exclude "/(\.eggs|\.git|\.hg|\.mypy_cache|\.nox|\.tox|\.venv|\.svn|_build|buck-out|build|dist/third_party/custom_components)/" "${REPO_ROOT}"
+
 # x. ormolu
 # ormolu --mode inplace
 

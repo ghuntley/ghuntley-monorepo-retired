@@ -35,4 +35,12 @@ command -v flake8 >/dev/null 2>&1 || { echo >&2 "[dev-env] ERROR: 'flake8' was n
 # shellcheck disable=SC2038
 flake8 "${REPO_ROOT}"
 
+echo "[dev-env] Linting Python"
+command -v flake8 >/dev/null 2>&1 || { echo >&2 "[dev-env] ERROR: 'flake8' was not found on your path"; exit 2; }
+
+# shellcheck disable=SC2038
+flake8 "${REPO_ROOT}"
+pydocstyle "${REPO_ROOT}/libraries/python/*"
+pydocstyle "${REPO_ROOT}/patterns/python/*"
+
 echo "[dev-env] Linting complete"

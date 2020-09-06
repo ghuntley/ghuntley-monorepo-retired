@@ -82,11 +82,17 @@ case "${TARGET_TOOL}" in
   "python")
     attr="third_party.python38"
     ;;
+  "pydocstyle")
+    attr="third_party.pydocstyle"
+    ;;
   "pylint")
     attr="third_party.pylint"
     ;;
   "hg")
     attr="third_party.mercurialFull"
+    ;;
+  "isort")
+    attr="third_party.isort"
     ;;
   "nix-linter")
     attr="third_party.nix-linter"
