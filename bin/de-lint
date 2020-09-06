@@ -29,4 +29,10 @@ command -v yamllint >/dev/null 2>&1 || { echo >&2 "[dev-env] ERROR: 'yamllint' w
 # shellcheck disable=SC2038
 cd "${REPO_ROOT}" && yamllint -d "${REPO_ROOT}/.yamllint" .
 
+echo "[dev-env] Linting Python"
+command -v flake8 >/dev/null 2>&1 || { echo >&2 "[dev-env] ERROR: 'flake8' was not found on your path"; exit 2; }
+
+# shellcheck disable=SC2038
+flake8 "${REPO_ROOT}"
+
 echo "[dev-env] Linting complete"

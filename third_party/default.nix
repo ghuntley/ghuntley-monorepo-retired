@@ -58,6 +58,7 @@ let
 
     inherit (nixpkgs.python38Packages)
       cookiecutter
+      flake8
       pip
       pylint;
   };

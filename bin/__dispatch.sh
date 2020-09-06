@@ -40,6 +40,9 @@ case "${TARGET_TOOL}" in
   "docker")
     attr="third_party.docker"
     ;;
+  "flake8")
+    attr="third_party.flake8"
+    ;;
   "git")
     attr="third_party.git"
     ;;
