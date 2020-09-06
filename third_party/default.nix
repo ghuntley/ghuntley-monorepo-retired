@@ -48,13 +48,17 @@ let
       nixpkgs-fmt
       p7zip
       pulumi-bin
-      python3
+      python38
       watchman
       yamllint
       youtube-dl;
 
     inherit (nixpkgs.gitAndTools)
       git-bug;
+
+    inherit (nixpkgs.python38Packages)
+      pip
+      pylint;
   };
 
 in exposed.lib.fix(self: exposed // {

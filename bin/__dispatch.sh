@@ -70,8 +70,14 @@ case "${TARGET_TOOL}" in
   "tree")
     attr="third_party.tree"
     ;;
+  "pip")
+    attr="third_party.pip"
+    ;;
   "python")
-    attr="third_party.python3"
+    attr="third_party.python38"
+    ;;
+  "pylint")
+    attr="third_party.pylint"
     ;;
   "hg")
     attr="third_party.mercurialFull"
