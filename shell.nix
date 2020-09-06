@@ -16,7 +16,9 @@ mkShell {
 
     export REPO_ROOT=`pwd`
     export PATH="$REPO_ROOT/bin:$PATH"
+
     export NIX_PATH="nixpkgs=$REPO_ROOT/default.nix"
+    export NIX_CONF_DIR="$REPO_ROOT"
 
     # Disable telemetry
     export DOTNET_CLI_TELEMETRY_OPTOUT=1

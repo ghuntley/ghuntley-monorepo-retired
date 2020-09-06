@@ -60,9 +60,6 @@ cp "${REPO_ROOT}/commitlint.config.js" "${REPO_ROOT}/private"
 cp "${REPO_ROOT}/LICENSE.md" "${REPO_ROOT}/private"
 cp "${REPO_ROOT}/SECURITY.md" "${REPO_ROOT}/private"
 
-# 3. Configuring binary caches
-bash "$REPO_ROOT/bin/de-configure-cache"
-
 # n. Notify
 echo "[dev-env] Initialization complete"
 echo
