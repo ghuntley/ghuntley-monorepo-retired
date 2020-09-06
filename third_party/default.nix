@@ -59,7 +59,9 @@ let
     inherit (nixpkgs.python38Packages)
       cookiecutter
       flake8
+      isort
       pip
+      pydocstyle
       pylint;
   };
 
