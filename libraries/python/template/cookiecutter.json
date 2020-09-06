@@ -1,0 +1,9 @@
+{
+    "author_name": "Geoffrey Huntley",
+    "author_email": "ghuntley@ghuntley.com",
+
+    "package_name": "template",
+    "package_version": "0.1.0",
+    "package_description": "An opinionated, minimal cookiecutter template for Python packages",
+    "package_url": "https://github.com/ghuntley/ghuntley"
+}
