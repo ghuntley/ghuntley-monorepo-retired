@@ -40,8 +40,8 @@ bash "${REPO_ROOT}/bin/de-install-git-hooks"
 
 # 2. Automatically push build artifacts to cachix
 echo "[dev-env] Installing and starting systemd service to automatically push artifacts to cachix"
-mkdir -p ~/.config/systemd/user
-ln -f -s "${REPO_ROOT}/services/cachix-push-daemon.service ~/.config/systemd/user"
+mkdir -p ~/.config/systemd/user && cd ~/.config/systemd/user
+ln -f -s "${REPO_ROOT}/services/cachix-push-daemon.service" "."
 systemctl --user daemon-reload
 systemctl --user start cachix-push-daemon.service
 
