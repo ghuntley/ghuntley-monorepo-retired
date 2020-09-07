@@ -63,6 +63,7 @@ filetypes = \
     'yaml'   : { 'start' : '#' * 80 , 'line' : '#'    , 'end' : ''    , 'empty_line' : '' } ,
     'nix'    : { 'start' : '#' * 80 , 'line' : '#'    , 'end' : ''    , 'empty_line' : '' } ,
     'conf'   : { 'start' : '#' * 80 , 'line' : '#'    , 'end' : ''    , 'empty_line' : '' } ,
+    'patch'  : { 'start' : '@' * 80 , 'line' : '@'    , 'end' : ''    , 'empty_line' : '' } ,
   }
 
 #########################
