@@ -41,6 +41,11 @@ Twitter][].
 * `dotfiles/windows` contains my dotfiles for windows computers.
 * `dotfiles/macos` contains my dotfiles for mac computers.
 
+## Applications
+
+* `dotfiles/pasteboard` your favourite macOS command line clipboard manipulation libraries `pbcopy` / `pbpaste` ported over to Windows and available
+   for installation via Chocolatey.
+
 ## BIOS / Firmware
 
 * `bios/seaslic` If your computer is installed with Windows 7/8 by default but you'd prefer to run Linux as your desktop but on ocassion run a single
