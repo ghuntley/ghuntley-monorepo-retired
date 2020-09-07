@@ -71,6 +71,8 @@
     "xargs"
 ],
 "python.linting.pylintEnabled": false,
+"python.linting.pylintPath": "~/code/bin/pylint",
 "python.linting.flake8Enabled": true,
+"python.linting.flake8Path": "~/code/bin/flake8",
 "python.linting.enabled": true,
 }
