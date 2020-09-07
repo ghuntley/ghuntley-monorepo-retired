@@ -3,6 +3,13 @@
 # SPDX-License-Identifier: Proprietary
 
 set -Eeuo pipefail
+trap notify ERR
+
+function notify {
+  echo
+  echo "[dev-env] ERROR - Initialization failed: ${0}"
+  echo
+}
 
 # 0. Configure git
 echo "[dev-env] Configuring git"
@@ -29,39 +36,45 @@ done) &
 cd "${OLD_PWD}"
 
 # 1. Install git-hooks
-bash "$REPO_ROOT/bin/de-install-git-hooks"
+bash "${REPO_ROOT}/bin/de-install-git-hooks"
+
+# 2. Automatically push build artifacts to cachix
+echo "[dev-env] Installing and starting systemd service to automatically push artifacts to cachix"
+mkdir -p ~/.config/systemd/user
+ln -f -s "${REPO_ROOT}/services/cachix-push-daemon.service ~/.config/systemd/user"
+systemctl --user daemon-reload
+systemctl --user start cachix-push-daemon.service
+
+#bash "${REPO_ROOT}/bin/de-restart-cachix-daemon"
 
 # 2. Bootstrap third_party git submodules
-echo "[dev-env] Synchronizing git submodules"
+#echo "[dev-env] Synchronizing git submodules"
 #(git submodule sync && git submodule update) &
 
 # 3. Synchronizing private/* configuration
-echo "[dev-env] Synchronizing repository configuration to private/*"
-rm -rf "${REPO_ROOT}/private/.github"
-cp -r "${REPO_ROOT}/.github" "${REPO_ROOT}/private"
-rm "${REPO_ROOT}/private/.github/workflows/cla.yml"
-
-rm -rf "${REPO_ROOT}/private/.vscode"
-cp -r "${REPO_ROOT}/.vscode" "${REPO_ROOT}/private"
-
-rm -rf "${REPO_ROOT}/private/git-hooks"
-cp -r "${REPO_ROOT}/git-hooks" "${REPO_ROOT}/private"
-
-cp "${REPO_ROOT}/.copyrightheader" "${REPO_ROOT}/private"
-cp "${REPO_ROOT}/.editorconfig" "${REPO_ROOT}/private"
-cp "${REPO_ROOT}/.gitattributes" "${REPO_ROOT}/private"
-cp "${REPO_ROOT}/.gitignore" "${REPO_ROOT}/private"
-cp "${REPO_ROOT}/.gitpod.dockerfile" "${REPO_ROOT}/private"
-cp "${REPO_ROOT}/.gitpod.yml" "${REPO_ROOT}/private"
-cp "${REPO_ROOT}/.imgbotconfig" "${REPO_ROOT}/private"
-cp "${REPO_ROOT}/.licensed.yml" "${REPO_ROOT}/private"
-cp "${REPO_ROOT}/.markdownlint.json" "${REPO_ROOT}/private"
-cp "${REPO_ROOT}/commitlint.config.js" "${REPO_ROOT}/private"
-cp "${REPO_ROOT}/LICENSE.md" "${REPO_ROOT}/private"
-cp "${REPO_ROOT}/SECURITY.md" "${REPO_ROOT}/private"
-
-# 4. Automatically push build artifacts to cachix
-bash "${REPO_ROOT}/bin/de-restart-cachix-daemon"
+#echo "[dev-env] Synchronizing repository configuration to private/*"
+#rm -rf "${REPO_ROOT}/private/.github"
+#cp -r "${REPO_ROOT}/.github" "${REPO_ROOT}/private"
+#rm "${REPO_ROOT}/private/.github/workflows/cla.yml"
+#
+#rm -rf "${REPO_ROOT}/private/.vscode"
+#cp -r "${REPO_ROOT}/.vscode" "${REPO_ROOT}/private"
+#
+#rm -rf "${REPO_ROOT}/private/git-hooks"
+#cp -r "${REPO_ROOT}/git-hooks" "${REPO_ROOT}/private"
+#
+#cp "${REPO_ROOT}/.copyrightheader" "${REPO_ROOT}/private"
+#cp "${REPO_ROOT}/.editorconfig" "${REPO_ROOT}/private"
+#cp "${REPO_ROOT}/.gitattributes" "${REPO_ROOT}/private"
+#cp "${REPO_ROOT}/.gitignore" "${REPO_ROOT}/private"
+#cp "${REPO_ROOT}/.gitpod.dockerfile" "${REPO_ROOT}/private"
+#cp "${REPO_ROOT}/.gitpod.yml" "${REPO_ROOT}/private"
+#cp "${REPO_ROOT}/.imgbotconfig" "${REPO_ROOT}/private"
+#cp "${REPO_ROOT}/.licensed.yml" "${REPO_ROOT}/private"
+#cp "${REPO_ROOT}/.markdownlint.json" "${REPO_ROOT}/private"
+#cp "${REPO_ROOT}/commitlint.config.js" "${REPO_ROOT}/private"
+#cp "${REPO_ROOT}/LICENSE.md" "${REPO_ROOT}/private"
+#cp "${REPO_ROOT}/SECURITY.md" "${REPO_ROOT}/private"
 
 # n. Notify
 echo "[dev-env] Initialization complete"

@@ -39,6 +39,11 @@ Twitter][].
 
 ## Services
 
+* `services/cachix-push-daemon.[service|nix]` automatically publish build artifacts to cachix.org so future builds of the monorepository go 🚀🚀🚀🚀🚀 
+
+  Available as an expression NixOS but is automatically installed, configured and started as a user systemd service when the developer
+  environment initialises via `de-init`
+
 ## Miscellaneous
 
 Presentations I've given in the past are in the `presentations` folder, these
