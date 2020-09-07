@@ -28,3 +28,6 @@
 [submodule "third_party/github.com/juanluisbaptiste/docker-postfix"]
 	path = third_party/github.com/juanluisbaptiste/docker-postfix
 	url = https://github.com/juanluisbaptiste/docker-postfix
+[submodule "presentations/appstore-automation-with-fastlane"]
+	path = presentations/appstore-automation-with-fastlane
+	url = https://github.com/ghuntley/appstore-automation-with-fastlane
