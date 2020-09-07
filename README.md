@@ -28,14 +28,17 @@ Twitter][].
 * `third_party/copyright-headers` idempotently add copyright headers to source files with the contents of `.copyrightheader`
    unless a stub `.autocopyrightignore` is found in the current or parent directory.
 * `third_party/licensed` verify the licenses of dependencies.
-* `third_party/nixpkgs` contains my fork of the Nix package manager packages.
+* `third_party/nixpkgs` contains my fork of the Nix package manager packages which is automatically updated via the `dependabot` automation.
 
 ## Infrastructure
 
 * `infra/desktops` contains my nixos configs for my personal computers.
+* `infra/homelab` contains my configs for my homelab.
 
 ## Packages / Libraries
 
+* `libraries/python/template` is a `cookiecutter` template for creating new python libraries.
+* `libraries/python/telstra-data-usage` retrieves mobile and internet data usage for Telstra services.
 
 ## Services
 
