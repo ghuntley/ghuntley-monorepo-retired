@@ -62,6 +62,7 @@ Twitter][].
 
 * `libraries/python/template` is a `cookiecutter` template for creating new python libraries.
 * `libraries/python/telstra-data-usage` retrieves mobile and internet data usage for Telstra services.
+* `libraries/xamarin/siminformation` a cross-platform library that provides a way to access ICCID, MCC, IMSI, MSID, MNC, MSISDN the information from a SIM card.
 
 ## Services
 

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <id>@project@</id>
+    <version>@build.number@</version>
+    <authors>@authors@</authors>
+    <owners>@authors@</owners>
+    <summary>@summary@</summary>
+    <licenseUrl>https://github.com/ghuntley/siminformation/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/ghuntley/siminformation</projectUrl>
+    <iconUrl>https://i.imgur.com/5ps5Ewf.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>@description@</description>
+    <releaseNotes>@releaseNotes@</releaseNotes>
+    <tags>Xamarin UWP iOS Android Mobile SIM MNC MSID IMSI MSISDN MCC ICCID</tags>
+    <dependencies>
+      <group targetFramework="net45">
+      </group>
+      <group targetFramework="netcore45">
+      </group>
+      <group targetFramework="portable-win81+wpa81">
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System" targetFramework="net45" />
+    </frameworkAssemblies>
+  </metadata>
+</package>
