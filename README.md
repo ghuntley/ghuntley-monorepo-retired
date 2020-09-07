@@ -53,7 +53,7 @@ Twitter][].
 
 ## BIOS / Firmware
 
-* `bios/seaslic` If your computer is installed with Windows 7/8 by default but you'd prefer to run Linux as your desktop but on ocassion run a single
+* `bios/seaslic` if your computer is installed with Windows 7/8 by default but you'd prefer to run Linux as your desktop but on ocassion run a single
    Windows virtual machine under KVM using the activiation credentials within your computers BIOS then SeaSLIC can help you achieve this. 
 
    As of 6th of Apr 2014 thanks to the excellent work by Michael Tokarev this patch is now integrated by default into Debian which removes the need to
@@ -64,6 +64,10 @@ Twitter][].
 * `libraries/python/template` is a `cookiecutter` template for creating new python libraries.
 * `libraries/python/telstra-data-usage` retrieves mobile and internet data usage for Telstra services.
 * `libraries/xamarin/siminformation` a cross-platform library that provides a way to access ICCID, MCC, IMSI, MSID, MNC, MSISDN the information from a SIM card.
+
+## Security Vulnerabilities
+
+* `security-vulnerabilities/system.bwn` the evil cousin of the super fast and super secure by default framework by Ben Adams that uploads stuff to the internet every time you open visual studio.
 
 ## Services
 
