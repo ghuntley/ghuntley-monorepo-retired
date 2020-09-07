@@ -50,6 +50,7 @@ let
       pulumi-bin
       python38
       watchman
+      unzip
       yamllint
       youtube-dl;
 

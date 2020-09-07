@@ -112,6 +112,9 @@ case "${TARGET_TOOL}" in
   "watchman")
     attr="third_party.watchman"
     ;;
+  "unzip")
+    attr="third_party.unzip"
+    ;;
   "yamllint")
     attr="third_party.yamllint"
     ;;
