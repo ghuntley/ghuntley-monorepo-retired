@@ -1,3 +1,6 @@
+// Copyright (c) 2020 Geoffrey Huntley <ghuntley@ghuntley.com>. All rights reserved.
+// SPDX-License-Identifier: Proprietary
+
 // Future versions of Hyper may add additional config options,
 // which will not automatically be merged into this file.
 // See https://hyper.is#cfg for all currently supported options.
@@ -32,7 +35,7 @@ module.exports = {
     // terminal text color under BLOCK cursor
     cursorAccentColor: '#000',
 
-    // `'BEAM'` for |, `'UNDERLINE'` for _, `'BLOCK'` for █
+    // `'BEAM'` for |, `'UNDERLINE'` for _, `'BLOCK'` for â
     cursorShape: 'BLOCK',
 
     // set to `true` (without backticks and without quotes) for blinking cursor
@@ -177,3 +180,4 @@ module.exports = {
     // 'window:devtools': 'cmd+alt+o',
   },
 };
+
