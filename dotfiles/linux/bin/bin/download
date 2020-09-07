@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#
+# downloads a file using `aria2c` to ~/Downloads directory
+#
+currentPath=`pwd`
+mkdir -p ~/Downloads
+cd ~/Downloads
+aria2c $*
+cd $currentPath

@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+cmd="$1"
+
+usage () {
+  echo "nix-pkg <build|shell|instantiate> [OPTIONS]..."
+  exit 1
+}
+
+[[ "$cmd" = "build" ||
+   "$cmd" = "shell" ||
+   "$cmd" = "instantiate"
+]] || usage
+
+shift
+
+nix-${cmd} -E 'with import <nixpkgs> {}; callPackage ./default.nix {}' $@
+

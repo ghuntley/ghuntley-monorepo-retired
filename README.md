@@ -35,6 +35,12 @@ Twitter][].
 * `infra/desktops` contains my nixos configs for my personal computers.
 * `infra/homelab` contains my configs for my homelab.
 
+## Dotfiles
+
+* `dotfiles/linux` contains my dotfiles for linux computers.
+* `dotfiles/windows` contains my dotfiles for windows computers.
+* `dotfiles/macos` contains my dotfiles for mac computers.
+
 ## Packages / Libraries
 
 * `libraries/python/template` is a `cookiecutter` template for creating new python libraries.

@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+#
+# Usage: callPackage [src] [...nix-build args]
+#
+# A version of nix-build that uses nixpkgs.callPackage to fill in the
+# arguments.
+#
+# * [src] can be a path or a URL. Defaults to .
+#
+# Example:
+#
+#   callPackage https://github.com/direnv/direnv/archive/master.tar.gz
+#
+# Let's say you are hacking on pkgs/applications/misc/hello/default.nix
+# The problem is that default.nix takes a number of arguments and thus cannot
+# be called with nix-build directly. So first you have to edit
+# pkgs/top-level/all-packages.nix and figure out which attribute the package
+# maps to, then call `nix-build -A hello` on the repo root.
+#
+# Instead, use `callPackage pkgs/applications/misc/hello/default.nix`. You
+# might already be in the `pkgs/applications/misc/hello` folder in which case
+# `callPackage` is enough.
+set -uo pipefail
+
+src=${1:-}
+shift
+
+exec nix-build \
+  --no-out-link \
+  -I "src=$src" \
+  --expr '(import <nixpkgs> {}).callPackage <src> {}' \
+  "$@"
+

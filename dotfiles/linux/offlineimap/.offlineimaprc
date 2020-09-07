@@ -1,0 +1,23 @@
+[general]
+accounts = personal
+ui = ttyui
+
+[Account personal]
+localrepository = personal-local
+remoterepository = personal-remote
+
+[Repository personal-local]
+type = Maildir
+localfolders = ~/mail/personal
+nametrans = lambda folder: {'archive': '[Gmail]/All Mail',
+                            }.get(folder, folder)
+
+[Repository personal-remote]
+type = Gmail
+ssl = yes
+cert_fingerprint = 786ae36c7285e371a0331978de8c20c7cd51c3253d95744e07204f4b56fe4b7d3faa003653b1f7b5b7084e5332955a61147171c48d113def9f7180b708e7807f
+
+nametrans = lambda folder: {'[Gmail]/All Mail': 'archive',
+                            }.get(folder, folder)
+
+folderfilter = lambda folder: folder == '[Gmail]/All Mail'
