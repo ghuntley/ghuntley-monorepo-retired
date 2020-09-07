@@ -41,6 +41,14 @@ Twitter][].
 * `dotfiles/windows` contains my dotfiles for windows computers.
 * `dotfiles/macos` contains my dotfiles for mac computers.
 
+## BIOS / Firmware
+
+* `bios/seaslic` If your computer is installed with Windows 7/8 by default but you'd prefer to run Linux as your desktop but on ocassion run a single
+   Windows virtual machine under KVM using the activiation credentials within your computers BIOS then SeaSLIC can help you achieve this. 
+
+   As of 6th of Apr 2014 thanks to the excellent work by Michael Tokarev this patch is now integrated by default into Debian which removes the need to
+   roll and maintain your own your own copy of SeaBIOS.
+
 ## Packages / Libraries
 
 * `libraries/python/template` is a `cookiecutter` template for creating new python libraries.

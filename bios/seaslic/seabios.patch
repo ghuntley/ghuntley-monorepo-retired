@@ -1,0 +1,50 @@
+@ Copyright (c) 2020 Geoffrey Huntley <ghuntley@ghuntley.com>. All rights reserved.
+@ SPDX-License-Identifier: Proprietary
+
+--- a/src/fw/acpi.c
++++ b/src/fw/acpi.c
+@@ -23,6 +23,11 @@ struct srat_memory_affinity
+ 
+ #include "src/fw/acpi-dsdt.hex"
+ 
++#define CONFIG_OEM_SLIC
++#ifdef CONFIG_OEM_SLIC
++#include "acpi-slic.hex"
++#endif
++
+ static void
+ build_header(struct acpi_table_header *h, u32 sig, int len, u8 rev)
+ {
+@@ -35,6 +40,10 @@ build_header(struct acpi_table_header *h, u32 sig, int len, u8 rev)
+     h->oem_revision = cpu_to_le32(1);
+     memcpy(h->asl_compiler_id, BUILD_APPNAME4, 4);
+     h->asl_compiler_revision = cpu_to_le32(1);
++    #ifdef CONFIG_OEM_SLIC
++    if (sig == RSDT_SIGNATURE) // only RSDT is checked by win7 & vista
++        memcpy(h->oem_id, ((struct acpi_table_header*)SLIC)->oem_id, 14);
++    #endif
+     h->checksum -= checksum(h, len);
+ }
+ 
+@@ -624,6 +633,18 @@ acpi_bios_init(void)
+     if (pci->device == PCI_DEVICE_ID_INTEL_ICH9_LPC)
+         ACPI_INIT_TABLE(build_mcfg_q35());
+ 
++    #ifdef CONFIG_OEM_SLIC
++    {
++        void *buf = malloc_high(sizeof(SLIC));
++        if (!buf)
++            warn_noalloc();
++        else {
++            memcpy(buf, SLIC, sizeof(SLIC));
++            ACPI_INIT_TABLE(buf);
++        }
++    }
++    #endif
++
+     struct romfile_s *file = NULL;
+     for (;;) {
+         file = romfile_findprefix("acpi/", file);
+
+
+
