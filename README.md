@@ -48,6 +48,7 @@ Twitter][].
 
 ## Browser Extensions
 
+* `browser-extensions/send-from-outlook-dot-com` a Google Chrome plugin that makes Outlook.com your default email application and provides a button to compose a message to quickly share a link via email.
 * `browser-extensions/serverless-to-cgi-bin` tongue in cheek browser extension for FireFox and Google Chrome that replaces occurrences of 'serverless' with 'cgi-bin'.
 
 ## BIOS / Firmware
