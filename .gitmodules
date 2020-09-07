@@ -6,7 +6,7 @@
 	url = https://github.com/unoplatform/workshops.git
 [submodule "web/noyaml.com"]
 	path = web/noyaml.com
-	url = https://github.com/ghuntley/noyaml.git
+	url = git@github.com:ghuntley/noyaml.git
 [submodule "third_party/github.com/lnl7/nix-docker"]
 	path = third_party/github.com/lnl7/nix-docker
 	url = https://github.com/LnL7/nix-docker.git
