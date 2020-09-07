@@ -46,6 +46,10 @@ Twitter][].
 * `dotfiles/pasteboard` your favourite macOS command line clipboard manipulation libraries `pbcopy` / `pbpaste` ported over to Windows and available
    for installation via Chocolatey.
 
+## Browser Extensions
+
+* `browser-extensions/serverless-to-cgi-bin` tongue in cheek browser extension for FireFox and Google Chrome that replaces occurrences of 'serverless' with 'cgi-bin'.
+
 ## BIOS / Firmware
 
 * `bios/seaslic` If your computer is installed with Windows 7/8 by default but you'd prefer to run Linux as your desktop but on ocassion run a single
