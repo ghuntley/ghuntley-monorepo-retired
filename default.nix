@@ -29,7 +29,7 @@ let
     pkgs = depot.third_party;
   };
 
-  readTree' = import ./third_party/tvl.fyi/nix/readTree { };
+  readTree' = import ./nix/readTree { };
 
   localPkgs = readTree: {
     nix = readTree ./nix;

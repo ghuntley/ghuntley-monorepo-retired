@@ -80,6 +80,10 @@ case "${TARGET_TOOL}" in
     aka=""
     attr="third_party.google-cloud-sdk"
     ;;
+  "hash-password")
+    aka=""
+    attr="tools.hash-password"
+    ;;
   "hlint")
     aka=""
     attr="third_party.hlint"

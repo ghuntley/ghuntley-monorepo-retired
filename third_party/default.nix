@@ -25,45 +25,64 @@ let
 
     # Inherit the packages from nixos-unstable that should be available inside
     # of the repo. They become available under `pkgs.third_party.<name>`
+
+    # Archivers
     inherit (nixpkgs)
-      ack
+      p7zip
+      unzip
+    ;
+
+    # Cloud vendors
+    inherit (nixpkgs)
       aws
       azure-cli
-      black
-      cachix
-      ctags
-      docker
-      git
       google-cloud-sdk
-      hlint
-      jq
-      lib
-      mercurialFull
-      neovim
-      nixpkgs-fmt
-      nodejs
-      ormolu
-      p7zip
       pulumi-bin
-      python
-      rpl
-      rustfmt
-      shellcheck
       terraform
+    ;
+
+    # Cryptography
+    inherit (nixpkgs)
+      libsodium
+    ;
+
+    # Docker
+    inherit (nixpkgs)
+      docker
+      docker-compose
+      dockerTools
+    ;
+
+    # Editors
+    inherit (nixpkgs)
+      ctags
+      neovim
+      vimPlugins
+    ;
+
+    # Haskell
+    inherit (nixpkgs)
+      hlint
+      ormolu
+    ;
+
+    # Utilities
+    inherit (nixpkgs)
+      ack
+      jq
+      openldap
+      rpl
       tmux
       tree
-      unzip
-      vimPlugins
       watchman
-      yamllint
-      yarn
-      youtube-dl;
+      youtube-dl
+    ;
 
-    inherit (nixpkgs.gitAndTools)
-      git-bug;
-
-    inherit (nixpkgs.nodePackages)
-      npm;
+    # Python
+    inherit (nixpkgs)
+      black
+      python
+    ;
 
     inherit (nixpkgs.pythonPackages)
       cookiecutter
@@ -71,7 +90,51 @@ let
       isort
       pip
       pydocstyle
-      pylint;
+      pylint
+    ;
+
+    # Rust
+    inherit (nixpkgs)
+      rustfmt
+    ;
+
+    # Shell
+    inherit (nixpkgs)
+      shellcheck
+    ;
+
+    # Source Control
+    inherit (nixpkgs)
+      git
+      mercurialFull
+    ;
+
+    inherit (nixpkgs.gitAndTools)
+      git-bug;
+
+    # NIX
+    inherit (nixpkgs)
+      cachix
+      fetchFromGitHub
+      fetchgit
+      fetchurl
+      fetchzip
+      lib
+      nixpkgs-fmt
+      writeShellScript
+      writeShellScriptBin;
+
+    # YAML
+    inherit (nixpkgs)
+      yamllint;
+
+    # node.js
+    inherit (nixpkgs)
+      nodejs
+      yarn;
+
+    inherit (nixpkgs.nodePackages)
+      npm;
   };
 
 in exposed.lib.fix(self: exposed // {
@@ -79,7 +142,7 @@ in exposed.lib.fix(self: exposed // {
 
   # Packages to be overridden
   originals = {
-    inherit (nixpkgs) neovim;
+    inherit (nixpkgs) openldap neovim;
   };
 
   # Python 3
