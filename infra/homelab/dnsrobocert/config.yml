@@ -30,6 +30,24 @@ certificates:
   - containers:
     - ingress
 
+- name: ghuntley.dev
+  profile: cloudflare
+  force_renew: false
+  domains:
+    - ghuntley.dev
+  autorestart:
+  - containers:
+    - ingress
+
+- name: search.ghuntley.dev
+  profile: cloudflare
+  force_renew: false
+  domains:
+    - search.ghuntley.dev
+  autorestart:
+  - containers:
+    - ingress
+
 - name: ghuntley.net
   profile: cloudflare
   force_renew: false

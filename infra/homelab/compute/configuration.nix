@@ -335,6 +335,34 @@ in
       ];
     };
 
+    sourcegraph = {
+      image = "sourcegraph/server:3.19.2";
+      ports = [
+        "0.0.0.0:7080:7080"
+      ];
+      volumes = [
+        "/srv/sourcegraph/etc:/etc/sourcegraph"
+        "/srv/sourcegraph/data:/var/opt/sourcegraph"
+      ];
+      environment = { 
+        SRC_SYNTECT_SERVER = "http://compute.wg.ghuntley.net:9238";
+      };
+      cmd = [
+      ];
+    };
+
+    syntect_server = {
+      image = "sourcegraph/syntech_server";
+      ports = [
+        "0.0.0.0:9238:9238"
+      ];
+      volumes = [
+      ];
+      environment = { };
+      cmd = [
+      ];
+    };
+
     #squid = {
     #  image = "nixery.dev/squid";
     #  ports = [
