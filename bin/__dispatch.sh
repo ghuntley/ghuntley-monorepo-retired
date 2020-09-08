@@ -152,6 +152,10 @@ case "${TARGET_TOOL}" in
     aka=""
     attr="third_party.nodejs"
     ;;
+  "npm")
+    aka=""
+    attr="third_party.npm"
+    ;;
   "nvim")
     aka=""
     attr="third_party.neovim"
@@ -183,6 +187,10 @@ case "${TARGET_TOOL}" in
   "unzip")
     aka=""
     attr="third_party.unzip"
+    ;;
+  "yarn")
+    aka=""
+    attr="third_party.yarn"
     ;;
   "yamllint")
     aka=""

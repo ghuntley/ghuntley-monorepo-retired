@@ -56,10 +56,14 @@ let
       unzip
       vimPlugins
       yamllint
+      yarn
       youtube-dl;
 
     inherit (nixpkgs.gitAndTools)
       git-bug;
+
+    inherit (nixpkgs.nodePackages)
+      npm;
 
     inherit (nixpkgs.python38Packages)
       cookiecutter
@@ -73,7 +77,7 @@ let
 
 in exposed.lib.fix(self: exposed // {
   callPackage = nixpkgs.lib.callPackageWith self;
-  
+
   # Packages to be overridden
   originals = {
     inherit (nixpkgs) neovim;
