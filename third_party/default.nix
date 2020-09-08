@@ -33,28 +33,28 @@ let
       cachix
       ctags
       docker
-      lib
       git
       google-cloud-sdk
       hlint
       jq
+      lib
+      mercurialFull
+      neovim
+      nixpkgs-fmt
+      nodejs
+      ormolu
+      p7zip
+      pulumi-bin
+      python
       rpl
       rustfmt
       shellcheck
       terraform
       tmux
       tree
-      ormolu
-      mercurialFull
-      neovim
-      nixpkgs-fmt
-      nodejs
-      p7zip
-      pulumi-bin
-      python
-      watchman
       unzip
       vimPlugins
+      watchman
       yamllint
       yarn
       youtube-dl;
