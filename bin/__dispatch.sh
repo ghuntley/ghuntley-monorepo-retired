@@ -118,7 +118,7 @@ case "${TARGET_TOOL}" in
     ;;
   "python")
     aka=""
-    attr="third_party.python38"
+    attr="third_party.python"
     ;;
   "pydocstyle")
     aka=""

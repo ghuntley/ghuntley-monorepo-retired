@@ -51,7 +51,7 @@ let
       nodejs
       p7zip
       pulumi-bin
-      python38
+      python
       watchman
       unzip
       vimPlugins
@@ -65,14 +65,13 @@ let
     inherit (nixpkgs.nodePackages)
       npm;
 
-    inherit (nixpkgs.python38Packages)
+    inherit (nixpkgs.pythonPackages)
       cookiecutter
       flake8
       isort
       pip
       pydocstyle
       pylint;
-
   };
 
 in exposed.lib.fix(self: exposed // {
@@ -82,6 +81,10 @@ in exposed.lib.fix(self: exposed // {
   originals = {
     inherit (nixpkgs) neovim;
   };
+
+  # Python 3
+  python = nixpkgs.python38;
+  pythonPackages = nixpkgs.python38Packages;
 
   # Supplementals
   cabal-fmt = nixpkgs.haskellPackages.callCabal2nix "cabal-fmt" ./github.com/phadej/cabal-fmt {};
