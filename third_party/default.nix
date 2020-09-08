@@ -45,6 +45,7 @@ let
       tree
       ormolu
       mercurialFull
+      neovim
       nixpkgs-fmt
       p7zip
       pulumi-bin
@@ -64,6 +65,7 @@ let
       pip
       pydocstyle
       pylint;
+
   };
 
 in exposed.lib.fix(self: exposed // {

@@ -7,6 +7,17 @@
 #
 # To add a new tool, insert it into the case statement below by setting `attr`
 # to the key in nixpkgs which represents the program you want to run.
+#
+# If the binary name of the tool has been aliased, define the correct name by
+# setting `aka`.
+#
+# Example:
+#
+#  "binaryname")
+#    attr="third_party.nix-expression"
+#    aka="binary-name-in-nix-expression-if-different"
+#    ;;
+
 set -ueo pipefail
 
 readonly REPO_ROOT="$(dirname "$0")/.."
@@ -14,111 +25,159 @@ TARGET_TOOL="$(basename "$0")"
 
 case "${TARGET_TOOL}" in
   "7z")
+    aka=""
     attr="third_party.p7zip"
     ;;
   "ack")
+    aka=""
     attr="third_party.ack"
     ;;
   "aws")
+    aka=""
     attr="third_party.aws"
     ;;
   "az")
+    aka=""
     attr="third_party.azure-cli"
     ;;
   "black")
+    aka=""
     attr="third_party.black"
     ;;
   "cabal-fmt")
+    aka=""
     attr="third_party.cabal-fmt"
     ;;
   "cachix")
+    aka=""
     attr="third_party.cachix"
     ;;
   "cookiecutter")
+    aka=""
     attr="third_party.cookiecutter"
     ;;
   "docker")
+    aka=""
     attr="third_party.docker"
     ;;
   "flake8")
+    aka=""
     attr="third_party.flake8"
     ;;
   "git")
+    aka=""
     attr="third_party.git"
     ;;
   "git-bug")
+    aka=""
     attr="third_party.git-bug"
     ;;
   "gcloud")
+    aka=""
     attr="third_party.google-cloud-sdk"
     ;;
   "hlint")
+    aka=""
     attr="third_party.hlint"
     ;;
   "jq")
+    aka=""
     attr="third_party.jq"
     ;;
   "rpl")
+    aka=""
     attr="third_party.rpl"
     ;;
   "rustfmt")
+    aka=""
     attr="third_party.rustfmt"
     ;;
   "shellcheck")
+    aka=""
     attr="third_party.shellcheck"
     ;;
   "terraform")
+    aka=""
     attr="third_party.terraform-with-plugins"
     ;;
   "tmux")
+    aka=""
     attr="third_party.tmux"
     ;;
   "tree")
+    aka=""
     attr="third_party.tree"
     ;;
   "pip")
+    aka=""
     attr="third_party.pip"
     ;;
   "python")
+    aka=""
     attr="third_party.python38"
     ;;
   "pydocstyle")
+    aka=""
     attr="third_party.pydocstyle"
     ;;
   "pylint")
+    aka=""
     attr="third_party.pylint"
     ;;
   "hg")
+    aka=""
     attr="third_party.mercurialFull"
     ;;
   "isort")
+    aka=""
     attr="third_party.isort"
     ;;
   "nix-linter")
+    aka=""
     attr="third_party.nix-linter"
     ;;
   "nixpkgs-fmt")
+    aka=""
     attr="third_party.nixpkgs-fmt"
     ;;
+  "nvim")
+    aka=""
+    attr="third_party.neovim"
+    ;;
   "ormolu")
+    aka=""
     attr="third_party.ormolu"
     ;;
   "pulumi")
+    aka=""
     attr="third_party.pulumi-bin"
     ;;
   "rs-git-fsmonitor")
+    aka=""
     attr="third_party.rs-git-fsmonitor"
     ;;
+  "vi")
+    aka="nvim"
+    attr="third_party.neovim"
+    ;;
+  "vim")
+    aka="nvim"
+    attr="third_party.neovim"
+    ;;
   "watchman")
+    aka=""
     attr="third_party.watchman"
     ;;
   "unzip")
+    aka=""
     attr="third_party.unzip"
     ;;
   "yamllint")
+    aka=""
     attr="third_party.yamllint"
     ;;
   "youtube-dl")
+    aka=""
     attr="third_party.youtube-dl"
     ;;
   *)
@@ -130,5 +189,9 @@ esac
 result=$(nix-build --no-out-link --attr "${attr}" "${REPO_ROOT}")
 PATH="${result}/bin:$PATH"
 
-exec "${TARGET_TOOL}" "${@}"
-
+if [ ${#aka} -ge 1 ];
+then
+    exec "${aka}" "${@}"; # aliased
+else
+    exec "${TARGET_TOOL}" "${@}"; # not aliased
+fi

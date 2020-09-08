@@ -22,6 +22,9 @@ mkShell {
 
     # Disable telemetry
     export DOTNET_CLI_TELEMETRY_OPTOUT=1
+ 
+    # Editor
+    export EDITOR="$REPO_ROOT/bin/vim"
 
     echo "[dev-env] Setting up the development environment"
     "$REPO_ROOT/bin/de-init"
