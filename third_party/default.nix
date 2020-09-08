@@ -69,6 +69,7 @@ let
     # Utilities
     inherit (nixpkgs)
       ack
+      flamegraph
       jq
       openldap
       rpl
@@ -120,6 +121,7 @@ let
       fetchurl
       fetchzip
       lib
+      linuxPackages
       nixpkgs-fmt
       writeShellScript
       writeShellScriptBin;

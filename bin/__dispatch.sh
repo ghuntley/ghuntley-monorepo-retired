@@ -120,6 +120,10 @@ case "${TARGET_TOOL}" in
     aka=""
     attr="third_party.pip"
     ;;
+  "perf-flamegraph")
+    aka=""
+    attr="tools.perf-flamegraph"
+    ;;
   "python")
     aka=""
     attr="third_party.python"
