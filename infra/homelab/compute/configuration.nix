@@ -13,6 +13,10 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  boot.initrd.supportedFilesystems = [ "zfs" ];
+  boot.supportedFilesystems = [ "zfs" ];
+
+  networking.hostId = "DEADBEEF";
 
   networking.useDHCP = false;
 
@@ -80,39 +84,54 @@ in
     EDITOR = [ "${pkgs.vim}/bin/vim" ];
   };
 
-  services.openssh.enable = true;
-  services.tailscale.enable = true;
-
-  services.telegraf.enable = true;
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+  hardware.bluetooth.package = pkgs.bluezFull;
 
   services.gpsd = {
     enable = true;
     nowait = true;
   };
 
+  services.openssh.enable = true;
+  services.tailscale.enable = true;
+
+  services.smartd.enable = true;
+
+  services.telegraf.enable = true;
+
+  services.zfs.autoSnapshot = {
+    enable = true;
+    frequent = 32; # 4 hours.
+    daily = 14;
+    weekly = 0;
+    monthly = 0;
+  };
+
+
   virtualisation.vmware.guest.enable = true;
   virtualisation.docker.enable = true;
 
   docker-containers = {
 
-    buildkite = {
-      image = "buildkite/agent:3-ubuntu";
-      volumes = [
-        "/srv/buildkite/builds:/buildkite/builds"
-        #
-        # nb. careful this allows root access
-        #"/var/run/docker.sock:/var/run/docker.sock" # nb. careful this allows root access
-        # nb. careful this allows root access
-        #
-      ];
-      environment = {
-        BUILDKITE_BUILD_PATH = "/var/lib/buildkite/builds";
-        BUILDKITE_AGENT_TOKEN = secrets.buildkite-agent-token;
-      };
-      cmd = [
-        "start"
-      ];
-    };
+    #buildkite = {
+    #  image = "buildkite/agent:3-ubuntu";
+    #  volumes = [
+    #    "/srv/buildkite/builds:/buildkite/builds"
+    #    #
+    #    # nb. careful this allows root access
+    #    #"/var/run/docker.sock:/var/run/docker.sock" # nb. careful this allows root access
+    #    # nb. careful this allows root access
+    #    #
+    #  ];
+    #  environment = {
+    #    BUILDKITE_BUILD_PATH = "/var/lib/buildkite/builds";
+    #    BUILDKITE_AGENT_TOKEN = secrets.buildkite-agent-token;
+    #  };
+    #  cmd = [
+    #    "start"
+    #  ];
+    #};
 
     code-server = {
       image = "codercom/code-server:latest";
@@ -136,18 +155,18 @@ in
       ];
     };
 
-    cgit = {
-      image = "clearlinux/cgit";
-      ports = [
-        "0.0.0.0:8888:80"
-      ];
-      volumes = [
-        "/srv/cgit:/var/www/cgit"
-      ];
-      environment = { };
-      cmd = [
-      ];
-    };
+    #cgit = {
+    #  image = "clearlinux/cgit";
+    #  ports = [
+    #    "0.0.0.0:8888:80"
+    #  ];
+    #  volumes = [
+    #    "/srv/cgit:/var/www/cgit"
+    #  ];
+    #  environment = { };
+    #  cmd = [
+    #  ];
+    #};
 
     dnsrobocert = {
       image = "adferrand/dnsrobocert";
@@ -230,19 +249,21 @@ in
     };
 
 
-    #motion = {
-    #  image = "motionproject/motion:latest";
-    #  ports = [
-    #    "0.0.0.0:7070:7999"
-    #  ];
-    #  volumes = [
-    #  ];
-    #  environment = {
-    #    TZ = "Australia/Brisbane";
-    #  };
-    #  cmd = [
-    #  ];
-    #};
+    motion = {
+      image = "motionproject/motion:latest";
+      ports = [
+        "0.0.0.0:7070:7999"
+      ];
+      volumes = [
+        "/srv/motion/config:/usr/local/etc/motion"
+        "/srv/motion/storage:/var/lib/motion"
+      ];
+      environment = {
+        TZ = "Australia/Brisbane";
+      };
+      cmd = [
+      ];
+    };
 
     nexus = {
       image = "sonatype/nexus3";
@@ -298,27 +319,8 @@ in
     #  };
     #  cmd = [
     #  ];
-    #};
 
     #};
-
-    portainer = {
-      image = "portainer/portainer";
-      ports = [
-        "0.0.0.0:9000:9000"
-      ];
-      volumes = [
-        #
-        # nb. careful this allows root access
-        "/var/run/docker.sock:/var/run/docker.sock"
-        # nb. careful this allows root access
-        #
-        "/srv/portainer:/data"
-      ];
-      environment = { };
-      cmd = [
-      ];
-    };
 
     prometheus = {
       image = "prom/prometheus";
