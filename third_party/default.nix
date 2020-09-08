@@ -41,7 +41,7 @@ let
       rpl
       rustfmt
       shellcheck
-      terraform_0_12
+      terraform
       tmux
       tree
       ormolu
@@ -85,6 +85,8 @@ in exposed.lib.fix(self: exposed // {
   # Python 3
   python = nixpkgs.python38;
   pythonPackages = nixpkgs.python38Packages;
+
+  terraform = nixpkgs.terraform_0_13;
 
   # Supplementals
   cabal-fmt = nixpkgs.haskellPackages.callCabal2nix "cabal-fmt" ./github.com/phadej/cabal-fmt {};

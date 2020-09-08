@@ -1,6 +1,6 @@
 { pkgs, ... }:
 
-pkgs.terraform_0_12.withPlugins(p: [ 
+pkgs.terraform.withPlugins(p: [ 
     p.acme
     p.auth0
     p.aws
