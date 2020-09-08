@@ -53,4 +53,3 @@ buildFHSUserEnv {
   ];
   runScript = "$SHELL";
 }
-
