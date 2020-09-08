@@ -3,10 +3,12 @@
 
 import exceptions
 from collections import defaultdict
-from datetime import datetime
 from string import Template
 
 import requests
+
+USERNAME = ""
+PASSWORD = ""
 
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:81.0) Gecko/20100101 Firefox/81.0"
@@ -52,8 +54,8 @@ class TelstraApi(object):
         login_response.raise_for_status()
 
         if (
-            not "BPSESSION" in self.session.cookies
-            or not "JSESSIONID" in self.session.cookies
+            "BPSESSION" not in self.session.cookies
+            or "JSESSIONID" not in self.session.cookies
         ):
             raise exceptions.AuthError
 
@@ -96,7 +98,7 @@ class TelstraApi(object):
         return json
 
     def _raise_on_error(self, json) -> None:
-        if not "SUCCESS" in json["status"] or json["error"] is not None:
+        if "SUCCESS" not in json["status"] or json["error"] is not None:
             raise exceptions.ApiError
 
 
@@ -207,4 +209,3 @@ class Telstra(object):
         self.telstra_api.logout()
 
         return services
-

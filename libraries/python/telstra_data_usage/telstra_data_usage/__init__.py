@@ -7,6 +7,4 @@
 import logging
 from logging import NullHandler
 
-from .__version__ import __version__
-
 logging.getLogger(__name__).addHandler(NullHandler())

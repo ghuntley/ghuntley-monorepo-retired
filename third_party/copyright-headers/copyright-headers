@@ -13,12 +13,11 @@
 # $ touch some/directory/.autocopyrightignore
 # $ git add some/directory/.autocopyrightignore
 
-import subprocess
-import re
 import os
+import re
 import string
+import subprocess
 import sys
-
 
 #########################
 # File-type configuration
@@ -284,4 +283,3 @@ if failed and check_only:
   print("\nCopyright header check failed.\nPlease update copyright headers by running 'copyright-headers update'")
 
 sys.exit(failed)
-
