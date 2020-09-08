@@ -31,6 +31,7 @@ let
       azure-cli
       black
       cachix
+      ctags
       docker
       lib
       git
@@ -47,11 +48,13 @@ let
       mercurialFull
       neovim
       nixpkgs-fmt
+      nodejs
       p7zip
       pulumi-bin
       python38
       watchman
       unzip
+      vimPlugins
       yamllint
       youtube-dl;
 
@@ -73,9 +76,10 @@ in exposed.lib.fix(self: exposed // {
   
   # Packages to be overridden
   originals = {
-    inherit (nixpkgs);
+    inherit (nixpkgs) neovim;
   };
 
+  # Supplementals
   cabal-fmt = nixpkgs.haskellPackages.callCabal2nix "cabal-fmt" ./github.com/phadej/cabal-fmt {};
   nix-linter = nixpkgs.haskellPackages.callCabal2nix "nix-linter" ./github.com/synthetica9/nix-linter {};
 

@@ -56,6 +56,10 @@ case "${TARGET_TOOL}" in
     aka=""
     attr="third_party.cookiecutter"
     ;;
+  "ctags")
+    aka=""
+    attr="third_party.ctags"
+    ;;
   "docker")
     aka=""
     attr="third_party.docker"
@@ -139,6 +143,14 @@ case "${TARGET_TOOL}" in
   "nixpkgs-fmt")
     aka=""
     attr="third_party.nixpkgs-fmt"
+    ;;
+  "node")
+    aka="nodejs"
+    attr="third_party.nodejs"
+    ;;
+  "nodejs")
+    aka=""
+    attr="third_party.nodejs"
     ;;
   "nvim")
     aka=""
