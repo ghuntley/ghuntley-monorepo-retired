@@ -6,7 +6,8 @@ let secrets = import /etc/nixos/secrets.nix;
 in
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -26,7 +27,10 @@ in
   time.timeZone = "Brisbane/Australia";
 
   environment.systemPackages = with pkgs; [
-    git htop vim tmux 
+    git
+    htop
+    vim
+    tmux
   ];
 
   services.openssh.enable = true;
@@ -84,7 +88,7 @@ in
 
   users.users.mgmt = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; 
+    extraGroups = [ "wheel" ];
   };
 
   system.autoUpgrade.enable = true;
