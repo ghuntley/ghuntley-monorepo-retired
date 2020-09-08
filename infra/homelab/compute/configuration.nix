@@ -362,9 +362,12 @@ in
 
   system.autoUpgrade.enable = true;
 
+  # Free up to 4GiB whenever there is less than 1GiB left:
   nix.gc.automatic = true;
-  nix.gc.dates = "weekly";
-  nix.gc.options = "--delete-older-than 30d";
+  nix.extraOptions = ''
+    min-free = ${toString (1024 * 1024 * 1024)}
+    max-free = ${toString (4096 * 1024 * 1024)}
+  '';
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
