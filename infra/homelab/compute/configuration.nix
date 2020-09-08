@@ -96,7 +96,7 @@ in
   services.openssh.enable = true;
   services.tailscale.enable = true;
 
-  services.smartd.enable = true;
+  #services.smartd.enable = true;
 
   services.telegraf.enable = true;
 
