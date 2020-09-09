@@ -100,12 +100,16 @@ in
 
   services.telegraf.enable = true;
 
-  services.zfs.autoSnapshot = {
-    enable = true;
-    frequent = 32; # 4 hours.
-    daily = 14;
-    weekly = 0;
-    monthly = 0;
+  services.zfs = {
+    trim.enable = true;
+    autoScrub.enable = true;
+    autoSnapshot = {
+      enable = true;
+      frequent = 32; # 4 hours.
+      daily = 14;
+      weekly = 0;
+      monthly = 0;
+    };
   };
 
 
