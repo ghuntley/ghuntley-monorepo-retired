@@ -72,19 +72,13 @@ class TelstraApi(object):
 
         return json
 
-    def get_internet_data_usage(
-        self, hashed_account_id, hashed_service_id
-    ):
+    def get_internet_data_usage(self, hashed_account_id, hashed_service_id):
         exit(1)
 
-    def get_shared_data_service_usage(
-        self, hashed_account_id, hashed_service_id
-    ):
+    def get_shared_data_service_usage(self, hashed_account_id, hashed_service_id):
         exit(1)
 
-    def get_mobile_service_usage(
-        self, hashed_account_id, hashed_service_id
-    ):
+    def get_mobile_service_usage(self, hashed_account_id, hashed_service_id):
         url = MOBILE_SERVICE_DATA_USAGE_URL.substitute(
             accountId=hashed_account_id, serviceId=hashed_service_id
         )
