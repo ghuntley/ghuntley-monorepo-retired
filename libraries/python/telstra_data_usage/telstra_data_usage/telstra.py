@@ -26,7 +26,7 @@ MOBILE_SERVICE_DATA_USAGE_URL = Template(
 
 
 class TelstraApi(object):
-    def __init__(self, username: str, password: str):
+    def __init__(self, username, password):
 
         self.session = requests.Session()
         self.session.max_redirects = 10
@@ -35,7 +35,7 @@ class TelstraApi(object):
         self.username = username
         self.password = password
 
-    def login(self) -> None:
+    def login(self):
         login_page = self.session.get(LOGIN_URL)
         login_page.raise_for_status()
 
@@ -59,11 +59,11 @@ class TelstraApi(object):
         ):
             raise exceptions.AuthError
 
-    def logout(self) -> None:
+    def logout(self):
         logout_page = self.session.get(LOGOUT_URL)
         logout_page.raise_for_status()
 
-    def get_account_overview(self) -> dict:
+    def get_account_overview(self):
         overview_response = self.session.get(OVERVIEW_URL)
         overview_response.raise_for_status()
 
@@ -73,18 +73,18 @@ class TelstraApi(object):
         return json
 
     def get_internet_data_usage(
-        self, hashed_account_id: str, hashed_service_id: str
-    ) -> dict:
+        self, hashed_account_id, hashed_service_id
+    ):
         exit(1)
 
     def get_shared_data_service_usage(
-        self, hashed_account_id: str, hashed_service_id: str
-    ) -> dict:
+        self, hashed_account_id, hashed_service_id
+    ):
         exit(1)
 
     def get_mobile_service_usage(
-        self, hashed_account_id: str, hashed_service_id: str
-    ) -> dict:
+        self, hashed_account_id, hashed_service_id
+    ):
         url = MOBILE_SERVICE_DATA_USAGE_URL.substitute(
             accountId=hashed_account_id, serviceId=hashed_service_id
         )
@@ -97,17 +97,17 @@ class TelstraApi(object):
 
         return json
 
-    def _raise_on_error(self, json) -> None:
+    def _raise_on_error(self, json):
         if "SUCCESS" not in json["status"] or json["error"] is not None:
             raise exceptions.ApiError
 
 
 class Telstra(object):
-    def __init__(self, username: str, password: str):
+    def __init__(self, username, password):
 
         self.telstra_api = TelstraApi(username, password)
 
-    def services(self) -> list:
+    def services(self):
         services = defaultdict(list)
 
         # for service in self.get_internet_services():
@@ -121,10 +121,10 @@ class Telstra(object):
 
         return services
 
-    def get_internet_services(self) -> list:
+    def get_internet_services(self):
         raise NotImplementedError()
 
-    def get_mobile_services(self) -> list:
+    def get_mobile_services(self):
         services = []
 
         self.telstra_api.login()
@@ -182,7 +182,7 @@ class Telstra(object):
 
         return services
 
-    def get_shared_data_services(self) -> list:
+    def get_shared_data_services(self):
         services = []
 
         self.telstra_api.login()
