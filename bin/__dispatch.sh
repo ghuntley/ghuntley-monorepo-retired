@@ -136,6 +136,10 @@ case "${TARGET_TOOL}" in
     aka=""
     attr="tools.perf-flamegraph"
     ;;
+  "pwsh")
+    aka=""
+    attr="third_party.powershell"
+    ;;
   "python")
     aka=""
     attr="third_party.python"

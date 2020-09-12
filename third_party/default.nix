@@ -133,10 +133,6 @@ let
       writeShellScript
       writeShellScriptBin;
 
-    # YAML
-    inherit (nixpkgs)
-      yamllint;
-
     # node.js
     inherit (nixpkgs)
       nodejs
@@ -144,6 +140,14 @@ let
 
     inherit (nixpkgs.nodePackages)
       npm;
+
+    # Windows
+    inherit (nixpkgs)
+      powershell;
+
+    # YAML
+    inherit (nixpkgs)
+      yamllint;
   };
 
 in exposed.lib.fix(self: exposed // {
