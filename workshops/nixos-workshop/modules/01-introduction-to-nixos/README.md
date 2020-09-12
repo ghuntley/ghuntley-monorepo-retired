@@ -74,19 +74,10 @@ be used to write to these trees.
 
 ## 🗹 Recap
 
-1. You don’t need to install additional software to manage system configuration.
-   Desired state configuration is built into the operating system, removing the
-   need for configuration management tools such as Chef, Puppet or Ansible.
-1. Configuration of the operating system is defined in a single declarative
-   configuration file at
-   [/etc/nixos/configuration.nix][nixos-generate-default-config]
-1. NixOS does not follow the [Filesystem Hierarchy Standard][fhs-standard]
-   standard and `/usr/` or `/opt` does not exist. Instead symbolic links to
-   directories under `/nix/store/` are heavily used. More information about how
-   this works is provided in a future module.
-1. Sudo is not needed to install software. Users can install any program without
-   needing sudo privileges. Programs are installed into the users home directory
-   at `~/.nix-profile/bin/`.
+1. You don’t need to install additional software to manage system configuration. Desired state configuration is built into the operating system, removing the need for configuration management tools such as Chef, Puppet or Ansible.
+1. Configuration of the operating system is defined in a single declarative configuration file at [/etc/nixos/configuration.nix][nixos-generate-default-config]
+1. NixOS does not follow the [Filesystem Hierarchy Standard][fhs-standard] standard and `/usr/` or `/opt` does not exist. Instead symbolic links to directories under `/nix/store/` are heavily used. More information about how this works is provided in a future module.
+1. Sudo is not needed to install software. Users can install any program without needing sudo privileges. Programs are installed into the users home directory at `~/.nix-profile/bin/`.
 
 ## 📚 Additional reading material
 

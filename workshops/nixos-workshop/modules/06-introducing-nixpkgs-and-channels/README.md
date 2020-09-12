@@ -88,26 +88,14 @@ $ readlink -f `which glxinfo`                                              #10
 
 This performs the following actions:
 1. list the available channels. There doesn't appear to be any channel!
-2. confirm there exists a default channel that we installed system-wide when we
-   installed NixOS. The fact that it's called `nixos` is just a convention; it
-   could be any other name, but why make life complicated.
-3. install from the `nixos` channel despite not having configured it in
-   our user profile
+2. confirm there exists a default channel that we installed system-wide when we installed NixOS. The fact that it's called `nixos` is just a convention; it could be any other name, but why make life complicated.
+3. install from the `nixos` channel despite not having configured it in our user profile
 4. let's see the actual binary in our store, and take note of the hash 
-5. add the channel labeled nixpkgs-unstable from nixos.org and install it to our
-   user profile under the name `nixpkgs`. This name is, again, a common
-   convention. You could call it something else if you wanted to.
+5. add the channel labeled nixpkgs-unstable from nixos.org and install it to our user profile under the name `nixpkgs`. This name is, again, a common convention. You could call it something else if you wanted to.
 6. list the available channels, to check what we just did worked.
-7. attempt to install the `glxinfo` package again, this time from `nixpkgs`.
-   This will fail because we `add` ed the channel but did not update it. So we
-   have a channel defined in `~/.nix-channels`, but we haven't fetched its
-   definitions yet.
-8. fetch the latest package definitions from `nixpkgs`. In this case, it's also
-   the first fetch.
-9. install `glxinfo` package from `nixpkgs`, this time successfully. It will
-   also bring a brace of dependencies, because every package in nixpkgs is a
-   closure of its dependencies, so different binaries in a NixOS system can depend 
-   on different versions of the same library, without any conflict.
+7. attempt to install the `glxinfo` package again, this time from `nixpkgs`. This will fail because we `add` ed the channel but did not update it. So we have a channel defined in `~/.nix-channels`, but we haven't fetched its definitions yet.
+8. fetch the latest package definitions from `nixpkgs`. In this case, it's also the first fetch.
+9. install `glxinfo` package from `nixpkgs`, this time successfully. It will also bring a brace of dependencies, because every package in nixpkgs is a closure of its dependencies, so different binaries in a NixOS system can depend on different versions of the same library, without any conflict.
 10. let's see the actual binary in our store, and take note of the different hash.
 
 To browse the list of channels, go [here](https://nixos.org/channels/).

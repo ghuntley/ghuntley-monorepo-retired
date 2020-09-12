@@ -1,3 +1,5 @@
+// editorconfig-checker-disable-file
+
 // fba9dc272a443cf9fdb984676a7732a6a082f4c0
 /**
  * @class The built-in Array class.

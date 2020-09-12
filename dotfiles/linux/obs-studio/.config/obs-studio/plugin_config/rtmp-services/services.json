@@ -858,7 +858,7 @@
                 },
                 {
                     "name": "North America : US West",
-                     "url": "rtmp://rtmpmanager-aws-en-west.afreeca.tv/live"
+                    "url": "rtmp://rtmpmanager-aws-en-west.afreeca.tv/live"
                 },
                 {
                     "name": "Asia : Singapore",

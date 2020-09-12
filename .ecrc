@@ -4,13 +4,13 @@
   "IgnoreDefaults": false,
   "SpacesAftertabs": false,
   "NoColor": false,
-  "exclude": ["third_party"],
+  "Exclude": ["\\.git", "\\.config\/i3blocks", "\\.csproj", "\\.designer\\.cs", "\\.exe", "\\.flv", "\\.patch", "\\.psd", "\\.sln", "\\.md", "\\.xaml.cs", "LICENSE", "LICENSE\\.md", "homeassistant\/custom_components", "notes\\.org", "third_party", "web\/noyaml\\.com", "workshops\/unoplatform"],
   "AllowedContentTypes": [],
   "PassedFiles": [],
   "Disable": {
     "EndOfLine": false,
     "Indentation": false,
-    "InsertFinalNewline": false,
+    "InsertFinalNewline": true,
     "TrimTrailingWhitespace": false,
     "IndentSize": false,
     "MaxLineLength": false

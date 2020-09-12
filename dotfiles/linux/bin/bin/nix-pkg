@@ -7,8 +7,8 @@ usage () {
 }
 
 [[ "$cmd" = "build" ||
-   "$cmd" = "shell" ||
-   "$cmd" = "instantiate"
+  "$cmd" = "shell" ||
+  "$cmd" = "instantiate"
 ]] || usage
 
 shift

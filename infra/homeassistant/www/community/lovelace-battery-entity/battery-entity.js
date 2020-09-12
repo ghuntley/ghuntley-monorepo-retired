@@ -1,3 +1,5 @@
+// editorconfig-checker-disable-file
+
 class BatteryEntity extends Polymer.Element {
 	static get template() {
 		return Polymer.html`

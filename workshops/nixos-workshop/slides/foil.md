@@ -17,4 +17,3 @@ https://github.com/ghuntley/workshops/
 - The SSID is `...`
 - If you aren't prompted to login visit "http://neverssl.com" in your browser
 - The event code is `....`
-

@@ -155,7 +155,7 @@ ncdu 1.14 ~ Use the arrow keys to navigate, press ? for help
   673.7 MiB [####      ] /3bfgswkdz559y7n1mxpnbrpf...cabal-at-2019-07-29T000000Z
   639.4 MiB [####      ] /fvkaqawargzj3m9s0rjnx7s6...yis-google-fonts-2017-06-28
   591.2 MiB [####      ] /k19zskg6lrpqwc80dinri01x613iangi-hackage-exprs-source
- Total disk usage: 101.1 GiB  Apparent size: 100.3 GiB  Items: 3125663
+  Total disk usage: 101.1 GiB  Apparent size: 100.3 GiB  Items: 3125663
 ```
 
 Your results may vary. In fact, they will! Try it yourselves.
@@ -186,24 +186,24 @@ This is good... but not enough. The reason is that some of these paths are still
 
 ```bash
 $ nix-env --list-generations
- 135   2019-07-30 13:55:33   
- 136   2019-08-02 09:38:21   
- 137   2019-08-02 14:41:48   
- 138   2019-08-02 14:59:43   
- 139   2019-08-02 15:02:17   
- 140   2019-08-02 15:02:24   
- 141   2019-08-02 15:06:51   
- 142   2019-08-02 17:39:29   
- 143   2019-08-11 13:30:24   
- 144   2019-08-18 22:20:37   
- 145   2019-08-19 20:47:54   
- 146   2019-08-19 20:51:15   
- 147   2019-08-19 20:51:41   
- 148   2019-08-19 20:57:32   
- 149   2019-08-19 21:04:37   
- 150   2019-08-21 21:49:06   
- 151   2019-08-21 22:00:11   
- 152   2019-08-27 01:36:45   (current)
+  135   2019-07-30 13:55:33   
+  136   2019-08-02 09:38:21   
+  137   2019-08-02 14:41:48   
+  138   2019-08-02 14:59:43   
+  139   2019-08-02 15:02:17   
+  140   2019-08-02 15:02:24   
+  141   2019-08-02 15:06:51   
+  142   2019-08-02 17:39:29   
+  143   2019-08-11 13:30:24   
+  144   2019-08-18 22:20:37   
+  145   2019-08-19 20:47:54   
+  146   2019-08-19 20:51:15   
+  147   2019-08-19 20:51:41   
+  148   2019-08-19 20:57:32   
+  149   2019-08-19 21:04:37   
+  150   2019-08-21 21:49:06   
+  151   2019-08-21 22:00:11   
+  152   2019-08-27 01:36:45   (current)
 ```
 
 In the past month (roughly since I started working on this tutorial) I've
@@ -232,7 +232,7 @@ And now I can't rollback my user environment, because I only have one.
 
 ```bash
 $ nix-env --list-generations
- 152   2019-08-27 01:36:45   (current)
+  152   2019-08-27 01:36:45   (current)
 ```
 
 And now my nix-store has lost 60Gb:

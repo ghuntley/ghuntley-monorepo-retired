@@ -211,7 +211,7 @@ def process_file(filename, check_only):
       print(f"{filename}: copyright header missing or out-of-date, updating.")
       with open(filename, 'w') as fp:
         if state == 'fail':
-           # copyright header existed, but was out of date, replace it.
+          # copyright header existed, but was out of date, replace it.
           fp.write("".join(before_header))
           fp.write(header)
           # remove additional blank line added at ADD_BLANK_LINE

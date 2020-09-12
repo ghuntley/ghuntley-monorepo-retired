@@ -55,9 +55,11 @@ function makeOutlookWin(summary) {
   } else {
     body = summary + "\n" + url;
   }
+  
   var outlookUrl = baseUrl +
-                 "&subject=" + encodeURIComponent(subject) +
-                 "&body=" + encodeURIComponent(body);
+    "&subject=" + encodeURIComponent(subject) +
+    "&body=" + encodeURIComponent(body);
+
   chrome.windows.create({
     url: outlookUrl,
     left: 20,

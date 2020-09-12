@@ -36,7 +36,7 @@ for configuration instructions. </summary> <p>
 You'll need to do two steps:
 
 1. Activate the proxy-cache in the temporary in-memory operating system
-   configuration
+  configuration
 
 ```bash
 chmod 644 /etc/nixos/configuration.nix
@@ -50,8 +50,8 @@ services.avahi.enable = true;
 services.avahi.nssmdns = true;
 
 nix.binaryCaches = [
-   "http://dymaxion.local"
-   "https://cache.nixos.org"
+  "http://dymaxion.local"
+  "https://cache.nixos.org"
 ];
 ```
 

@@ -16,6 +16,7 @@
         "ms-vscode-remote.vscode-remote-extensionpack",
         "ms-vscode.csharp",
         "ms-vscode.go",
+        "ms-vscode.powershell",
         "ms-vsliveshare.vsliveshare-pack",
         "nopjmp.fairyfloss",
         "peterjausovec.vscode-docker",

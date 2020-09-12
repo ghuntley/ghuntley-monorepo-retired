@@ -1,3 +1,5 @@
+// editorconfig-checker-disable-file
+
 function init(h,w) {
 //  $('#title').text(document.title);
 

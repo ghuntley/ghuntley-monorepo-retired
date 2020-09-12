@@ -5,7 +5,7 @@
 set -Eeuo pipefail
 
 if [ $# -lt 1 ]; then
-   "${REPO_ROOT}/bin/de-help"
+  "${REPO_ROOT}/bin/de-help"
 else
   cmd="$1"
   exe="${REPO_ROOT}/bin/de-${cmd}"

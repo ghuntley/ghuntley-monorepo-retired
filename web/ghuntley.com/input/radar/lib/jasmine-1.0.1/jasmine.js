@@ -1,3 +1,5 @@
+// editorconfig-checker-disable-file
+
 /**
  * Top level namespace for Jasmine, a lightweight JavaScript BDD/spec/testing framework.
  *

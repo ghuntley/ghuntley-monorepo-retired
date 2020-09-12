@@ -1,3 +1,5 @@
+// editorconfig-checker-disable-file
+
 // Key
 //
 // movement:

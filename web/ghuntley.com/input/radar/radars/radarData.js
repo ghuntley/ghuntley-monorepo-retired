@@ -1,3 +1,5 @@
+// editorconfig-checker-disable-file
+
 // This is the title for your window tab, and your Radar
 document.title = "";
 
