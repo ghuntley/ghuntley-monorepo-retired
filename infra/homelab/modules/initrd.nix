@@ -1,0 +1,5 @@
+{
+  boot.initrd = {
+    cleanTmpDir = true;
+  };
+}

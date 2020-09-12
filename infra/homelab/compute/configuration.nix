@@ -2,29 +2,46 @@
 # SPDX-License-Identifier: Proprietary
 
 { config, pkgs, lib, ... }:
-let secrets = import /etc/nixos/secrets.nix;
-in
 {
   imports =
     [
-      /etc/nixos/hardware-configuration.nix
+      ./hardware-configuration.nix
+      ../modules/bluetooth.nix
+      ../modules/docker.nix
+      ../modules/fail2ban.nix
+      ../modules/firewall.nix
+      ../modules/gist.nix
+      ../modules/gps.nix
+      ../modules/i18n.nix
+      ../modules/initrd.nix
+      ../modules/libvirtd.nix
+      ../modules/logging.nix
+      ../modules/mosh.nix
+      ../modules/neovim.nix
+      ../modules/networking-ipv6.nix
+      ../modules/nix-daemon.nix
+      ../modules/pkgs.nix
+      ../modules/shell.nix
+      ../modules/sshd.nix
+      ../modules/sudo.nix
+      ../modules/tailscale.nix
+      ../modules/telegraf.nix
+      ../modules/timesyncd.nix
+      ../modules/timezone.nix
+      ../modules/vmware-guest.nix
+      ../modules/zfs.nix
+      ../users/default.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.supportedFilesystems = [ "zfs" ];
-  boot.supportedFilesystems = [ "zfs" ];
-
+  networking.hostName = "compute.wg.ghuntley.net";
   networking.hostId = "DEADBEEF";
 
   networking.useDHCP = false;
-
-  networking.hostName = "compute.wg.ghuntley.net";
   networking.defaultGateway = "10.10.10.254";
   networking.nameservers = [ "10.10.10.254" ];
-
-  networking.enableIPv6 = false;
 
   # virtual machines
   networking.interfaces.ens32 = {
@@ -50,92 +67,7 @@ in
     ipv4.addresses = [{ address = "10.10.105.250"; prefixLength = 24; }];
   };
 
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  time.timeZone = "Australia/Brisbane";
-
-  environment.systemPackages = with pkgs; [
-    direnv
-    git
-    git-lfs
-    gpsd
-    htop
-    inetutils
-    smartmontools
-    tailscale
-    tmux
-    vim
-    wget
-    wol
-  ];
-
-  nixpkgs.config.vim = {
-    ftNixSupport = true;
-  };
-
-  environment.interactiveShellInit = ''
-    alias vi='vim'
-  '';
-
-  environment.variables = {
-    EDITOR = [ "${pkgs.vim}/bin/vim" ];
-  };
-
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
-  hardware.bluetooth.package = pkgs.bluezFull;
-
-  services.gpsd = {
-    enable = true;
-    nowait = true;
-  };
-
-  services.openssh.enable = true;
-  services.tailscale.enable = true;
-
-  #services.smartd.enable = true;
-
-  services.telegraf.enable = true;
-
-  services.zfs = {
-    trim.enable = true;
-    autoScrub.enable = true;
-    autoSnapshot = {
-      enable = true;
-      frequent = 32; # 4 hours.
-      daily = 14;
-      weekly = 0;
-      monthly = 0;
-    };
-  };
-
-
-  virtualisation.vmware.guest.enable = true;
-  virtualisation.docker.enable = true;
-
   docker-containers = {
-
-    #buildkite = {
-    #  image = "buildkite/agent:3-ubuntu";
-    #  volumes = [
-    #    "/srv/buildkite/builds:/buildkite/builds"
-    #    #
-    #    # nb. careful this allows root access
-    #    #"/var/run/docker.sock:/var/run/docker.sock" # nb. careful this allows root access
-    #    # nb. careful this allows root access
-    #    #
-    #  ];
-    #  environment = {
-    #    BUILDKITE_BUILD_PATH = "/var/lib/buildkite/builds";
-    #    BUILDKITE_AGENT_TOKEN = secrets.buildkite-agent-token;
-    #  };
-    #  cmd = [
-    #    "start"
-    #  ];
-    #};
 
     code-server = {
       image = "codercom/code-server:latest";
@@ -158,40 +90,6 @@ in
         "password"
       ];
     };
-
-    #cgit = {
-    #  image = "clearlinux/cgit";
-    #  ports = [
-    #    "0.0.0.0:8888:80"
-    #  ];
-    #  volumes = [
-    #    "/srv/cgit:/var/www/cgit"
-    #  ];
-    #  environment = { };
-    #  cmd = [
-    #  ];
-    #};
-
-    dnsrobocert = {
-      image = "adferrand/dnsrobocert";
-      volumes = [
-        #
-        # nb. careful this allows root access
-        "/var/run/docker.sock:/var/run/docker.sock"
-        # nb. careful this allows root access
-        #
-        "/srv/dnsrobocert/dnsrobocert/config.yml:/etc/dnsrobocert/config.yml"
-        "/srv/dnsrobocert/letsencrypt:/etc/letsencrypt"
-      ];
-      environment = {
-        CLOUDFLARE_AUTH_USERNAME = secrets.dnsrobocert-cloudflare-auth-username;
-        CLOUDFLARE_AUTH_TOKEN = secrets.dnsrobocert-cloudflare-auth-token;
-        CLOUDFLARE_ZONE_ID = secrets.dnsrobocert-cloudflare-zone-id;
-      };
-      cmd = [
-      ];
-    };
-
 
     grafana = {
       image = "grafana/grafana";
@@ -237,22 +135,6 @@ in
       ];
     };
 
-    ingress = {
-      image = "library/nginx:latest";
-      ports = [
-        "0.0.0.0:80:80"
-        "0.0.0.0:443:443"
-      ];
-      volumes = [
-        "/srv/git/ghuntley/trunk/infra/homelab/ingress/default.conf:/etc/nginx/conf.d/default.conf"
-        "/srv/dnsrobocert/letsencrypt:/etc/letsencrypt"
-      ];
-      environment = { };
-      cmd = [
-      ];
-    };
-
-
     motion = {
       image = "motionproject/motion:latest";
       ports = [
@@ -282,17 +164,6 @@ in
       ];
     };
 
-    #rclone = {
-    #  image = "nixery.dev/rclone";
-    #  ports = [
-    #  ];
-    #  volumes = [
-    #  ];
-    #  environment = { };
-    #  cmd = [
-    #  ];
-    #};
-
     smtp = {
       image = "juanluisbaptiste/postfix";
       ports = [
@@ -311,20 +182,6 @@ in
       cmd = [
       ];
     };
-
-    #telegraf = {
-    #  image = "telegraf";
-    #  ports = [
-    #  ];
-    #  volumes = [
-    #    "/srv/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf"
-    #  ];
-    #  environment = {
-    #  };
-    #  cmd = [
-    #  ];
-
-    #};
 
     prometheus = {
       image = "prom/prometheus";
@@ -348,7 +205,7 @@ in
         "/srv/sourcegraph/etc:/etc/sourcegraph"
         "/srv/sourcegraph/data:/var/opt/sourcegraph"
       ];
-      environment = { 
+      environment = {
         SRC_SYNTECT_SERVER = "http://compute.wg.ghuntley.net:9238";
       };
       cmd = [
@@ -367,46 +224,18 @@ in
       ];
     };
 
-    #squid = {
-    #  image = "nixery.dev/squid";
-    #  ports = [
-    #    "0.0.0.0:3128:3128"
-    #  ];
-    #  volumes = [
-    #  ];
-    #  environment = { };
-    #  cmd = [
-    #  ];
-    #};
-
   };
 
-  networking.firewall.enable = false;
-  #networking.firewall.allowedTCPPorts = [
-  #  80
-  #  443
-  #];
+  networking.firewall.enable = true;
 
-  users.users.mgmt = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
-  };
+  networking.firewall.allowedTCPPorts = [];
+  networking.firewall.allowedUDPPorts = [];
 
-  system.autoUpgrade.enable = true;
+  networking.firewall."tailscale0".allowedTCPPorts = [
+    80
+    443
+  ];
 
-  # Free up to 4GiB whenever there is less than 1GiB left:
-  nix.gc.automatic = true;
-  nix.extraOptions = ''
-    min-free = ${toString (1024 * 1024 * 1024)}
-    max-free = ${toString (4096 * 1024 * 1024)}
-  '';
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It's perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "20.03"; # Did you read the comment?
-
+  system.stateVersion = "20.03";
 }
