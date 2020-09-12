@@ -4,4 +4,3 @@
 # https://www.home-assistant.io/integrations/version/
 platform: version
 name: version_current
-

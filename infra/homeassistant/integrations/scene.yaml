@@ -4,4 +4,3 @@
 # https://www.home-assistant.io/integrations/scene
 scene: !include ../scenes.yaml
 scene split: !include_dir_list ../scenes
-

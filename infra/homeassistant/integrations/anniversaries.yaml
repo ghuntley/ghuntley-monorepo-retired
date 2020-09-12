@@ -4,4 +4,3 @@
 # https://github.com/pinkywafer/Anniversaries
 anniversaries:
   sensors: !secret anniversaries
-

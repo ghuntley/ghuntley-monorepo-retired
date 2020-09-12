@@ -6,4 +6,3 @@ frontend:
   javascript_version: auto
 
   themes: !include_dir_merge_named ../themes
-

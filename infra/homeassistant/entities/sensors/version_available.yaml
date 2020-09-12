@@ -6,4 +6,3 @@ platform: version
 name: version_available
 source: docker
 image: default
-

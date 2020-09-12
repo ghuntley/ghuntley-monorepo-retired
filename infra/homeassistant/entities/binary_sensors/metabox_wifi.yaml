@@ -4,4 +4,3 @@
 platform: ping
 name: metabox_wifi
 host: !secret ping_host_metabox_wifi
-

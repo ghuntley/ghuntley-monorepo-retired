@@ -16,4 +16,3 @@ action:
   - service: recorder.purge
     data:
       repack: true
-

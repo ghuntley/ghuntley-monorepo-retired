@@ -4,4 +4,3 @@
 # https://www.home-assistant.io/integrations/bom
 platform: bom
 location: Sydney
-

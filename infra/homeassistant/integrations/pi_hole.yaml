@@ -5,4 +5,3 @@
 pi_hole:
   - host: !secret pi_hole_host
     api_key: !secret pi_hole_api_key
-

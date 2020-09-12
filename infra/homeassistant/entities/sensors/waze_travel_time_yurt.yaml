@@ -9,4 +9,3 @@ destination: !secret waze_travel_time_destination_yurt
 region: 'AU'
 avoid_toll_roads: true
 avoid_subscription_roads: true
-

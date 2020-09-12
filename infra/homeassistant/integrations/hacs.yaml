@@ -4,4 +4,3 @@
 # https://hacs.xyz/docs/configuration/legacy
 hacs:
   token: !secret github_access_token
-

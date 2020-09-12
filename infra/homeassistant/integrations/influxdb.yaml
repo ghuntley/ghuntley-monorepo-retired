@@ -20,4 +20,3 @@ influxdb:
 
   include:
     entities: !include_dir_merge_list ../influxdb
-

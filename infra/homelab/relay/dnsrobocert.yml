@@ -4,13 +4,13 @@
 draft: false
 acme:
   email_account: ${CLOUDFLARE_AUTH_USERNAME}
-  staging: false 
+  staging: false
   crontab_renew: 12 01,13 * * *
   certs_permissions:
     files_mode: 0644
     dirs_mode: 0755
-    #user: nobody
-    #group: nogroup 
+    # user: nobody
+    # group: nogroup
 
 profiles:
   - name: cloudflare
@@ -21,29 +21,29 @@ profiles:
       zone_id: ${CLOUDFLARE_ZONE_ID}
 
 certificates:
-- name: wg.ghuntley.net
-  profile: cloudflare
-  force_renew: false
-  domains:
-    - "*.wg.ghuntley.net"
-  autorestart:
-  - containers:
-    - ingress
+  - name: wg.ghuntley.net
+    profile: cloudflare
+    force_renew: false
+    domains:
+      - "*.wg.ghuntley.net"
+    autorestart:
+      - containers:
+          - ingress
 
-- name: ghuntley.net
-  profile: cloudflare
-  force_renew: false
-  domains:
-    - "*.ghuntley.net"
-  autorestart:
-  - containers:
-    - ingress
+  - name: ghuntley.net
+    profile: cloudflare
+    force_renew: false
+    domains:
+      - "*.ghuntley.net"
+    autorestart:
+      - containers:
+          - ingress
 
-- name: ghuntley.dev
-  profile: cloudflare
-  force_renew: false
-  domains:
-    - "*.ghuntley.dev"
-  autorestart:
-  - containers:
-    - ingress
+  - name: ghuntley.dev
+    profile: cloudflare
+    force_renew: false
+    domains:
+      - "*.ghuntley.dev"
+    autorestart:
+      - containers:
+          - ingress

@@ -3,5 +3,4 @@
 
 platform: nsw_fuel_station
 station_id: !secret nsw_fuel_station_id
-fuel_types: ['DL','PDL']
-
+fuel_types: ['DL', 'PDL']

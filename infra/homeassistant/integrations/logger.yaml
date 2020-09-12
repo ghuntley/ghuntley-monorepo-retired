@@ -4,5 +4,4 @@
 logger:
   default: warning
   logs:
-    # homeassistant.setup: debug
-
+  # homeassistant.setup: debug

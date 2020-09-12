@@ -4,4 +4,3 @@
 url: !secret huawei_lte_url_telstra
 username: !secret huawei_lte_username
 password: !secret huawei_lte_password
-

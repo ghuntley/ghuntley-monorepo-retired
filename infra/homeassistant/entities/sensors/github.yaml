@@ -6,4 +6,3 @@ platform: github
 access_token: !secret github_access_token
 repositories:
   - path: 'ghuntley/ghuntley'
-

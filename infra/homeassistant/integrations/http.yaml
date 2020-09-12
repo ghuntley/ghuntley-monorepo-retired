@@ -3,11 +3,10 @@
 
 # https://www.home-assistant.io/integrations/http/
 http:
-  #use_x_forwarded_for: true
+  # use_x_forwarded_for: true
 
-  #trusted_proxies: !secret http_trusted_proxies
+  # trusted_proxies: !secret http_trusted_proxies
 
   ip_ban_enabled: true
 
   login_attempts_threshold: 5
-

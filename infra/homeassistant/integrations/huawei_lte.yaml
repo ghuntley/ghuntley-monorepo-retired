@@ -2,4 +2,3 @@
 # SPDX-License-Identifier: Proprietary
 
 huawei_lte: !include_dir_list ../entities/huawei_lte
-

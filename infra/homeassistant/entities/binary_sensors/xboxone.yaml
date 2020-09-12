@@ -4,4 +4,3 @@
 platform: ping
 name: xboxone
 host: !secret ping_host_xboxone
-

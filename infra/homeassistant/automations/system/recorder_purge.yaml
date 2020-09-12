@@ -10,4 +10,3 @@ trigger:
     minutes: 12
 action:
   - service: recorder.purge
-

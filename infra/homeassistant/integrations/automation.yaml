@@ -4,4 +4,3 @@
 # https://www.home-assistant.io/docs/automation/
 automation: !include ../automations.yaml
 automation split: !include_dir_list ../automations
-

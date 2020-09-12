@@ -10,4 +10,3 @@ cloud:
 
     filter:
       include_entities: !include_dir_merge_list ../google_assistant
-

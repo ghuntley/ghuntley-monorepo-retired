@@ -1,8 +1,8 @@
 ---
 ignore: |
-  /.github/
-  /third_party/
-  /workshops/unoplatform/
+  .github/*
+  third_party/*
+  workshops/unoplatform/*
 
 extends: default
 

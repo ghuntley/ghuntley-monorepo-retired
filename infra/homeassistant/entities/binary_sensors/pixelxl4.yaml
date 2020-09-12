@@ -4,4 +4,3 @@
 platform: ping
 name: pixelxl4
 host: !secret ping_host_pixelxl4
-

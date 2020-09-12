@@ -7,4 +7,3 @@ client_id: !secret twitch_client_id
 token: !secret twitch_token
 channels:
   - geoffreyhuntley
-

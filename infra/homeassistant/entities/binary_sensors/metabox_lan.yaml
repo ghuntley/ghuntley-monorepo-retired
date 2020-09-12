@@ -4,4 +4,3 @@
 platform: ping
 name: metabox_lan
 host: !secret ping_host_metabox_lan
-

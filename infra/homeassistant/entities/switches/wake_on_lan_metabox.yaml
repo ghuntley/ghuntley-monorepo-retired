@@ -4,4 +4,3 @@
 # https://www.home-assistant.io/integrations/wake_on_lan/
 platform: wake_on_lan
 mac: !secret wake_on_lan_mac_metabox
-
