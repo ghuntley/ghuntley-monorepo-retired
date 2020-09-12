@@ -41,25 +41,6 @@
 
   docker-containers = {
 
-    buildkite = {
-      image = "buildkite/agent:3-ubuntu";
-      volumes = [
-        #
-        # nb. careful this allows root access
-        "/var/run/docker.sock:/var/run/docker.sock" # nb. careful this allows root access
-        # nb. careful this allows root access
-        #
-        "/nix:/nix"
-        "/srv/buildkite:/var/lib/buildkite/builds"
-      ];
-      environment = {
-        BUILDKITE_AGENT_TOKEN = secrets.buildkite-agent-token;
-      };
-      cmd = [
-        "start"
-      ];
-    };
-
     github-runner = {
       image = "myoung34/github-runner:latest";
       volumes = [
@@ -81,7 +62,20 @@
         "start"
       ];
     };
+
   };
+
+  services.buildkite-agents = listToAttrs (map
+    (n: rec {
+      name = "builder-${toString n}";
+      value = {
+        inherit name;
+        enable = true;
+        tokenPath = "/etc/secrets/buildkite-agent-token";
+        hooks.post-command = "${buildkiteHooks}/bin/post-command";
+      };
+    })
+    (range 1 32));
 
   system.stateVersion = "20.03";
 
