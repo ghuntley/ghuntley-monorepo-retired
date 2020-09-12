@@ -1,2 +1,2 @@
-
 - Automatically format and commit source code via https://github.com/stefanzweifel/git-auto-commit-action
+- Backups via https://restic.readthedocs.io/
