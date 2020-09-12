@@ -56,6 +56,7 @@ let
     # Editors
     inherit (nixpkgs)
       ctags
+      fzf
       neovim
       vimPlugins
     ;
@@ -69,6 +70,7 @@ let
     # Utilities
     inherit (nixpkgs)
       ack
+      bat
       flamegraph
       jq
       openldap

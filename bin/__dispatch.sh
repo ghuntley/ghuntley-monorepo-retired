@@ -40,6 +40,10 @@ case "${TARGET_TOOL}" in
     aka=""
     attr="third_party.azure-cli"
     ;;
+  "bat")
+    aka=""
+    attr="third_party.bat"
+    ;;
   "black")
     aka=""
     attr="third_party.black"
@@ -67,6 +71,10 @@ case "${TARGET_TOOL}" in
   "flake8")
     aka=""
     attr="third_party.flake8"
+    ;;
+  "fzf")
+    aka=""
+    attr="third_party.fzf"
     ;;
   "git")
     aka=""
