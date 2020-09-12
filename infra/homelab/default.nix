@@ -1,3 +1,6 @@
+# Copyright (c) 2020 Geoffrey Huntley <ghuntley@ghuntley.com>. All rights reserved.
+# SPDX-License-Identifier: Proprietary
+
 # Most of the Nix expressions in this folder are NixOS modules, which
 # are not readTree compatible.
 #
@@ -7,11 +10,9 @@
 # TODO(tazjin): Find a more elegant solution for the whole module
 # situation.
 { lib, pkgs, depot, ... }@args:
-
 let
   inherit (lib) findFirst isAttrs;
 in
-
 rec {
   # System installation
 

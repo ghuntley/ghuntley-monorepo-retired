@@ -228,8 +228,8 @@
 
   networking.firewall.enable = true;
 
-  networking.firewall.allowedTCPPorts = [];
-  networking.firewall.allowedUDPPorts = [];
+  networking.firewall.allowedTCPPorts = [ ];
+  networking.firewall.allowedUDPPorts = [ ];
 
   networking.firewall."tailscale0".allowedTCPPorts = [
     80
