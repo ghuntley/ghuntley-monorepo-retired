@@ -41,6 +41,11 @@ let
       terraform
     ;
 
+    # CI
+    inherit (nixpkgs)
+        editorconfig-checker
+    ;
+
     # Cryptography
     inherit (nixpkgs)
       libsodium

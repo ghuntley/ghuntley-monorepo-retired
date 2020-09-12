@@ -68,6 +68,10 @@ case "${TARGET_TOOL}" in
     aka=""
     attr="third_party.docker"
     ;;
+  "editorconfig-checker")
+    aka=""
+    attr="third_party.editorconfig-checker"
+    ;;
   "flake8")
     aka=""
     attr="third_party.flake8"
