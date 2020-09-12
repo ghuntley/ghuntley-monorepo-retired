@@ -25,7 +25,7 @@ mkShell {
 
     # Editor
     export EDITOR="$REPO_ROOT/bin/vim"
-    alias cat='bat'
+    alias cat="bat"
 
     echo "[dev-env] Setting up the development environment"
     "$REPO_ROOT/bin/de-init"
