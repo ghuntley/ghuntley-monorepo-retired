@@ -4,14 +4,23 @@
 { depot, pkgs, ... }:
 
 rec {
-  relay = import ./relay/configuration.nix;
+  compute = import ./compute/configuration.nix;
+  computeSystem = (pkgs.nixos {
+    configuration = compute;
+  }).system;
 
+  builder = import ./builder/configuration.nix;
+  builderSystem = (pkgs.nixos {
+    configuration = builder;
+  }).system;
+
+  relay = import ./relay/configuration.nix;
   relaySystem = (pkgs.nixos {
     configuration = relay;
   }).system;
 
   # Build relay in CI
-  meta.targets = [ "relaySystem" ];
+  meta.targets = [ "builderSystem" "computeSystem" "relaySystem" ];
 
   rebuilder =
     let

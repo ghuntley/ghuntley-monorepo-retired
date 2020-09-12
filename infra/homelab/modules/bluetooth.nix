@@ -12,17 +12,17 @@
       Enable=Source,Sink,Media,Socket
     '';
     powerOnBoot = true;
-    package = pkgs.bluezFull
-      };
+    package = pkgs.bluezFull;
+  };
 
-    hardware.pulseaudio = {
-      enable = true;
-      extraModules = [ pkgs.pulseaudio-modules-bt ];
-      extraConfig = ''
-        load-module module-switch-on-connect
-      '';
-      package = pkgs.pulseaudioFull;
-    };
+  hardware.pulseaudio = {
+    enable = true;
+    extraModules = [ pkgs.pulseaudio-modules-bt ];
+    extraConfig = ''
+      load-module module-switch-on-connect
+    '';
+    package = pkgs.pulseaudioFull;
+  };
 
     services.blueman.enable = true;
   }

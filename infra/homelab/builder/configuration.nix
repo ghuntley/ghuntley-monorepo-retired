@@ -1,7 +1,7 @@
 # Copyright (c) 2020 Geoffrey Huntley <ghuntley@ghuntley.com>. All rights reserved.
 # SPDX-License-Identifier: Proprietary
 
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 {
   imports =
     [
@@ -34,7 +34,7 @@
   boot.loader.grub.version = 2;
   boot.loader.grub.device = "/dev/sda";
 
-  networking.hostName = "builder.wg.ghuntley.net";
+  networking.hostName = "builder";
 
   networking.useDHCP = false;
   networking.interfaces.ens192.useDHCP = true;
@@ -53,9 +53,9 @@
         "/srv/github-runner:/build"
       ];
       environment = {
-        REPO_URL = secrets.github-runner-repo-url;
-        RUNNER_NAME = secrets.github-runner-name;
-        RUNNER_TOKEN = secrets.github-runner-token;
+        REPO_URL = "secrets.github-runner-repo-url";
+        RUNNER_NAME = "secrets.github-runner-name";
+        RUNNER_TOKEN = "secrets.github-runner-token";
         RUNNER_WORKDIR = "/build";
       };
       cmd = [
@@ -65,17 +65,17 @@
 
   };
 
-  services.buildkite-agents = listToAttrs (map
+  services.buildkite-agents = lib.listToAttrs (map
     (n: rec {
       name = "builder-${toString n}";
       value = {
         inherit name;
         enable = true;
         tokenPath = "/etc/secrets/buildkite-agent-token";
-        hooks.post-command = "${buildkiteHooks}/bin/post-command";
+        # hooks.post-command = "${buildkiteHooks}/bin/post-command";
       };
     })
-    (range 1 32));
+    (lib.range 1 32));
 
   system.stateVersion = "20.03";
 

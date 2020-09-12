@@ -11,7 +11,7 @@
       ../modules/fail2ban.nix
       ../modules/firewall.nix
       ../modules/gist.nix
-      ../modules/gps.nix
+      ../modules/gpsd.nix
       ../modules/i18n.nix
       ../modules/initrd.nix
       ../modules/libvirtd.nix
@@ -36,7 +36,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "compute.wg.ghuntley.net";
+  networking.hostName = "compute";
   networking.hostId = "DEADBEEF";
 
   networking.useDHCP = false;
@@ -83,7 +83,7 @@
         "/srv/git:/home/coder/code"
       ];
       environment = {
-        PASSWORD = secrets.codeserver-password;
+        PASSWORD = "secrets.codeserver-password";
       };
       cmd = [
         "--auth"
@@ -175,9 +175,9 @@
       environment = {
         ALWAYS_ADD_MISSING_HEADERS = "yes";
         SERVER_HOSTNAME = "smtp.ghuntley.net";
-        SMTP_SERVER = secrets.smtp-server;
-        SMTP_USERNAME = secrets.smtp-username;
-        SMTP_PASSWORD = secrets.smtp-password;
+        SMTP_SERVER = "secrets.smtp-server";
+        SMTP_USERNAME = "secrets.smtp-username";
+        SMTP_PASSWORD = "secrets.smtp-password";
       };
       cmd = [
       ];
@@ -231,10 +231,10 @@
   networking.firewall.allowedTCPPorts = [ ];
   networking.firewall.allowedUDPPorts = [ ];
 
-  networking.firewall."tailscale0".allowedTCPPorts = [
-    80
-    443
-  ];
+  # networking.firewall."tailscale0".allowedTCPPorts = [
+  #   80
+  #   443
+  # ];
 
 
   system.stateVersion = "20.03";
