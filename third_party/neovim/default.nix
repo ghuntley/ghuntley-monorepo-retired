@@ -1,14 +1,16 @@
 { pkgs, ... }:
 
 pkgs.originals.neovim.override {
+  viAlias = true;
   vimAlias = true;
+  withPython3 = true;
 
   configure = {
     customRC = ''
-      " _   _ ___ 
+      " _   _ ___
       " | | | |_ _|
-      " | | | || | 
-      " | |_| || | 
+      " | | | || |
+      " | |_| || |
       "  \___/|___|
 
       "Enable terminal colors 256
@@ -28,11 +30,11 @@ pkgs.originals.neovim.override {
       colorscheme gruvbox
       let g:airline_theme="gruvbox"
 
-      "  _____    _ _ _             
-      " | ____|__| (_) |_ ___  _ __ 
+      "  _____    _ _ _
+      " | ____|__| (_) |_ ___  _ __
       " |  _| / _` | | __/ _ \| '__|
-      " | |__| (_| | | || (_) | |   
-      " |_____\__,_|_|\__\___/|_|   
+      " | |__| (_| | | || (_) | |
+      " |_____\__,_|_|\__\___/|_|
 
       " Remap leader key to ,
       " With a map leader it's possible to do extra key combinations
@@ -195,7 +197,7 @@ pkgs.originals.neovim.override {
       "Remove Trailing whitespaces in all files
       autocmd BufWritePre * %s/\s\+$//e
 
-      " _____                   _             _ 
+      " _____                   _             _
       " |_   _|__ _ __ _ __ ___ (_)_ __   __ _| |
       "   | |/ _ \ '__| '_ ` _ \| | '_ \ / _` | |
       "   | |  __/ |  | | | | | | | | | | (_| | |
@@ -208,12 +210,12 @@ pkgs.originals.neovim.override {
       "Always start terminal in insert mode
       autocmd TermOpen * startinsert
 
-      "  _____ _ _      _                         
-      " |  ___(_) | ___| |_ _   _ _ __   ___  ___ 
+      "  _____ _ _      _
+      " |  ___(_) | ___| |_ _   _ _ __   ___  ___
       " | |_  | | |/ _ \ __| | | | '_ \ / _ \/ __|
       " |  _| | | |  __/ |_| |_| | |_) |  __/\__ \
       " |_|   |_|_|\___|\__|\__, | .__/ \___||___/
-      "                     |___/|_|              
+      "                     |___/|_|
 
       autocmd FileType dart :packadd dart-vim-plugin
       autocmd FileType go :packadd vim-go
