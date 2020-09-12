@@ -36,7 +36,7 @@
   boot.loader.grub.version = 2;
   boot.loader.grub.device = "/dev/sda";
 
-  networking.hostName = "relay.wg.ghuntley.net";
+  networking.hostName = "relay";
 
   networking.useDHCP = false;
   networking.interfaces.ens192.useDHCP = true;

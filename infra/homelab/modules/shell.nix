@@ -2,15 +2,9 @@
 # SPDX-License-Identifier: Proprietary
 
 { pkgs, config, lib, ... }: {
-  environment.systemPackages = with pkgs; [ bat ];
+  environment.systemPackages = with pkgs; [ bat fzf ];
 
   programs.bash.enableCompletion = true;
-
-  programs.fzf = {
-    enable = true;
-    enableBashIntegration = true;
-    enableZshIntegration = true;
-  };
 
   programs.zsh = {
     enable = true;
@@ -30,4 +24,5 @@
     shellAliases = {
       "cat" = "${pkgs.bat}/bin/bat";
     };
-  }
+  };
+}
