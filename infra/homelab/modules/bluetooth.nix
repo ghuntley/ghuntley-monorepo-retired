@@ -7,12 +7,11 @@
 
   hardware.bluetooth = {
     enable = true;
-    extraConfig = ''
-      [General]
-      Enable=Source,Sink,Media,Socket
-    '';
-    powerOnBoot = true;
-    package = pkgs.bluezFull;
+    config = {
+      General = {
+        Enable = "Source,Sink,Media,Socket";
+      };
+    };
   };
 
   hardware.pulseaudio = {
@@ -24,5 +23,5 @@
     package = pkgs.pulseaudioFull;
   };
 
-    services.blueman.enable = true;
-  }
+  services.blueman.enable = true;
+}
