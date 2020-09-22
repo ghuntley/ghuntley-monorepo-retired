@@ -1,3 +1,130 @@
 [user]
-	email = ghuntley@ghuntley.com
-	name = Geoffrey Huntley
+email = ghuntley@ghuntley.com
+name = Geoffrey Huntley
+
+[core]
+editor = nvim
+whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+
+[rerere]
+enabled = 1
+autoupdate = 1
+
+[alias]
+c = commit -am
+fpush = push --force
+s = status
+sclone = clone --depth=1
+amend = commit --amend --all
+undocommit = reset HEAD~
+hreset = reset --hard
+co = checkout
+df = diff --color --color-words --abbrev
+lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+cherrypick = cherry-pick
+cherry = cherry-pick
+cp = cherry-pick
+
+# show commit log of unique commits of this branch (not on master)
+diffcommitsfrommaster = log --no-merges master..
+# show unified diff of unique commits of this branch
+difffrommaster = diff master...
+# ^^^^ Holy crap two dots vs three dots, so important. https://stackoverflow.com/a/48681527
+
+# Show the diff between the latest commit and the current state
+d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+
+reup = rebase-update # depot_tools specific
+git = !exec git
+
+[core]
+excludesfile = ~/.gitignore
+attributesfile = ~/.gitattributes
+precomposeUnicode = true
+
+[commit]
+gpgSign = false
+
+[pager]
+# insanely beautiful diffs
+diff = diff-so-fancy | less --tabs=4 -RFX
+show = diff-so-fancy | less --tabs=4 -RFX
+
+[interactive]
+diffFilter = "diff-so-fancy"
+
+# so much color
+[color]
+ui = auto
+
+[color "diff"]
+meta = yellow bold
+commit = green bold
+frag = magenta bold
+old = red bold
+new = green bold
+whitespace = red reverse
+newMoved = cyan
+oldMoved = blue
+
+[color "diff-highlight"]
+oldNormal = red bold
+oldHighlight = "red bold 52"
+newNormal = "green bold"
+newHighlight = "green bold 22"
+
+[color "branch"]
+current = yellow reverse
+local = yellow
+remote = green
+
+[color "status"]
+added = yellow
+changed = green
+untracked = cyan
+
+# git mergetool
+[merge]
+tool = opendiff
+renameLimit = 0
+conflictstyle = diff3
+ff = only
+
+
+[url "git://gist.github.com/"]
+insteadOf = "gist:"
+
+# correct typos
+[help]
+autocorrect = 1
+
+# push easily. http://stackoverflow.com/a/23918418/89484
+[push]
+default = current
+followTags = true
+
+# use separate file for username / github token / etc
+[include]
+path = ~/.gitconfig.local
+
+
+[filter "lfs"]
+clean = git-lfs clean %f
+smudge = git-lfs smudge %f
+required = true
+
+[fetch]
+prune = true
+
+[diff]
+# Show blocks of moved text of at least 20 alphanumeric characters differently than adds/deletes
+# https://blog.github.com/2018-04-05-git-217-released/
+colorMoved = zebra
+
+[transfer]
+fsckobjects = true
+
+[stash]
+showPatch = true
+[log]
+date = relative

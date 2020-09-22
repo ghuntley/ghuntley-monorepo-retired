@@ -1,0 +1,192 @@
+[colors]
+background = #f90f0f0f
+background-alt = #f93f3f3f
+foreground = #d4be98
+foreground-alt = #d4be98
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+[bar/ghuntley]
+;monitor = ${env:MONITOR:HDMI-0}
+monitor = ${env:MONITOR}
+width = 100%
+height = 55
+fixed-center = true
+border-size= 0
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 0
+line-color = #f00
+
+padding-left = 5
+padding-right = 5
+
+module-margin-left = 2
+module-margin-right = 3
+
+font-0 = Fira Code:size=20;0
+font-1 = FontAwesome:size=22;0
+font-2 = Weather Icons:size=24;0
+
+;tray-position = right
+;tray-padding = 5
+;tray-underline-size = 0
+;tray-detached = false
+;tray-transparent = false
+;tray-background = ${colors.background}
+;tray-foreground = ${colors.foreground-alt}
+
+modules-left = powermenu i3
+modules-center = xwindow
+modules-right = pulseaudio date temperature
+
+wm-restack = i3
+
+;override-redirect = true
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/xwindow]
+type = internal/xwindow
+label = %title%
+;label = %title:0:30:...%
+
+[module/i3]
+type = internal/i3
+
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 2
+
+label-occupied = %index%
+label-occupied-padding = 2
+
+label-urgent = %index%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+label-empty = %index%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 2
+
+; Separator in between workspaces
+; label-separator = |
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+label-muted = muted
+label-muted-foreground = #666
+
+click-right = pavucontrol &
+; click-middle = 
+
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = %a, %b %d
+time = %l:%M %p
+label = %date%  %time%
+
+background = ${colors.background-alt} 
+
+[module/temperature]
+type = internal/temperature
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP1
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+format-charging-underline = #ffb52a
+
+format-discharging = <animation-discharging> <label-discharging>
+format-discharging-underline = ${self.format-charging-underline}
+
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-underline = ${self.format-charging-underline}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-foreground = ${colors.foreground-alt}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-framerate = 750
+
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-foreground = ${colors.foreground-alt}
+animation-discharging-framerate = 750
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+format-spacing = 4
+
+label-open = 
+label-close = 
+label-separator =  
+label-separator-foreground = ${colors.foreground-alt}
+label-active-font = 1
+
+menu-0-0 = " Restart"
+menu-0-0-exec = sudo reboot
+menu-0-1 = "     Shutdown"
+menu-0-1-exec = sudo poweroff
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = "  "
+format = <label>
+exec = python /home/ghuntley/.config/polybar/spotify_status.py -f '{song}: {artist}'
+
+label = %output%
+label-active-font = 3
+
+[module/weather]
+type = custom/script
+exec = busctl --user -j get-property io.ntfd /weather openweathermap.strings RenderedTemplate | jq -r .data
+interval = 60
+label-font = 3
+
+[module/update]
+type = custom/script
+exec = yay -Qu | wc -l
+interval = 1000
+label = %output%
+format-prefix = " "
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+vim:ft=dosini

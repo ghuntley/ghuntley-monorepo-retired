@@ -1,23 +1,23 @@
 install: 
-	stow alacritty
-	stow bin
-	stow compton
-	stow editorconfig
-	stow fontconfig
-	stow git
-	stow i3
-	stow i3blocks
-	stow konsole
-	stow plasma
-	stow obs-studio
-	stow offlineimap
-	stow nixpkgs
-	stow ssh
-	stow tmux
-	stow terminator
-	stow vim
-	stow X
-	git add -A
-	git commit -m bump
-	git pull origin --rebase
-	git push origin master
+	stow alacritty -t ~
+	stow autorandr -t ~
+	stow bin -t ~
+	stow compton -t ~
+	stow editorconfig -t ~
+	stow fontconfig -t ~
+	stow git -t ~
+	stow i3 -t ~
+	stow kitty -t ~
+	stow konsole -t ~
+	stow nixpkgs -t ~
+	stow obs-studio -t ~
+	stow offlineimap -t ~
+	stow plasma -t ~
+	stow polybar -t ~
+	stow ranger -t ~
+	stow ssh -t ~
+	stow termite -t ~
+	stow tmux -t ~
+	stow terminator -t ~
+	stow vim -t ~
+	stow X -t ~

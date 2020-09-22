@@ -205,52 +205,10 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# i3bar
-bar {
-  i3bar_command i3bar
-  status_command i3blocks 
-  position top
-  #font pango:...
-  strip_workspace_numbers yes
-  separator_symbol "-"
-  workspace_buttons yes
-  bindsym button4 nop
-  bindsym button5 nop
-  tray_padding 0
-
-  colors {
-    statusline    #ffffff
-    background    #000000
-    separator     #000000ff
-      #                  BORDER      BACKGROUND    TEXT
-    focused_workspace   #00000000    #00000000   #c6ff00
-    inactive_workspace  #00000000    #00000000   #dddddd
-    active_workspace    #00000000    #00000000   #ffffff
-    urgent_workspace    #b71c1c      #b71c1c     #00000000
-    binding_mode        #b71c1c      #b71c1c     #00000000
-  }
-}
-
 # automatically lock when laptop lid closes
 exec --no-startup-id xss-lock -- 
 
 # Starting things with i3
 # exec --no-startup-id xcompmgr -C &    # Bare compositor to allow transparency
-for_window [class="yakuake"] floating enable
 exec --no-startup-id feh --bg-center ~/.dotfiles/wallpapers/sadie.jpg --image-bg white
 
-## Plasma Integration
-# Try to kill the wallpaper set by Plasma (it takes up the entire workspace and hides everythiing)
-exec --no-startup-id wmctrl -c Plasma
-for_window [title="Desktop — Plasma"] kill, floating enable, border none
-
-## Avoid tiling popups, dropdown windows from plasma
-# for the first time, manually resize them, i3 will remember the setting for floating windows
-for_window [class="plasmashell"] floating enable
-for_window [class="Plasma"] floating enable, border none
-for_window [title="plasma-desktop"] floating enable, border none
-for_window [title="win7"] floating enable, border none
-for_window [class="krunner"] floating enable, border none
-for_window [class="Kmix"] floating enable, border none
-for_window [class="Klipper"] floating enable, border none
-for_window [class="Plasmoidviewer"] floating enable, border none

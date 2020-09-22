@@ -1,0 +1,32 @@
+[options]
+allow_bold = true
+audible_bell = false
+bold_is_bright = true
+clickable_url = t
+font = Fira Code 11
+scrollback_lines = 10000
+cursor_blink = on
+cursor_shape = block
+
+[colors]
+background = rgba(10, 10, 10, 0.8)
+highlight = #dc3232
+
+# Colors from color0 to color254 can be set
+color0 = #665c54
+color1 = #ea6962
+color2 = #a9b665
+color3 = #e78a4e
+color4 = #7daea3
+color5 = #d3869b
+color6 = #89b482
+color7 = #d4be98
+color8 = #928374
+color9 = #ea6962
+color10 = #a9b665
+color11 = #d8a657
+color12 = #7daea3
+color13 = #d3869b
+color14 = #89b482
+color15 = #d4be98
+
