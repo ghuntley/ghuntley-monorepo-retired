@@ -1,10 +1,9 @@
 # Copyright (c) 2020 Geoffrey Huntley <ghuntley@ghuntley.com>. All rights reserved.
 # SPDX-License-Identifier: Proprietary
 
-{ pkgs, config, lib, sops, ... }: {
-  networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
+{ pkgs, config, lib, ... }: {
 
-  imports = [ ../secrets/wireless-networks.nix ];
+  networking.wireless.enable = true;
+  # networking.wireless.extraConfig = (builtins.readFile config.sops.secrets.wpa_supplicant.path);
 
-  #networking.wireless.networks = builtins.fromJSON (builtins.readFile ../secrets/wireless-networks.json);
 }

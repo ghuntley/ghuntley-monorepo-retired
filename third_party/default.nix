@@ -179,4 +179,7 @@ in exposed.lib.fix(self: exposed // {
   # Make NixOS available
   nixos = import ./github.com/nixos/nixpkgs-channels/nixos;
   nixeval = import ./github.com/nixos/nixpkgs-channels/nixos/lib/eval-config.nix;
+
+  # Make SOPS available
+  sops-nix = import ./github.com/mic92/sops-nix;
 })

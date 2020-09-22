@@ -34,3 +34,6 @@
 [submodule "third_party/tvl.fyi"]
 	path = third_party/tvl.fyi
 	url = https://cl.tvl.fyi/depot
+[submodule "third_party/github.com/mic92/sops-nix"]
+	path = third_party/github.com/mic92/sops-nix
+	url = https://github.com/mic92/sops-nix

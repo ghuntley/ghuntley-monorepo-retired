@@ -53,15 +53,6 @@
       ../modules/zfs.nix
     ];
 
-  # sopsPGPKeyDirs = [ 
-  #   "../../../keys/hosts"
-  #   "../../../keys/users"
-  # ];
-
-  # nativeBuildInputs = [
-  #   (pkgs.callPackage <sops-nix> {}).sops-pgp-hook
-  # ];
-
   networking.hostId = "DEADBEEF";
   networking.hostName = "metabox"; # Define your hostname.
 

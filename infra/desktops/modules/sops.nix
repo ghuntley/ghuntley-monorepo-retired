@@ -2,8 +2,9 @@
 # SPDX-License-Identifier: Proprietary
 
 { pkgs, config, lib, sops, ... }: {
-  sops.secrets.wireless_networks = {
+  sops.secrets.wpa_supplicant = {
     format = "binary";
-    sopsFile = ../secrets/enc-wireless-networks.nix;
+    sopsFile = ../secrets/wpa_supplicant;
+    path = "/etc/wpa_supplicant.conf";
   };
 }

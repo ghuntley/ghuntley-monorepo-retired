@@ -32,6 +32,7 @@ let
   readTree' = import ./nix/readTree { };
 
   localPkgs = readTree: {
+    keys = import ./keys;
     infra = readTree ./infra;
     nix = readTree ./nix;
     nixos = readTree ./nixos;
