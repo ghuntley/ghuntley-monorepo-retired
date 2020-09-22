@@ -169,6 +169,7 @@ in exposed.lib.fix(self: exposed // {
   python = nixpkgs.python38;
   pythonPackages = nixpkgs.python38Packages;
 
+  # Terraform
   terraform = nixpkgs.terraform_0_13;
 
   # Supplementals
