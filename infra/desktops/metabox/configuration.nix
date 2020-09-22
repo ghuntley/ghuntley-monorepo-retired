@@ -7,6 +7,7 @@
       <sops-nix/modules/sops>
       ./hardware-configuration.nix
       ../modules/bluetooth.nix
+      ../modules/builders.nix
       ../modules/boot.nix
       ../modules/corsair.nix
       ../modules/docker.nix
@@ -23,6 +24,7 @@
       ../modules/mbsyncd.nix
       ../modules/mosh.nix
       ../modules/setcap-wrapper.nix
+      ../modules/sops.nix
       ../modules/microcode.nix
       ../modules/googlechrome.nix
       ../modules/nvme.nix
@@ -38,7 +40,6 @@
       ../modules/logitech.nix
       ../modules/sshd.nix
       ../modules/sound.nix
-      ../modules/sops.nix
       ../modules/sudo.nix
       ../modules/nvidia.nix
       ../modules/steam.nix
@@ -58,16 +59,6 @@
 
   networking.interfaces.enp109s0.useDHCP = true;
   networking.interfaces.wlp112s0.useDHCP = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    wget
-    vim
-    htop
-    tmux
-    firefox
-  ];
 
   system.stateVersion = "20.03";
 }

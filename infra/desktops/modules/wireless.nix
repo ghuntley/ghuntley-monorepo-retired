@@ -4,6 +4,5 @@
 { pkgs, config, lib, ... }: {
 
   networking.wireless.enable = true;
-  # networking.wireless.extraConfig = (builtins.readFile config.sops.secrets.wpa_supplicant.path);
 
 }

@@ -13,11 +13,12 @@
     gitAndTools.gitFull
     gnumake
     htop
-    jq
-    killall
+    htop
     iftop
     inetutils
     iotop
+    jq
+    killall
     lsof
     muchsync
     nixpkgs-fmt
@@ -27,8 +28,11 @@
     rpl
     stow
     tmux
+    tmux
     tree
     unzip
+    vim
+    wget
     wget
     wol
     zip
