@@ -19,7 +19,9 @@
     inetutils
     iotop
     lsof
+    muchsync
     nixpkgs-fmt
+    notmuch
     p7zip
     ranger
     rpl

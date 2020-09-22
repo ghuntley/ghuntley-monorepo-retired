@@ -30,6 +30,7 @@
       ../modules/networking-ipv6.nix
       ../modules/nix-daemon.nix
       ../modules/pkgs.nix
+      ../modules/pkgs-x11.nix
       ../modules/printing.nix
       ../modules/powermanagement.nix
       ../modules/sourcegraph.nix
@@ -48,7 +49,7 @@
       ../modules/timezone.nix
       ../modules/users.nix
       ../modules/wireless.nix
-      ../modules/x11-i3.nix
+      ../modules/x11-kde.nix
       ../modules/zfs.nix
     ];
 
