@@ -64,6 +64,10 @@ case "${TARGET_TOOL}" in
     aka=""
     attr="third_party.ctags"
     ;;
+  "dhall")
+    aka=""
+    attr="third_party.dhall"
+    ;;
   "docker")
     aka=""
     attr="third_party.docker"
@@ -115,6 +119,10 @@ case "${TARGET_TOOL}" in
   "shellcheck")
     aka=""
     attr="third_party.shellcheck"
+    ;;
+  "sops")
+    aka=""
+    attr="third_party.sops"
     ;;
   "terraform")
     aka=""

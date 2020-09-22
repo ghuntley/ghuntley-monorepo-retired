@@ -49,6 +49,12 @@ let
     # Cryptography
     inherit (nixpkgs)
       libsodium
+      sops
+    ;
+
+    # Dhall
+    inherit (nixpkgs)
+      dhall
     ;
 
     # Docker
