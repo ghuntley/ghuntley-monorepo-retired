@@ -172,6 +172,10 @@ case "${TARGET_TOOL}" in
     aka=""
     attr="third_party.nix-linter"
     ;;
+  "nixos-shell")
+    aka=""
+    attr="third_party.nixos-shell"
+    ;;
   "nixpkgs-fmt")
     aka=""
     attr="third_party.nixpkgs-fmt"

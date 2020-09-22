@@ -2,5 +2,6 @@
 # SPDX-License-Identifier: Proprietary
 
 { pkgs, ... }: {
-  home-manager.users.ghuntley = { };
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  services.openssh.enable = true;
 }

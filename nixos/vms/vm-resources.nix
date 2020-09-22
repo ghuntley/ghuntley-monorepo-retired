@@ -2,10 +2,8 @@
 # SPDX-License-Identifier: Proprietary
 
 {
-  services.syncthing = {
-    enable = true;
-    user = "ghuntley";
-    openDefaultPorts = true;
-    dataDir = "/home/ghuntley";
+  virtualisation = {
+    cores = 2;
+    memorySize = "1024M";
   };
 }

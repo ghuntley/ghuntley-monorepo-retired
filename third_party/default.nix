@@ -136,6 +136,7 @@ let
       lib
       linuxPackages
       nixpkgs-fmt
+      nixos-shell
       writeShellScript
       writeShellScriptBin;
 
