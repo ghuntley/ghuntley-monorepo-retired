@@ -7,7 +7,7 @@
       <sops-nix/modules/sops>
       ./hardware-configuration.nix
       ../modules/bluetooth.nix
-      ../modules/builders.nix
+      #../modules/builders.nix
       ../modules/boot.nix
       ../modules/corsair.nix
       ../modules/docker.nix
