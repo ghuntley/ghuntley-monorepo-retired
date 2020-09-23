@@ -1,6 +1,5 @@
 # Copyright (c) 2020 Geoffrey Huntley <ghuntley@ghuntley.com>. All rights reserved.
 # SPDX-License-Identifier: Proprietary
-
 let keys = import ../../../keys; # TODO(high): retrieve keys from depot instead of manually importing via file
 in
 { pkgs, config, lib, ... }: {
@@ -8,7 +7,7 @@ in
     ghuntley = {
       isNormalUser = true;
       home = "/home/ghuntley";
-      extraGroups = [ 
+      extraGroups = [
         "adbusers"
         "docker"
         "input"

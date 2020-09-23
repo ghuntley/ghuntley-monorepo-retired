@@ -15,7 +15,7 @@
   hardware.pulseaudio.tcp.anonymousClients.allowedIpRanges = [ "127.0.0.1" ];
   hardware.pulseaudio.tcp.enable = true;
 
-  systemd.services.audio-off = { 
+  systemd.services.audio-off = {
     description = "Mute audio before suspend";
     enable = true;
     serviceConfig.ExecStart = "${pkgs.pamixer}/bin/pamixer --mute";

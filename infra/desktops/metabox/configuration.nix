@@ -39,7 +39,7 @@
       ../modules/shell.nix
       ../modules/sops.nix
       ../modules/sound.nix
-#      ../modules/sourcegraph.nix
+      #      ../modules/sourcegraph.nix
       ../modules/sshd.nix
       ../modules/steam.nix
       ../modules/sudo.nix
