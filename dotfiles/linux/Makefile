@@ -1,4 +1,4 @@
-install: 
+install:
 	stow alacritty -t ~
 	stow autorandr -t ~
 	stow bin -t ~
@@ -9,9 +9,11 @@ install:
 	stow i3 -t ~
 	stow kitty -t ~
 	stow konsole -t ~
+	stow mbsyncd -t ~
+	stow neomutt -t ~
 	stow nixpkgs -t ~
+	stow notmuch -t ~
 	stow obs-studio -t ~
-	stow offlineimap -t ~
 	stow plasma -t ~
 	stow polybar -t ~
 	stow ranger -t ~

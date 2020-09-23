@@ -1,0 +1,54 @@
+Create Both
+Expunge Both
+SyncState *
+
+IMAPAccount personal
+Host imap.gmail.com
+User ghuntley@ghuntley.com
+PassCmd "cat /run/secrets/personal-imap-password"
+SSLType IMAPS
+AuthMechs LOGIN
+
+IMAPStore personal-remote
+Account personal
+
+MaildirStore personal-local
+Path ~/Mail/
+Inbox ~/Mail/Inbox
+
+Channel personal-inbox
+Master :personal-remote:
+Slave :personal-local:
+Patterns "INBOX"
+
+Channel personal-starred
+Master :personal-remote:"[Gmail]/Starred"
+Slave :personal-local:Starred
+
+Channel personal-sent
+Master :personal-remote:"[Gmail]/Sent Mail"
+Slave :personal-local:Sent
+
+Channel personal-drafts
+Master :personal-remote:"[Gmail]/Drafts"
+Slave :personal-local:Drafts
+
+Channel personal-trash
+Master :personal-remote:"[Gmail]/Trash"
+Slave :personal-local:Trash
+
+Group personal
+Channel personal-inbox
+Channel personal-starred
+Channel personal-sent
+Channel personal-drafts
+Channel personal-trash
+
+# Gmail mailboxes:
+# "All Mail"
+# "Drafts"
+# "Important"
+# "Sent Mail"
+# "Spam"
+# "Starred"
+# "Trash"

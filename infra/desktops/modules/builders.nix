@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Proprietary
 
 { pkgs, config, lib, sops, ... }: {
-  
+
   sops.secrets.github-runner-name = {
     format = "yaml";
     sopsFile = ../secrets/secrets.yaml;
@@ -48,14 +48,16 @@
     };
   };
 
-  services.buildkite-agents = lib.listToAttrs (map (n: rec {
-    name = "metabox-${toString n}";
-    value = {
-      inherit name;
-      enable = true;
-      tokenPath = config.sops.secrets.buildkite-agent-token.path;
-      tags = { hardware = "laptop"; os = "nixos"; docker = "true"; kvm = "true"; nix = "true"; nvidia = "true"; };
-    };
-  }) (lib.range 1 32));
+  services.buildkite-agents = lib.listToAttrs (map
+    (n: rec {
+      name = "metabox-${toString n}";
+      value = {
+        inherit name;
+        enable = true;
+        tokenPath = config.sops.secrets.buildkite-agent-token.path;
+        tags = { hardware = "laptop"; os = "nixos"; docker = "true"; kvm = "true"; nix = "true"; nvidia = "true"; };
+      };
+    })
+    (lib.range 1 32));
 
 }

@@ -1,0 +1,17 @@
+# Main configuration based on http://www.physics.drexel.edu/liki/index.php/Mutt
+
+set folder = ~/Mail
+
+# Mutt will mark emails from these addresses as having been sent by you
+alternates me@geoffreyhuntley.com
+
+# Keybindings.conf should go first since some of the other config files will
+# override default keybindings
+source ~/.mutt/keybindings.conf
+
+source ~/.mutt/mailboxes.conf
+source ~/.mutt/common.conf
+source ~/.mutt/colours.conf
+source ~/.mutt/pgp.conf
+source ~/.mutt/accounts.conf
+

@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Proprietary
 
 { pkgs, config, lib, sops, ... }: {
-  
+
   sops.defaultSopsFile = ../secrets/secrets.yaml;
-  
+
 }

@@ -21,7 +21,7 @@
       ../modules/initrd.nix
       ../modules/libvirtd.nix
       ../modules/logging.nix
-      ../modules/mbsyncd.nix
+      ../modules/mail.nix
       ../modules/mosh.nix
       ../modules/setcap-wrapper.nix
       ../modules/sops.nix
