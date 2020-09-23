@@ -20,7 +20,7 @@ in
         "wheel"
         "wireshark"
       ];
-      shell = "/run/current-system/sw/bin/zsh";
+      shell = pkgs.zsh;
       uid = 1000;
       openssh.authorizedKeys.keys = [ keys.users.ghuntley.ssh ];
     };

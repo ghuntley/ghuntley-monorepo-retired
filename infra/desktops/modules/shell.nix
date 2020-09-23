@@ -10,19 +10,30 @@
     enable = true;
     ohMyZsh = {
       enable = true;
+      theme = "lambda";
       plugins = [
         "battery"
         "colorize"
+        "direnv"
+        "docker"
         "command-not-found"
+        "git"
+        "git-prompt"
         "github"
         "gitignore"
+        "last-working-dir"
+        "history"
+        "kubectl"
         "postgres"
+        "ssh-agent"
         "systemd"
         "themes"
+        "tmux"
       ];
     };
     shellAliases = {
       "cat" = "${pkgs.bat}/bin/bat";
+      "mutt" = "${pkgs.neomutt}/bin/neomutt";
     };
   };
 }
