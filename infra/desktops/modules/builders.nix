@@ -3,6 +3,26 @@
 
 { pkgs, config, lib, sops, ... }: {
   
+  sops.secrets.github-runner-name = {
+    format = "yaml";
+    sopsFile = ../secrets/secrets.yaml;
+  };
+
+  sops.secrets.github-runner-repo-url = {
+    format = "yaml";
+    sopsFile = ../secrets/secrets.yaml;
+  };
+
+  sops.secrets.github-runner-token = {
+    format = "yaml";
+    sopsFile = ../secrets/secrets.yaml;
+  };
+
+  sops.secrets.buildkite-agent-token = {
+    format = "binary";
+    sopsFile = ../secrets/buildkite-agent-token;
+  };
+
   virtualisation.oci-containers.containers = {
 
     github-runner = {
