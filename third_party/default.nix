@@ -72,6 +72,15 @@ let
       vimPlugins
     ;
 
+    # Games
+    inherit (nixpkgs)
+      ioquake3
+      quake3e
+      quake3hires
+      quake3pointrelease
+      quake3wrapper
+    ;
+
     # Haskell
     inherit (nixpkgs)
       hlint
@@ -137,10 +146,12 @@ let
       fetchzip
       lib
       linuxPackages
+      stdenvNoCC
       nixpkgs-fmt
       nixos-shell
       writeShellScript
-      writeShellScriptBin;
+      writeShellScriptBin
+    ;
 
     # node.js
     inherit (nixpkgs)
@@ -166,6 +177,11 @@ in exposed.lib.fix(self: exposed // {
   originals = {
     inherit (nixpkgs) openldap neovim;
   };
+
+  # Use LLVM 11
+  llvmPackages = nixpkgs.llvmPackages_11;
+  clangStdenv = nixpkgs.llvmPackages_11.stdenv;
+  stdenv = nixpkgs.llvmPackages_11.stdenv;
 
   # Python 3
   python = nixpkgs.python38;
