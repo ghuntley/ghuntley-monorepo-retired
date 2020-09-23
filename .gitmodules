@@ -10,9 +10,6 @@
 [submodule "third_party/github.com/lnl7/nix-docker"]
 	path = third_party/github.com/lnl7/nix-docker
 	url = https://github.com/LnL7/nix-docker.git
-[submodule "third_party/github.com/jgavris/rs-git-fsmonitor"]
-	path = third_party/github.com/jgavris/rs-git-fsmonitor
-	url = https://github.com/jgavris/rs-git-fsmonitor.git
 [submodule "web/emailaddress.github.io"]
 	path = web/emailaddress.github.io
 	url = https://github.com/emailaddress/emailaddress.github.io.git

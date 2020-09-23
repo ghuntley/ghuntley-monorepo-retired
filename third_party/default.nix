@@ -120,11 +120,13 @@ let
     # Source Control
     inherit (nixpkgs)
       git
-      mercurialFull
+      mercurialFul
     ;
 
     inherit (nixpkgs.gitAndTools)
-      git-bug;
+      git-bug
+      rs-git-fsmonitor
+    ;
 
     # NIX
     inherit (nixpkgs)
