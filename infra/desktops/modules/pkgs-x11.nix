@@ -6,12 +6,19 @@
   environment.systemPackages = with pkgs; [
     alacritty
     arandr
+    ark
     autorandr
+    bluedevil
     discord
     dmenu
+    gimp-with-plugins
     feh
     j4-dmenu-desktop
     libnotify
+    kate
+    kgpg
+    pinentry-qt
+    ktorrent
     minitube
     mplayer
     obs-studio
@@ -32,6 +39,8 @@
     tdesktop
     terminus
     termite.terminfo
+    thunderbird
+    vlc
     xclip
     xorg.xbacklight
     xorg.xmodmap

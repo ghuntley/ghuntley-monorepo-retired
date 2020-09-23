@@ -9,13 +9,13 @@
       inputs = {
         system = { };
         mem = { };
-        zfs = lib.optionalAttrs (lib.any (fs: fs == "zfs") config.boot.supportedFilesystems) { };
-        systemd_units = { };
-        swap = { };
-        disk.tagdrop = {
-          fstype = [ "tmpfs" "ramfs" "devtmpfs" "devfs" "iso9660" "overlay" "aufs" "squashfs" ];
-          device = [ "rpc_pipefs" "lxcfs" "nsfs" "borgfs" ];
-        };
+        # zfs = lib.optionalAttrs (lib.any (fs: fs == "zfs") config.boot.supportedFilesystems) { };
+        # systemd_units = { };
+        # swap = { };
+        # disk.tagdrop = {
+        #   fstype = [ "tmpfs" "ramfs" "devtmpfs" "devfs" "iso9660" "overlay" "aufs" "squashfs" ];
+        #   device = [ "rpc_pipefs" "lxcfs" "nsfs" "borgfs" ];
+        # };
       };
       outputs = {
         prometheus_client = {

@@ -14,6 +14,7 @@ install:
 	stow nixpkgs -t ~
 	stow notmuch -t ~
 	stow obs-studio -t ~
+	stow omf -t ~
 	stow plasma -t ~
 	stow polybar -t ~
 	stow ranger -t ~

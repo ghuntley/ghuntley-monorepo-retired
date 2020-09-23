@@ -1,0 +1,7 @@
+package colored-man-pages
+package direnv
+package vish
+theme agnoster
+theme default
+theme lambda
+theme shellder

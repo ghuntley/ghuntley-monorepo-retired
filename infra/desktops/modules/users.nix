@@ -20,7 +20,7 @@ in
         "wheel"
         "wireshark"
       ];
-      shell = pkgs.zsh;
+      shell = pkgs.fish;
       uid = 1000;
       openssh.authorizedKeys.keys = [ keys.users.ghuntley.ssh ];
     };

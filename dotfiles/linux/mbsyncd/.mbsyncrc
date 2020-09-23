@@ -13,6 +13,7 @@ IMAPStore personal-remote
 Account personal
 
 MaildirStore personal-local
+SubFolders Legacy
 Path ~/Mail/
 Inbox ~/Mail/Inbox
 
@@ -33,16 +34,16 @@ Channel personal-drafts
 Master :personal-remote:"[Gmail]/Drafts"
 Slave :personal-local:Drafts
 
-Channel personal-trash
-Master :personal-remote:"[Gmail]/Trash"
-Slave :personal-local:Trash
+#Channel personal-trash
+#Master :personal-remote:"[Gmail]/Trash"
+#Slave :personal-local:Trash
 
 Group personal
 Channel personal-inbox
 Channel personal-starred
 Channel personal-sent
 Channel personal-drafts
-Channel personal-trash
+#Channel personal-trash
 
 # Gmail mailboxes:
 # "All Mail"
