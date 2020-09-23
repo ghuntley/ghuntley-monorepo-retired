@@ -7,6 +7,8 @@
     startAgent = true;
     extraConfig = ''
       AddKeysToAgent yes
+
+      VerifyHostKeyDNS yes
     '';
   };
 
