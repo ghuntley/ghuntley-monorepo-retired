@@ -38,6 +38,7 @@ let
     nix = readTree ./nix;
     nixos = readTree ./nixos;
     ops = readTree ./ops;
+    operating-systems = readTree ./operating-systems;
     patterns = readTree ./patterns;
     third_party = readTree ./third_party;
     tools = readTree ./tools;
