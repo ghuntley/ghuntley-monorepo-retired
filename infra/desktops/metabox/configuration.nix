@@ -5,7 +5,7 @@
   imports =
     [
       <sops-nix/modules/sops>
-      #../modules/builders.nix
+      ../modules/builders.nix
       ../modules/bluetooth.nix
       ../modules/boot.nix
       ../modules/corsair.nix
