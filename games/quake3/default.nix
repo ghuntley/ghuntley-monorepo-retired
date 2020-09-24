@@ -15,8 +15,6 @@ let paks = stdenv.mkDerivation rec {
     sha256 = "1rdjfcqp4df1cazgbkv6bcj5ddfg8ggg96kjickynnxw7xjxjanf";
   };
 
-  # buildInputs = [ ioquake3 quake3e quake3pointrelease ];
-
   buildCommand = ''
     cat $src/dependencies/baseq3/pak0/pak0.z01 \
         $src/dependencies/baseq3/pak0/pak0.z02 \
