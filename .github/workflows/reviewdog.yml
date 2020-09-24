@@ -6,18 +6,6 @@ name: reviewdog
 on: [pull_request]
 jobs:
 
-  dotenv-linter:
-    name: runner / dotenv-linter
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v2.3.2
-      - name: dotenv-linter
-        uses: dotenv-linter/action-dotenv-linter@v2
-        with:
-          github_token: ${{ secrets.github_token }}
-          reporter: github-pr-review # Default is github-pr-check
-
   misspell:
     name: runner / misspell
     runs-on: ubuntu-latest
@@ -30,14 +18,3 @@ jobs:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
           locale: "UK"
-  
-  shellcheck:
-      name: runner / shellcheck
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v2.3.2
-        - name: shellcheck
-          uses: reviewdog/action-shellcheck@v1
-          with:
-            github_token: ${{ secrets.github_token }}
-            reporter: github-pr-review
