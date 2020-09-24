@@ -17,6 +17,5 @@ stdenv.mkDerivation rec {
     mkdir -p $out
     cp -R ${pulumi-bin}/* $out/
     cp -R $src/* $out/
-    ./bin/pulumi check
   '';
 }
