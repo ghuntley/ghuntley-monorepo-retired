@@ -64,6 +64,12 @@ let
       dockerTools
     ;
 
+    # .NET (DOTNET)
+    inherit (nixpkgs)
+      dotnet-sdk
+      dotnetPackages
+    ;
+
     # Editors
     inherit (nixpkgs)
       ctags
@@ -78,6 +84,11 @@ let
       quake3e
       quake3pointrelease
       quake3wrapper
+    ;
+
+    # Go
+    inherit (nixpkgs)
+      go
     ;
 
     # Haskell
@@ -147,9 +158,11 @@ let
       fetchzip
       lib
       linuxPackages
+      runCommand
       runCommandLocal
       s6-portable-utils
       stdenvNoCC
+      makeWrapper
       mktemp
       nixpkgs-fmt
       nixos-shell
@@ -186,15 +199,18 @@ in exposed.lib.fix(self: exposed // {
     inherit (nixpkgs) openldap neovim;
   };
 
+  # .NET (DOTNET)
+  dotnet-sdk = nixpkgs.dotnet-sdk_3;
+
   # Use LLVM 11
   llvmPackages = nixpkgs.llvmPackages_11;
   clangStdenv = nixpkgs.llvmPackages_11.stdenv;
   stdenv = nixpkgs.llvmPackages_11.stdenv;
 
   # Python 3
-  python = nixpkgs.python38;
+  python = nixpkgs.python38.withPackages (ps: with ps; [ ]);
   pythonPackages = nixpkgs.python38Packages;
-
+  
   # Terraform
   terraform = nixpkgs.terraform_0_13;
 
@@ -206,8 +222,8 @@ in exposed.lib.fix(self: exposed // {
   nomad = nixpkgs.nomad_0_12;
 
   # Make NixOS available
-  nixos = import ./github.com/nixos/nixpkgs-channels/nixos;
-  nixeval = import ./github.com/nixos/nixpkgs-channels/nixos/lib/eval-config.nix;
+  nixos = import ./github.com/nixos/nixpkgs/nixos;
+  nixeval = import ./github.com/nixos/nixpkgs/nixos/lib/eval-config.nix;
 
   # Make SOPS available
   sops-nix = import ./github.com/mic92/sops-nix;

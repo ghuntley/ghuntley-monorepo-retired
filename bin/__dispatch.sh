@@ -72,6 +72,10 @@ case "${TARGET_TOOL}" in
     aka=""
     attr="third_party.docker"
     ;;
+  "dotnet")
+    aka=""
+    attr="third_party.dotnet"
+    ;;
   "editorconfig-checker")
     aka=""
     attr="third_party.editorconfig-checker"
@@ -84,6 +88,10 @@ case "${TARGET_TOOL}" in
     aka=""
     attr="third_party.fzf"
     ;;
+  "gcloud")
+    aka=""
+    attr="third_party.google-cloud-sdk"
+    ;;
   "git")
     aka=""
     attr="third_party.git"
@@ -92,9 +100,9 @@ case "${TARGET_TOOL}" in
     aka=""
     attr="third_party.git-bug"
     ;;
-  "gcloud")
+  "go")
     aka=""
-    attr="third_party.google-cloud-sdk"
+    attr="third_party.go"
     ;;
   "hash-password")
     aka=""

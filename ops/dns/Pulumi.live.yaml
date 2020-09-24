@@ -1,0 +1,5 @@
+config:
+  cloudflare:apiKey:
+    secure: AAABAPJV88tEfcInt/lbXtkxvRYIpePnK/GtppUFEnmyl18DktgpAJoIXnN5We0fKYO944Z7AvitNZEvSGcGG5JOPaph
+  cloudflare:email:
+    secure: AAABAJYNis8V0nq+h9sYQRvzERsrFf+t6ytg1wEjkR09TlnDSDBsSg4aOIQ/ttzAdehHW/8=
