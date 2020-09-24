@@ -25,6 +25,7 @@
     notmuch
     p7zip
     ranger
+    rs-git-fsmonitor
     rpl
     stow
     t
@@ -33,6 +34,7 @@
     tree
     unzip
     vim
+    watchman
     wget
     wget
     wol
