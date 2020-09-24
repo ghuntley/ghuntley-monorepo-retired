@@ -1,4 +1,6 @@
-# ghuntley's personal monorepo [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/ghuntley/ghuntley)
+# ghuntley's personal monorepo  [![Build status](https://badge.buildkite.com/fbb4651d19a95536f66c81d35a50be02d9a04a1f40ff979f25.svg)](https://buildkite.com/ghuntley/ghuntley)
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/ghuntley/ghuntley)
 
 This repository is the [monorepo][] for my personal software.
 
