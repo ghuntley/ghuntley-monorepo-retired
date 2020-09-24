@@ -188,6 +188,10 @@ case "${TARGET_TOOL}" in
     aka=""
     attr="third_party.nodejs"
     ;;
+  "nomad")
+    aka=""
+    attr="third_party.nomad"
+    ;;
   "npm")
     aka=""
     attr="third_party.npm"

@@ -166,6 +166,9 @@ let
     inherit (nixpkgs.nodePackages)
       npm;
 
+    inherit (nixpkgs)
+      nomad_0_12;
+
     # Windows
     inherit (nixpkgs)
       powershell;
@@ -198,6 +201,9 @@ in exposed.lib.fix(self: exposed // {
   # Supplementals
   cabal-fmt = nixpkgs.haskellPackages.callCabal2nix "cabal-fmt" ./github.com/phadej/cabal-fmt {};
   nix-linter = nixpkgs.haskellPackages.callCabal2nix "nix-linter" ./github.com/synthetica9/nix-linter {};
+
+  # Nomad
+  nomad = nixpkgs.nomad_0_12;
 
   # Make NixOS available
   nixos = import ./github.com/nixos/nixpkgs-channels/nixos;
