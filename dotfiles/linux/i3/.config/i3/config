@@ -18,7 +18,7 @@ smart_gaps on
 #  xprop | grep "CLASS"
 assign [class="Google-chrome"] 3
 assign [class="Code"] 2
-assign [class="Google Play Music Desktop Player"] 5
+assign [class="Spotify"] 5
 
 set $black       #212121
 set $darkblack   #000000
@@ -44,7 +44,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Iosevka 15
+font pango:Hack 15
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -56,7 +56,8 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # rofi
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -i -dmenu -font "Iosevka 15" '
+
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -i -dmenu -font "Hack 30" '
 
 # lock
 bindsym $mod+Ctrl+l exec --no-startup-id i3lock
@@ -84,8 +85,6 @@ bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
-
-# bindsym $mod+space exec rofi -show run
 
 # split in horizontal orientation
 bindsym $mod+h split v
@@ -206,7 +205,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # automatically lock when laptop lid closes
-exec --no-startup-id xss-lock -- 
+exec --no-startup-id xss-lock --
 
 # Starting things with i3
 # exec --no-startup-id xcompmgr -C &    # Bare compositor to allow transparency
