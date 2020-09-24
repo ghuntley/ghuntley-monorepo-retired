@@ -27,6 +27,7 @@
     ranger
     rpl
     stow
+    t
     tmux
     tmux
     tree
