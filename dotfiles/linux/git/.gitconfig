@@ -116,7 +116,7 @@ required = true
 
 [fetch]
 prune = true
-	fsckObjects = =
+	fsckObjects = true
 
 [diff]
 # Show blocks of moved text of at least 20 alphanumeric characters differently than adds/deletes
@@ -124,7 +124,7 @@ prune = true
 colorMoved = zebra
 
 [transfer]
-	fsckObjects = =
+	fsckObjects = true
 
 [stash]
 showPatch = true
@@ -133,4 +133,4 @@ date = relative
 [init]
 	defaultBranch = trunk
 [receive]
-	fsckObjects = =
+	fsckObjects = true
