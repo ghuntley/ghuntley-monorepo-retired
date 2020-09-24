@@ -5,7 +5,6 @@
 This repository is the [monorepo][] for my personal software.
 
 Everything in here is built using [Nix][] with an automatic attribute-set layout
-that mirrors the filesystem layout of the repository (this might feel familiar
 to users of Bazel).
 
 If you've ended up here and have no idea who I am, feel free to follow me [on
