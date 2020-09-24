@@ -2,10 +2,9 @@
 # SPDX-License-Identifier: Proprietary
 
 { pkgs, config, lib, sops, ... }:
-
 let amountOfBuildKiteAgents = 8;
 in
- {
+{
 
   sops.secrets.github-runner-name = {
     format = "yaml";
@@ -83,8 +82,8 @@ in
     })
     (lib.range 1 amountOfBuildKiteAgents));
 
-    # enable buildkite agents to read secrets
-    systemd.services = lib.listToAttrs (map
+  # enable buildkite agents to read secrets
+  systemd.services = lib.listToAttrs (map
     (n: rec {
       name = "buildkite-agent-metabox-${toString n}";
       value = {

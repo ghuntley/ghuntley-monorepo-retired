@@ -1,3 +1,6 @@
+# Copyright (c) 2020 Geoffrey Huntley <ghuntley@ghuntley.com>. All rights reserved.
+# SPDX-License-Identifier: Proprietary
+
 # Utility for invoking slappasswd with the correct options for
 # creating an ARGON2 password hash.
 { pkgs, ... }:

@@ -1,3 +1,6 @@
+# Copyright (c) 2020 Geoffrey Huntley <ghuntley@ghuntley.com>. All rights reserved.
+# SPDX-License-Identifier: Proprietary
+
 # This file configures the primary build pipeline used for the
 # top-level list of depot targets.
 #
@@ -5,7 +8,6 @@
 # submitted to Buildkite at the start of each build. This means we can
 # dynamically configure the pipeline execution here.
 { depot, lib, pkgs, ... }:
-
 let
   inherit (builtins) concatStringsSep foldl' map toJSON;
   inherit (lib) singleton;
@@ -18,14 +20,16 @@ let
       descend = expr: attr: "builtins.getAttr \"${attr}\" (${expr})";
       targetExpr = foldl' descend "import ./. {}" target.__readTree;
       subtargetExpr = descend targetExpr target.__subtarget;
-    in if target ? __subtarget then subtargetExpr else targetExpr;
+    in
+    if target ? __subtarget then subtargetExpr else targetExpr;
 
   # Create a pipeline label from the targets tree location.
   mkLabel = target:
     let label = concatStringsSep "/" target.__readTree;
-    in if target ? __subtarget
-      then "${label}:${target.__subtarget}"
-      else label;
+    in
+    if target ? __subtarget
+    then "${label}:${target.__subtarget}"
+    else label;
 
   # Create a pipeline step from a single target.
   #
@@ -71,4 +75,5 @@ let
         label = ":duck:";
       })
     ];
-in (writeText "depot.yaml" (toJSON pipeline))
+in
+(writeText "depot.yaml" (toJSON pipeline))
