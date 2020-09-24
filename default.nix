@@ -35,7 +35,6 @@ let
     games = readTree ./games;
     infra = readTree ./infra;
     keys = import ./keys;
-    nix = readTree ./nix;
     ops = readTree ./ops;
     operating-systems = readTree ./operating-systems;
     patterns = readTree ./patterns;
