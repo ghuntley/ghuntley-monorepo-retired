@@ -50,7 +50,7 @@
       ../modules/timezone.nix
       ../modules/users.nix
       ../modules/wireless.nix
-      ../modules/x11-kde.nix
+      ../modules/x11-i3.nix
       ../modules/yubikey.nix
       ../modules/zfs.nix
       ./hardware-configuration.nix

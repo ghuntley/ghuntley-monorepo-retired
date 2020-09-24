@@ -76,7 +76,6 @@ let
     inherit (nixpkgs)
       ioquake3
       quake3e
-      quake3hires
       quake3pointrelease
       quake3wrapper
     ;
@@ -91,6 +90,7 @@ let
     inherit (nixpkgs)
       ack
       bat
+      curl
       flamegraph
       jq
       openldap
@@ -129,7 +129,7 @@ let
     # Source Control
     inherit (nixpkgs)
       git
-      mercurialFul
+      mercurialFull
     ;
 
     inherit (nixpkgs.gitAndTools)
@@ -140,15 +140,20 @@ let
     # NIX
     inherit (nixpkgs)
       cachix
+      execline
       fetchFromGitHub
       fetchgit
       fetchurl
       fetchzip
       lib
       linuxPackages
+      runCommandLocal
+      s6-portable-utils
       stdenvNoCC
+      mktemp
       nixpkgs-fmt
       nixos-shell
+      writeText
       writeShellScript
       writeShellScriptBin
     ;

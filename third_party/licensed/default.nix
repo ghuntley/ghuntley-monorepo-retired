@@ -1,4 +1,6 @@
-{ pkgs, stdenv, fetchFromGitHub, mktemp }:
+{ depot, pkgs, lib, ... }:
+
+with pkgs;
 
 stdenv.mkDerivation rec {
   version = "2.3.0";
@@ -17,7 +19,7 @@ stdenv.mkDerivation rec {
     mkdir -p $out/bin
     tar -xvf ${src}
     cp licensed $out/bin/licensed
-    chmod +x $out/bin/licensed 
+    chmod +x $out/bin/licensed
   '';
 
   meta = {

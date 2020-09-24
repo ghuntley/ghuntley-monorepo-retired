@@ -29,14 +29,13 @@ let
     pkgs = depot.third_party;
   };
 
-  readTree' = import ./nix/readTree { };
+  readTree' = import ./third_party/readTree { };
 
   localPkgs = readTree: {
     games = readTree ./games;
     infra = readTree ./infra;
     keys = import ./keys;
     nix = readTree ./nix;
-    nixos = readTree ./nixos;
     ops = readTree ./ops;
     operating-systems = readTree ./operating-systems;
     patterns = readTree ./patterns;
@@ -80,7 +79,7 @@ fix (self: {
   config = config self;
 
   # Elevate 'lib' from nixpkgs
-  lib = import (self.third_party.nixpkgsSrc + "/lib");
+  lib = self.third_party.lib;
 
   # Expose readTree for downstream repo consumers.
   readTree = {
@@ -100,7 +99,7 @@ fix (self: {
     # remove the pipelines themselves from the set over which to
     # generate pipelines because that also leads to infinite
     # recursion.
-    ops = self.ops // { pipelines = null; };
+    ops = self.ops // { ci = null; };
   });
 }
 

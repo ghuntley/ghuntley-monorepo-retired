@@ -7,9 +7,6 @@
 [submodule "web/noyaml.com"]
 	path = web/noyaml.com
 	url = https://github.com/ghuntley/noyaml.git
-[submodule "third_party/github.com/lnl7/nix-docker"]
-	path = third_party/github.com/lnl7/nix-docker
-	url = https://github.com/LnL7/nix-docker.git
 [submodule "web/emailaddress.github.io"]
 	path = web/emailaddress.github.io
 	url = https://github.com/emailaddress/emailaddress.github.io.git
@@ -25,9 +22,6 @@
 [submodule "presentations/appstore-automation-with-fastlane"]
 	path = presentations/appstore-automation-with-fastlane
 	url = https://github.com/ghuntley/appstore-automation-with-fastlane
-[submodule "third_party/tvl.fyi"]
-	path = third_party/tvl.fyi
-	url = https://cl.tvl.fyi/depot
 [submodule "third_party/github.com/mic92/sops-nix"]
 	path = third_party/github.com/mic92/sops-nix
 	url = https://github.com/mic92/sops-nix
