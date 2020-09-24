@@ -24,7 +24,7 @@ mkShell {
     export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
     # Editor
-    export EDITOR="$REPO_ROOT/bin/neovim"
+    export EDITOR="$REPO_ROOT/bin/nvim"
     alias cat="bat"
 
     echo "[dev-env] Setting up the development environment"
