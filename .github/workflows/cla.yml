@@ -20,7 +20,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with: 
           path-to-signatures: 'cla/signatures.json'
-          path-To-cladocument: 'https://github.com/ghuntley/depot/blob/trunk/cla/README.md'
+          path-To-cla-document: 'https://github.com/ghuntley/depot/blob/trunk/cla/README.md'
           # branch should not be protected
           branch: 'trunk'
           whitelist: imgbot,dependabot*
