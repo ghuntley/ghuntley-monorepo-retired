@@ -54,6 +54,26 @@ func ghuntley_com(ctx *pulumi.Context) {
 
 	// domain ownership verification
 
+  
+
+  cloudflare.NewRecord(ctx, zoneName+"-dns-record-openpgp4fpr", &cloudflare.RecordArgs{
+		ZoneId: pulumi.String(zoneId),
+		Name:   pulumi.String("@"),
+		Type:   pulumi.String("TXT"),
+		Value:  pulumi.String("openpgp4fpr:0x3E6183A645F1755E"), // https://keyoxide.org/guides/dns
+		Ttl:    pulumi.Int(1),
+	})
+
+
+	cloudflare.NewRecord(ctx, zoneName+"-dns-record-wkd", &cloudflare.RecordArgs{
+		ZoneId: pulumi.String(zoneId),
+		Name:   pulumi.String("openpgpkey"),
+		Type:   pulumi.String("CNAME"),
+		Value:  pulumi.String("wkd.keys.openpgp.org"), // https://keys.openpgp.org/about/usage#wkd-as-a-service
+		Ttl:    pulumi.Int(1),
+	})
+
+
 	cloudflare.NewRecord(ctx, zoneName+"-dns-record-bing-verification", &cloudflare.RecordArgs{
 		ZoneId: pulumi.String(zoneId),
 		Name:   pulumi.String("aad95f930bf299e7925ec84a9fd86245"),

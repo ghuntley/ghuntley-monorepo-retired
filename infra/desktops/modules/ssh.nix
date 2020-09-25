@@ -4,15 +4,13 @@
 { config, lib, pkgs, ... }:
 {
   programs.ssh = {
-    startAgent = true;
+    startAgent = false;
     extraConfig = ''
       AddKeysToAgent yes
 
       VerifyHostKeyDNS yes
     '';
   };
-
-  programs.gnupg.agent.enable = true;
 
   #  programs.ssh.knownHosts.ssh-ca = {
   #    certAuthority = true;

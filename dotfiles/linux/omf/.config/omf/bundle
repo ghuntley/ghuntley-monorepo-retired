@@ -1,5 +1,6 @@
 package colored-man-pages
 package direnv
+package keychain
 package vish
 theme agnoster
 theme default

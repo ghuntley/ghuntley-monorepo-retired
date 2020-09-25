@@ -5,8 +5,8 @@ with import <nixpkgs> { };
 mkShell {
   # imports all files ending in .asc/.gpg and sets $SOPS_PGP_FP.
   sopsPGPKeyDirs = [
-    "./keys/hosts"
-    "./keys/users"
+    "./hosts"
+    "./users"
   ];
   nativeBuildInputs = [
     (pkgs.callPackage <sops-nix> { }).sops-pgp-hook

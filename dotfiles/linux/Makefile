@@ -4,8 +4,10 @@ install:
 	stow bin -t ~
 	stow compton -t ~
 	stow editorconfig -t ~
+	stow fish -t ~
 	stow fontconfig -t ~
 	stow git -t ~
+	stow gnupg -t ~
 	stow i3 -t ~
 	stow kitty -t ~
 	stow konsole -t ~

@@ -1,6 +1,7 @@
 [user]
 email = ghuntley@ghuntley.com
 name = Geoffrey Huntley
+	signingkey = 0x3E6183A645F1755E
 
 [core]
 editor = nvim
@@ -44,7 +45,7 @@ precomposeUnicode = true
 	fsmonitor = rs-git-fsmonitor
 
 [commit]
-gpgSign = false
+	gpgsign = true
 
 [pager]
 # insanely beautiful diffs
