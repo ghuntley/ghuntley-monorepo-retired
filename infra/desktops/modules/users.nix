@@ -57,7 +57,7 @@ in
 
   sops.secrets.yubikey-challenge-7029292-root = {
     format = "binary";
-    sopsFile = ../secrets/yubikey-challenge-7029292;
+    sopsFile = ../secrets/yubico-challenge-7029292;
     path = "/root/.yubico/challenge-7029292";
     owner = "root";
     group = "users";
