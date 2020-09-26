@@ -11,6 +11,7 @@
     exfat
     git-lfs
     gitAndTools.gitFull
+    gitAndTools.rs-git-fsmonitor
     gnumake
     htop
     htop
@@ -25,9 +26,9 @@
     notmuch
     p7zip
     ranger
-    rs-git-fsmonitor
     rpl
     stow
+    sops
     t
     tmux
     tmux

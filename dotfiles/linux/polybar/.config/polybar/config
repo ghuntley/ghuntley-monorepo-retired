@@ -41,7 +41,7 @@ font-2 = Weather Icons:size=24;0
 
 modules-left = powermenu i3
 modules-center = xwindow
-modules-right = pulseaudio date temperature
+modules-right = pulseaudio date temperature battery
 
 wm-restack = i3
 
@@ -98,7 +98,7 @@ date = %a, %b %d
 time = %l:%M %p
 label = %date%  %time%
 
-background = ${colors.background-alt} 
+background = ${colors.background-alt}
 
 [module/temperature]
 type = internal/temperature

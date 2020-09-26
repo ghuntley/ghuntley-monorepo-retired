@@ -36,6 +36,9 @@
 *.xls filter=lfs diff=lfs merge=lfs -text
 *.xlsx filter=lfs diff=lfs merge=lfs -text
 
+## Linux Firmware
+*.bin filter=lfs diff=lfs merge=lfs -text
+
 ## Fonts
 *.ttf filter=lfs diff=lfs merge=lfs -text
 *.otf filter=lfs diff=lfs merge=lfs -text

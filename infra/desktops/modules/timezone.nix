@@ -2,5 +2,5 @@
 # SPDX-License-Identifier: Proprietary
 
 { pkgs, config, lib, ... }: {
-  time.timeZone = "Brisbane/Australia";
+  time.timeZone = "Australia/Brisbane";
 }

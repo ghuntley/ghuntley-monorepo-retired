@@ -12,6 +12,7 @@
     discord
     dmenu
     gimp-with-plugins
+    gitkraken
     feh
     j4-dmenu-desktop
     libnotify

@@ -10,9 +10,10 @@
     # cf. https://github.com/NixOS/nixpkgs/issues/69073#issuecomment-621982371
     fonts = with pkgs; [
       fira-code
+      fira-code-symbols
       font-awesome-ttf
-      hack
-      monofur
+      hack-font
+      source-code-pro
       nerdfonts
       noto-fonts-emoji
       powerline-fonts
