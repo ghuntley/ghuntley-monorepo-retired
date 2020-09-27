@@ -16,6 +16,7 @@
       extraTargets = [ "display-manager.service" ];
     };
     muteKernelMessages = true;
+    lockMessage = builtins.readFile (pkgs.runCommand "" { buildInputs = [ pkgs.figlet ]; } "figlet ${config.networking.hostName} >$out");
   };
 
   security.sudo.extraConfig = ''
@@ -48,16 +49,16 @@
     };
     script = ''
       AGENTS=`ps aux | grep gpg | grep -v grep | awk {'print $2'} | wc -l`
-      echo Active gpg-agents: ${AGENTS}
+      echo Active gpg-agents: $AGENTS
       ps aux | grep gpg | grep -v grep
-      
+
       echo
       echo Terminating all gpg-agents...
       for pid in `ps aux | grep gpg | grep -v grep | awk {'print $2'}`; do kill -9 $pid;done
       echo
-      
+
       AGENTS=`ps aux | grep gpg | grep -v grep | awk {'print $2'} | wc -l`
-      echo Active gpg-agents: ${AGENTS}
+      echo Active gpg-agents: $AGENTS
       ps aux | grep gpg | grep -v grep
       if [ $AGENTS -gt 0 ]
       then
