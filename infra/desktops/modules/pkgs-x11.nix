@@ -43,6 +43,7 @@
     thunderbird
     vlc
     xclip
+    xcompmgr
     xorg.xbacklight
     xorg.xmodmap
     xorg.xprop

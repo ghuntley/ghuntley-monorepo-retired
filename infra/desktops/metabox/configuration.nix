@@ -14,6 +14,7 @@
       ../modules/entropy.nix
       ../modules/fail2ban.nix
       ../modules/firewall.nix
+      ../modules/fonts.nix
       ../modules/gist.nix
       ../modules/googlechrome.nix
       ../modules/hidpi.nix
@@ -36,6 +37,7 @@
       ../modules/powermanagement.nix
       ../modules/printing.nix
       ../modules/setcap-wrapper.nix
+      ../modules/screenlock.nix
       ../modules/shell.nix
       ../modules/sops.nix
       ../modules/sound.nix

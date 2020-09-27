@@ -9,7 +9,7 @@ alert = #bd2c40
 
 [bar/ghuntley]
 ;monitor = ${env:MONITOR:HDMI-0}
-monitor = ${env:MONITOR}
+;monitor = ${env:MONITOR}
 width = 100%
 height = 55
 fixed-center = true

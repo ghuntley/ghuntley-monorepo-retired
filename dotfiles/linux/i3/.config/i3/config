@@ -60,7 +60,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -i -dmenu -font "Hack 30" '
 
 # lock
-bindsym $mod+Ctrl+l exec --no-startup-id i3lock
+bindsym $mod+Ctrl+l exec --no-startup-id ~/.config/i3/lock-screen.sh
 
 # change focus
 bindsym $mod+j focus left
@@ -208,9 +208,10 @@ bindsym $mod+r mode "resize"
 exec --no-startup-id xss-lock --
 
 # Starting things with i3
-# exec --no-startup-id xcompmgr -C &    # Bare compositor to allow transparency
-exec --no-startup-id autorandr -c
-exec --no-startup-id ~/.config/i3/xinput-cfg.sh
-exec --no-startup-id ~/.config/polybar/launch.sh
+exec --no-startup-id xcompmgr -C &    # Bare compositor to allow transparency
+exec --no-startup-id autorandr -c &
+exec --no-startup-id xautolock -time 5 -locker ~/.config/i3/lock-screen.sh &
+exec --no-startup-id ~/.config/i3/xinput-cfg.sh &
+exec --no-startup-id ~/.config/polybar/launch.sh &
 exec --no-startup-id feh --bg-center ~/.dotfiles/wallpapers/sadie.jpg --image-bg white
 
