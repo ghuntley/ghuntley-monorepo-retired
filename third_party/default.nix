@@ -17,7 +17,7 @@ let nixpkgsConfig = {
 
 let
   # Tracking nixos-unstable
-  nixpkgs = import ./github.com/nixos/nixpkgs-channels {
+  nixpkgs = import ./github.com/nixos/nixpkgs {
     config = nixpkgsConfig;
   };
 
