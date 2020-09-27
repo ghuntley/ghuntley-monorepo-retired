@@ -10,6 +10,56 @@ func ghuntley_net(ctx *pulumi.Context) {
 	const zoneName = "ghuntley-net"
 	const zoneId = "8cbecb7f14bf65e2e7060b325d928340"
 
+  // internal wireguard hosts
+
+	cloudflare.NewRecord(ctx, zoneName+"-wg-lenovo", &cloudflare.RecordArgs{
+		ZoneId: pulumi.String(zoneId),
+		Name:   pulumi.String("lenovo.wg"),
+		Type:   pulumi.String("A"),
+		Value:  pulumi.String("100.120.133.16"),
+		Ttl:    pulumi.Int(1),
+	})
+
+	cloudflare.NewRecord(ctx, zoneName+"-wg-metabox", &cloudflare.RecordArgs{
+		ZoneId: pulumi.String(zoneId),
+		Name:   pulumi.String("metabox.wg"),
+		Type:   pulumi.String("A"),
+		Value:  pulumi.String("100.81.127.108"),
+		Ttl:    pulumi.Int(1),
+	})
+
+	cloudflare.NewRecord(ctx, zoneName+"-wg-pihole", &cloudflare.RecordArgs{
+		ZoneId: pulumi.String(zoneId),
+		Name:   pulumi.String("pihole.wg"),
+		Type:   pulumi.String("A"),
+		Value:  pulumi.String("100.94.185.64"),
+		Ttl:    pulumi.Int(1),
+	})
+
+	cloudflare.NewRecord(ctx, zoneName+"-wg-pwnagotchie", &cloudflare.RecordArgs{
+		ZoneId: pulumi.String(zoneId),
+		Name:   pulumi.String("pwnagotchie.wg"),
+		Type:   pulumi.String("A"),
+		Value:  pulumi.String("100.106.79.18"),
+		Ttl:    pulumi.Int(1),
+	})
+
+	cloudflare.NewRecord(ctx, zoneName+"-wg-speedify", &cloudflare.RecordArgs{
+		ZoneId: pulumi.String(zoneId),
+		Name:   pulumi.String("speedify.wg"),
+		Type:   pulumi.String("A"),
+		Value:  pulumi.String("100.119.53.67"),
+		Ttl:    pulumi.Int(1),
+	})
+
+	cloudflare.NewRecord(ctx, zoneName+"-wg-surfacego", &cloudflare.RecordArgs{
+		ZoneId: pulumi.String(zoneId),
+		Name:   pulumi.String("surfacego.wg"),
+		Type:   pulumi.String("A"),
+		Value:  pulumi.String("100.94.172.32"),
+		Ttl:    pulumi.Int(1),
+	})
+
 	// domain ownership verification
 
 	// email
