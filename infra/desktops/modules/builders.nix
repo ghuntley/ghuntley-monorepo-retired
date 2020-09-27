@@ -71,13 +71,22 @@ in
         tags = { hardware = "laptop"; os = "nixos"; docker = "true"; kvm = "true"; nix = "true"; nvidia = "true"; };
 
         runtimePackages = [
-          pkgs.gnutar
           pkgs.bash
-          pkgs.nix
-          pkgs.gzip
           pkgs.git
           pkgs.git-lfs
+          pkgs.gnutar
+          pkgs.gzip
+          pkgs.nix
+          pkgs.xz
         ];
+
+        hooks.environment = ''
+          export PATH=$PATH:/run/wrappers/bin/
+          export NIX_PATH=nixpkgs=${pkgs.path}
+        '';
+
+        extraConfig = ''git-clean-flags=-n'';
+
       };
     })
     (lib.range 1 amountOfBuildKiteAgents));
@@ -92,4 +101,11 @@ in
     })
     (lib.range 1 amountOfBuildKiteAgents));
 
+  # enable buildkite agents to build without sandbox
+  nix = lib.listToAttrs (map
+    (n: rec {
+      name = "trustedUsers";
+      value = [ "buildkite-agent-metabox-${toString n}" ];
+    })
+    (lib.range 1 amountOfBuildKiteAgents));
 }

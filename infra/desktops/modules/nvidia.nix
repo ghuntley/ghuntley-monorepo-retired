@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: Proprietary
 
 { pkgs, config, ... }: {
+  
   services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.opengl.driSupport32Bit = true;
+
 }

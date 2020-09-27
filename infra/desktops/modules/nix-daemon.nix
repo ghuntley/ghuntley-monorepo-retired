@@ -3,6 +3,13 @@
 
 { lib, config, pkgs, ... }: with lib; {
   nix = {
+
+    nixPath = [ 
+      "sops-nix=/home/ghuntley/code/third_party/github.com/mic92/sops-nix"
+      "nixos-config=/etc/nixos/configuration.nix"
+      "nixpkgs=/home/ghuntley/code/third_party/github.com/nixos/nixpkgs"
+    ];
+
     trustedUsers = [ "ghuntley" "root" ];
     useSandbox = true;
     gc.automatic = true;

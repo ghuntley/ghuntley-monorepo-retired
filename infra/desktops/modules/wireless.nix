@@ -5,10 +5,10 @@
 
   networking.wireless.enable = true;
 
-  sops.secrets.wpa_supplicant = {
-    format = "binary";
-    sopsFile = ../secrets/wpa_supplicant;
-    path = "/etc/wpa_supplicant.conf";
-  };
+  #sops.secrets.wpa_supplicant = {
+  #  format = "binary";
+  #  sopsFile = ../secrets/wpa_supplicant;
+  #  path = "/etc/wpa_supplicant.conf";
+  #};
 
 }

@@ -5,6 +5,7 @@
   imports =
     [
       <sops-nix/modules/sops>
+      ../modules/avahi.nix
       ../modules/bluetooth.nix
       ../modules/boot.nix
       ../modules/efi.nix
@@ -27,10 +28,13 @@
       ../modules/networking-ipv6.nix
       ../modules/nix-daemon.nix
       ../modules/nvme.nix
+      ../modules/opengl.nix
       ../modules/pkgs-x11.nix
       ../modules/pkgs.nix
       ../modules/powermanagement.nix
       ../modules/printing.nix
+      ../modules/prometheus.nix      
+      ../modules/screenlock.nix
       ../modules/setcap-wrapper.nix
       ../modules/shell.nix
       ../modules/sops.nix
@@ -57,7 +61,7 @@
   #networking.interfaces.enp0s20f0u1u4.useDHCP = false;
   networking.interfaces.wlp1s0.useDHCP = true;
   networking.interfaces.wwp0s20f0u3.useDHCP = true;
-  
+
   # control the backlight
   programs.light.enable = true;
 

@@ -24,5 +24,5 @@
   networking.firewall.interfaces."trailscale0".allowedTCPPorts = [ 22 ];
 
   # Allow sudo-ing via the forwarded SSH agent.
-  security.pam.enableSSHAgentAuth = true;
+  # security.pam.enableSSHAgentAuth = true;
 }

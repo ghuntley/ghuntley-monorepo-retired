@@ -5,4 +5,7 @@
 
   boot.cleanTmpDir = true;
 
+  boot.loader.systemd-boot.memtest86.enable = true;
+  boot.loader.grub.memtest86.enable = true;
+
 }

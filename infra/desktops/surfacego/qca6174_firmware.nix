@@ -1,4 +1,7 @@
-{stdenv, pkgs}:
+# Copyright (c) 2020 Geoffrey Huntley <ghuntley@ghuntley.com>. All rights reserved.
+# SPDX-License-Identifier: Proprietary
+
+{ stdenv, pkgs }:
 stdenv.mkDerivation {
   name = "surface-wifi-firmware";
   src = ./firmware;

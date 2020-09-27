@@ -5,6 +5,7 @@
   imports =
     [
       <sops-nix/modules/sops>
+      ../modules/avahi.nix
       ../modules/builders.nix
       ../modules/bluetooth.nix
       ../modules/boot.nix
@@ -14,7 +15,7 @@
       ../modules/entropy.nix
       ../modules/fail2ban.nix
       ../modules/firewall.nix
-      ../modules/fonts.nix
+      #../modules/fonts.nix
       ../modules/gist.nix
       ../modules/googlechrome.nix
       ../modules/hidpi.nix
@@ -32,10 +33,12 @@
       ../modules/nix-daemon.nix
       ../modules/nvidia.nix
       ../modules/nvme.nix
+      ../modules/opengl.nix
       ../modules/pkgs-x11.nix
       ../modules/pkgs.nix
       ../modules/powermanagement.nix
       ../modules/printing.nix
+      ../modules/prometheus.nix
       ../modules/setcap-wrapper.nix
       ../modules/screenlock.nix
       ../modules/shell.nix
@@ -63,8 +66,6 @@
 
   networking.interfaces.enp109s0.useDHCP = true;
   networking.interfaces.wlp112s0.useDHCP = true;
-
-
 
   system.stateVersion = "20.03";
 }

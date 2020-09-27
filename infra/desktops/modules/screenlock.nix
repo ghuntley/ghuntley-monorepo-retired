@@ -6,9 +6,9 @@
   environment.systemPackages = with pkgs; [ xautolock keychain ];
 
   services.physlock = {
+    allowAnyUser = true;
     enable = true;
     disableSysRq = true;
-    allowAnyUser = true;
     lockOn = {
       hibernate = true;
       suspend = true;
@@ -16,6 +16,7 @@
       # start x11 and associated programs in background but require password to unlock workstation
       extraTargets = [ "display-manager.service" ];
     };
+    muteKernelMessages = true;
   };
 
 }

@@ -9,11 +9,13 @@
     ark
     autorandr
     bluedevil
+    chromium
     discord
     dmenu
     gimp-with-plugins
     gitkraken
     feh
+    firefox-devedition-bin
     j4-dmenu-desktop
     libnotify
     kate
@@ -52,5 +54,16 @@
     yank
     zathura
   ];
+
+
+  nixpkgs.config.firefox = {
+    enablePlasmaBrowserIntegration = true;
+    enableAdobeFlash = true;
+  };
+
+  nixpkgs.config.chromium = {
+    enablePepperFlash = true;
+    enableVaapi = true;
+  };
 
 }
