@@ -3,10 +3,8 @@
 
 { pkgs, config, lib, ... }: {
 
-  time.timeZone = "UTC";
+  environment.systemPackages = with pkgs; [ nvme-cli ];
 
-  environment.shellInit = ''
-    export TZ='UTC'
-  '';
+  services.fstrim.enable = true;
 
 }

@@ -11,5 +11,10 @@
         pgp = (builtins.readFile ./users/ghuntley.asc);
         ssh = (builtins.readFile ./users/ghuntley.pub);
       };
+    mgmt =
+      {
+        pgp = (builtins.readFile ./users/ghuntley.asc);
+        ssh = (builtins.readFile ./users/ghuntley.pub);
+      };
   };
 }

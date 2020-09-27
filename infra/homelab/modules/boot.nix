@@ -3,10 +3,9 @@
 
 { pkgs, config, lib, ... }: {
 
-  time.timeZone = "UTC";
+  boot.cleanTmpDir = true;
 
-  environment.shellInit = ''
-    export TZ='UTC'
-  '';
+  boot.loader.systemd-boot.memtest86.enable = true;
+  boot.loader.grub.memtest86.enable = true;
 
 }

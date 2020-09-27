@@ -11,6 +11,7 @@
   services.openssh = {
     enable = true;
     forwardX11 = true;
+    openFirewall = false;
     passwordAuthentication = false;
     permitRootLogin = "no";
     useDns = false;
@@ -20,6 +21,8 @@
     '';
   };
 
+  networking.firewall.interfaces."tailscale0".allowedTCPPorts = [ 22 ];
+
   # Allow sudo-ing via the forwarded SSH agent.
-  security.pam.enableSSHAgentAuth = true;
+  # security.pam.enableSSHAgentAuth = true;
 }

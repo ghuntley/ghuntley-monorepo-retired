@@ -10,6 +10,7 @@
     dos2unix
     git-lfs
     gitAndTools.gitFull
+    gnupg
     htop
     iftop
     inetutils

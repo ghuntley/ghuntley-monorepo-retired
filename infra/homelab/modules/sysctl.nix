@@ -2,11 +2,6 @@
 # SPDX-License-Identifier: Proprietary
 
 { pkgs, config, lib, ... }: {
-
-  time.timeZone = "UTC";
-
-  environment.shellInit = ''
-    export TZ='UTC'
-  '';
-
+  boot.kernel.sysctl."fs.file-max" = 100000;
+  boot.kernel.sysctl."fs.inotify.max_user_watches" = 524288;
 }

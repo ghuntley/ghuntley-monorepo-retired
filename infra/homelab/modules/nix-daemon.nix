@@ -3,6 +3,13 @@
 
 { lib, config, pkgs, ... }: with lib; {
   nix = {
+
+    nixPath = [
+      "sops-nix=/srv/git/third_party/github.com/mic92/sops-nix"
+      "nixos-config=/etc/nixos/configuration.nix"
+      "nixpkgs=/srv/git/third_party/github.com/nixos/nixpkgs"
+    ];
+
     trustedUsers = [ "mgmt" "root" ];
     useSandbox = true;
     gc.automatic = true;
@@ -39,8 +46,6 @@
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
     ];
   };
-
-  imports = [ ./builder.nix ];
 
   nixpkgs.config.allowUnfree = true;
 }
