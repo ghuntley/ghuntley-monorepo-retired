@@ -6,11 +6,11 @@
   environment.systemPackages = with pkgs; [ smartmontools ];
 
   services.smartd = {
-      autodetect = true;
-      enable = true;
-      
-      notifications.wall.enable = true;
-      notifications.x11.enable = true;
+    autodetect = true;
+    enable = true;
+
+    notifications.wall.enable = true;
+    notifications.x11.enable = true;
   };
 
   networking.firewall.interfaces."tailscale0".allowedTCPPorts = [ 9100 ];
@@ -19,12 +19,27 @@
     enable = true;
     enabledCollectors = [
       # "netclass" "exec" "edec" "boottime"
-      "arp" "bonding" "conntrack" "cpu" "diskstats"
+      "arp"
+      "bonding"
+      "conntrack"
+      "cpu"
+      "diskstats"
       "entropy" # "exec"
-      "filefd" "filesystem" "hwmon"
-      "loadavg" "mdadm" "meminfo"
-      "netdev" "netstat"
-      "sockstat" "systemd" "textfile" "time" "vmstat" "wifi" "zfs"
+      "filefd"
+      "filesystem"
+      "hwmon"
+      "loadavg"
+      "mdadm"
+      "meminfo"
+      "netdev"
+      "netstat"
+      "sockstat"
+      "systemd"
+      "textfile"
+      "time"
+      "vmstat"
+      "wifi"
+      "zfs"
     ];
     extraFlags = [
       "--collector.textfile.directory=/var/lib/prometheus-node-exporter-text-files"
@@ -60,58 +75,57 @@
     path = [ pkgs.bash pkgs.gawk pkgs.smartmontools ];
     serviceConfig = {
       Type = "oneshot";
-      PrivateTmp =  true;
+      PrivateTmp = true;
       WorkingDirectory = "/tmp";
     };
-      script = ''
-        mkdir -pm 0775 /var/lib/prometheus-node-exporter-text-files
-        cd /var/lib/prometheus-node-exporter-text-files
-        set -euxo pipefail
-        ${./smartmon.sh} | ${pkgs.moreutils}/bin/sponge smartmon.prom
-      '';
+    script = ''
+      mkdir -pm 0775 /var/lib/prometheus-node-exporter-text-files
+      cd /var/lib/prometheus-node-exporter-text-files
+      set -euxo pipefail
+      ${./smartmon.sh} | ${pkgs.moreutils}/bin/sponge smartmon.prom
+    '';
 
   };
 
   systemd.timers.prometheus-zfs-snapshot-exporter = {
-      description = "Captures snapshot data";
-      wantedBy = [ "timers.target" ];
-      partOf = [ "prometheus-zfs-snapshot-exporter.service" ];
-      enable = true;
-      timerConfig = {
-        OnCalendar = "*:0/3";
-        Unit = "prometheus-zfs-snapshot-exporter.service";
-        Persistent = "yes";
-      };
+    description = "Captures snapshot data";
+    wantedBy = [ "timers.target" ];
+    partOf = [ "prometheus-zfs-snapshot-exporter.service" ];
+    enable = true;
+    timerConfig = {
+      OnCalendar = "*:0/3";
+      Unit = "prometheus-zfs-snapshot-exporter.service";
+      Persistent = "yes";
+    };
   };
 
   systemd.services.prometheus-zfs-snapshot-exporter = {
     path = with pkgs; [ bash gawk gnused moreutils zfs ];
     serviceConfig = {
       Type = "oneshot";
-      PrivateTmp =  true;
+      PrivateTmp = true;
       WorkingDirectory = "/tmp";
     };
-      script = ''
-        mkdir -pm 0775 /var/lib/prometheus-node-exporter-text-files
-        cd /var/lib/prometheus-node-exporter-text-files
-        set -euxo pipefail
-        zfs list -Hp -t snapshot -o name,creation \
-          | sed -e 's#@.*\s# #' \
-          | awk '
-              {
-                if (last[$1] < $2) {
-                  last[$1]=$2
-                }
+    script = ''
+      mkdir -pm 0775 /var/lib/prometheus-node-exporter-text-files
+      cd /var/lib/prometheus-node-exporter-text-files
+      set -euxo pipefail
+      zfs list -Hp -t snapshot -o name,creation \
+        | sed -e 's#@.*\s# #' \
+        | awk '
+            {
+              if (last[$1] < $2) {
+                last[$1]=$2
               }
-              END {
-                for (m in last) {
-                  printf "zfs_snapshot_age_seconds{dataset=\"%s\"} %s\n", m, last[m];
-                }
+            }
+            END {
+              for (m in last) {
+                printf "zfs_snapshot_age_seconds{dataset=\"%s\"} %s\n", m, last[m];
               }
-            ' \
-          | sponge znapzend-snaps.prom
-      '';
+            }
+          ' \
+        | sponge znapzend-snaps.prom
+    '';
   };
 
 }
-

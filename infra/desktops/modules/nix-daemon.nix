@@ -4,7 +4,7 @@
 { lib, config, pkgs, ... }: with lib; {
   nix = {
 
-    nixPath = [ 
+    nixPath = [
       "sops-nix=/home/ghuntley/code/third_party/github.com/mic92/sops-nix"
       "nixos-config=/etc/nixos/configuration.nix"
       "nixpkgs=/home/ghuntley/code/third_party/github.com/nixos/nixpkgs"

@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Proprietary
 
 { pkgs, config, ... }: {
-  
+
   services.xserver.videoDrivers = [ "nvidia" ];
 
 }

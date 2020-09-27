@@ -9,6 +9,7 @@
     direnv
     dos2unix
     exfat
+    figlet
     git-lfs
     gitAndTools.gitFull
     gitAndTools.rs-git-fsmonitor
