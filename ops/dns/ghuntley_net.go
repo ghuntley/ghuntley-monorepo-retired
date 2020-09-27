@@ -60,6 +60,14 @@ func ghuntley_net(ctx *pulumi.Context) {
 		Ttl:    pulumi.Int(1),
 	})
 
+	cloudflare.NewRecord(ctx, zoneName+"-wg-vanpute", &cloudflare.RecordArgs{
+		ZoneId: pulumi.String(zoneId),
+		Name:   pulumi.String("vanpute.wg"),
+		Type:   pulumi.String("A"),
+		Value:  pulumi.String("100.64.245.99"),
+		Ttl:    pulumi.Int(1),
+	})
+
 	// domain ownership verification
 
 	// email
