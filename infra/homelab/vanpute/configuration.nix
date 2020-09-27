@@ -84,8 +84,32 @@
   networking.firewall.interfaces."tailscale0".allowedTCPPorts = [
     80
     443
+    8080
   ];
 
+  virtualisation.oci-containers.containers = {
+    code-server = {
+      image = "codercom/code-server:latest";
+      ports = [
+        "0.0.0.0:8080:8080"
+      ];
+      volumes = [
+        #
+        # nb. careful this allows root access
+        "/var/run/docker.sock:/var/run/docker.sock"
+        # nb. careful this allows root access
+        #
+        "/srv/git:/home/coder/code"
+      ];
+      environment = {
+        PASSWORD = "TODO";
+      };
+      cmd = [
+        "--auth"
+        "password"
+      ];
+    };
+  };
 
   system.stateVersion = "20.03";
 }
