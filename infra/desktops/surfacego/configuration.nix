@@ -33,7 +33,7 @@
       ../modules/pkgs.nix
       ../modules/powermanagement.nix
       ../modules/printing.nix
-      ../modules/prometheus.nix      
+      ../modules/prometheus.nix
       ../modules/screenlock.nix
       ../modules/setcap-wrapper.nix
       ../modules/shell.nix
