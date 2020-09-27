@@ -136,3 +136,5 @@ date = relative
 	defaultBranch = trunk
 [receive]
 	fsckObjects = true
+[pull]
+	rebase = true
