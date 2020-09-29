@@ -7,9 +7,7 @@ import (
 func main() {
 	pulumi.Run(func(ctx *pulumi.Context) error {
 
-		geoffreyhuntley_com(ctx)
-		ghuntley_com(ctx)
-		ghuntley_net(ctx)
+		ghuntley_dev(ctx)
 
 		return nil
 	})
