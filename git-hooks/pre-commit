@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-de format
-de lint
+# TODO(ci): move linting and formatting to be a CI gate
+#de format
+#de lint
