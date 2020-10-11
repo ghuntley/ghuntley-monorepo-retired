@@ -27,8 +27,10 @@
       ../modules/mail.nix
       ../modules/microcode.nix
       ../modules/metabox.nix
+      ../modules/model01.nix
       ../modules/mosh.nix
       ../modules/neovim.nix
+      ../modules/networking.nix
       ../modules/networking-ipv6.nix
       ../modules/nix-daemon.nix
       ../modules/nvidia.nix
@@ -64,8 +66,8 @@
   networking.hostId = "DEADBEEF";
   networking.hostName = "metabox";
 
-  networking.interfaces.enp109s0.useDHCP = true;
-  networking.interfaces.wlp112s0.useDHCP = true;
+  #networking.interfaces.enp109s0.useDHCP = true;
+  #networking.interfaces.wlp112s0.useDHCP = true;
 
   system.stateVersion = "20.03";
 }

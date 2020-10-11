@@ -25,6 +25,7 @@
       ../modules/microcode.nix
       ../modules/mosh.nix
       ../modules/neovim.nix
+      ../modules/networking.nix
       ../modules/networking-ipv6.nix
       ../modules/nix-daemon.nix
       ../modules/nvme.nix
@@ -59,8 +60,8 @@
 
 
   #networking.interfaces.enp0s20f0u1u4.useDHCP = false;
-  networking.interfaces.wlp1s0.useDHCP = true;
-  networking.interfaces.wwp0s20f0u3.useDHCP = true;
+  #networking.interfaces.wlp1s0.useDHCP = true;
+  #networking.interfaces.wwp0s20f0u3.useDHCP = true;
 
   # control the backlight
   programs.light.enable = true;

@@ -28,6 +28,7 @@
     p7zip
     ranger
     rpl
+    sshfs
     stow
     sops
     t

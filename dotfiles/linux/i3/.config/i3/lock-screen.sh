@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Copyright (c) 2020 Geoffrey Huntley <ghuntley@ghuntley.com>. All rights reserved.
+# SPDX-License-Identifier: Proprietary
+
 
 keychain --clear --agents gpg
 
@@ -9,4 +12,5 @@ if [ "$bat" = "Adapter 0: on-line" ]; then
 else
   systemctl suspend
 fi
+
 
