@@ -25,3 +25,6 @@
 [submodule "third_party/github.com/nixos/nixpkgs"]
 	path = third_party/github.com/nixos/nixpkgs
 	url = https://github.com/nixos/nixpkgs
+[submodule "fott/third_party/github.com/wagdav/dhall-nomad"]
+	path = fott/third_party/github.com/wagdav/dhall-nomad
+	url = git@github.com:wagdav/dhall-nomad.git
