@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Copyright (c) 2020 Geoffrey Huntley <ghuntley@ghuntley.com>. All rights reserved.
+# SPDX-License-Identifier: Proprietary
+
 
 # Kensington Slimblade
 xinput set-int-prop "Kensington Kensington Slimblade Trackball" "Evdev Middle Button Emulation" 8 0 7 8 9
@@ -8,4 +11,5 @@ xinput set-int-prop "Kensington Kensington Slimblade Trackball" "Evdev Wheel Emu
 xinput set-int-prop "Kensington Kensington Slimblade Trackball" "Evdev Wheel Emulation Axes" 8 6 7 4 5
 xinput set-int-prop "Kensington Kensington Slimblade Trackball" "Evdev Wheel Emulation Timeout" 16 300
 xinput set-prop "Kensington Kensington Slimblade Trackball" "libinput Accel Speed" 1
+
 

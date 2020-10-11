@@ -177,3 +177,4 @@ for device in ${device_list}; do
     *) echo "disk type is not sat or scsi, ${type}"; exit ;;
   esac
 done | format_output
+

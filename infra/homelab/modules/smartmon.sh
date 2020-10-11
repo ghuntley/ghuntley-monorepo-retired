@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Copyright (c) 2020 Geoffrey Huntley <ghuntley@ghuntley.com>. All rights reserved.
+# SPDX-License-Identifier: Proprietary
+
 # Script informed by the collectd monitoring script for smartmontools (using smartctl)
 # by Samuel B. <samuel_._behan_(at)_dob_._sk> (c) 2012
 # source at: http://devel.dob.sk/collectd-scripts/
@@ -174,3 +177,4 @@ for device in ${device_list}; do
     *) echo "disk type is not sat or scsi, ${type}"; exit ;;
   esac
 done | format_output
+

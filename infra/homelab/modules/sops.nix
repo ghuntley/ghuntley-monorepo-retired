@@ -3,6 +3,6 @@
 
 { pkgs, config, lib, sops, ... }: {
 
-#  sops.defaultSopsFile = ../secrets/secrets.yaml;
+  #  sops.defaultSopsFile = ../secrets/secrets.yaml;
 
 }
