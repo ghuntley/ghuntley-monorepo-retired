@@ -15,6 +15,7 @@ in
         "keys"
         "kvm"
         "libvirtd"
+        "networkmanager"
         "plugdev"
         "vboxusers"
         "wheel"

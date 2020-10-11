@@ -9,4 +9,7 @@
   virtualisation.libvirtd.enable = true;
 
   networking.firewall.checkReversePath = false;
+
+  networking.networkmanager.unmanaged = [ "interface-name:ve-*" ];
+
 }
