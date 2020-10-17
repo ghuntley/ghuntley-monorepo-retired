@@ -1,5 +1,5 @@
 ---
-title: nix/nixos for developers
+title: nix/nixos workshop for developers
 ---
 
 The Nix/NixOS ecosystem is a new way of building software.
