@@ -1,5 +1,5 @@
 ---
-title: nix/nixos for site reliability engineers
+title: nix/nixos workshop for site reliability engineers
 ---
 
 The Nix/NixOS ecosystem is a new way of building software.
