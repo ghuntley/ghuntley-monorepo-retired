@@ -4,18 +4,15 @@ FROM gitpod/workspace-full
 USER root
 
 # 1. Install direnv & git-lfs
-RUN sudo apt-get install -y curl \ 
+RUN sudo apt-get install -y \ 
                     direnv \
                     git-lfs
 
-# 2. Install Nix
+# 2. Configure Nix
 CMD /bin/bash -l
 USER gitpod
 ENV USER gitpod
 WORKDIR /home/gitpod
-
-RUN touch .bash_profile && \
-  sudo curl https://nixos.org/nix/install --no-daemon | sh
 
 RUN mkdir -p /home/gitpod/.config/nixpkgs && echo '{ allowUnfree = true; }' >> /home/gitpod/.config/nixpkgs/config.nix
 
