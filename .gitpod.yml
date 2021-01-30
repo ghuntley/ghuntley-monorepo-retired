@@ -4,7 +4,7 @@
 image:
   file: .gitpod.dockerfile
 tasks:
-  - init: direnv allow && de-preload
+  - init: sudo curl https://nixos.org/nix/install --no-daemon | sh && direnv allow && de-preload
   - command: sudo docker-up
 ports:
   - port: 41564
