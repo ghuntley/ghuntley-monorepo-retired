@@ -5,6 +5,7 @@ image:
   file: .gitpod.dockerfile
 tasks:
   - init: direnv allow && de-preload
+  - command: sudo docker-up
 ports:
   - port: 41564
     onOpen: open-browser
