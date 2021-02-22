@@ -1,0 +1,26 @@
+{
+  "name": "mdxjs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "mdxjs",
+  "author": "Geoffrey Huntley",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "gatsby": "^2.32.3",
+    "gatsby-plugin-mdx": "^1.10.0",
+    "gatsby-source-filesystem": "^2.11.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}

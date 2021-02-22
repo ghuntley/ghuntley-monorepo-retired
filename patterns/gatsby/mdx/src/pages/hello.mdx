@@ -1,0 +1,2 @@
+# My first MDX Page
+some awesome content
