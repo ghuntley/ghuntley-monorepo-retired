@@ -1,7 +1,8 @@
 {
-	"name": "https://github.com/ghuntley/ghuntley",
-	"build": {
-		"dockerfile": "../.gitpod.Dockerfile",
-	},
+  "name": "https://github.com/ghuntley/ghuntley",
+  "build": {
+    "dockerfile": "../.gitpod.Dockerfile",
+  },
+  "postCreateCommand": "direnv allow",
   "remoteUser": "gitpod"
 }
