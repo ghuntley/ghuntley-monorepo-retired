@@ -5,7 +5,8 @@ image:
   file: .gitpod.Dockerfile
 tasks:
   - init: >
-      nix-shell
+      nix-shell &&
+      de-preload
 
 github:
   prebuilds:
@@ -14,7 +15,10 @@ github:
     pullRequests: true
     pullRequestsFromForks: true
     addCheck: true
-
+    addComment: true
+    addBadge: true
+    addLabel: true
+    
 vscode:
   extensions:
     - bbenoist.Nix
