@@ -100,6 +100,10 @@ case "${TARGET_TOOL}" in
     aka=""
     attr="third_party.git-bug"
     ;;
+  "git-lfs")
+    aka=""
+    attr="third_party.git-lfs"
+    ;;
   "go")
     aka=""
     attr="third_party.go"

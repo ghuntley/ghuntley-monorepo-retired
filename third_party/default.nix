@@ -140,6 +140,7 @@ let
     # Source Control
     inherit (nixpkgs)
       git
+      git-lfs
       mercurialFull
     ;
 
