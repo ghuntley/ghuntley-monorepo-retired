@@ -2,33 +2,26 @@
 # SPDX-License-Identifier: Proprietary
 
 image:
-  file: .gitpod.dockerfile
+  file: .gitpod.Dockerfile
 tasks:
-  - init: sh <(curl -L https://nixos.org/nix/install) --no-daemon && direnv allow && de-preload
+  - init: direnv allow && de-preload
   - command: sudo docker-up
-ports:
-  - port: 41564
-    onOpen: open-browser
+
 github:
   prebuilds:
-    # enable for the master/default branch (defaults to true)
     master: true
-    # enable for all branches in this repo (defaults to false)
     branches: true
-    # enable for pull requests coming from this repo (defaults to true)
     pullRequests: true
-    # add a check to pull requests (defaults to true)
+    pullRequestsFromForks: true
     addCheck: true
-    # add a "Review in Gitpod" button as a comment to pull requests (defaults to false)
-    addComment: true
 
 vscode:
   extensions:
-    - bbenoist.Nix@1.0.1:TbrU16w37jLfkqA6h20vuQ==
-    - EditorConfig.EditorConfig@0.15.1:wTLttUDotgRJ2XHnXVuC0A==
-    - Equinusocio.vsc-material-theme@32.6.0:6o7v8SA8ux84IAEvZOC88w==
-    - PKief.material-icon-theme@4.1.0:KnvIQCZopEmlWvmvaG/R3g==
-    - CoenraadS.bracket-pair-colorizer@1.0.61:fqPT1sJEqaEdrfXeYbdW+A==
-    - redhat.vscode-yaml@0.8.0:8vabe1J83VQsx0CcIALnVQ==
-    - streetsidesoftware.code-spell-checker@1.9.0:B0Usq/ATl+ohrSS731xRiA==
-    - timonwong.shellcheck@0.9.0:hsU/Rd39aqPYowTqL+DbXg==
+    - bbenoist.Nix
+    - EditorConfig.EditorConfig
+    - Equinusocio.vsc-material-theme
+    - PKief.material-icon-theme
+    - CoenraadS.bracket-pair-colorizer
+    - redhat.vscode-yaml
+    - streetsidesoftware.code-spell-checker
+    - timonwong.shellcheck
