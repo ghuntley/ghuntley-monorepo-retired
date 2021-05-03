@@ -1,0 +1,7 @@
+{
+	"name": "https://github.com/ghuntley/ghuntley",
+	"build": {
+		"dockerfile": "../.gitpod.Dockerfile",
+	},
+  "remoteUser": "gitpod"
+}
