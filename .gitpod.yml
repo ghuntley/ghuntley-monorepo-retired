@@ -5,6 +5,8 @@ image:
   file: .gitpod.Dockerfile
 tasks:
   - init: >
+      mkdir -p /home/gitpod/.config/nix &&
+      echo 'sandbox = false' >> /home/gitpod/.config/nix/nix.conf &&
       nix-shell &&
       de-preload
 
@@ -15,7 +17,6 @@ github:
     pullRequests: true
     pullRequestsFromForks: true
     addCheck: true
-    addComment: true
     addBadge: true
     addLabel: true
     
