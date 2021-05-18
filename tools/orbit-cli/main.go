@@ -68,10 +68,10 @@ func main() {
 							var tags = c.String("tags")
 
 							log.WithFields(log.Fields{
-								"user":      username,
-								"workspace": workspace,
-								"tags":      tags,
-								"token":     token,
+								"user":        username,
+								"workspace":   workspace,
+								"tags_to_add": tags,
+								"token":       token,
 							}).Debug("CLI flags")
 
 							if tags != "" {
@@ -102,10 +102,10 @@ func main() {
 							var tags = c.String("tags")
 
 							log.WithFields(log.Fields{
-								"user":      username,
-								"workspace": workspace,
-								"tags":      tags,
-								"token":     token,
+								"user":        username,
+								"workspace":   workspace,
+								"tags_to_add": tags,
+								"token":       token,
 							}).Debug("CLI flags")
 
 							if tags != "" {
@@ -136,10 +136,10 @@ func main() {
 							var tags = c.String("tags")
 
 							log.WithFields(log.Fields{
-								"user":      username,
-								"workspace": workspace,
-								"tags":      tags,
-								"token":     token,
+								"user":        username,
+								"workspace":   workspace,
+								"tags_to_add": tags,
+								"token":       token,
 							}).Debug("CLI flags")
 
 							if tags != "" {
