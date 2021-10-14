@@ -1,0 +1,24 @@
+# More configuration options here:
+# http://pyropus.ca/software/getmail/configuration.html
+[retriever]
+type = SimpleIMAPSSLRetriever
+server = imap.gmail.com
+mailboxes = ("Inbox", "[Gmail]/Sent Mail") # optional - leave this line out to just grab inbox
+username = email@address.com
+password = redacted
+
+[destination]
+type = Maildir
+path = ~/mail/
+
+[options]
+verbose = 2
+message_log = ~/.getmail/log
+
+# retrieve only new messages
+# if set to true it will re-download ALL messages every time!
+read_all = false
+
+# do not alter messages
+delivered_to = false
+received = false
