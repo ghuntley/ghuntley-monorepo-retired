@@ -79,6 +79,27 @@
       };
   };
 
+  systemd.services.updateghost = {
+    serviceConfig.User = "root";
+    serviceConfig.Type = "oneshot";
+
+    path = [
+      pkgs.docker
+      pkgs.systemd
+    ];
+
+    script = ''
+      ${pkgs.docker}/bin/docker pull ghost
+      ${pkgs.systemd}/bin/systemctl restart docker-ghost
+    '';
+  };
+
+  systemd.timers.updateghost = {
+      wantedBy = [ "timers.target" ];
+      partOf = [ "updateghost.service" ];
+      timerConfig.OnCalendar = "daily";
+  };
+
   services.restic.backups = {
     b2 = {
       user = "root";
@@ -131,4 +152,3 @@
   system.stateVersion = "21.05"; # Did you read the comment?
 
 }
-
