@@ -1,12 +1,14 @@
-# Copyright (c) 2020 Geoffrey Huntley <ghuntley@ghuntley.com>. All rights reserved.
-# SPDX-License-Identifier: Proprietary
-
+# Copyright (c) 2019-2021 The TVL Authors
+# SPDX-License-Identifier: MIT
+#
 # This file configures the primary build pipeline used for the
 # top-level list of depot targets.
 #
 # It outputs a "YAML" (actually JSON) file which is evaluated and
 # submitted to Buildkite at the start of each build. This means we can
 # dynamically configure the pipeline execution here.
+#
+# Forked from https://code.tvl.fyi/tree/ops/pipelines/depot.nix?id=9c482d6238cccbe038b11e71468ee73edd124309
 { depot, lib, pkgs, ... }:
 let
   inherit (builtins) concatStringsSep foldl' map toJSON;
