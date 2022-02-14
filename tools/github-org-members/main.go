@@ -67,18 +67,19 @@ func main() {
 		
 				log.Trace("Current Page: ", opts.Page)
 				opts.Page = response.NextPage
-		
-				log.Trace("Next Page: ", response.NextPage)
+				
+				for i, organization := range organizations {
+					i = i + 1
+					fmt.Println(organization.GetLogin())
+				}
+        
+        log.Trace("Next Page: ", response.NextPage)
 				if response.NextPage == 0 {
 					log.Trace("Final page!")
 		
 					break
 				}
-		
-				for i, organization := range organizations {
-					i = i + 1
-					fmt.Println(organization.GetLogin())
-				}
+
 			}
 		
 			return nil
