@@ -1,13 +1,13 @@
-# Copyright (c) 2020 Geoffrey Huntley <ghuntley@ghuntley.com>. All rights reserved.
-# SPDX-License-Identifier: Proprietary
-
-# This file sets up the top-level package set by traversing the package tree
-# (see read-tree.nix for details) and constructing a matching attribute set
-# tree.
+# Copyright (c) 2019-2021 The TVL Authors
+# SPDX-License-Identifier: MIT
 #
-# This makes packages accessible via the Nixery instance that is configured to
-# use this repository as its nixpkgs source.
-
+# This file sets up the top-level package set by traversing the
+# package tree using readTree[0] and constructing a matching attribute
+# set tree.
+#
+# [0]: https://code.tvl.fyi/about/nix/readTree
+#
+# Forked from https://code.tvl.fyi/tree/default.nix?id=f59ab9aba506c1ed149f7093f5543ef021567ebc
 { ... }@args:
 
 with builtins;
